@@ -22,7 +22,10 @@ class IndexAction extends Action
 			}
 		}
 		$this -> assign("result", $temp);
-		//$this -> ajaxReturn($result);
+		
+		$Vuserlog = M("Vuserlog");
+		$log = $Vuserlog -> order('insert_time desc') -> limit(10) -> select();
+		$this -> assign("log", $log);
         $this->display();
     }
 

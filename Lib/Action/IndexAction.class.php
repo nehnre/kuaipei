@@ -24,7 +24,7 @@ class IndexAction extends Action
 		$this -> assign("result", $temp);
 		
 		$Vuserlog = M("Vuserlog");
-		$log = $Vuserlog -> order('insert_time desc') -> limit(10) -> select();
+		$log = $Vuserlog -> order('insert_time desc') -> limit(8) -> select();
 		$this -> assign("log", $log);
         $this->display();
     }

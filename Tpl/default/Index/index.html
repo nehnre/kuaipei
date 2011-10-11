@@ -163,68 +163,9 @@
 				</div>
 				<div class="btn_goright"></div>
 			</div>
-			<div class="search">
-				<div class="search_text gray">请输入要查询的内容</div>
-				<div class="search_form">
-					<div class="search_input"><input type="text" /></div>
-					<div class="search_btn"><input type="button" value=" 搜     索 "/></div>
-				</div>
-				<div class="search_hot">
-					<a href="#" class="gray">3M</a> <a href="#" class="gray">刹车片</a> <a href="#" class="gray">机油</a> <a href="#" class="gray">导航仪</a>
-					 <a href="#" class="gray">WINX</a>
-				</div>
-			</div>
-			<div class="category">
-				<div class="category_fenlei">分类</div>
-				<div class="category_fenlei_content">
-					<a href="#" class="black">热门促销</a><span class="red">(10)</span>
-					<a href="#" class="black">本月促销</a><span class="red">(10)</span>
-					<a href="#" class="black">往期促销</a><span class="red">(10)</span>
-					<a href="#" class="black">易耗配件</a><span class="red">(10)</span>
-					<a href="#" class="black">机修促销</a><span class="red">(10)</span>
-					<a href="#" class="black">汽车用品</a><span class="red">(10)</span>
-				</div>
-				<div class="category_news">资讯</div>
-				<div class="category_news_content">
-					<a href="#" class="black">汽配资讯</a>
-					<a href="#" class="black">产品报告</a>
-					<a href="#" class="black">厂商动态</a>
-					<a href="#" class="black">经销动态</a>
-					<a href="#" class="black">一线维修</a>
-					<a href="#" class="black">汽配人物</a>
-				</div>
-			</div>
 			<div class="clear"></div>
 			<div class="layer1">
 				<div class="left">
-					<div class="seckill">
-						<div class="left_title"><span>立</span>即秒杀<a href="#" class="gray">更多 ></a></div>
-						<div class="seckill_content">
-							<div class="seckill_pic">
-								<div class="seckill_item">
-									<div><img src="__PUBLIC__/images/seckill/sk1.jpg" /></div>
-									<div class="introduce">忙忙碌碌·第一辑</div>
-									<div class="price"><span class="red">￥23.6</span> <span class="original_price">￥50.0</span></div>
-								</div>
-								<div class="seckill_item">
-									<div><img src="__PUBLIC__/images/seckill/sk2.jpg" /></div>
-									<div class="introduce">宏基笔记本电脑 i7-2350M win7 2G独显</div>
-									<div class="price"><span class="red">￥3999.0</span> <span class="original_price">￥4890</span></div>
-								</div>
-								<div class="seckill_item">
-									<div><img src="__PUBLIC__/images/seckill/sk3.jpg" /></div>
-									<div class="introduce">苹果Ipad2 16G平板电脑</div>
-									<div class="price"><span class="red">3399.0</span> <span class="original_price">￥3698.0</span></div>
-								</div>
-								<div class="seckill_item">
-									<div><img src="__PUBLIC__/images/seckill/sk4.jpg" /></div>
-									<div class="introduce">卡西欧时常男表</div>
-									<div class="price"><span class="red">￥499.0</span> <span class="original_price">￥899.0</span></div>
-								</div>
-							</div>
-						</div>
-						<div class="left_bottom"></div>
-					</div>
 					<div class="promotion">
 						<div class="left_title">
 							<div class="title"><span>最</span>新促销</div>
@@ -251,8 +192,12 @@
 							<a href="#" class="gray">更多 ></a>
 						</div>
 						<div class="promotion_content">
+							<volist name="result" id="child">
+							<if condition="$i  gt 1">
+							<div class="line"></div>
+							</if>
 							<div class="row">
-								<volist name="result" id="vo">
+								<volist name="child" id="vo">
 								<div class="item">
 									<div class="img"><img src="__PUBLIC__/Uploads/{$vo.index_pic}" /></div>
 									<div class="red bold text">{$vo.sponsor}</div>
@@ -264,7 +209,11 @@
 								</div>
 								</volist>
 							</div>
+							</volist>
+							<div style="height:20px;"></div>
+							<div class="clear"></div>
 						</div>
+						<div class="clear"></div>
 						<div class="left_bottom"></div>
 					</div>
 				</div>
@@ -382,83 +331,8 @@
 				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="layer2">
-				<img src="__PUBLIC__/images/layer2/ad1.jpg" />
-			</div>
-			<div class="clear"></div>
-			<div class="layer3">
-				<div class="left">
-					<div class="title"><span>汽</span>配热点<a href="#" class="gray">更多 ></a></div>
-					<div class="content">
-						<div class="pic_news">
-							<div class="pic"><img src="__PUBLIC__/images/layer3/pic_news.jpg" /></div>
-							<div class="news">
-								<div class="news_title bold">汽车灯具，安全行车的“眼睛”</div>
-								<div class="news_abstract">汽车灯具，安全行车的眼睛汽车灯具，安全行车的眼睛汽车灯具，安全行车的眼睛汽车灯具，安全行车的眼睛
-								汽车灯具，安全行车的眼睛汽车灯具的眼睛...</div>
-							</div>
-						</div>
-						<div class="clear"></div>
-						<div class="news_list">
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-						</div>
-					</div>
-					<div class="bottom"></div>
-				</div>
-				<div class="center">
-					<div class="title"><span>汽</span>配人物<a href="#" class="gray">更多 ></a></div>
-					<div class="content">
-						<div class="pic_news">
-							<div class="pic"><img src="__PUBLIC__/images/layer3/pic_news.jpg" /></div>
-							<div class="news">
-								<div class="news_title bold">汽车灯具，安全行车的“眼睛”</div>
-								<div class="news_abstract">汽车灯具，安全行车的眼睛汽车灯具，安全行车的眼睛汽车灯具，安全行车的眼睛汽车灯具，安全行车的眼睛
-								汽车灯具，安全行车的眼睛汽车灯具的眼睛...</div>
-							</div>
-						</div>
-						<div class="clear"></div>
-						<div class="news_list">
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-						</div>
-					</div>
-					<div class="bottom"></div>
-				</div>
-				<div class="right">
-					<div class="title"><span>维</span>修资源库<a href="#" class="gray" style="margin-left:40px;">更多 ></a></div>
-					<div class="content">
-						<div class="news_list">
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div class="line"></div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div class="line"></div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div class="line"></div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div class="line"></div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div class="line"></div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-							<div class="line"></div>
-							<div>汽车灯具，安全行车的“眼睛”</div>
-						</div>
-					</div>
-					<div class="right_bottom"></div>
-				</div>
-			</div>
-			<div class="clear"></div>
 		</div>
 	</div>
-	<div class="clear"></div>
 	<include file="./Tpl/default/Public/index_bottom.html" />
 	<include file="./Tpl/default/Public/dialog.html" />  
     <script type="text/javascript" language="javascript">

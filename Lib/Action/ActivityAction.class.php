@@ -107,6 +107,22 @@ class ActivityAction extends Action
 		$this -> display();
 	}
 	
+	public function preview(){
+		
+		$id = $_REQUEST["id"];
+		$Activity = M("Activity");
+		$condition["id"] = $id;
+		$result = $Activity -> where($condition) -> find();
+		
+		$introduce = split("\n",str_replace("\r","",$result["introduce"]));
+		$describ_text = split("\n",str_replace("\r","",$result["describ_text"]));
+		$this -> assign("result", $result);
+		$this -> assign("introduce", $introduce);
+		$this -> assign("describ_text", $describ_text);
+		$this -> assign("preview", true);
+		$this -> display("./Tpl/default/Activity/show.html");
+	}
+	
     /**
     +----------------------------------------------------------
     * 新增或保存一条活动记录
@@ -166,8 +182,8 @@ class ActivityAction extends Action
 			$Activity -> save();
 		}
 		
-		//$this -> ajaxReturn($id);
-		echo '<script>alert("保存成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
+		
+		echo '<script type="text/javascript">alert("保存成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
 	}
 	
 	public function show(){
@@ -202,6 +218,8 @@ class ActivityAction extends Action
 		$this -> assign("describ_text", $describ_text);
 		$this -> display();
 	}
+	
+	
 	public function test(){
 		$Activity = M("Activity");
 		$result = $Activity -> where("id=12") -> find();

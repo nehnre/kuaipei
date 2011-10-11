@@ -20,5 +20,13 @@ $(function(){
 	
 	$("#btnCancle").click(function(){
 		location.href = "listActivity";
+		try{window.event.returnValue=false;}catch(e){}
+		
+	});
+	
+	$("#btnPreview").click(function(){
+		$("form").attr("action","preview");
+		$("form").attr("target", "_blank");
+		$("form").submit();
 	});
 });

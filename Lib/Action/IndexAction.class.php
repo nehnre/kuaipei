@@ -11,7 +11,17 @@ class IndexAction extends Action
     {
 		$Activity = M("Activity");
 		$result = $Activity -> order('insert_time desc') -> limit(9) -> select();
-		$this -> assign("result", $result);
+		$len = count($result);
+		for($i=0;$i< $len/3;$i++){
+			$temp[$i][0] = $result[$i*3];
+			if($len > $i*3 + 1){
+				$temp[$i][1] = $result[$i*3 + 1];
+			}
+			if($len > $i*3 + 2){
+				$temp[$i][2] = $result[$i*3 + 2];
+			}
+		}
+		$this -> assign("result", $temp);
 		//$this -> ajaxReturn($result);
         $this->display();
     }

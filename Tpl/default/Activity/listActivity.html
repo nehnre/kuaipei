@@ -10,6 +10,7 @@
 		function del(id){
 			if(id && confirm("确定要删除这条记录吗？")){
 				location.href = "deleteActivity?id=" + id;
+				try{window.event.returnValue=false;}catch(e){}
 			}
 		}
 	</script>

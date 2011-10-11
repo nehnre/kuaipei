@@ -53,6 +53,7 @@ class RegAction extends Action
 			if("导入" == $result["import_flag"]){
 				if($check_num == $result["check_num"]){
 					Session::set("id", $result["id"]);
+					Session::set("user_name", $result["user_name"]);
 					$this -> ajaxReturn(2,"验证成功！",2);
 				}
 			}
@@ -159,6 +160,7 @@ class RegAction extends Action
 		$id = $User -> add();
 		
 		Session::set("id",$id);
+		Session::set("user_name",$user_name);
 		$this -> ajaxReturn($id,"恭喜你，用户名不存在，可以注册",2);
 	}
 	

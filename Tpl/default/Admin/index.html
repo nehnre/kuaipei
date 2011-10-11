@@ -1,0 +1,139 @@
+<html> 
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>快配网欢迎你::系统==首页</title>
+		<link rel="stylesheet" href="__PUBLIC__/css/jyb.css" type="text/css"></link>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Admin/index.js"></script>
+
+	</head>
+	<body>
+		<table width="100%" height="100%" cellpadding="0" cellspacing="0" style="font-size: 12px;" border="0">
+			<tr>
+				<td valign="top" align="left" width="100%" colspan="2">
+					<table width="100%" cellpadding="0" cellspacing="0"
+						style="font-size: 12px;" border="0">
+						<tr>
+							<td align="left" width="573px" style="background-image: url('__PUBLIC__/images/jyb/top_01.gif'); height: 71px"></td>
+							<td align="left"
+								style="background-image: url('__PUBLIC__/images/jyb/top_02.gif'); height: 71px">
+								&nbsp;
+							</td>
+							<td align="right" width="326px"
+								style="background-image: url('__PUBLIC__/images/jyb/top_04.gif'); width: 328px; height: 71px;">
+								<table width="100%" height="98%" cellpadding="0" cellspacing="0" style="font-size: 12px;" border="0">
+									<tr>
+										<td>
+											<table height="100%" cellpadding="0" cellspacing="0" style="font-size: 12px;" border="0">
+												<tr>
+													<td width="22" height="13" align="left">
+														<a href=""><img src="__PUBLIC__/images/logo.gif"
+																alt="首页"></img>
+														</a>
+													</td>
+													<td width="50" align="left" style="color: #FFFFFF">
+														<a href="" style="color: #FFFFFF"> 首
+															页 </a>
+													</td>
+													<td width="22" height="13" align="left">
+														<a href=""><img src="__PUBLIC__/images/logo_07.gif"
+																alt="注销"></img> </a>
+													</td>
+													<td width="50" align="left" align="left"
+														style="color: #FFFFFF">
+														<a href="" style="color: #FFFFFF"> 注 销 </a>
+													</td>
+													<td width="22" height="13" align="left">
+														<img src="__PUBLIC__/images/logo_09.gif" alt="个人信息"
+															onclick=""
+															style="cursor: pointer"></img>
+													</td>
+													 
+													<td width="60" align="left" style="color: #FFFFFF">
+														<a href="./jumptogzlcgl.do?method=JumpToGZlcgl"
+															onclick=""
+															style="color: #FFFFFF">工作流程</a>
+													</td>
+													<!-- http://localhost:8080/lpage/console/index.jsp -->
+													<td height="13" width="15" align="left"><img
+									src="__PUBLIC__/images/bz.gif" alt="帮助"
+									onclick=""
+									style="cursor: pointer"></img></td>
+								<td width="40" align="left"><a href="#" onclick="xgmm();" style="color: #FFFFFF">改密码</a></td>
+												</tr>
+											</table>
+										</td>
+									<tr>
+										<td>
+											<table width="100%" height="100%" cellpadding="0"
+												cellspacing="0" style="font-size: 12px;" border="0">
+												<tr>
+													<td align="left" width="21" height="20">
+														<img src="__PUBLIC__/images/logo_15.gif"></img>
+													</td>
+													<td colspan="1" align="left" style="color: #FFFFFF;">
+														<label id="greet"></label>
+													</td>
+													<td align="left" width="21" height="20">
+														<img src="__PUBLIC__/images/logo_17.gif"></img>
+													</td>
+													<td colspan="3" align="left"
+														style="color: #FFFFFF; font-weight: bold;">
+														<label id="date"></label>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" width="242" height="100%">
+					<div class="menu">
+								<ul id="parentUL" class="ui-accordion-container">						
+										<li id="XTGL-" class="catalog" style="display: block">
+											<a  href="javascript:ShowCatalog(1)" class="ui-accordion-link">系统管理</a>						
+												<ul class="subCatalog" id="catalog_1">												
+													<li id="XTGL-帐号管理及权限设置" style="display: block">															
+														<a href="#" onclick="javascript:setCSS(this);" style="color: 585956">帐号管理及权限设置</a>	
+													</li>
+												 </ul>
+										</li>
+										<li id="GSBGL-" class="catalog" style="display: block">
+											<a  href="javascript:ShowCatalog(2)" class="ui-accordion-link">活动管理</a>	
+													<ul class="subCatalog" id="catalog_2">
+														<li id="GSBGL-活动列表" style="display: block">															
+																	<a href="../Activity/listActivity" target="content" onclick="javascript:setCSS(this);" style="color: 585956">活动列表</a>	
+														</li>												
+														<li id="GSBGL-新增活动" style="display: block">															
+																	<a href="../Activity/editActivity" target="content" onclick="javascript:setCSS(this);" style="color: 585956">新增活动</a>	
+														</li>
+												     </ul>
+										</li>
+								</ul>
+					</div>
+				</td>
+				<td  valign="top" height="100%">
+					<iframe name="content" id="content" width="100%" height="100%" scrolling="yes" frameborder="0" src="/Admin/defaultPage"></iframe>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 242px; height: 29px; margin: 0px; padding: 0px;">
+					<div style="background-image: url('__PUBLIC__/images/jyb/d_18.gif'); width: 242px; height: 29px; margin: 0px; padding: 0px;"></div>
+				</td>
+				<td
+					style="width: 100%; background-image: url('__PUBLIC__/images/jyb/d_19.gif'); height: 29px; margin: 0px; padding: 0px; color: #FFFFFF;; text-align: center; vertical-align: middle;">
+					<a href="#" style="color: #ffffff"
+						target="_blank">上海科流软件提供开发与技术支持</a>
+				</td>
+			</tr>
+		</table>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/reg.css" type="text/css" media="screen" /> 
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Reg/regMoreInfo.js"></script>
+	<title>升级用户注册——快配网</title>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/top.html" />
+		<div class="body" style="height:500px">
+			<div style="height:30px;"></div>
+			<div class="bodycenter">
+				<div class="regtitle">
+					<div class="titletext"><img src="__PUBLIC__/images/reg_complete_title.jpg" /></div>
+				</div>
+			</div>
+			<div class="bodycenter" style="height:500px">
+				<div style="height:10px;"></div>
+				<div class="container" style="height:350px">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td align="center"><form class="niceform" id="myForm">
+								<table width="80%" border="0" cellspacing="0" cellpadding="0" id="formtable">
+									<tr>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td colspan="2" class="red"><span class="bold">提示：</span>有*必填 无*选填</td>
+									</tr>
+									<tr>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td width="120"><span class="red">*</span>　用户类型：</td>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="200">
+														<select name="user_type1" size="1" class="width_160" id="user_type1">
+															<option value="">请选择</option>
+															<option value="厂商">厂商</option>
+															<option value="经销商">经销商</option>
+															<option value="修理厂">修理厂</option>
+															<option value="车主">车主</option>
+															<option value="车队">车队</option>
+														</select>
+													</td>
+													<td>
+														<select name="user_type2" size="1" class="width_160" id="user_type2">
+															<option value="">请选择</option>
+														</select>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td><span class="red">*</span>　姓　　名：</td>
+										<td><input type="text" id="true_name" name="true_name"  value="{$user['id']}" size="20"/></td>
+									</tr>
+									<tr>
+										<td><span class="red" style="color:#f6f6f6">*</span>　性　　别：</td>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="60">
+														<input type="radio" value="1" id="sex1" name="sex"/>
+														<label for="sex1">男</label>
+													</td>
+													<td>
+														<input type="radio" value="2" id="sex2" name="sex"/>
+														<label for="sex2">女</label>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td width="120px"><span class="red"  style="color:#f6f6f6">*</span>　出生日期：</td>
+										<td><input type="text" id="birthday" name="birthday"  size="20"/></td>
+									</tr>
+									<tr>
+										<td><span class="red" style="color:#f6f6f6">*</span>　职　　业：</td>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="250">
+														<input type="text" id="profession" name="profession"  size="20"/>
+													</td>
+													<td width="100" style="text-align:right"><span class="red" style="color:#f6f6f6">*</span>　企业名称：</td>
+													<td>
+														<input type="text"  size="20" name="company_name" id="company_name"/>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td><span class="red" style="color:#f6f6f6">*</span>　QQ号码：</td>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="250">
+														<input type="text" name="qq" id="qq"  size="20"/>
+													</td>
+													<td width="100" style="text-align:right"><span class="red" style="color:#f6f6f6">*</span>　MSN号码：</td>
+													<td>
+														<input type="text" name="msn" id="msn"  size="20"/>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><input type="button" id="btnSubmit" value="　提交认证　"/>　<input type="button" value="　取　消　"/></td>
+									</tr>
+								</table></form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="bodyright"></div>
+		</div>
+		<include file="./Tpl/default/Public/bottom.html" />  
+	</div>
+	<include file="./Tpl/default/Public/dialog.html" />  
+</body>
+</html>

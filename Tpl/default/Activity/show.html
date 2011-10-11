@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/activity.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.6.2.min.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Activity/show.js"></script>
+	<title>欢迎光临——快配网</title>	
+<body>
+	<include file="./Tpl/default/Public/index_top.html" />
+	<input type="hidden" name="id" id="id" value="{$result.id}" />
+	<div class="body">
+		<div class="align_center index_body">
+			<div class="search">
+				<div class="search_text gray">请输入要查询的内容</div>
+				<div class="search_form">
+					<div class="search_input"><input type="text" /></div>
+					<div class="search_btn"><input type="button" value=" 搜     索 "/></div>
+				</div>
+				<div class="search_hot">
+					<a href="#" class="gray">3M</a> <a href="#" class="gray">刹车片</a> <a href="#" class="gray">机油</a> <a href="#" class="gray">导航仪</a>
+					 <a href="#" class="gray">WINX</a>
+				</div>
+			</div>
+			<div class="category" style="width:770px;">
+				<div class="category_fenlei">分类</div>
+				<div class="category_fenlei_content" style="width:550px;">
+					<a href="#" class="black">所有促销</a><span class="red">(10)</span>
+					<a href="#" class="black">热门促销</a><span class="red">(10)</span>
+					<a href="#" class="black">本月促销</a><span class="red">(10)</span>
+					<a href="#" class="black">往期促销</a><span class="red">(10)</span>
+					<a href="#" class="black">易耗配件</a><span class="red">(10)</span>
+					<a href="#" class="black">机修促销</a><span class="red">(10)</span>
+					<a href="#" class="black">汽车用品</a><span class="red">(10)</span>
+				</div>
+				<div class="btn_comment">
+					<input type="button" value="我要评论" />
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="layer1">
+				<div class="left">
+					<div class="activity_ad">
+						<img src="__PUBLIC__/Uploads/{$result.topad_pic}" />
+					</div>
+					<div class="activity_content">
+						<div class="left">
+							<div class="btn">
+								<input type="button" value="活动介绍" />
+								<input type="button" value="相关产品" />
+								<input type="button" value="品牌故事" />
+							</div>
+							<div class="picture">
+								<img src="__PUBLIC__/Uploads/{$result.activity_pic}" />
+							</div>
+							<div class="text">活动结束日期：{$result.end_time}</div>
+						</div>
+						<div class="right">
+							<div class="title bold">{$result.title}</div>
+							<div class="abstract">
+								<volist name="introduce" id="vo">
+								<div>{$vo}</div>
+								</volist>
+								<div>主办方：{$result.sponsor}</div>
+							</div>
+							<div class="introduce_list">
+								<ul>
+									<volist name="describ_text" id="vo">
+									<li>{$vo}</li>
+									</volist>
+								</ul>
+							</div>
+							<div class="btn">
+								<div class="download"><img src="__PUBLIC__/images/activity/btn_join.gif" style="cursor:pointer" id="btnJoin" unlogin="{$unlogin}" joined="{$joined}"/></div>
+								<div class="attention"><img src="__PUBLIC__/images/activity/btn_attention.jpg" style="cursor:pointer"/></div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="activity_describe">
+						<div class="left_title">
+							<span>详</span>细介绍
+							<a href="#" class="gray">更多 ></a>
+						</div>
+						<div class="content">
+							<img src="__PUBLIC__/Uploads/{$result.detail_pic}" />
+						</div>
+						<div class="left_bottom"></div>
+					</div>
+					<div class="activity_comment">
+						<div class="left_title">
+							<span>用</span>户心得
+						</div>
+						<div class="content">
+							<div class="comment">
+								<div class="title">使用背带的好处 【王先生】</div>
+								<div class="line"></div>
+								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
+							</div>
+							<div class="comment">
+								<div class="title">使用背带的好处 【王先生】</div>
+								<div class="line"></div>
+								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
+							</div>
+							<div class="comment">
+								<div class="title">使用背带的好处 【王先生】</div>
+								<div class="line"></div>
+								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
+							</div>
+							<div class="comment">
+								<div class="title">使用背带的好处 【王先生】</div>
+								<div class="line"></div>
+								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
+							</div>
+							<div class="comment">
+								<div class="title">使用背带的好处 【王先生】</div>
+								<div class="line"></div>
+								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
+								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
+							</div>
+							<div class="btn_comment1">
+								<input type="button" value="我要评论" />
+							</div>
+						</div>
+						<div class="left_bottom"></div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="activity_guide">
+						<div class="activity_title1">活动指南</div>
+						<div class="activity_content1">
+							1、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
+							2、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
+							3、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
+							4、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
+							5、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
+							6、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
+							7、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
+							8、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="custom_service">
+						<div class="activity_title1">客服电话</div>
+						<div class="activity_content1">021-8854354</div>
+					</div>
+					<div class="clear"></div>
+					<div class="activity_faq">
+						<div class="activity_title1">FAQ常见问题</div>
+						<div class="activity_content1">
+							1、劳而无功砌<br />
+							2、劳而无功砌<br />
+							3、劳而无功砌<br />
+							4、劳而无功砌<br />
+						</div>
+						
+					</div>
+					<div class="ads">
+						<div><img src="__PUBLIC__/images/ad1.jpg" /></div>
+						<div><img src="__PUBLIC__/images/ad2.jpg" /></div>
+						<div><img src="__PUBLIC__/images/ad2.jpg" /></div>
+						<div><img src="__PUBLIC__/images/ad3.jpg" /></div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<include file="./Tpl/default/Public/index_bottom.html" />
+	<include file="./Tpl/default/Public/dialog.html" />  
+	<div id="dialog-comment" title="对此次活动评论" style="display:none">
+		<div style="margin-top:5px;padding-left:10px;">标题：<input type="text" style="width:500px;" name="title" id="title"/></div>
+		<div style="margin-top:5px;padding-left:10px;">内容：<textarea style="width:500px;" cols="30" rows="15"></textarea></div>
+		<div style="text-align:center;margin-top:5px;"><input type="button" value=" 发送评论 " id="btnSubmit"/></div>
+	</div>
+</body>
+</html>

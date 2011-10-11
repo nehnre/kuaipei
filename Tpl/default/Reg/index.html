@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/reg.css" type="text/css" media="screen" /> 
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/passwordstrength.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Reg/index.js"></script>
+	<title>普通用户注册——快配网</title>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/top.html" />
+		<div class="body">
+			<div style="height:30px;"></div>
+			<div class="bodycenter">
+				<div class="regtitle">
+					<div class="titletext mircroblod bold">普通用户注册</div>
+				</div>
+			</div>
+			<div class="bodycenter">
+				<div style="height:10px;"></div>
+				<div class="container">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td align="center"><form class="niceform">
+								<table width="70%" border="0" cellspacing="0" cellpadding="0" id="formtable">
+									<tr>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td colspan="2" class="red"><span class="bold">提示：</span>有*必填 无*选填</td>
+									</tr>
+									<tr>
+										<td width="120px"><span class="red">*</span>　手　机　号：</td>
+										<td>{$result.user_name}</td>
+									</tr>
+									<tr>
+										<td><span class="red">*</span>　设置登录密码：</td>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="280">
+														<input type="password" name="password" id="password"  class="text_input input_normal" onKeyUp="ps.update(this.value)" />
+													</td>
+													<td class="none">
+														<script language="javascript">
+															var ps = new PasswordStrength();
+															ps.setMinLength(6);
+														</script>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td valign="top" class="gray">6-16位字符（字母、数字、符号），区分大小写</td>
+									</tr>
+									<tr>
+										<td><span class="red">*</span>　再次输入密码：</td>
+										<td><input type="password" name="passwordagain" id="passwordagain" size="25"  class="text_input input_normal" /></td>
+									</tr>
+									<tr>
+										<td><span style="color:#f6f6f6">*</span>　电子邮件：</td>
+										<td><input type="text" name="email" id="email" value="{$result.email}" size="25"  class="text_input input_normal" /></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><input type="checkbox" id="agree" checked="checked"/> <label for="agree">我已经阅读并同意快配网协议</label></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><input type="button" value="同意以上协议并注册" id="btnReg"/>　<input type="button" onclick="location.href='/'" value="取消" id="btnCancle"/></td>
+									</tr>
+								</table></form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="bodyright"></div>
+		</div>
+		<include file="./Tpl/default/Public/bottom.html" />  
+	</div>
+	<include file="./Tpl/default/Public/dialog.html" />  	
+</body>
+</html>

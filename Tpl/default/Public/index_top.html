@@ -1,0 +1,98 @@
+	
+	<div id="dialog-login" title="登录窗口" style="display:none">
+		<div style="margin-top:5px;padding-left:10px;">用户名：<input type="text" style="width:150px;" name="user_name" id="user_name"/></div>
+		<div style="margin-top:5px;padding-left:10px;">密　码：<input type="password" style="width:150px;" name="password" id="password"/></div>
+		<div style="text-align:center;margin-top:5px;"><input type="button" value=" 登 录 " id="btnLogin"/></div>
+	</div>
+	<div class="head">
+		<div class="align_center index_top">
+			<div style="position:relative; margin-bottom:-2px;">
+				<img src="__PUBLIC__/images/logo.jpg" />
+				<div class="menu_container">
+					<div class="top_menu menu_index1"></div>
+					<div class="top_menu menu_promotion"></div>
+					<div class="top_menu menu_news"></div>
+					<div class="top_menu menu_help"></div>
+					<div class="top_menu menu_activity"></div>
+				</div>
+				<div class="subscription">
+					<div class="red bold" style="height:18px">及时参加配件促销！</div>
+					<div style="height:22px;"><input type="text" value="输入Email订阅促销信息" style="width:150px;color:gray;" name="subEmail" id="subEmain"/> <input type="button" value=" 订 阅 " style="height:20px; width:45px;"/></div>
+				</div>
+				<div class="btn_reg gray">
+					<if condition="empty($_SESSION['user_name'])">
+					<a href="javascript:;" id="login" class="gray">登录</a> | <a href="/Reg/checkMobile" class="gray">注册</a>
+					<else />
+					欢迎你，{$Think.session.user_name } | <a href="javascript:;" id="logout" class="gray">退出</a>
+					</if>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$(".top_menu").each(function(){
+				$(this).click(function(){
+					var _href = $(this).attr("href");
+					if(_href){
+						location.href = _href;
+					}
+				});
+			});
+			
+			$("#subEmain").click(function(){
+				var val = $(this).val();
+				if("输入Email订阅促销信息" == val){
+					$(this).val("");
+					$(this).css("color","black");
+				}
+			}).blur(function(){
+				var val = $.trim($(this).val());
+				if(!val || "输入Email订阅促销信息" == val){
+					$(this).val("输入Email订阅促销信息");
+					$(this).css("color","gray");
+				}
+			});
+			$( "#dialog-login" ).dialog({
+				height: 140,
+				resizable: false,
+				closeOnEscape: false,
+				modal: true,
+				autoOpen: false,
+				close: function(){
+					$("#user_name").val("");
+					$("#password").val("");
+				}
+			});
+			$("#login").click(function(){
+				$( "#dialog-login" ).dialog("open");
+			});
+			$("#btnLogin").click(function(){
+				var userName = $("#user_name").val();
+				var password = $("#password").val();
+				if(!userName || !password){
+					showAlert("用户名密码不能为空!");
+					return;
+				}
+				showWaiting();
+				$.ajax({
+					url:"/User/login",
+					data:"user_name=" + userName + "&password=" + password,
+					type:"post",
+					success:function(json){
+						json = nehnre.parseJSON(json);
+						showAlert(json.data.msg, function(){
+							if(json.data.success){
+								location.href = location.href.replace(/#*$/ig,"");
+								try{window.event.returnValue=false;}catch(e){}
+							}
+						});
+					}
+				});
+			});
+			$("#logout").click(function(){
+				location.href = "/User/logout?backurl=" + encodeURIComponent(location.href);
+				try{window.event.returnValue=false;}catch(e){}
+			});
+		});
+	</script>

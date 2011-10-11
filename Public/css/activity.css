@@ -1,0 +1,161 @@
+﻿/*  
+ *	powered by nehnre
+ */
+ .btn_comment{
+	padding-top:20px;
+	float:right;
+	text-align:right;
+ }
+ .btn_comment input{
+	background:url(../images/activity/btn_bg.jpg);
+	width:119px;
+	height:31px;
+	border:0px;
+	font-weight:bold;
+	font-size:16px;
+ }
+ .activity_ad img{
+	border:1px solid #bebebe;
+ }
+ .activity_content{
+	height:365px;
+	border:1px solid #bebebe;
+	background-color:#f1f1f1;
+	margin-top:10px;
+ }
+ .activity_content .left{
+	width:390px;
+	float:left;
+	padding-left:10px;
+ }
+ .activity_content .right{
+	width:340px;
+	float:left;
+ }
+ .activity_content .left .btn {
+	margin-bottom:20px;
+	padding-top:20px;
+ }
+ .activity_content .left .btn input{
+	width:123px;
+	height:35px;
+	background:url(../images/activity/btn_bg2.jpg);
+	border:0px;
+	font-weight:bold;
+	font-size:16px;
+	color:white;
+	margin-left:0px;
+}
+ .activity_content .left .picture{
+	width:375px;
+	height:235px;
+	background-color:white;
+	border:1px solid #c0c0c0;
+ }
+ .activity_content .left .picture img{
+	border:1px solid #bebebe;
+	margin-left:3px;
+	margin-top:3px;
+ }
+ .activity_content .left .text{
+	line-height:50px;
+	font-size:20px;
+	text-align:center;
+ }
+ .activity_content .right {
+	margin-left:20px;
+ }
+ .activity_content .right .title{
+	padding-top:20px;
+	font-size:24px;
+	font-family:微软雅黑;
+	margin-bottom:20px;
+	height:35px;
+ }
+ .activity_content .right .abstract{
+	font-size:16px;
+	font-family:微软雅黑;
+	line-height:22px;
+	margin-bottom:20px;
+ }
+ .activity_content .right .introduce_list ul{
+	margin-left:15px;
+	line-height:25px;
+ }
+ .activity_content .right .introduce_list{
+	margin-bottom:20px;
+ }
+ .activity_content .right .download{
+	float:left;
+ }
+ .activity_content .right .attention{
+	float:left;
+	margin-left:30px;
+ }
+ 
+ .activity_describe{
+	margin-top:10px;
+ }
+ .activity_describe .content{
+	background-color:#F5F5F5;
+	border-left:#bebebe solid 1px;
+	border-right:#bebebe solid 1px;
+	padding:4px 4px 4px 4px;
+ }
+ .layer1{
+	width: 100%;
+	height:100%;
+ }
+ .activity_describe .content img{
+	border:1px solid #bebebe;
+ }
+ .activity_comment{
+	margin-top:10px;
+ }
+ .activity_comment .content{
+	background-color:#F5F5F5;
+	border-left:#bebebe solid 1px;
+	border-right:#bebebe solid 1px;
+	padding:10px 10px 10px 10px;
+ }
+ .activity_comment .comment {
+	margin-top:10px;
+	margin-bottom:30px;
+ }
+  .activity_comment .comment .title{
+	font-weight:bold;
+  }
+  .activity_comment .comment .line{
+	border-top:#bebebe dashed 1px;
+	margin:5px 0 5px 0;
+  }
+ .right .activity_title1{
+	background:url(../images/activity/right_title.jpg);
+	height:15px;
+	font-weight:bold;
+	padding-top:15px;
+	padding-left:10px;
+ }
+ .right .activity_content1{
+	border-width:0 1px 1px 1px;
+	border-color:#d5d5d5;
+	border-style:solid;
+	padding:10px 5px 10px 5px;
+	line-height:25px;
+	background-color:white;
+ }
+ .right .custom_service{
+	margin-top:10px;
+ }
+ .right .activity_faq{
+	margin-top:10px;
+ }
+ 
+ .btn_comment1 input{
+	background:url(../images/activity/btn_bg.jpg);
+	width:119px;
+	height:31px;
+	border:0px;
+	font-weight:bold;
+	font-size:16px;
+ }

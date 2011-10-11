@@ -1,0 +1,363 @@
+[ 2011-10-03T00:01:41+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:01:41+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:03:22+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:03:23+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:05:46+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:05:46+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:06:02+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:06:02+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:07:09+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:07:09+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:09:41+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:09:41+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:09:54+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:09:54+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:09:58+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:09:59+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:10:09+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:10:09+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:12:35+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:12:35+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:24:20+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:24:20+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:27:09+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:27:09+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:28:00+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:28:00+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:31:43+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:31:43+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:32:39+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:32:40+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:33:45+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:33:45+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:37:29+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:37:30+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:38:11+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:38:12+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:39:10+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:39:10+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:39:51+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:39:51+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:40:19+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:40:19+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:43:06+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:43:09+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:43:09+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:46:32+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:46:32+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:48:55+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:48:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:50:13+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:50:14+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:51:27+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:51:27+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:52:19+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:52:20+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:57:05+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:57:05+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:57:47+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:57:48+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:57:54+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T00:57:54+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:58:33+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007779s ]
+[ 2011-10-03T00:58:34+08:00 ] SQL: UPDATE `kp_user` SET `usertype1`='厂商',`usertype2`='合资',`truename`='111111',`sex`='1',`birthday`='1991-10-02',`profession`='工程师',`qq`='278729228',`companyname`='万达信息',`msn`='nehnre@yahoo.com.cn',`updatetime`='2011-10-03 00:58:34' WHERE ( `id` = '4' ) [ RunTime:0.034163s ]
+[ 2011-10-03T00:58:34+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:58:40+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T00:58:55+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.009159s ]
+[ 2011-10-03T00:58:55+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=4 LIMIT 1  [ RunTime:0.001116s ]
+[ 2011-10-03T00:58:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:00:14+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:00:37+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:00:54+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:02:09+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:02:31+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008019s ]
+[ 2011-10-03T01:02:38+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007365s ]
+[ 2011-10-03T01:02:42+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007364s ]
+[ 2011-10-03T01:02:42+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `username` = '13444444444' ) [ RunTime:0.001007s ]
+[ 2011-10-03T01:02:53+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007484s ]
+[ 2011-10-03T01:02:53+08:00 ] SQL: INSERT INTO `kp_user` (`username`,`checknum`,`updatetime`,`inserttime`) VALUES ('13444444444','610067','2011-10-03 01:02:53','2011-10-03 01:02:53') [ RunTime:0.003484s ]
+[ 2011-10-03T01:02:53+08:00 ] SQL: select last_insert_id() as last [ RunTime:0.000487s ]
+[ 2011-10-03T01:02:53+08:00 ] SQL: select last_insert_id() as last [ RunTime:0.000435s ]
+[ 2011-10-03T01:02:56+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007479s ]
+[ 2011-10-03T01:02:56+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=5 LIMIT 1  [ RunTime:0.000994s ]
+[ 2011-10-03T01:02:56+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:03:13+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007667s ]
+[ 2011-10-03T01:03:13+08:00 ] SQL: UPDATE `kp_user` SET `password`='333333',`email`='nehnre@yahoo.com.cn',`updatetime`='2011-10-03 01:03:13' WHERE ( `id` = '5' ) [ RunTime:0.003621s ]
+[ 2011-10-03T01:03:13+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:03:15+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T01:03:15+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:04:07+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007292s ]
+[ 2011-10-03T01:04:07+08:00 ] SQL: UPDATE `kp_user` SET `usertype1`='修理厂',`usertype2`='美容养护',`truename`='聂红雷',`sex`='1',`birthday`='1984-09-11',`profession`='软件工程师',`qq`='278729228',`companyname`='sgst',`msn`='niehonglei@gmail.com',`updatetime`='2011-10-03 01:04:07' WHERE ( `id` = '5' ) [ RunTime:0.004388s ]
+[ 2011-10-03T01:04:08+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:04:16+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:04:44+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008149s ]
+[ 2011-10-03T01:04:44+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=5 LIMIT 1  [ RunTime:0.001086s ]
+[ 2011-10-03T01:04:44+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:08:45+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:08:48+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007313s ]
+[ 2011-10-03T01:08:48+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=5 LIMIT 1  [ RunTime:0.001045s ]
+[ 2011-10-03T01:08:48+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:08:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:09:40+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:09:42+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:09:47+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:09:53+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:09:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:10:00+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:10:02+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:10:21+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007020s ]
+[ 2011-10-03T01:10:21+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `username` = '18602123502' ) [ RunTime:0.000877s ]
+[ 2011-10-03T01:10:31+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007403s ]
+[ 2011-10-03T01:10:31+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `username` = '18602123503' ) [ RunTime:0.001068s ]
+[ 2011-10-03T01:10:41+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007297s ]
+[ 2011-10-03T01:10:41+08:00 ] SQL: INSERT INTO `kp_user` (`username`,`checknum`,`updatetime`,`inserttime`) VALUES ('18602123503','496496','2011-10-03 01:10:41','2011-10-03 01:10:41') [ RunTime:0.002618s ]
+[ 2011-10-03T01:10:41+08:00 ] SQL: select last_insert_id() as last [ RunTime:0.000477s ]
+[ 2011-10-03T01:10:41+08:00 ] SQL: select last_insert_id() as last [ RunTime:0.000430s ]
+[ 2011-10-03T01:10:45+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007366s ]
+[ 2011-10-03T01:10:45+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=6 LIMIT 1  [ RunTime:0.000991s ]
+[ 2011-10-03T01:10:45+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:11:01+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007609s ]
+[ 2011-10-03T01:11:01+08:00 ] SQL: UPDATE `kp_user` SET `password`='111111',`email`='nehnre@yahoo.com.cn',`updatetime`='2011-10-03 01:11:01' WHERE ( `id` = '6' ) [ RunTime:0.003983s ]
+[ 2011-10-03T01:11:01+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:11:03+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T01:11:03+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:24:32+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:25:10+08:00 ] NOTIC: [8] Undefined variable: user 97e857419ddd70b93541e536af600157.php 第 71 行.
+[ 2011-10-03T01:25:10+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:40:03+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:41:39+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:41:55+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008640s ]
+[ 2011-10-03T01:41:55+08:00 ] SQL: UPDATE `kp_user` SET `usertype1`='厂商',`usertype2`='外资',`updatetime`='2011-10-03 01:41:55' WHERE ( `id` = '6' ) [ RunTime:0.003637s ]
+[ 2011-10-03T01:41:56+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:47:53+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007911s ]
+[ 2011-10-03T01:47:53+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T01:49:40+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007468s ]
+[ 2011-10-03T01:49:40+08:00 ] SQL: INSERT INTO `kp_user` (`username`) VALUES ('te1st') [ RunTime:0.030108s ]
+[ 2011-10-03T01:49:40+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T07:06:52+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T07:06:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T07:07:00+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T07:07:12+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.058111s ]
+[ 2011-10-03T07:07:12+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `username` = '18602123502' ) [ RunTime:0.009034s ]
+[ 2011-10-03T07:07:22+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007335s ]
+[ 2011-10-03T07:07:22+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `username` = '18602123502' ) [ RunTime:0.001149s ]
+[ 2011-10-03T07:08:07+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.031016s ]
+[ 2011-10-03T07:08:07+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `username` = '18602123502' ) [ RunTime:0.001070s ]
+[ 2011-10-03T07:08:16+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007553s ]
+[ 2011-10-03T07:08:16+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `username` = '18602123501' ) [ RunTime:0.001180s ]
+[ 2011-10-03T07:08:26+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007447s ]
+[ 2011-10-03T07:08:27+08:00 ] SQL: INSERT INTO `kp_user` (`username`,`checknum`,`updatetime`,`inserttime`) VALUES ('18602123501','163363','2011-10-03 07:08:26','2011-10-03 07:08:26') [ RunTime:0.040213s ]
+[ 2011-10-03T07:08:32+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007594s ]
+[ 2011-10-03T07:08:32+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=8 LIMIT 1  [ RunTime:0.001102s ]
+[ 2011-10-03T07:08:32+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T20:57:12+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T21:37:02+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T21:37:27+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.039345s ]
+[ 2011-10-03T21:37:31+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007496s ]
+[ 2011-10-03T21:37:31+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `username` = '18602123503' ) [ RunTime:0.001258s ]
+[ 2011-10-03T21:37:40+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007543s ]
+[ 2011-10-03T21:37:40+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `username` = '18602123509' ) [ RunTime:0.000935s ]
+[ 2011-10-03T21:37:52+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007445s ]
+[ 2011-10-03T21:37:52+08:00 ] SQL: INSERT INTO `kp_user` (`username`,`checknum`,`updatetime`,`inserttime`) VALUES ('18602123509','271908','2011-10-03 21:37:52','2011-10-03 21:37:52') [ RunTime:0.002807s ]
+[ 2011-10-03T21:37:56+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007422s ]
+[ 2011-10-03T21:37:56+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001185s ]
+[ 2011-10-03T21:37:56+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T21:38:16+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007566s ]
+[ 2011-10-03T21:38:16+08:00 ] SQL: UPDATE `kp_user` SET `password`='88888888',`email`='ne@s.s',`updatetime`='2011-10-03 21:38:16' WHERE ( `id` = 9 ) [ RunTime:0.024538s ]
+[ 2011-10-03T21:38:16+08:00 ] NOTIC: [8] Undefined index: usertype1 RegAction.class.php 第 193 行.
+[ 2011-10-03T21:38:16+08:00 ] NOTIC: [8] Undefined index: usertype2 RegAction.class.php 第 194 行.
+[ 2011-10-03T21:38:16+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T21:38:18+08:00 ] NOTIC: [8] Undefined variable: user b4ace6772fc4acaa54892fa5da219e43.php 第 71 行.
+[ 2011-10-03T21:38:19+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T21:57:38+08:00 ] ERR: (ThinkException) 模板不存在[./Reg/authUserFactory.html]
+[ 2011-10-03T21:57:38+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T21:59:12+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007694s ]
+[ 2011-10-03T21:59:12+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001075s ]
+[ 2011-10-03T21:59:12+08:00 ] NOTIC: [8] Undefined variable: user 31c452d5d30490f9813375a7f9fe52a0.php 第 47 行.
+[ 2011-10-03T21:59:12+08:00 ] ERR: (ThinkException) 无法加载模块Public
+[ 2011-10-03T21:59:12+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:06:05+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008568s ]
+[ 2011-10-03T22:06:05+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001115s ]
+[ 2011-10-03T22:06:05+08:00 ] NOTIC: [8] Undefined variable: user 31c452d5d30490f9813375a7f9fe52a0.php 第 47 行.
+[ 2011-10-03T22:06:05+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:17:04+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.004771s ]
+[ 2011-10-03T22:17:04+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.000554s ]
+[ 2011-10-03T22:17:04+08:00 ] NOTIC: [8] Undefined variable: user 31c452d5d30490f9813375a7f9fe52a0.php 第 47 行.
+[ 2011-10-03T22:17:04+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:19:12+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.006506s ]
+[ 2011-10-03T22:19:12+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.000516s ]
+[ 2011-10-03T22:19:12+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:19:24+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.007542s ]
+[ 2011-10-03T22:19:24+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001054s ]
+[ 2011-10-03T22:19:24+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:34:34+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.011169s ]
+[ 2011-10-03T22:34:34+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.000556s ]
+[ 2011-10-03T22:34:35+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:36:05+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008647s ]
+[ 2011-10-03T22:36:05+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001764s ]
+[ 2011-10-03T22:36:05+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:40:19+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.009087s ]
+[ 2011-10-03T22:40:19+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001304s ]
+[ 2011-10-03T22:40:19+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:43:51+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:43:51+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:43:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:43:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:43:58+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:43:59+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:44:33+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008452s ]
+[ 2011-10-03T22:44:33+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001665s ]
+[ 2011-10-03T22:44:33+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:44:36+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:44:36+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:44:38+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:44:38+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:44:41+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:44:41+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:47:46+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008958s ]
+[ 2011-10-03T22:47:46+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001427s ]
+[ 2011-10-03T22:47:46+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:48:05+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:49:13+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008450s ]
+[ 2011-10-03T22:49:13+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001248s ]
+[ 2011-10-03T22:49:13+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:49:16+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:49:16+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:49:21+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:49:22+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:49:30+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:50:37+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008860s ]
+[ 2011-10-03T22:50:37+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001684s ]
+[ 2011-10-03T22:50:37+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:50:40+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:50:40+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:50:47+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:50:55+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.009034s ]
+[ 2011-10-03T22:50:55+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001858s ]
+[ 2011-10-03T22:50:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:52:18+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.009466s ]
+[ 2011-10-03T22:52:18+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001699s ]
+[ 2011-10-03T22:52:18+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:52:22+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:52:22+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:53:08+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008404s ]
+[ 2011-10-03T22:53:08+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001129s ]
+[ 2011-10-03T22:53:08+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:53:11+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:53:11+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:53:15+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:53:55+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008257s ]
+[ 2011-10-03T22:53:55+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001225s ]
+[ 2011-10-03T22:53:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:53:58+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:53:58+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:54:01+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:54:01+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:54:05+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:54:05+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:54:27+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008359s ]
+[ 2011-10-03T22:54:27+08:00 ] SQL: UPDATE `kp_user` SET `company_name`='1111111',`city`='',`post_code`='11111',`business_call`='111',`link_man`='1111',`business_scope`='111',`company_scale`='2',`business_license`='thumb_4e89cc865f4e0.jpg',`address_pic`='thumb_4e89cc896a0d8.jpg',`business_card`='thumb_4e89cc8ce645d.jpg' WHERE ( `id` = 9 ) [ RunTime:0.003319s ]
+[ 2011-10-03T22:54:27+08:00 ] NOTIC: [8] Undefined index: usertype1 RegAction.class.php 第 196 行.
+[ 2011-10-03T22:54:27+08:00 ] NOTIC: [8] Undefined index: usertype2 RegAction.class.php 第 197 行.
+[ 2011-10-03T22:54:27+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:54:33+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T22:55:56+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008899s ]
+[ 2011-10-03T22:55:56+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=9 LIMIT 1  [ RunTime:0.001263s ]
+[ 2011-10-03T22:55:56+08:00 ] NOTIC: [8] Undefined index: username d76e83ae71e96d8500e3e6d162b172f9.php 第 44 行.
+[ 2011-10-03T22:55:57+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:38:11+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:38:18+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:39:06+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:39:07+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:39:12+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:39:16+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:39:42+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:39:51+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.009804s ]
+[ 2011-10-03T23:39:51+08:00 ] SQL: SELECT * FROM `kp_user` WHERE ( `user_name` = '18702123502' ) [ RunTime:0.001227s ]
+[ 2011-10-03T23:40:00+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008989s ]
+[ 2011-10-03T23:40:00+08:00 ] SQL: INSERT INTO `kp_user` (`user_name`,`check_num`) VALUES ('18702123502','872833') [ RunTime:0.002773s ]
+[ 2011-10-03T23:40:04+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008571s ]
+[ 2011-10-03T23:40:04+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=10 LIMIT 1  [ RunTime:0.001179s ]
+[ 2011-10-03T23:40:04+08:00 ] NOTIC: [8] Undefined index: username d76e83ae71e96d8500e3e6d162b172f9.php 第 44 行.
+[ 2011-10-03T23:40:04+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:40:36+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008575s ]
+[ 2011-10-03T23:40:36+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=10 LIMIT 1  [ RunTime:0.001205s ]
+[ 2011-10-03T23:40:36+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:40:58+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008204s ]
+[ 2011-10-03T23:40:58+08:00 ] SQL: UPDATE `kp_user` SET `password`='111111',`email`='',`update_time`='2011-10-03 23:40:58' WHERE ( `id` = 10 ) [ RunTime:0.003297s ]
+[ 2011-10-03T23:40:58+08:00 ] NOTIC: [8] Undefined index: usertype1 RegAction.class.php 第 196 行.
+[ 2011-10-03T23:40:58+08:00 ] NOTIC: [8] Undefined index: usertype2 RegAction.class.php 第 197 行.
+[ 2011-10-03T23:40:58+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:41:01+08:00 ] ERR: (ThinkException) 模板不存在[F:/myselfproject/kuaipei/kuaipei/Tpl/default/Reg/regmoreinfo.html]
+[ 2011-10-03T23:41:01+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:41:03+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:42:19+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:42:40+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:42:41+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:42:43+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:42:46+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.009711s ]
+[ 2011-10-03T23:42:46+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=10 LIMIT 1  [ RunTime:0.001345s ]
+[ 2011-10-03T23:42:46+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:43:16+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008885s ]
+[ 2011-10-03T23:43:16+08:00 ] SQL: UPDATE `kp_user` SET `password`='333333',`email`='nehnre@yahoo.com.cn',`update_time`='2011-10-03 23:43:16' WHERE ( `id` = 10 ) [ RunTime:0.003755s ]
+[ 2011-10-03T23:43:16+08:00 ] NOTIC: [8] Undefined index: usertype1 RegAction.class.php 第 196 行.
+[ 2011-10-03T23:43:16+08:00 ] NOTIC: [8] Undefined index: usertype2 RegAction.class.php 第 197 行.
+[ 2011-10-03T23:43:16+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:43:18+08:00 ] ERR: (ThinkException) 模板不存在[F:/myselfproject/kuaipei/kuaipei/Tpl/default/Reg/regmoreinfo.html]
+[ 2011-10-03T23:43:18+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:43:20+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:43:21+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:43:22+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:43:49+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:43:49+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:43:50+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:43:52+08:00 ] NOTIC: [8] Undefined variable: user 50c8bfc28783da0e7ab15fb0c28cf999.php 第 71 行.
+[ 2011-10-03T23:43:52+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:44:20+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:44:21+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:44:24+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:44:33+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008729s ]
+[ 2011-10-03T23:44:33+08:00 ] SQL: UPDATE `kp_user` SET `update_time`='2011-10-03 23:44:33' WHERE ( `id` = 10 ) [ RunTime:0.002886s ]
+[ 2011-10-03T23:44:35+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008640s ]
+[ 2011-10-03T23:44:35+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=10 LIMIT 1  [ RunTime:0.001201s ]
+[ 2011-10-03T23:44:35+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:45:11+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:45:11+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:45:16+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:45:16+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:45:20+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:45:24+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008267s ]
+[ 2011-10-03T23:45:24+08:00 ] SQL: UPDATE `kp_user` SET `company_name`='33',`city`='上海',`post_code`='333333',`business_call`='3333',`link_man`='33',`business_scope`='33',`company_scale`='1',`business_license`='thumb_4e89d8875483c.jpg',`address_pic`='thumb_4e89d88c2c3b4.jpg',`business_card`='thumb_4e89d890b0cc9.jpg',`update_time`='2011-10-03 23:45:24' WHERE ( `id` = 10 ) [ RunTime:0.002727s ]
+[ 2011-10-03T23:45:24+08:00 ] NOTIC: [8] Undefined index: usertype1 RegAction.class.php 第 196 行.
+[ 2011-10-03T23:45:24+08:00 ] NOTIC: [8] Undefined index: usertype2 RegAction.class.php 第 197 行.
+[ 2011-10-03T23:45:24+08:00 ] ERR: (ThinkException) 非法操作regmoreinfook
+[ 2011-10-03T23:45:24+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:45:30+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:45:34+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:45:36+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:46:53+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:46:53+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:46:57+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:46:57+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:47:35+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:47:37+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:47:42+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:48:22+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:48:37+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:49:24+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:49:32+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008525s ]
+[ 2011-10-03T23:49:32+08:00 ] SQL: UPDATE `kp_user` SET `user_type1`='经销商',`user_type2`='代理',`update_time`='2011-10-03 23:49:32' WHERE ( `id` = 10 ) [ RunTime:0.002739s ]
+[ 2011-10-03T23:49:32+08:00 ] NOTIC: [8] Undefined index: usertype1 RegAction.class.php 第 196 行.
+[ 2011-10-03T23:49:32+08:00 ] NOTIC: [8] Undefined index: usertype2 RegAction.class.php 第 197 行.
+[ 2011-10-03T23:49:34+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.010398s ]
+[ 2011-10-03T23:49:34+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=10 LIMIT 1  [ RunTime:0.001265s ]
+[ 2011-10-03T23:49:35+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:49:45+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:49:47+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:53:53+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.009013s ]
+[ 2011-10-03T23:53:53+08:00 ] SQL: UPDATE `kp_user` SET `user_type1`='厂商',`user_type2`='外资',`update_time`='2011-10-03 23:53:53' WHERE ( `id` = 10 ) [ RunTime:0.002718s ]
+[ 2011-10-03T23:53:55+08:00 ] SQL: SHOW COLUMNS FROM `kp_user` [ RunTime:0.008251s ]
+[ 2011-10-03T23:53:55+08:00 ] SQL: SELECT * FROM `kp_user` WHERE id=10 LIMIT 1  [ RunTime:0.000706s ]
+[ 2011-10-03T23:53:55+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:55:17+08:00 ] ERR: (ThinkException) 无法加载模块
+[ 2011-10-03T23:55:23+08:00 ] ERR: (ThinkException) 无法加载模块

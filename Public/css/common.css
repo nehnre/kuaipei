@@ -1,0 +1,23 @@
+.red {
+	color:#ce0000;
+}
+
+.bold {
+	font-weight:bold;
+}
+
+
+.gray {
+	color: #999;
+}
+.black {
+	color: black;
+}
+
+.align_center{
+	position: relative;
+	margin: 0 auto;
+}
+
+*:focus {outline: none;}
+.clear{ clear:both; height:0; line-height:0; font-size:0px;}

@@ -1,0 +1,49 @@
+﻿.ad { 
+	        margin-bottom:10px;
+	        width:586px; 
+	        height:150px; 
+	        overflow:hidden;
+	        position:relative;
+        }
+        .slider, .num{
+	        position:absolute;
+        }
+        .slider li{ 
+	        list-style:none;
+	        display:inline;
+        }
+        .slider img{ 
+	        width:586px; 
+	        height:150px;
+	        display:block;
+        }
+        .num{ 
+	        right:5px; 
+	        bottom:5px;
+        }
+        .num li{
+	        float: left;
+	        color: #FF7300;
+	        text-align: center;
+	        line-height: 16px;
+	        width: 16px;
+	        height: 16px;
+	        font-family: Arial;
+	        font-size: 12px;
+	        cursor: pointer;
+	        overflow: hidden;
+	        margin: 3px 1px;
+	        border: 1px solid #FF7300;
+	        background-color: #fff;
+        }
+        .num li.on{
+	        color: #fff;
+	        line-height: 21px;
+	        width: 21px;
+	        height: 21px;
+	        font-size: 16px;
+	        margin: 0 1px;
+	        border: 0;
+	        background-color: #FF7300;
+	        font-weight: bold;
+        }

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/reg.css" type="text/css" media="screen" /> 
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/queryString.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/passwordstrength.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Reg/checkMobile.js"></script>
+	<title>普通用户注册——快配网</title>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/top.html" />
+		<div class="body" style="height:270px;">
+			<div style="height:30px;"></div>
+			<div class="bodycenter">
+				<div class="regtitle">
+					<div class="titletext mircroblod bold">验证手机</div>
+				</div>
+			</div>
+			<div class="bodycenter">
+				<div style="height:10px;"></div>
+				<div class="container" style="height:160px">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td align="center"><form class="niceform">
+								<table width="70%" border="0" cellspacing="0" cellpadding="0" id="formtable">
+									<tr>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td width="120px"><span class="red">*</span>　手机号：</td>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="280">
+														<input type="text" class="text_input input_normal" id="user_name" name="user_name" />
+													</td>
+													<td><input type="button" value="发送验证码" id="btnCheck"/></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td><span class="red">*</span>　验证码：</td>
+										<td><input type="text" name="check_num" class="text_input input_normal"  id="check_num" size="25"  /></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><input type="button" value=" 验 证 " id="btnSmsCheck"/>　<input type="button" onclick="location.href='/'" value="取消" id="btnCancle"/></td>
+									</tr>
+								</table></form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="bodyright"></div>
+		</div>
+		<include file="./Tpl/default/Public/bottom.html" />  
+	</div>
+	<include file="./Tpl/default/Public/dialog.html" />  	
+</body>
+</html>

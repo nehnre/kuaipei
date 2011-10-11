@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<title>活动</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Activity/editActivity.js"></script>
+</head>
+<body >
+	<form method="post" action="saveOrUpdateActivity" enctype="multipart/form-data" >
+	<input type="hidden" value="{$result.id}" name="id"/>
+	<table border="0" class="table" cellpadding="0" cellspacing="0"  >
+		<tr >
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_01.jpg" alt=""/>
+			</td>
+			<td class="navigation_middle" >
+				您现在的位置： 活动管理 》<if condition="!empty($result)">编辑<else />新增</if>活动
+			</td>
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_03.jpg" alt=""></img>
+			</td>
+		</tr>
+	</table>
+	<table class="its" cellspacing="1" cellpadding="5" border="0">
+			<tr class="odd">
+				<td width="200px" align="right">活动类型：</td>
+				<td align="left">
+					<select style="width:80%" name="type">
+						<option value="抽奖活动">抽奖活动</option>
+					</select>
+				</td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">活动标题：</td>
+				<td align="left"><input type="text" style="width:80%" name="title" id="title" value="{$result.title}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">主办方名称：</td>
+				<td  align="left"><input type="text" style="width:80%" name="sponsor" id="sponsor" value="{$result.sponsor}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">活动介绍：</td>
+				<td  align="left"><textarea cols="100" style="width:80%" rows="8" id="introduce" name="introduce" >{$result.introduce}</textarea></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">活动说明：</td>
+				<td  align="left"><textarea cols="100" style="width:80%" rows="8" id="describ_text" name="describ_text">{$result.describ_text}</textarea></td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">活动开始时间：</td>
+				<td align="left"><input type="text" style="width:80%" id="start_time" name="start_time" value="{$result.start_time}"/></td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">活动结束时间：</td>
+				<td align="left"><input type="text" style="width:80%" id="end_time" name="end_time" value="{$result.end_time}"/></td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">顶部图片：</td>
+				<if condition="empty($result['topad_pic'])">
+				<td align="left"><input type="file" style="width:80%" name="photo[]"/></td>
+				<else />
+				<td align="left">
+					<table cellspacing="0" border="0" cellpadding="0" width="100%">
+						<tr>
+							<td><input type="file" style="width:80%" name="photo[]"/></td>
+						</tr>
+						<tr>
+							<td><a href="__PUBLIC__/Uploads/{$result.topad_pic}" target="blank">查看</a></td>
+						</tr>
+					</table>
+				</td>
+				</if>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">活动图片：</td>
+				<if condition="empty($result['activity_pic'])">
+				<td align="left"><input type="file" style="width:80%" name="photo[]"/></td>
+				<else />
+				<td align="left">
+					<table cellspacing="0" border="0" cellpadding="0" width="100%">
+						<tr>
+							<td><input type="file" style="width:80%" name="photo[]"/></td>
+						</tr>
+						<tr>
+							<td><a href="__PUBLIC__/Uploads/{$result.activity_pic}" target="blank">查看</a></td>
+						</tr>
+					</table>
+				</td>
+				</if>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">详情图片：</td>
+				<if condition="empty($result['detail_pic'])">
+				<td align="left"><input type="file" style="width:80%" name="photo[]"/></td>
+				<else />
+				<td align="left">
+					<table cellspacing="0" border="0" cellpadding="0" width="100%">
+						<tr>
+							<td><input type="file" style="width:80%" name="photo[]"/></td>
+						</tr>
+						<tr>
+							<td><a href="__PUBLIC__/Uploads/{$result.detail_pic}" target="blank">查看</a></td>
+						</tr>
+					</table>
+				</td>
+				</if>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">首页图片：</td>
+				<if condition="empty($result['index_pic'])">
+				<td align="left"><input type="file" style="width:80%" name="photo[]"/></td>
+				<else />
+				<td align="left">
+					<table cellspacing="0" border="0" cellpadding="0" width="100%">
+						<tr>
+							<td><input type="file" style="width:80%" name="photo[]"/></td>
+						</tr>
+						<tr>
+							<td><a href="__PUBLIC__/Uploads/{$result.index_pic}" target="blank">查看</a></td>
+						</tr>
+					</table>
+				</td>
+				</if>
+			</tr>
+			<tr  class="odd">
+				<td colspan="2">
+					<input type="submit" value="提 交" id="btnSubmit" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+					<input type="button" value="取 消" id="btnCancle" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+				</td>
+			</tr>
+	</table>
+	</form>
+</body>
+
+</html>

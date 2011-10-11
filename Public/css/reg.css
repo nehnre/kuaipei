@@ -1,0 +1,130 @@
+﻿/*  
+ *	powered by nehnre
+ */
+body{ font-size:12px;}
+*{ margin:0; padding:0;}
+a {
+text-decoration: none;
+}
+.head {
+	height:95px;
+	background:url("../images/top_bg.jpg");
+	text-align:center;
+}
+.bottom {
+	height:230px;
+	background:url("../images/bottom_bg.jpg");
+}
+.bottomcontent {
+	position: relative;
+	width: 1100px;
+	margin: 0 auto;
+}
+.ftbox {
+	border-right: 1px #555 dashed;
+	width: 110px;
+	float: left;
+	height: 100px;
+	padding: 0px 25px 0px 45px;
+}
+
+.ftbox li {
+	font-size: 12px;
+	list-style: outside disc;
+	line-height: 1.8;
+}
+.ftbox a {
+	color: #999;
+}
+.ftbox ul {
+	padding-left: 16px;
+}
+.ftbox h3 {
+	color: #999;
+	margin-bottom: 8px;
+}
+h3 {
+	display: block;
+	font-size: 1.17em;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+.body {
+	height: 500px;
+	background: url(../images/reg_body_bg.jpg) repeat-y;
+	background-attachment:fixed;
+	background-position:center;
+}
+.bottominfo {
+	text-align:center;
+	color: #999;
+}
+
+.bodycenter {
+	position: relative;
+	width: 930px;
+	margin: 0 auto;
+}
+
+.container {
+	height:400px;
+	width:924px;
+	background-color:#f6f6f6;
+	border:solid 2px #d9d9d9;
+}
+.bottomlogo{
+	padding-left:80px;
+}
+.regpad {
+	padding-left:120px;
+}
+.red {
+	color:#ce0000;
+}
+.bold {
+	font-weight:bold;
+}
+
+#formtable td {
+	text-align:left;
+	height:30px;
+}
+.gray {
+	color: #999;
+}
+.regtitle {
+	width:924px;
+	height:35px;
+	background: url(../images/reg_title_bg.jpg);
+}
+.titletext {
+	margin-left:30px;
+	padding-top:5px;
+	font-size:20px;
+}
+.mircroblod {
+	font-family: 微软雅黑;
+}
+.hidden .ui-dialog-titlebar .ui-dialog-titlebar-close{display:none;}
+.font_11 {font-size:14px;color:#039;}
+
+.text_input{
+	height: 23px;
+	line-height: 23px;
+	border: 1px solid #A8C7DD;
+	width: 250px;
+	color: #999;
+	font-family: tahoma;
+	padding-left: 5px;
+	font-size: 14px;
+	background-position: -1px -1px;
+}
+.input_normal{
+	background:url(../images/reg_v21.png)
+}
+.input_focus{
+	background-position: -1px -26px;
+}

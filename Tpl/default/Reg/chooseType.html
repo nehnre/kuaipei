@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/reg.css" type="text/css" media="screen" /> 
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Reg/chooseType.js"></script>
+	<title>升级用户注册——快配网</title>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/top.html" />
+		<div class="body" style="height:300px">
+			<div style="height:30px;"></div>
+			<div class="bodycenter">
+				<div class="regtitle">
+					<div class="titletext mircroblod bold">选择用户类型</div>
+				</div>
+			</div>
+			<div class="bodycenter" style="height:300px">
+				<div style="height:10px;"></div>
+				<div class="container" style="height:200px">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td align="center"><form id="myForm">
+								<table width="80%" border="0" cellspacing="0" cellpadding="0" id="formtable">
+									<tr>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td colspan="2" class="red"><span class="bold">提示：</span>有*必填 无*选填</td>
+									</tr>
+									<tr>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td width="120"><span class="red">*</span>　用户类型：</td>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="200">
+														<select name="user_type1" size="1" style="width:160px;" id="user_type1">
+															<option value="">请选择</option>
+															<option value="厂商">厂商</option>
+															<option value="经销商">经销商</option>
+															<option value="修理厂">修理厂</option>
+															<option value="车主">车主</option>
+															<option value="车队">车队</option>
+														</select>
+														<script type="text/javascript">
+															$("#user_type1").val("{$result.user_type1}");
+														</script>
+													</td>
+													<td>
+														<select name="user_type2" size="1" style="width:160px;" id="user_type2">
+															<option value="">请选择</option>
+															<if condition="$result.user_type1 eq '厂商'">
+																<option value="外资">外资</option>
+																<option value="合资">合资</option>
+																<option value="民营">民营</option>
+																<option value="国有">国有</option>
+															</if>
+															<if condition="$result.user_type1 eq '经销商'">
+																<option value="代理">代理</option>
+																<option value="分销商">分销商</option>
+															</if>
+															<if condition="$result.user_type1 eq '修理厂'">
+																<option value="综合修理厂(一类资质)">综合修理厂(一类资质)</option>
+																<option value="综合修理厂(二类资质)">综合修理厂(二类资质)</option>
+																<option value="综合修理厂(三类资质)">综合修理厂(三类资质)</option>
+																<option value="快修店">快修店</option>
+																<option value="专项修理">专项修理</option>
+																<option value="轮胎店">轮胎店</option>
+																<option value="美容养护">美容养护</option>
+																<option value="4S店">4S店</option>
+															</if>
+															<if condition="$result.user_type1 eq '车主'">
+																<option value="商用车">商用车</option>
+																<option value="私家车">私家车</option>
+															</if>
+															<if condition="$result.user_type1 eq '车队'">
+																<option value="货车">货车</option>
+																<option value="客车">客车</option>
+															</if>
+														</select>
+														<script type="text/javascript">
+															$("#user_type2").val("{$result.user_type2}");
+														</script>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><input type="button" id="btnSubmit" value="　下一步　"/></td>
+									</tr>
+								</table></form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="bodyright"></div>
+		</div>
+		<include file="./Tpl/default/Public/bottom.html" />  
+	</div>
+	<include file="./Tpl/default/Public/dialog.html" />  
+</body>
+</html>

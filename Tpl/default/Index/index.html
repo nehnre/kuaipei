@@ -203,7 +203,7 @@
 							<div class="content">
 								<volist name="log" id="vo">
 								<div class="row">
-									<div class="nick_name">[<php>echo substr($vo["user_name"],0,5)</php>]</div>
+									<div class="nick_name">[{$vo.nick_name}]</div>
 									<div class="action">{$vo.act_describ}</div>
 									<div class="clear"></div>
 								</div>

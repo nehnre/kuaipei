@@ -28,7 +28,7 @@ class UserAction extends Action
 				$json["msg"] = "用户名或密码不正确！";
 			} else {
 				Session::set("id", $result["id"]);
-				Session::set("user_name", $result["user_name"]);
+				Session::set("nick_name", $result["nick_name"]);
 				$json["success"] = true;
 				$json["msg"] = "登录成功";
 				

@@ -2,11 +2,23 @@ $(function(){
 	
 	//注册按钮
 	$("#btnReg").click(function(){
-		if(checkPassword() && checkEmail() && checkAgree()){
+		if(checkPassword() && checkNickName() && checkAgree()){
 			var id = $("#id").val();
 			showWaiting();
 			submitForm();
 		}
+	});
+	
+	$( "#agreement" ).dialog({
+		height: 360,
+		width:700,
+		resizable: false,
+		modal: true,
+		autoOpen: false
+	});	
+	
+	$("#btnAgreement").click(function(){
+		$( "#agreement" ).dialog("open");
 	});
 });
 
@@ -43,6 +55,23 @@ function checkEmail(){
 	if(email && !nehnre.reg.email.test(email)){
 		showAlert("电子邮件格式不正确！",function(){
 			$("#email").focus();
+		});
+		return false;
+	}
+	return true;
+}
+
+function checkNickName(){
+	var nickName = $("#nick_name").val();
+	if(!nickName){
+		showAlert("昵称不能为空！", function(){
+			$("#nick_name").focus();
+		});
+		return false;
+	}
+	if(nickName.length > 6){
+		showAlert("昵称长度不能超过六个汉字！", function(){
+			$("#nick_name").focus();
 		});
 		return false;
 	}

@@ -95,15 +95,15 @@ function filterPic(file, extension){
 }
 
 function bodyIncrease(inc){
-	if(!inc) inc = 200;
-	var bodyHeight = $(".body").css("height");
-	bodyHeight = bodyHeight.replace(/px$/ig,"");
-	$(".body").css("height", ~~bodyHeight + inc);
-	$(".bodycenter").eq(1).css("height", ~~bodyHeight + inc);
-	var container = $(".container").css("height");
+	// if(!inc) inc = 200;
+	// var bodyHeight = $(".body").css("height");
+	// bodyHeight = bodyHeight.replace(/px$/ig,"");
+	// $(".body").css("height", ~~bodyHeight + inc);
+	// $(".bodycenter").eq(1).css("height", ~~bodyHeight + inc);
+	// var container = $(".container").css("height");
 	
-	container = container.replace(/px$/ig,"");
-	$(".container").css("height", ~~container + inc);
+	// container = container.replace(/px$/ig,"");
+	// $(".container").css("height", ~~container + inc);
 }
 
 function checkForm(){

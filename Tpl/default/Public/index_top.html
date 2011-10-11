@@ -20,10 +20,10 @@
 					<div style="height:22px;"><input type="text" value="输入Email订阅促销信息" style="width:150px;color:gray;" name="subEmail" id="subEmain"/> <input type="button" value=" 订 阅 " style="height:20px; width:45px;"/></div>
 				</div>
 				<div class="btn_reg gray">
-					<if condition="empty($_SESSION['user_name'])">
+					<if condition="empty($_SESSION['nick_name'])">
 					<a href="javascript:;" id="login" class="gray">登录</a> | <a href="/Reg/checkMobile" class="gray">注册</a> | <a href="/Reg/checkMobile?importFlag=1" class="gray">激活</a>
 					<else />
-					欢迎你，{$Think.session.user_name } | <a href="javascript:;" id="logout" class="gray">退出</a>
+					欢迎你，{$Think.session.nick_name } | <a href="javascript:;" id="logout" class="gray">退出</a>
 					</if>
 				</div>
 			</div>

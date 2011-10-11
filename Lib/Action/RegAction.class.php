@@ -326,8 +326,76 @@ class RegAction extends Action
 	}
 	
 	public function test(){
+		require("./Public/php/csvdatafile.php");
+		$filename = "h:/test.csv"; 
+		$filename1 = "h:/test1.csv"; 
+
+		// Read file source 
+		// $handle = fopen($filename, "r"); 
+		// $contents = fread($handle, filesize($filename)); 
+		// fclose($handle);
+		// $utf8_fopen_read = "utf8_fopen_read";
+		// $handle = $this -> $utf8_fopen_read($filename);
+		// $contents = fread($handle, filesize($filename)); 
+		// fclose($handle);
+		$loadFile = "loadFile";
+		$contents = $this -> $loadFile($filename,"gb2312");
+		echo $contents;
+		// // format content for special chars 
+		$contents = @addslashes($contents); 
+		$contents = @str_replace('\,', '\ ,', $contents); 
+		$contents = @stripslashes($contents); 
+
+		// // Write to new file 
+		$handle = @fopen($filename1, "w"); 
+		@fwrite($handle, $contents); 
+		@fclose($handle); 
+
+		$fd = @fopen($filename1, "rb"); 
+		$first_line = str_replace(' ,',',',str_replace('"','',trim(@fgets($fd, 1000)))) ; 
+		@fclose($fd); 
+		$pass = true;
+		if($first_line != "学生编号,学号,学生姓名") { 
+			$pass = false; 
+		} 
 		
-		$this -> ajaxReturn($_REQUEST["user_type1"]);
+		if($pass){ 
+			$csv = new csvDataFile($filename1); 
+			while($csv->next_Row()) { 
+				$userid = trim($csv->f('学生编号')); 
+				$classno = trim($csv->f('学号')); 
+				$username = trim($csv->f('学生姓名')); 
+				echo $username.'<br />';
+			} 
+		} 
+		// $this -> ajaxReturn($handle);
+	}
+	
+	function utf8_fopen_read($fileName) { 
+		$fc = iconv('gbk', 'utf-8', file_get_contents($fileName)); 
+		$handle=fopen("php://memory", "rw"); 
+		fwrite($handle, $fc); 
+		fseek($handle, 0); 
+		return $handle; 
+	} 
+	
+	public function loadFile($sFilename, $sCharset = 'UTF-8')
+	{
+		if (floatval(phpversion()) >= 4.3) {
+			$sData = file_get_contents($sFilename);
+		} else {
+			if (!file_exists($sFilename)) return -3;
+			$rHandle = fopen($sFilename, 'r');
+			if (!$rHandle) return -2;
+
+			$sData = '';
+			while(!feof($rHandle))
+				$sData .= fread($rHandle, filesize($sFilename));
+			fclose($rHandle);
+		}
+		if ($sEncoding = mb_detect_encoding($sData, 'auto', true) != $sCharset)
+			$sData = mb_convert_encoding($sData, $sCharset, $sEncoding);
+		return $sData;
 	}
 }
 ?>

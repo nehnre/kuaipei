@@ -34,6 +34,10 @@
 				<td align="left"><input type="text" style="width:80%" name="true_name" id="true_name" value="{$result.true_name}"/></td>
 			</tr>
 			<tr class="odd">
+				<td width="200px" align="right">昵称：</td>
+				<td align="left"><input type="text" style="width:80%" name="nick_name" id="nick_name" value="{$result.nick_name}"/></td>
+			</tr>
+			<tr class="odd">
 				<td width="200px" align="right">性　　别：</td>
 				<td align="left">	
 				     <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -86,7 +90,7 @@
 				<td></td>						
 				<td>
 						<if condition="!empty($result['driving_license'])">
-								<img src="/Temp/{$result.driving_license}" />
+								<img src="/Public/Upload/{$result.driving_license}" />
 								<script type="text/javascript">
 										bodyIncrease();	
 										$("#tr_dl").show();
@@ -112,7 +116,7 @@
 				<td></td>						
 				<td>
 						<if condition="!empty($result['vehicle_license'])">
-								<img src="/Temp/{$result.vehicle_license}" />
+								<img src="/Public/Upload/{$result.vehicle_license}" />
 								<script type="text/javascript">
 										bodyIncrease();	
 										$("#tr_vl").show();
@@ -138,7 +142,7 @@
 				<td></td>						
 				<td>
 						<if condition="!empty($result['business_card'])">
-								<img src="/Temp/{$result.business_card}" />
+								<img src="/Public/Upload/{$result.business_card}" />
 								<script type="text/javascript">
 										bodyIncrease();	
 										$("#tr_bc").show();
@@ -227,7 +231,7 @@
 				<td></td>						
 				<td>
 						<if condition="!empty($result['business_license'])">
-								<img src="/Temp/{$result.business_license}" />
+								<img src="/Public/Upload/{$result.business_license}" />
 								<script type="text/javascript">
 										bodyIncrease();	
 										$("#tr_bl").show();
@@ -253,7 +257,7 @@
 				<td></td>						
 				<td>
 						<if condition="!empty($result['address_pic'])">
-								<img src="/Temp/{$result.address_pic}" />
+								<img src="/Public/Upload/{$result.address_pic}" />
 								<script type="text/javascript">
 										bodyIncrease();	
 										$("#tr_ap").show();
@@ -265,7 +269,7 @@
 			<tr  class="odd">
 				<td colspan="2">
 					<input type="submit" value="提 交" id="btnSubmit" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
-					<if condition="$result['status']  eq '待审核'">
+					<if condition="$result['status']  eq '待审核'  OR $result['status']  eq '基本注册'  ">
 					<input type="button" value="审 核" id="btnCheck" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
 					</if>
 					<input type="button" value="取 消" id="btnCancle" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>

@@ -590,13 +590,16 @@ a:hover{
 	border:1px solid #bebebe;
 }
 .foot{
-	background: url(../images/index_bottom_bg.jpg);
+	background: url(../images/foot_bg.jpg) repeat-y;
+	background-attachment:fixed;
+	background-position:center;
 }
 .foot_width{
 	width:990px;
 }
 .foot_help{
 	height:150px;
+	background: url(../images/index_bottom_bg.jpg);
 }
 .foot_help .item{
 	width:128px;
@@ -628,6 +631,29 @@ a:hover{
 }
 .foot_help .contact{
 	padding-top:20px;
+	width:200px;
+	float:left;
+}
+.foot_help .contact_detail{
+	padding-left:25px;
+	line-height:20px;
+	color: #737373;
+	
+}
+.foot_help .icon1{
+	background:url(../images/index_bottom/people.jpg) no-repeat;
+}
+.foot_help .icon2{
+	background:url(../images/index_bottom/peoples.jpg) no-repeat;
+}
+.foot_help .icon3{
+	background:url(../images/index_bottom/phone.jpg) no-repeat;
+}
+.foot_help .icon4{
+	background:url(../images/index_bottom/fax.jpg) no-repeat;
+}
+.foot_help .icon5{
+	background:url(../images/index_bottom/qq.jpg) no-repeat;
 }
 .foot_help .contact .phone_num{
 	font-size:25px;

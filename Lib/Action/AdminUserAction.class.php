@@ -9,8 +9,8 @@ class AdminUserAction extends Action
 	public function editAdminUser(){
 		$id = $_REQUEST["id"];
 		if(!empty($id)){
-			$Activity = M("User");
-			$result = $Activity -> where("id=".$id) -> find();
+			$User = M("User");
+			$result = $User -> where("id=".$id) -> find();
 			$this -> assign("result", $result);
 		}
         $this->display();
@@ -18,8 +18,8 @@ class AdminUserAction extends Action
 
 	public function deleteAdminUser(){
 		$id = $_REQUEST["id"];
-		$Activity = M("User");
-		$Activity -> where("id=".$id) -> delete();
+		$User = M("User");
+		$User -> where("id=".$id) -> delete();
 		echo '<script>alert("删除成功！");location.href="listUser";try{window.event.returnValue=false; }catch(e){}</script>';
 	}
 	
@@ -40,7 +40,7 @@ class AdminUserAction extends Action
     +----------------------------------------------------------
     */
 	public function listUser(){
-		$Activity = M("User");
+		$User = M("User");
 
 		$user_name = $_REQUEST["user_name"];
 		if(!empty($user_name)){
@@ -62,11 +62,11 @@ class AdminUserAction extends Action
 			$condition["status"] = $status; 
 		}
 
-		$count = $Activity -> where($condition) -> count();
+		$count = $User -> where($condition) -> count();
 		import("ORG.Util.Page");
  		$Page = new Page($count, 10);
 		$foot = $Page -> show();
-		$list = $Activity -> where($condition) -> order('update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+		$list = $User -> where($condition) -> order('update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
 		
 		$this->assign('list',$list); 
 		$this->assign('foot',$foot);
@@ -81,14 +81,16 @@ class AdminUserAction extends Action
     */
 	public function saveAdminUser(){
 		$id = $_REQUEST["id"];
-		$Activity = M("User");
-		$Activity -> create();
-		$Activity -> update_time = date("Y-m-d H:i:s");
-		$Activity -> save();
+		$User = M("User");
+		$User -> create();
+		$User -> update_time = date("Y-m-d H:i:s");
+		$User -> save();
 		//处理附件上传
 		$moveFile = "moveFile";
 		if(!empty($User -> business_license)){
-			$this -> $moveFile($User -> business_license);
+			$info = $this -> $moveFile($User -> business_license);
+			echo '111';
+			echo $info;
 		}
 		if(!empty($User -> address_pic)){
 			$this -> $moveFile($User -> address_pic);
@@ -130,6 +132,9 @@ class AdminUserAction extends Action
 			$dirtemp = $dirbase."/Temp/";
 			$dirupload = $dirbase."/Public/Upload/";
 			$info = copy($dirtemp.$filename, $dirupload.$filename);
+			return $dirupload ;
+		}else{
+				return '2' ;
 		}
     }
 	    /**
@@ -139,11 +144,11 @@ class AdminUserAction extends Action
     */
  public function checkAdminUser(){
 		$id = $_REQUEST["id"];
-		$Activity = M("User");
+		$User = M("User");
 		$data["status"] = "已审核";
 		$data["update_time"]  = date("Y-m-d H:i:s");
 		$condition["id"] = $id ;
-		$result = $Activity -> where($condition)->save($data);
+		$result = $User -> where($condition)->save($data);
 	   if($result !== false){
              $json["success"] = true;
 		     $json["msg"] = "审核成功！";

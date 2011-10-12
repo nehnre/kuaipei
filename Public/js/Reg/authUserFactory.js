@@ -83,6 +83,10 @@ $(function(){
 			});
 		}
 	});
+	$("#btnCancle").click(function(){
+		location.href = "/";
+		try{window.event.returnValue=false;}catch(e){}
+	});
 });
 
 
@@ -112,6 +116,7 @@ function bodyIncrease(inc){
 
 function checkForm(){
 	var b = true;
+	b = b && notNull("business_card", "名片");
 	b = b && notNull("company_name", "企业名称");
 	b = b && notNull("company_address", "企业地址");
 	b = b && notNull("post_code", "邮编");
@@ -119,9 +124,6 @@ function checkForm(){
 	b = b && notNull("link_man", "联系人");
 	b = b && notNull("business_scope", "营业范围");
 	b = b && notNull("company_scale", "企业规模");
-	b = b && notNull("business_license", "工商营业执照");
-	b = b && notNull("address_pic", "所在位置地图");
-	b = b && notNull("business_card", "名片");
 	return b;
 }
 

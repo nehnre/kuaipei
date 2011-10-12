@@ -336,5 +336,14 @@ class RegAction extends Action
 		
 	}
 	
+	public function test(){
+		$User = M('User');
+		$User -> user_name = '111';
+		$User -> nick_name = '222';
+		$User -> password = '3333';
+		$id = $User -> add();
+		$this -> display();
+	}
+	
 }
 ?>

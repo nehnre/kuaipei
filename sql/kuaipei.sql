@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-10-12 21:08:26
+Date: 2011-10-13 00:58:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,36 +36,37 @@ CREATE TABLE `kp_activity` (
   `insert_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_activity
 -- ----------------------------
-INSERT INTO `kp_activity` VALUES ('11', '抽奖活动', '火车头买卖活动', '上海火车站', '开始：时间不定\r\n结束：任何人可以\r\n这样做可以吗？', '不能说话\r\n只能购买\r\n谱牒不算数，是这是规定\r\n不能说话', '2011-10-09', '2011-10-11', '4e909023c0021.jpg', '4e909023c0dfa.jpg', '4e909023c1f5f.jpg', '4e909023c2eb4.jpg', '待审核', '0', '2011-10-09 00:58:14', '2011-10-09 02:07:35');
-INSERT INTO `kp_activity` VALUES ('12', '抽奖活动', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说3333\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '2011-10-09', '2011-10-11', '4e90825ca459c.jpg', '4e90825ca4aa3.jpg', '4e90825ca4f42.jpg', '4e90825ca578d.jpg', '已发布', '0', '2011-10-09 01:03:24', '2011-10-12 00:00:00');
-INSERT INTO `kp_activity` VALUES ('13', '抽奖活动', '111111', '111111', '111111', '1111', '2010-01-01', '2010-01-02', '4e93066e96d88.jpg', '4e93066e97fb7.jpg', '4e93066e98f5d.jpg', '4e93066e9a14f.jpg', '待审核', '0', '2011-10-10 22:51:26', '2011-10-11 20:43:05');
-INSERT INTO `kp_activity` VALUES ('14', '抽奖活动', '111', '11', '11', '111', '2011-10-12', '2011-10-13', '4e951700e5113.jpg', '4e951700e5d81.jpg', '4e951700e6f79.jpg', '4e951700e86f6.jpg', '待审核', '0', '2011-10-12 12:26:40', '2011-10-12 12:26:40');
-INSERT INTO `kp_activity` VALUES ('15', '抽奖活动', '11', '11', '11', '11', '2011-10-27', '2011-10-19', null, null, null, null, '已发布', '0', '2011-10-12 12:35:00', '2011-10-12 00:00:00');
-INSERT INTO `kp_activity` VALUES ('16', '抽奖活动', '11', '11', '11', '11', '2011-10-27', '2011-10-19', '4e95190f735a9.jpg', '4e95190f74500.jpg', null, null, '已发布', '0', '2011-10-12 12:35:27', '2011-10-12 00:00:00');
-INSERT INTO `kp_activity` VALUES ('31', '抽奖活动', '555', '55', '55', '55', '2011-10-12', '2011-10-28', '4e952b47c72fa.jpg', '4e952b47c8616.jpg', null, null, '预览', '0', '2011-10-12 13:53:11', '2011-10-12 13:53:11');
-INSERT INTO `kp_activity` VALUES ('32', '抽奖活动', '555', '55', '55', '55', '2011-10-12', '2011-10-28', '4e952b52bb2d3.jpg', '4e952b52bc043.jpg', null, null, '已发布', '0', '2011-10-12 13:53:22', '2011-10-12 00:00:00');
+INSERT INTO `kp_activity` VALUES ('33', '抽奖活动', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '2011-10-12', '2011-10-30', '4e9598d316aba.jpg', '4e9598d31766c.jpg', '4e9598d318228.jpg', '4e9598d3195ae.jpg', '预览', '0', '2011-10-12 21:40:35', '2011-10-12 21:40:35');
+INSERT INTO `kp_activity` VALUES ('34', '抽奖活动', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '2011-10-12', '2011-10-30', '4e9598e8c5dfc.jpg', '4e9598e8c6d9e.jpg', '4e9598e8c7d3b.jpg', '4e9598e8c94a8.jpg', '已发布', '0', '2011-10-12 21:40:56', '2011-10-12 00:00:00');
+INSERT INTO `kp_activity` VALUES ('35', '抽奖活动', '汽车加油卡抽奖活动', '上海大众公司', '活动性质：公益\r\n活动类别：抽奖', '所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网', '2011-10-12', '2011-10-14', '4e9599975b317.jpg', '4e9599975c2b6.jpg', '4e9599975d257.jpg', '4e9599975e9c4.jpg', '已发布', '0', '2011-10-12 21:43:51', '2011-10-12 00:00:00');
 
 -- ----------------------------
 -- Table structure for `kp_activity_comment`
 -- ----------------------------
 DROP TABLE IF EXISTS `kp_activity_comment`;
 CREATE TABLE `kp_activity_comment` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
+  `activity_id` int(11) DEFAULT NULL,
   `title` varchar(200) DEFAULT NULL,
   `content` varchar(1000) DEFAULT NULL,
   `insert_time` datetime DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_activity_comment
 -- ----------------------------
+INSERT INTO `kp_activity_comment` VALUES ('5', '33', '34', '这次活动很好', '使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 ', '2011-10-12 22:46:54');
+INSERT INTO `kp_activity_comment` VALUES ('6', '33', '34', '1111111', '1111111111', '2011-10-12 23:19:35');
+INSERT INTO `kp_activity_comment` VALUES ('7', '33', '34', '说话', '说话 说话说话 ', '2011-10-12 23:37:41');
+INSERT INTO `kp_activity_comment` VALUES ('8', '33', '34', '可想而知', '工工工工工工', '2011-10-12 23:38:14');
+INSERT INTO `kp_activity_comment` VALUES ('9', '33', '35', '1111111', '1111111111111', '2011-10-12 23:43:05');
 
 -- ----------------------------
 -- Table structure for `kp_user`
@@ -107,46 +108,30 @@ CREATE TABLE `kp_user` (
   `insert_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_user
 -- ----------------------------
-INSERT INTO `kp_user` VALUES ('4', '18602123502', '222222', '3502', 'nehnre@yahoo.com.cn', '122164', '厂商', '合资', '111111', '1', '1991-10-02', '工程师', '278729228', '万达信息', 'nehnre@yahoo.com.cn', '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-02 23:00:05', '2011-10-03 00:58:34');
-INSERT INTO `kp_user` VALUES ('5', '13444444444', '333333', '444', 'nehnre@yahoo.com.cn', '610067', '修理厂', '美容养护', '聂红雷', '1', '1984-09-11', '软件工程师', '278729228', 'sgst', 'niehonglei@gmail.com', '待审核', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-03 01:02:53', '2011-10-03 01:04:07');
-INSERT INTO `kp_user` VALUES ('6', '18602123503', '111111', '3502', 'nehnre@yahoo.com.cn', '496496', '厂商', '外资', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-03 01:10:41', '2011-10-03 01:41:55');
-INSERT INTO `kp_user` VALUES ('7', 'te1st', null, 'dddd', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-03 23:47:04', '2011-10-03 23:47:09');
-INSERT INTO `kp_user` VALUES ('8', '18602123501', null, 'dsss', null, '163363', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-03 07:08:26', '2011-10-03 07:08:26');
-INSERT INTO `kp_user` VALUES ('9', '18602123509', '88888888', 'sdfsd', 'ne@s.s', '271908', null, null, null, null, null, null, null, '1111111', null, null, null, null, '', '11111', '111', '1111', '111', '2', 'thumb_4e89cc865f4e0.jpg', 'thumb_4e89cc896a0d8.jpg', 'thumb_4e89cc8ce645d.jpg', null, null, null, null, null, '2011-10-03 21:37:52', '2011-10-03 21:38:16');
-INSERT INTO `kp_user` VALUES ('10', '18702123502', '333333', 'fsdf', 'nehnre@yahoo.com.cn', '872833', '厂商', '外资', null, null, null, null, null, '33', null, null, null, null, '上海', '333333', '3333', '33', '33', '1', 'thumb_4e89d8875483c.jpg', 'thumb_4e89d88c2c3b4.jpg', 'thumb_4e89d890b0cc9.jpg', null, null, null, null, null, '2011-10-03 23:47:11', '2011-10-03 23:53:53');
-INSERT INTO `kp_user` VALUES ('11', '18922222222', '111111', 'sdf', 'nehnre@yahoo.com.cn', '667636', '经销商', '分销商', null, null, null, null, null, '111111', null, '待审核', '企业地址', null, '广州', '111111', '111111', '111', '111', '1', 'thumb_4e8d5a10ed3c5.jpg', 'thumb_4e8d5a13ef125.jpg', 'thumb_4e8d5a1647ebb.jpg', null, null, null, null, '导入', '2011-10-04 00:26:33', '2011-10-06 19:33:09');
-INSERT INTO `kp_user` VALUES ('12', '18603123502', '111111', 'sdf', '', '916448', '车主', '商用车', '聂红雷', '1', '1984-09-11', null, null, null, null, '待审核', null, null, null, null, null, null, null, null, null, null, 'thumb_4e89eda72088a.jpg', 'ddd', 'ddd', null, null, null, '2011-10-04 01:13:59', '2011-10-04 01:15:29');
-INSERT INTO `kp_user` VALUES ('13', '18900000000', '111111', 'sdf', 'nehnre@yahoo.com.cn', '463592', '经销商', '代理', null, null, null, null, null, null, null, '待审核', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-06 19:33:57', '2011-10-06 20:11:23');
 INSERT INTO `kp_user` VALUES ('14', '13801629524', '96e79218965eb72c92a549dd5a330112', 'sdf', '', '558459', null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-09 02:15:18', '2011-10-09 02:15:29');
-INSERT INTO `kp_user` VALUES ('15', '18202123501', null, 'sdf', null, '922189', null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 19:55:39', '2011-10-10 19:55:39');
-INSERT INTO `kp_user` VALUES ('16', '13222222222', null, 's', null, '303933', null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 20:19:24', '2011-10-10 20:19:24');
 INSERT INTO `kp_user` VALUES ('17', '18722222222', '96e79218965eb72c92a549dd5a330112', 's', '', '716278', '车主', '私家车', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 20:20:51', '2011-10-10 20:33:13');
 INSERT INTO `kp_user` VALUES ('18', '13801629525', '96e79218965eb72c92a549dd5a330112', 'werw', '', '274243', '修理厂', '综合修理厂(二类资质)', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 20:54:23', '2011-10-10 20:54:45');
 INSERT INTO `kp_user` VALUES ('19', '18602123533', '96e79218965eb72c92a549dd5a330112', 'qer', '', '443844', '厂商', '外资', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 20:56:43', '2011-10-10 21:19:56');
 INSERT INTO `kp_user` VALUES ('20', '18602122222', '96e79218965eb72c92a549dd5a330112', 'qer', '', '967068', '经销商', '代理', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 21:08:31', '2011-10-10 22:01:46');
-INSERT INTO `kp_user` VALUES ('21', '13801629583', null, 'ty', null, '128317', null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 21:58:21', '2011-10-10 21:58:21');
 INSERT INTO `kp_user` VALUES ('22', '13333333333', '96e79218965eb72c92a549dd5a330112', 'ry', '', '952676', '厂商', '外资', null, null, null, null, null, '111', null, '待审核', '11', null, '上海', '11', '11', '11', '111', '3', 'thumb_4e9300307316e.jpg', 'thumb_4e930037c1b05.JPG', 'thumb_4e93003c5b371.JPG', null, null, null, null, null, '2011-10-10 22:14:33', '2011-10-10 22:25:03');
 INSERT INTO `kp_user` VALUES ('23', '13111111111', '96e79218965eb72c92a549dd5a330112', 'try', '', '772967', '经销商', '代理', null, null, null, null, null, '111', null, '待审核', '111', null, '上海', '111', '11', '11', '11', '2', 'thumb_4e930439227e0.jpg', 'thumb_4e93043c259bb.jpg', 'thumb_4e93043fa1907.jpg', null, null, null, null, null, '2011-10-10 22:41:12', '2011-10-10 22:42:09');
 INSERT INTO `kp_user` VALUES ('24', '13911111111', '96e79218965eb72c92a549dd5a330112', 'uytu', '', '271057', '厂商', '外资', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 23:33:14', '2011-10-10 23:33:32');
 INSERT INTO `kp_user` VALUES ('25', '13222222223', '96e79218965eb72c92a549dd5a330112', 'yuyu', '', '807189', '经销商', '代理', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 23:45:01', '2011-10-10 23:45:17');
 INSERT INTO `kp_user` VALUES ('26', '13811111333', '96e79218965eb72c92a549dd5a330112', 'yi', '', '353042', '车队', '货车', null, null, null, null, null, '222222', null, '待审核', '22222', null, '上海', '222222', '222', '2222', null, '1', null, null, null, null, null, null, null, '导入', '2011-10-11 00:35:16', '2011-10-11 14:05:58');
 INSERT INTO `kp_user` VALUES ('27', '12333333333', '1a100d2c0dab19c4430e7d73762b3423', 'iwww', '', '903018', '经销商', '代理', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-11 19:46:16', '2011-10-11 19:47:07');
-INSERT INTO `kp_user` VALUES ('28', '13888888888', null, 'tyu', null, '947512', null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-11 22:52:05', '2011-10-11 22:52:05');
 INSERT INTO `kp_user` VALUES ('29', '18602123505', '96e79218965eb72c92a549dd5a330112', 'tyuy', '', '182177', '厂商', '外资', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-11 22:54:24', '2011-10-11 22:58:03');
 INSERT INTO `kp_user` VALUES ('30', '18989898989', '96e79218965eb72c92a549dd5a330112', '昵称昵称昵称', null, null, null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-12 00:03:31', '2011-10-12 00:03:31');
 INSERT INTO `kp_user` VALUES ('31', '12333333332', '96e79218965eb72c92a549dd5a330112', '昵称昵称昵称', null, null, null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-12 00:05:56', '2011-10-12 00:05:56');
 INSERT INTO `kp_user` VALUES ('32', '13111111112', '96e79218965eb72c92a549dd5a330112', '中国人', null, null, null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-12 00:20:20', '2011-10-12 00:20:20');
 INSERT INTO `kp_user` VALUES ('33', '19999999999', '96e79218965eb72c92a549dd5a330112', '中国人', null, null, null, null, null, null, null, null, null, null, null, '已审核', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-12 00:32:53', '2011-10-12 20:11:59');
 INSERT INTO `kp_user` VALUES ('34', '18888888888', '96e79218965eb72c92a549dd5a330112', '111111', null, null, null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-12 00:38:14', '2011-10-12 00:38:14');
-INSERT INTO `kp_user` VALUES ('35', '18888888888', null, null, null, null, '厂商', '外资', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-12 00:39:15', '2011-10-12 00:39:15');
-INSERT INTO `kp_user` VALUES ('37', '18888888888', null, null, null, null, '车队', '货车', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-12 00:55:40', '2011-10-12 00:55:40');
-INSERT INTO `kp_user` VALUES ('38', '18888888888', null, null, null, null, '车主', '商用车', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-12 00:58:34', '2011-10-12 00:58:34');
 INSERT INTO `kp_user` VALUES ('40', '19999999998', '96e79218965eb72c92a549dd5a330112', '1111', null, null, null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-12 14:59:55', '2011-10-12 15:00:13');
+INSERT INTO `kp_user` VALUES ('41', '18998989898', '96e79218965eb72c92a549dd5a330112', '联通用户', 'nehnre@yahoo.com.cn', null, '厂商', '外资', null, null, null, null, null, '11111', null, '待审核', '1111', '山东省', '菏泽市', '1111', '111', '111', '111', '2', '', '', 'thumb_4e95c3e95ce25.jpg', null, null, null, null, null, '2011-10-13 00:11:11', '2011-10-13 00:44:50');
 
 -- ----------------------------
 -- Table structure for `kp_userlog`
@@ -160,14 +145,14 @@ CREATE TABLE `kp_userlog` (
   `act_describ` varchar(200) DEFAULT NULL,
   `insert_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_userlog
 -- ----------------------------
 INSERT INTO `kp_userlog` VALUES ('1', '14', 'kp_user', '14', '登录一次', '2011-10-09 03:28:40');
 INSERT INTO `kp_userlog` VALUES ('2', '14', 'kp_user', '14', '登录一次', '2011-10-09 04:07:31');
-INSERT INTO `kp_userlog` VALUES ('3', '14', 'kp_activity', '12', '参加活动一次', '2011-10-09 04:14:19');
+INSERT INTO `kp_userlog` VALUES ('3', '14', 'kp_activity', '12', '参加抽奖活动一次', '2011-10-09 04:14:19');
 INSERT INTO `kp_userlog` VALUES ('4', '14', 'kp_user', '14', '登录一次', '2011-10-09 04:16:27');
 INSERT INTO `kp_userlog` VALUES ('5', '14', 'kp_user', '14', '登录一次', '2011-10-09 04:17:36');
 INSERT INTO `kp_userlog` VALUES ('6', '22', 'kp_user', '22', '登录一次', '2011-10-10 22:25:22');
@@ -191,11 +176,22 @@ INSERT INTO `kp_userlog` VALUES ('23', '26', 'kp_user', '26', '登录一次', '2
 INSERT INTO `kp_userlog` VALUES ('24', '33', 'kp_user', '33', '登录一次', '2011-10-12 00:34:06');
 INSERT INTO `kp_userlog` VALUES ('25', '34', 'kp_user', '34', '登录一次', '2011-10-12 20:09:37');
 INSERT INTO `kp_userlog` VALUES ('26', '33', 'kp_user', '33', '登录一次', '2011-10-12 20:10:13');
-INSERT INTO `kp_userlog` VALUES ('27', '33', 'kp_activity', '32', '参加活动一次', '2011-10-12 20:12:13');
+INSERT INTO `kp_userlog` VALUES ('27', '33', 'kp_activity', '32', '参加抽奖活动一次', '2011-10-12 20:12:13');
 INSERT INTO `kp_userlog` VALUES ('28', '33', 'kp_user', '33', '登录一次', '2011-10-12 20:12:35');
+INSERT INTO `kp_userlog` VALUES ('29', '33', 'kp_activity', '14', '参加抽奖活动一次', '2011-10-12 21:29:55');
+INSERT INTO `kp_userlog` VALUES ('30', '33', 'kp_user', '33', '登录一次', '2011-10-12 22:03:18');
+INSERT INTO `kp_userlog` VALUES ('31', '33', 'kp_activity', '34', '参加抽奖活动一次', '2011-10-12 22:03:29');
+INSERT INTO `kp_userlog` VALUES ('32', '33', 'kp_user', '33', '登录一次', '2011-10-12 23:42:51');
+INSERT INTO `kp_userlog` VALUES ('33', '33', 'kp_activity', '35', '参加抽奖活动一次', '2011-10-13 00:08:08');
+
+-- ----------------------------
+-- View structure for `kp_vactivity_comment`
+-- ----------------------------
+DROP VIEW IF EXISTS `kp_vactivity_comment`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vactivity_comment` AS select `t2`.`id` AS `id`,`t1`.`nick_name` AS `nick_name`,`t2`.`title` AS `title`,`t2`.`content` AS `content`,`t2`.`insert_time` AS `insert_time`,`t2`.`activity_id` AS `activity_id` from (`kp_user` `t1` join `kp_activity_comment` `t2`) where (`t1`.`id` = `t2`.`user_id`);
 
 -- ----------------------------
 -- View structure for `kp_vuserlog`
 -- ----------------------------
 DROP VIEW IF EXISTS `kp_vuserlog`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vuserlog` AS select `t2`.`id` AS `id`,`t1`.`nick_name` AS `nick_name`,`t2`.`act_describ` AS `act_describ`,`t2`.`insert_time` AS `insert_time` from (`kp_user` `t1` join `kp_userlog` `t2`) where (`t1`.`id` = `t2`.`user_id`);
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vuserlog` AS select `t2`.`id` AS `id`,`t1`.`nick_name` AS `nick_name`,`t2`.`act_describ` AS `act_describ`,`t2`.`insert_time` AS `insert_time` from (`kp_user` `t1` join `kp_userlog` `t2`) where ((`t1`.`id` = `t2`.`user_id`) and (`t2`.`table_name` <> 'kp_user'));

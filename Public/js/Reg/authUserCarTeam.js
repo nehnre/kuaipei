@@ -42,6 +42,12 @@ $(function(){
 			});
 		}
 	});
+	
+	
+	$("#btnCancle").click(function(){
+		location.href = "/";
+		try{window.event.returnValue=false;}catch(e){}
+	});
 });
 
 

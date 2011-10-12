@@ -89,12 +89,14 @@ function checkAgree(){
 
 function submitForm(){
 	var data = $("form").serialize();
+	console.log(data);
 	$.ajax({
 		url:"updateUser",
 		type:"POST",
 		data: data,
 		success: function(json){
 			location.href = "regTip";
+			//showAlert(json);
 		},
 		error: function(){
 			showAlert("提交失败，可能服务器出现故障。");

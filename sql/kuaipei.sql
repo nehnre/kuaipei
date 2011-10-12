@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-10-11 13:25:06
+Date: 2011-10-11 22:21:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -47,8 +47,7 @@ INSERT INTO `kp_activity` VALUES ('9', '抽奖活动', '8', '8', '888', '888', '
 INSERT INTO `kp_activity` VALUES ('10', '抽奖活动', '34', '44', '32423', '234', '2011-10-22', '2011-10-29', null, null, null, null, '待审核', '0', '2011-10-09 00:57:48', '2011-10-09 00:58:39');
 INSERT INTO `kp_activity` VALUES ('11', '抽奖活动', '火车头买卖活动', '上海火车站', '开始：时间不定\r\n结束：任何人可以\r\n这样做可以吗？', '不能说话\r\n只能购买\r\n谱牒不算数，是这是规定\r\n不能说话', '2011-10-09', '2011-10-11', '4e909023c0021.jpg', '4e909023c0dfa.jpg', '4e909023c1f5f.jpg', '4e909023c2eb4.jpg', '待审核', '0', '2011-10-09 00:58:14', '2011-10-09 02:07:35');
 INSERT INTO `kp_activity` VALUES ('12', '抽奖活动', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说3333\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '2011-10-09', '2011-10-11', '4e90825ca459c.jpg', '4e90825ca4aa3.jpg', '4e90825ca4f42.jpg', '4e90825ca578d.jpg', '待审核', '0', '2011-10-09 01:03:24', '2011-10-09 01:55:21');
-INSERT INTO `kp_activity` VALUES ('13', '抽奖活动', '111111', '111111', '111111', '1111', '2010-01-01', '2010-01-02', '4e93066e96d88.jpg', '4e93066e97fb7.jpg', '4e93066e98f5d.jpg', '4e93066e9a14f.jpg', '待审核', '0', '2011-10-10 22:51:26', '2011-10-10 23:12:37');
-INSERT INTO `kp_activity` VALUES ('14', '抽奖活动', '222', '22', '22', '22', '2011-10-19', '2011-11-04', '4e930d7c13cbf.jpg', '4e930d7c14ed4.jpg', '4e930d7c15fcb.jpg', '4e930d7c16efe.jpg', '待审核', '0', '2011-10-10 23:21:32', '2011-10-10 23:21:32');
+INSERT INTO `kp_activity` VALUES ('13', '抽奖活动', '111111', '111111', '111111', '1111', '2010-01-01', '2010-01-02', '4e93066e96d88.jpg', '4e93066e97fb7.jpg', '4e93066e98f5d.jpg', '4e93066e9a14f.jpg', '待审核', '0', '2011-10-10 22:51:26', '2011-10-11 20:43:05');
 
 -- ----------------------------
 -- Table structure for `kp_activity_comment`
@@ -105,7 +104,7 @@ CREATE TABLE `kp_user` (
   `insert_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_user
@@ -132,7 +131,8 @@ INSERT INTO `kp_user` VALUES ('22', '13333333333', '96e79218965eb72c92a549dd5a33
 INSERT INTO `kp_user` VALUES ('23', '13111111111', '96e79218965eb72c92a549dd5a330112', '', '772967', '经销商', '代理', null, null, null, null, null, '111', null, '待审核', '111', '上海', '111', '11', '11', '11', '2', 'thumb_4e930439227e0.jpg', 'thumb_4e93043c259bb.jpg', 'thumb_4e93043fa1907.jpg', null, null, null, null, null, '2011-10-10 22:41:12', '2011-10-10 22:42:09');
 INSERT INTO `kp_user` VALUES ('24', '13911111111', '96e79218965eb72c92a549dd5a330112', '', '271057', '厂商', '外资', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 23:33:14', '2011-10-10 23:33:32');
 INSERT INTO `kp_user` VALUES ('25', '13222222223', '96e79218965eb72c92a549dd5a330112', '', '807189', '经销商', '代理', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-10 23:45:01', '2011-10-10 23:45:17');
-INSERT INTO `kp_user` VALUES ('26', '13811111333', '96e79218965eb72c92a549dd5a330112', '', '353042', '车队', '货车', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-11 00:35:16', '2011-10-11 00:40:49');
+INSERT INTO `kp_user` VALUES ('26', '13811111333', '96e79218965eb72c92a549dd5a330112', '', '353042', '车队', '货车', null, null, null, null, null, '222222', null, '待审核', '22222', '上海', '222222', '222', '2222', null, '1', null, null, null, null, null, null, null, '导入', '2011-10-11 00:35:16', '2011-10-11 14:05:58');
+INSERT INTO `kp_user` VALUES ('27', '12333333333', '1a100d2c0dab19c4430e7d73762b3423', '', '903018', '经销商', '代理', null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2011-10-11 19:46:16', '2011-10-11 19:47:07');
 
 -- ----------------------------
 -- Table structure for `kp_userlog`
@@ -146,7 +146,7 @@ CREATE TABLE `kp_userlog` (
   `act_describ` varchar(200) DEFAULT NULL,
   `insert_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_userlog
@@ -173,3 +173,10 @@ INSERT INTO `kp_userlog` VALUES ('19', '23', 'kp_user', '23', '登录一次', '2
 INSERT INTO `kp_userlog` VALUES ('20', '23', 'kp_user', '23', '登录一次', '2011-10-10 22:47:28');
 INSERT INTO `kp_userlog` VALUES ('21', '23', 'kp_user', '23', '登录一次', '2011-10-10 23:44:32');
 INSERT INTO `kp_userlog` VALUES ('22', '23', 'kp_user', '23', '登录一次', '2011-10-11 00:15:01');
+INSERT INTO `kp_userlog` VALUES ('23', '26', 'kp_user', '26', '登录一次', '2011-10-11 14:04:56');
+
+-- ----------------------------
+-- View structure for `kp_vuserlog`
+-- ----------------------------
+DROP VIEW IF EXISTS `kp_vuserlog`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vuserlog` AS select `t2`.`id` AS `id`,`t1`.`user_name` AS `user_name`,`t2`.`act_describ` AS `act_describ`,`t2`.`insert_time` AS `insert_time` from (`kp_user` `t1` join `kp_userlog` `t2`) where (`t1`.`id` = `t2`.`user_id`);

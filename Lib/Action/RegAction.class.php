@@ -53,25 +53,19 @@ class RegAction extends Action
 			if("导入" == $result["import_flag"]){
 				if($check_num == $result["check_num"]){
 					Session::set("id", $result["id"]);
+					Session::set("nick_name", $result["nick_name"]);
 					$this -> ajaxReturn(2,"验证成功！",2);
 				}
 			}
-		}
-		
-		if($check_num == Session::get($user_name)){
-			$User -> user_name = $user_name;
-			$User -> check_num = $check_num;
-			$User -> update_time = date("Y-m-d H:i:s");
-			$User -> insert_time = date("Y-m-d H:i:s");
-			$User -> status = "基本注册";
-			$id = $User -> add();
-			
-			Session::set("id", $id);
-			Session::set("user_name", $user_name);
-			$this -> ajaxReturn(2,"验证成功！",2);
 		} else {
+			if($check_num == Session::get($user_name)){
 			
-			$this -> ajaxReturn(1,"验证失败！",1);
+				Session::set("user_name_temp", $user_name);
+				$this -> ajaxReturn(2,"验证成功！",2);
+			} else {
+				
+				$this -> ajaxReturn(1,"验证失败！",1);
+			}
 		}
 	}
 	
@@ -127,14 +121,16 @@ class RegAction extends Action
     */
     public function index()
     {
-		if(!Session::is_set("id")){
-			$this->error("没有登录！");
-		}
+		if(Session::is_set("user_name_temp")){
+			$result["user_name"] = Session::get("user_name_temp");
 		
-		$id = Session::get("id");
-		$User = M("User");
-		$result = $User -> where("id=".$id) -> find();
-		// $this -> ajaxReturn(1,$result,2);
+		} else if(Session::is_set("id")){
+			$id = Session::get("id");
+			$User = M("User");
+			$result = $User -> where("id=".$id) -> find();
+		} else {
+			$this -> error("非法操作");
+		}
 		
 		$this -> assign("result", $result);
         $this->display();
@@ -159,6 +155,7 @@ class RegAction extends Action
 		$id = $User -> add();
 		
 		Session::set("id",$id);
+		Session::set("nick_name",$User -> nick_name);
 		$this -> ajaxReturn($id,"恭喜你，用户名不存在，可以注册",2);
 	}
 	
@@ -205,14 +202,15 @@ class RegAction extends Action
     */
 	public function updateUser(){
 	
-		if(!Session::is_set("id")){
+		$if_insert = Session::is_set("user_name_temp");
+		if(!Session::is_set("id") && !$if_insert){
 			$this->error("没有登录！");
 		}
 		
 		$User = M('User');
 		$User -> create();
 		$User -> update_time = date("Y-m-d H:i:s");
-		$User -> id = Session::get("id");
+		
 		
 		//处理认证
 		$auth = $_REQUEST["auth"];
@@ -220,11 +218,25 @@ class RegAction extends Action
 			$User -> status = "待审核";
 		}
 		
+		//处理密码
 		$password = $_REQUEST["password"];
 		if(!empty($password)){
 			$User -> password = md5($password); 
+		} 
+		
+		//判断是插入还是更新
+		if($if_insert){
+			$user_name = Session::get("user_name_temp");
+			$User -> insert_time = date("Y-m-d H:i:s");
+			$User -> status = "基本注册";
+			$User -> user_name = $user_name;
+			$id = $User -> add();
+			Session::set("id", $id);
+			Session::set("nick_name", $User -> nick_name);
+		}else {
+			$User -> id = Session::get("id");
+			$User -> save();
 		}
-		$User -> save();
 		
 		//处理附件上传
 		$moveFile = "moveFile";
@@ -323,9 +335,5 @@ class RegAction extends Action
 		
 	}
 	
-	public function test(){
-		
-		$this -> ajaxReturn($_REQUEST["user_type1"]);
-	}
 }
 ?>

@@ -17,16 +17,16 @@
 <body>
 	<div>
 		<include file="./Tpl/default/Public/top.html" />
-		<div class="body" style="height:600px">
+		<div class="body">
 			<div style="height:30px;"></div>
 			<div class="bodycenter">
 				<div class="regtitle">
 					<div class="titletext mircroblod bold">升级用户注册</div>
 				</div>
 			</div>
-			<div class="bodycenter" style="height:600px">
+			<div class="bodycenter" style="padding-bottom:20px;">
 				<div style="height:10px;"></div>
-				<div class="container" style="height:500px">
+				<div class="container">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td align="center"><form class="niceform" id="myForm">
@@ -40,6 +40,32 @@
 									<tr>
 										<td colspan="2"></td>
 									</tr>
+									<tr>
+										<td><span class="red">*</span>　名　　片：</td>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="270">
+														<input type="text"  size="20" readonly="readonly" class="text_input input_normal"/>
+													</td>
+													<td width="80"><input type="button" id="btnBC" value="浏览" /></td>
+													<td class="gray"> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" name="business_card" id="business_card" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr id="tr_bc" style="display:none;height:200px">
+										<td></td>
+										<td>
+											<if condition="!empty($result['business_card'])">
+												<img src="/Public/Upload/{$result.business_card}" />
+												<script type="text/javascript">
+													bodyIncrease();	
+													$("#tr_bc").show();
+												</script>
+											</if>
+										</td>
+									</tr>	
 									<tr>
 										<td><span class="red">*</span>　真实姓名：</td>
 										<td><input type="text" id="true_name" name="true_name" value="{$true_name}" class="text_input input_normal" size="20"/></td>
@@ -67,6 +93,10 @@
 												</script>
 											</table>
 										</td>
+									</tr>
+									<tr>
+										<td width="120px"><span class="red">*</span>　E-mail：</td>
+										<td><input type="text" id="email" name="email" value="{$result.email}" class="text_input input_normal" size="20"/></td>
 									</tr>
 									<tr>
 										<td width="120px"><span class="red">*</span>　出生日期：</td>
@@ -133,32 +163,6 @@
 										</td>
 									</tr>	
 									<tr>
-										<td><span class="red">*</span>　名　　片：</td>
-										<td>
-											<table width="100%" border="0" cellspacing="0" cellpadding="0">
-												<tr>
-													<td width="270">
-														<input type="text"  size="20" readonly="readonly" class="text_input input_normal"/>
-													</td>
-													<td width="80"><input type="button" id="btnBC" value="浏览" /></td>
-													<td class="gray"> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" name="business_card" id="business_card" /></td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-									<tr id="tr_bc" style="display:none;height:200px">
-										<td></td>
-										<td>
-											<if condition="!empty($result['business_card'])">
-												<img src="/Public/Upload/{$result.business_card}" />
-												<script type="text/javascript">
-													bodyIncrease();	
-													$("#tr_bc").show();
-												</script>
-											</if>
-										</td>
-									</tr>	
-									<tr>
 										<td></td>
 										<td></td>
 									</tr>
@@ -166,13 +170,19 @@
 										<td></td>
 										<td><input type="button" id="btnSubmit" value="　提交认证　"/>　<input type="button" value="　取　消　"/></td>
 									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+									</tr>
 								</table></form>
 							</td>
 						</tr>
 					</table>
+				<div class="clear"></div>
 				</div>
+				<div class="clear"></div>
 			</div>
-			<div class="bodyright"></div>
+			<div class="clear"></div>
 		</div>
 		<include file="./Tpl/default/Public/bottom.html" />  
 	</div>

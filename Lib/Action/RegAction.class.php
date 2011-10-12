@@ -231,6 +231,7 @@ class RegAction extends Action
 			$User -> status = "基本注册";
 			$User -> user_name = $user_name;
 			$id = $User -> add();
+			Session::clear();
 			Session::set("id", $id);
 			Session::set("nick_name", $User -> nick_name);
 		}else {

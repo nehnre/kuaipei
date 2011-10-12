@@ -16,9 +16,12 @@ $(function(){
 	$("#btnJoin").click(function(){
 		var joined = $(this).attr("joined");
 		var unlogin = $(this).attr("unlogin");
+		var status = $(this).attr("status");
 		if(unlogin){
 			$("#login").click();
-		}else if(joined){
+		} else if(status != "已审核"){
+			showAlert("你的状态是：{0}，活动只有审核用户可以参加！".format(status));
+		} else if(joined){
 			showAlert("您已经于{0}参加过此次活动了！".format(joined));
 		} else {
 			showWaiting();

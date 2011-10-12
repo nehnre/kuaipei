@@ -75,9 +75,9 @@ class ActivityAction extends Action
 		
 		$status = $_REQUEST["status"];
 		if(!empty($status)){
-			if($status == "待审核"){
+			if($status == "待审核" || $status == "已审核" ){
 				$condition["status"] = $status; 
-			} else{
+			} else {
 				$condition["status"] = array(array("neq", "待审核"),array("neq","预览")); 
 				if($status == "未开始"){
 					$condition["start_time"] = array("gt", date("Y-m-d")); 
@@ -126,6 +126,15 @@ class ActivityAction extends Action
 		$this -> assign("preview", true);
 		$this -> display("./Tpl/default/Activity/show.html");
 	}
+
+	public function publishActivity(){
+		$id = $_REQUEST["id"];
+		$Activity = M("Activity");
+		$data["status"] = "已发布";
+		$data["update_time"] = date("Y-m-d");
+		$Activity -> where("id=".$id) -> save($data);
+		echo '<script>alert("发布成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
+	}
 	
     /**
     +----------------------------------------------------------
@@ -142,11 +151,11 @@ class ActivityAction extends Action
 		$id = $_REQUEST["id"];
 		$Activity = M("Activity");
 		$condition["id"] = $id;
-		$condition["status"] = "已审核";
+		$condition["status"] = "已发布";
 		
 		$result = $Activity -> where($condition) -> find();
 		if(empty($result)){
-			$this -> error("同有找到这项活动！");
+			$this -> error("没有这项活动或者活动还未被审核！");
 		}
 		
 		$user_id = Session::get("id");
@@ -168,6 +177,11 @@ class ActivityAction extends Action
 		$this -> assign("result", $result);
 		$this -> assign("introduce", $introduce);
 		$this -> assign("describ_text", $describ_text);
+		
+		$User = M("User");
+		$loginUser = $User -> where("id=".$user_id) -> find();
+		$this -> assign("user", $loginUser);
+		
 		$this -> display();
 	}
 	

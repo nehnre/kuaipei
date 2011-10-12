@@ -13,6 +13,12 @@
 				try{window.event.returnValue=false;}catch(e){}
 			}
 		}
+		function pub(id){
+			if(id){
+				location.href = "publishActivity?id=" + id;
+				try{window.event.returnValue=false;}catch(e){}
+			}
+		}
 	</script>
 </head>
 <body>
@@ -51,6 +57,7 @@
 				<select style="width:150px" name="status" id="status">
 					<option value=""></option>
 					<option value="待审核">待审核</option>
+					<option value="已发布">已发布</option>
 					<option value="未开始">未开始</option>
 					<option value="进行中">进行中</option>
 					<option value="已结束">已结束</option>
@@ -85,6 +92,9 @@
 				结束时间
 			</th>
 			<th nowrap="nowrap">
+				状态
+			</th>
+			<th nowrap="nowrap">
 				操作
 			</th>
 		</tr>
@@ -101,10 +111,19 @@
 				<td>{$vo.sponsor}</td>
 				<td>{$vo.start_time}</td>
 				<td>{$vo.end_time}</td>
-				<td><a href="editActivity?id={$vo.id}">编辑</a> <a href="javascript:;" onclick="del('{$vo.id}')">删除</a></td>
+				<td>{$vo.status}</td>
+				<td><a href="editActivity?id={$vo.id}">编辑</a> 
+				<a href="javascript:;" onclick="del('{$vo.id}')">删除</a>
+				<if condition="$vo.status eq '已发布'">
+				已发布
+				<else />
+				<a href="javascript:;" onclick="pub('{$vo.id}')">发布</a> 
+				</if>
+				
+				</td>
 			</tr>
 		</volist>
-		<tr class="odd"><td colspan="6" align="right">{$foot}</td></tr>
+		<tr class="odd"><td colspan="7" align="right">{$foot}</td></tr>
 	</table>
 	</form>
 </body>

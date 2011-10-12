@@ -99,18 +99,17 @@ class AdminUserAction extends Action
 		$data["status"] = "已审核";
 		$data["update_time"]  = date("Y-m-d H:i:s");
 		$condition["id"] = $id ;
-		$Activity -> where($condition)->save($data);
-		$json["success"] = true;
-		$json["msg"] = "审核成功！";
+		$result = $Activity -> where($condition)->save($data);
+	   if($result !== false){
+             $json["success"] = true;
+		     $json["msg"] = "审核成功！";
+       }else{
+              $json["success"] = false;
+		     $json["msg"] = "审核失败！";
+       }
 		$this -> ajaxReturn($json);
 	}
 	
-
-	public function test(){
-		$Activity = M("Activity");
-		$result = $Activity -> where("id=12") -> find();
-		$this -> ajaxReturn(split("\n",str_replace("\r","",$result["introduce"])));
-	}
 	
 }
 ?>

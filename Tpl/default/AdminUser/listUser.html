@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=gbk" />
+	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<title>活动列表</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Reg/chooseType.js"></script>
+	<script>
+		function del(id){
+			if(id && confirm("确定要删除这条记录吗？")){
+				location.href = "deleteAdminUser?id=" + id;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form method="get" action="listUser">
+	<table border="0" class="table" cellpadding="0" cellspacing="0"  >
+		<tr >
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_01.jpg" alt=""/>
+			</td>
+			<td class="navigation_middle" >
+				您现在的位置： 用户管理 》用户列表
+			</td>
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_03.jpg" alt=""></img>
+			</td>
+		</tr>
+	</table>
+	
+	<table cellpadding="0" cellspacing="0" class="table" border="0" style="padding-bottom: 5px;padding-top: 5px" >
+		<tr>
+			<td style="width:250px;">
+				用户名：<input type="text" style="width:150px;" name="user_name" value="{$Think.request.user_name}"/>
+			</td>
+			<td style="width:400px;">
+				类型：
+				<select name="user_type1" size="1" style="width:160px;" id="user_type1">
+					<option value="">请选择</option>
+					<option value="厂商">厂商</option>
+					<option value="经销商">经销商</option>
+					<option value="修理厂">修理厂</option>
+					<option value="车主">车主</option>
+					<option value="车队">车队</option>
+				</select>
+				<script type="text/javascript">
+						$("#user_type1").val("{$Think.request.user_type1}");
+				</script>
+				<select name="user_type2" size="1" style="width:160px;" id="user_type2">
+					<option value="">请选择</option>
+					<if condition="$_REQUEST['user_type1'] eq '厂商'">
+						<option value="外资">外资</option>
+						<option value="合资">合资</option>
+						<option value="民营">民营</option>
+						<option value="国有">国有</option>
+					</if>
+					<if condition="$_REQUEST['user_type1']  eq '经销商'">
+						<option value="代理">代理</option>
+						<option value="分销商">分销商</option>
+					</if>
+					<if condition="$_REQUEST['user_type1']  eq '修理厂'">
+						<option value="综合修理厂(一类资质)">综合修理厂(一类资质)</option>
+						<option value="综合修理厂(二类资质)">综合修理厂(二类资质)</option>
+						<option value="综合修理厂(三类资质)">综合修理厂(三类资质)</option>
+						<option value="快修店">快修店</option>
+						<option value="专项修理">专项修理</option>
+						<option value="轮胎店">轮胎店</option>
+						<option value="美容养护">美容养护</option>
+						<option value="4S店">4S店</option>
+					</if>
+					<if condition="$_REQUEST['user_type1']  eq '车主'">
+						<option value="商用车">商用车</option>
+						<option value="私家车">私家车</option>
+					</if>
+					<if condition="$_REQUEST['user_type1']  eq '车队'">
+						<option value="货车">货车</option>
+						<option value="客车">客车</option>
+					</if>
+				</select>
+				<script type="text/javascript">
+					$("#user_type2").val("{$Think.request.user_type2}");
+				</script>
+			</td>
+			<td style="width:200px;">
+				状态：
+				<select style="width:150px" name="status" id="status">
+					<option value=""></option>
+					<option value="基本注册">基本注册</option>
+					<option value="待审核">待审核</option>
+				</select>
+				<script type="text/javascript">
+					$("#status").val("{$Think.request.status}");
+				</script>
+			</td>
+
+			<td>
+				<input type="submit" value=" 查 询 " id="btnSearch" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+			</td>
+		</tr>
+	</table>
+	<table class="its" cellspacing="1" id="ufile" border="0">
+		<tr>
+			<th nowrap="nowrap">
+				用户名
+			</th>
+			<th nowrap="nowrap">
+				用户类型
+			</th>
+			<th nowrap="nowrap">
+				真实姓名
+			</th>
+			<th nowrap="nowrap">
+				状态
+			</th>
+			<th nowrap="nowrap">
+				更新时间
+			</th>
+			<th nowrap="nowrap">
+				操作
+			</th>
+		</tr>
+		<!-- odd even-->
+		
+		<volist name='list' id='vo' > 
+			<if condition="$i%2==1">
+			<tr class="odd">
+			<else />
+			<tr class="even">
+			</if>
+				<td>{$vo.user_name}</td>
+				<td>{$vo.user_type1}-{$vo.user_type2}</td>
+				<td>{$vo.true_name}</td>
+				<td>{$vo.status}</td>
+				<td>{$vo.update_time}</td>
+				<td><a href="editAdminUser?id={$vo.id}">编辑</a> <a href="javascript:;" onclick="del('{$vo.id}')">删除</a></td>
+			</tr>
+		</volist>
+		<tr class="odd"><td colspan="6" align="right">{$foot}</td></tr>
+	</table>
+	</form>
+</body>
+
+</html>

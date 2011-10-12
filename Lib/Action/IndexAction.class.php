@@ -10,7 +10,7 @@ class IndexAction extends Action
     public function index()
     {
 		$Activity = M("Activity");
-		$result = $Activity -> where("status='已发布'") -> order('insert_time desc') -> limit(9) -> select();
+		$result = $Activity -> where("status='已发布'") -> order('start_time') -> limit(9) -> select();
 		$len = count($result);
 		for($i=0;$i< $len/3;$i++){
 			$temp[$i][0] = $result[$i*3];
@@ -24,7 +24,7 @@ class IndexAction extends Action
 		$this -> assign("result", $temp);
 		
 		$Vuserlog = M("Vuserlog");
-		$log = $Vuserlog -> order('insert_time desc') -> limit(8) -> select();
+		$log = $Vuserlog -> where("") -> order('insert_time desc') -> limit(3) -> select();
 		$this -> assign("log", $log);
         $this->display();
     }

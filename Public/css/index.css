@@ -389,6 +389,9 @@ a:hover{
 	font-weight:bold;
 	padding-left:20px;
 }
+.trends{
+	
+}
 .trends_content{
 	background-color:white;
 	border-left:#bebebe solid 1px;
@@ -396,25 +399,25 @@ a:hover{
 }
 
 .trends_content .content{
-	padding:20px 10px 15px 10px;
+	padding:7px 10px 7px 10px;
+	height:254px;
 }
 .trends_content .content .row{
 	line-height:25px;
 }
-.trends_content .content .row .nick_name{
-	width:60px;
-	float:left;
+.trends_content .content  .nick_name{
 	color:#565656;
 	font-weight:bold;
 	overflow:hidden;
 	white-space:nowrap;
 	margin-right:5px;
+	line-height:25px;
+	margin-top:10px;
 }
-.trends_content .content .row .action{
-	width:120px;
-	float:left;
+.trends_content .content  .action{
 	overflow:hidden;
 	white-space:nowrap;
+	line-height:25px;
 }
 
 

@@ -1,6 +1,17 @@
 <?php
 class ActivityAction extends Action
 {
+
+
+	public function canclePublishActivity(){
+		$id = $_REQUEST["id"];
+		$Activity = M("Activity");
+		$data["status"] = "未发布";
+		$data["update_time"] = date("Y-m-d");
+		$Activity -> where("id=".$id) -> save($data);
+		echo '<script>alert("取消成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
+	}
+
     /**
     +----------------------------------------------------------
     * 进入新增或编辑页面
@@ -36,7 +47,7 @@ class ActivityAction extends Action
 			$Userlog -> user_id = $user_id;
 			$Userlog -> table_name = "kp_activity";
 			$Userlog -> table_id = $id;
-			$Userlog -> act_describ = "参加活动一次";
+			$Userlog -> act_describ = "参加抽奖活动一次";
 			$Userlog -> insert_time = date("Y-m-d H:i:s");
 			$Userlog -> add();
 			$json["success"] = true;
@@ -75,10 +86,10 @@ class ActivityAction extends Action
 		
 		$status = $_REQUEST["status"];
 		if(!empty($status)){
-			if($status == "待审核" || $status == "已审核" ){
+			if($status == "未发布" || $status == "已审核" ){
 				$condition["status"] = $status; 
 			} else {
-				$condition["status"] = array(array("neq", "待审核"),array("neq","预览")); 
+				$condition["status"] = array(array("neq", "未发布"),array("neq","预览")); 
 				if($status == "未开始"){
 					$condition["start_time"] = array("gt", date("Y-m-d")); 
 				} else if($status == "进行中"){
@@ -101,7 +112,7 @@ class ActivityAction extends Action
 		import("ORG.Util.Page");
  		$Page = new Page($count, 10);
 		$foot = $Page -> show();
-		$list = $Activity -> where($condition) -> order('update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+		$list = $Activity -> where($condition) -> order('start_time') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
 		
 		$this->assign('list',$list); 
 		$this->assign('foot',$foot);
@@ -178,13 +189,38 @@ class ActivityAction extends Action
 		$this -> assign("introduce", $introduce);
 		$this -> assign("describ_text", $describ_text);
 		
+		/*获取过期信息*/
+		$expires = 0;
+		if($result["start_time"] > date("Y-m-d")){
+			//还没到开始时间
+			$expirse = -1;
+		}
+		if($result["end_time"] < date("Y-m-d")){
+			//已经结束
+			$expirse = 1;
+		}
+		$this -> assign("expirse", $expirse);
+		
+		/*获取评论信息*/
+		$VActivityComment = M("vactivity_comment");
+		unset($condition);
+		$condition["activity_id"] = $id;
+		$count = $VActivityComment -> where($condition) -> count();
+		import("ORG.Util.Page");
+ 		$Page = new Page($count, 10);
+		$foot = $Page -> show();
+		$list = $VActivityComment -> where($condition) -> order('insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+		$this->assign('list',$list); 
+		$this->assign('foot',$foot);
+		
+		
+		/*获取用户信息*/
 		$User = M("User");
 		$loginUser = $User -> where("id=".$user_id) -> find();
 		$this -> assign("user", $loginUser);
 		
 		$this -> display();
 	}
-	
 	private function saveForm($preview){
 
 		$id = $_REQUEST["id"];
@@ -237,7 +273,7 @@ class ActivityAction extends Action
 			if($preview){
 				$Activity -> status = "预览";
 			} else {
-				$Activity -> status = "待审核";
+				$Activity -> status = "未发布";
 			}
 			$Activity -> create_user_id = 0;
 		}
@@ -251,9 +287,14 @@ class ActivityAction extends Action
 	}
 	
 	public function test(){
-		$saveForm = "saveForm";
-		$this -> $saveForm();
-		$this -> ajaxReturn($Activity);
+		$VActivityComment = M("vactivity_comment");
+		$condition["activity_id"] = 34;
+		$count = $VActivityComment -> where($condition) -> count();
+		import("ORG.Util.Page");
+ 		$Page = new Page($count, 10);
+		$foot = $Page -> show();
+		$list = $VActivityComment -> where($condition) -> order('insert_time') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+		$this -> ajaxReturn($count);
 	}
 	
 }

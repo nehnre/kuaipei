@@ -79,7 +79,7 @@
 								</ul>
 							</div>
 							<div class="btn">
-								<div class="download"><img src="__PUBLIC__/images/activity/btn_join.gif" style="cursor:pointer" id="btnJoin" status="{$user.status}" unlogin="{$unlogin}" joined="{$joined}"/></div>
+								<div class="download"><img src="__PUBLIC__/images/activity/btn_join.gif" style="cursor:pointer" id="btnJoin" status="{$user.status}" unlogin="{$unlogin}" joined="{$joined}" expirse="{$expirse}" start_time="{$result.start_time}" end_time="{$result.end_time}"/></div>
 								<div class="attention"><img src="__PUBLIC__/images/activity/btn_attention.jpg" style="cursor:pointer"/></div>
 							</div>
 						</div>
@@ -100,41 +100,17 @@
 							<span>用</span>户心得
 						</div>
 						<div class="content">
+							<if condition="empty($list) OR count($list) eq 0">
+								<div class="gray" style="text-align:center; line-height:30px;">暂时没有评论</div>
+							</if>
+							<volist name="list" id="vo">
 							<div class="comment">
-								<div class="title">使用背带的好处 【王先生】</div>
+								<div class="title">{$vo.title} 【{$vo.nick_name}】于 {$vo.insert_time} 评论</div>
 								<div class="line"></div>
-								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
+								<div class="comment_content">{$vo.content}</div>
 							</div>
-							<div class="comment">
-								<div class="title">使用背带的好处 【王先生】</div>
-								<div class="line"></div>
-								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
-							</div>
-							<div class="comment">
-								<div class="title">使用背带的好处 【王先生】</div>
-								<div class="line"></div>
-								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
-							</div>
-							<div class="comment">
-								<div class="title">使用背带的好处 【王先生】</div>
-								<div class="line"></div>
-								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
-							</div>
-							<div class="comment">
-								<div class="title">使用背带的好处 【王先生】</div>
-								<div class="line"></div>
-								<div class="comment_content">使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 
-								使用背带的好处 使用背带的好处 使用背带的好处 使用背带的好处 </div>
-							</div>
+							</volist>
+							<div style="text-align:right; line-height:30px;">{$foot}</div>
 							<div class="btn_comment1">
 								<input type="button" value="我要评论" />
 							</div>
@@ -188,8 +164,8 @@
 	<include file="./Tpl/default/Public/dialog.html" />  
 	<div id="dialog-comment" title="对此次活动评论" style="display:none">
 		<div style="margin-top:5px;padding-left:10px;">标题：<input type="text" style="width:500px;" name="title" id="title"/></div>
-		<div style="margin-top:5px;padding-left:10px;">内容：<textarea style="width:500px;" cols="30" rows="15"></textarea></div>
-		<div style="text-align:center;margin-top:5px;"><input type="button" value=" 发送评论 " id="btnSubmit"/></div>
+		<div style="margin-top:5px;padding-left:10px;">内容：<textarea style="width:500px;" cols="30" rows="15" id="content" name="content"></textarea></div>
+		<div style="text-align:center;margin-top:5px;"><input type="button" value=" 发送评论 " id="btnComment"/></div>
 	</div>
 </body>
 </html>

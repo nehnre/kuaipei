@@ -21,3 +21,5 @@
 
 *:focus {outline: none;}
 .clear{ clear:both; height:0; line-height:0; font-size:0px;}
+
+.font_11 {font-size:14px;color:#039;}

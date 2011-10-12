@@ -81,7 +81,6 @@ class AdminUserAction extends Action
     */
 	public function saveAdminUser(){
 		$id = $_REQUEST["id"];
-		
 		$Activity = M("User");
 		$Activity -> create();
 		$Activity -> update_time = date("Y-m-d H:i:s");
@@ -96,13 +95,11 @@ class AdminUserAction extends Action
     */
  public function checkAdminUser(){
 		$id = $_REQUEST["id"];
-
 		$Activity = M("User");
-		$Activity -> create();
-		//$Activity -> status ="已审核";
-		$Activity -> update_time = date("Y-m-d H:i:s");
-		$Activity -> save();
-		//$this -> ajaxReturn($id);
+		$data["status"] = "已审核";
+		$data["update_time"]  = date("Y-m-d H:i:s");
+		$condition["id"] = $id ;
+		$Activity -> where($condition)->save($data);
 		$json["success"] = true;
 		$json["msg"] = "审核成功！";
 		$this -> ajaxReturn($json);

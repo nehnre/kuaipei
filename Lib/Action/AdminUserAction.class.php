@@ -85,9 +85,53 @@ class AdminUserAction extends Action
 		$Activity -> create();
 		$Activity -> update_time = date("Y-m-d H:i:s");
 		$Activity -> save();
+		//处理附件上传
+		$moveFile = "moveFile";
+		if(!empty($User -> business_license)){
+			$this -> $moveFile($User -> business_license);
+		}
+		if(!empty($User -> address_pic)){
+			$this -> $moveFile($User -> address_pic);
+		}
+		if(!empty($User -> business_card)){
+			$this -> $moveFile($User -> business_card);
+		}
+		if(!empty($User -> driving_license)){
+			$this -> $moveFile($User -> driving_license);
+		}
+		if(!empty($User -> vehicle_license)){
+			$this -> $moveFile($User -> vehicle_license);
+		}
+		$deletePastdueFile = "deletePastdueFile";
+		$this -> $deletePastdueFile();
 		//$this -> ajaxReturn($id);
 		echo '<script>alert("保存成功！");location.href="listUser";try{window.event.returnValue=false; }catch(e){}</script>';
 	}
+
+		/**************私有方法**************/
+	private function deletePastdueFile()
+    {
+		$dirtemp = preg_replace ("[Lib.*$]","",dirname(__FILE__))."/Temp/";
+		$handle = opendir($dirtemp);
+		$info = "";
+		while (false !== ($file = readdir($handle))) {
+			if(!is_dir($file)){
+				if((time() - filemtime($dirtemp.$file)) > (20 * 60)){
+					unlink($dirtemp.$file);
+				}
+			}
+		}
+    }
+	
+	private function moveFile($filename)
+    {
+		if(!empty($filename)){
+			$dirbase = preg_replace ("[Lib.*$]","",dirname(__FILE__));
+			$dirtemp = $dirbase."/Temp/";
+			$dirupload = $dirbase."/Public/Upload/";
+			$info = copy($dirtemp.$filename, $dirupload.$filename);
+		}
+    }
 	    /**
     +----------------------------------------------------------
     * 审核一条用户记录
@@ -104,7 +148,7 @@ class AdminUserAction extends Action
              $json["success"] = true;
 		     $json["msg"] = "审核成功！";
        }else{
-              $json["success"] = false;
+             $json["success"] = false;
 		     $json["msg"] = "审核失败！";
        }
 		$this -> ajaxReturn($json);

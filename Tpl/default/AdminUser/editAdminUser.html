@@ -9,6 +9,8 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/AdminUser/adminUser.js"></script>
 </head>
 <body >
 	<form method="post" action="saveAdminUser" enctype="multipart/form-data" >
@@ -67,6 +69,84 @@
 				<td  align="right">汽车型号：</td>
 				<td  align="left"><input type="text" style="width:80%" name="car_model" id="car_model" value="{$result.car_model}"/></td>
 			</tr>
+			<tr class="odd">
+				<td  align="right">车主驾驶证：</td>
+				<td  align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="270">
+														<input type="text"  size="20" readonly="readonly" class="text_input input_normal"/>
+													</td>
+													<td width="80"><input type="button" id="btnDL" name="btnDL" value="浏览" /></td>
+													<td class="gray"> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.driving_license}" name="driving_license" id="driving_license" /></td>
+												</tr>											
+										  </table>
+				  </td>
+			</tr>
+			<tr id="tr_dl" style="display:none;height:200px" class="odd">
+				<td></td>						
+				<td>
+						<if condition="!empty($result['driving_license'])">
+								<img src="/Temp/{$result.driving_license}" />
+								<script type="text/javascript">
+										bodyIncrease();	
+										$("#tr_dl").show();
+								</script>
+						</if>
+				</td>
+			 </tr>	
+
+			<tr class="odd">
+				<td  align="right">汽车行驶证：</td>
+				<td  align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="270">
+														<input type="text"  size="20" readonly="readonly" class="text_input input_normal"/>
+													</td>
+													<td width="80"><input type="button" id="btnVL" name="btnVL" value="浏览" /></td>
+													<td class="gray"> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.vehicle_license}" name="vehicle_license" id="vehicle_license" /></td>
+												</tr>											
+										  </table>
+				  </td>
+			</tr>
+			<tr id="tr_vl" style="display:none;height:200px" class="odd">
+				<td></td>						
+				<td>
+						<if condition="!empty($result['vehicle_license'])">
+								<img src="/Temp/{$result.vehicle_license}" />
+								<script type="text/javascript">
+										bodyIncrease();	
+										$("#tr_vl").show();
+								</script>
+						</if>
+				</td>
+			 </tr>	
+
+			<tr class="odd">
+				<td  align="right">名片：</td>
+				<td  align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="270">
+														<input type="text"  size="20" readonly="readonly" class="text_input input_normal"/>
+													</td>
+													<td width="80"><input type="button" id="btnBC" name="btnBC" value="浏览" /></td>
+													<td class="gray"> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.business_card}" name="business_card" id="business_card" /></td>
+												</tr>											
+										  </table>
+				  </td>
+			</tr>
+			<tr id="tr_bc" style="display:none;height:200px" class="odd">
+				<td></td>						
+				<td>
+						<if condition="!empty($result['business_card'])">
+								<img src="/Temp/{$result.business_card}" />
+								<script type="text/javascript">
+										bodyIncrease();	
+										$("#tr_bc").show();
+								</script>
+						</if>
+				</td>
+			 </tr>	
+
 			<tr class="odd">
 				<td width="200px" align="right">职　　业：</td>
 				<td align="left"><input type="text" style="width:80%" id="profession" name="profession" value="{$result.profession}"/></td>
@@ -129,6 +209,59 @@
 					$("#company_scale").val("{$result.company_scale}");
 				</script>
 			</tr>
+
+			<tr class="odd">
+				<td  align="right">工商营业执照：</td>
+				<td  align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="270">
+														<input type="text"  size="20" readonly="readonly" class="text_input input_normal"/>
+													</td>
+													<td width="80"><input type="button" id="btnBL" name="btnBL" value="浏览" /></td>
+													<td class="gray"> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.business_license}" name="business_license" id="business_license" /></td>
+												</tr>											
+										  </table>
+				  </td>
+			</tr>
+			<tr id="tr_bl" style="display:none;height:200px" class="odd">
+				<td></td>						
+				<td>
+						<if condition="!empty($result['business_license'])">
+								<img src="/Temp/{$result.business_license}" />
+								<script type="text/javascript">
+										bodyIncrease();	
+										$("#tr_bl").show();
+								</script>
+						</if>
+				</td>
+			 </tr>	
+
+			<tr class="odd">
+				<td  align="right">所在位置地图：</td>
+				<td  align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="270">
+														<input type="text"  size="20" readonly="readonly" class="text_input input_normal"/>
+													</td>
+													<td width="80"><input type="button" id="btnAP" name="btnAP" value="浏览" /></td>
+													<td class="gray"> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.address_pic}" name="address_pic" id="address_pic" /></td>
+												</tr>											
+										  </table>
+				  </td>
+			</tr>
+			<tr id="tr_ap" style="display:none;height:200px" class="odd">
+				<td></td>						
+				<td>
+						<if condition="!empty($result['address_pic'])">
+								<img src="/Temp/{$result.address_pic}" />
+								<script type="text/javascript">
+										bodyIncrease();	
+										$("#tr_ap").show();
+								</script>
+						</if>
+				</td>
+			 </tr>	
+
 			<tr  class="odd">
 				<td colspan="2">
 					<input type="submit" value="提 交" id="btnSubmit" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>

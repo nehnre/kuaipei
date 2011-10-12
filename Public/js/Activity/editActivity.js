@@ -28,5 +28,7 @@ $(function(){
 		$("form").attr("action","preview");
 		$("form").attr("target", "_blank");
 		$("form").submit();
+		$("form").attr("action","saveOrUpdateActivity");
+		$("form").attr("target", "_self");
 	});
 });

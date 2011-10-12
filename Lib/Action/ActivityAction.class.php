@@ -78,7 +78,7 @@ class ActivityAction extends Action
 			if($status == "待审核"){
 				$condition["status"] = $status; 
 			} else{
-				$condition["status"] = array("neq", "待审核"); 
+				$condition["status"] = array(array("neq", "待审核"),array("neq","预览")); 
 				if($status == "未开始"){
 					$condition["start_time"] = array("gt", date("Y-m-d")); 
 				} else if($status == "进行中"){
@@ -88,6 +88,8 @@ class ActivityAction extends Action
 					$condition["end_time"] = array("lt", date("Y-m-d")); 
 				}
 			}
+		} else {
+			$condition["status"] = array("neq", "预览");
 		}
 		
 		$sponsor = $_REQUEST["sponsor"];
@@ -108,9 +110,11 @@ class ActivityAction extends Action
 	}
 	
 	public function preview(){
-		
-		$id = $_REQUEST["id"];
 		$Activity = M("Activity");
+		$Activity -> where("status='预览'") -> delete();
+	
+		$saveForm = "saveForm";
+		$id = $this -> $saveForm(true);
 		$condition["id"] = $id;
 		$result = $Activity -> where($condition) -> find();
 		
@@ -129,6 +133,46 @@ class ActivityAction extends Action
     +----------------------------------------------------------
     */
 	public function saveOrUpdateActivity(){
+		$saveForm = "saveForm";
+		$this -> $saveForm(false);
+		echo '<script type="text/javascript">alert("保存成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
+	}
+	
+	public function show(){
+		$id = $_REQUEST["id"];
+		$Activity = M("Activity");
+		$condition["id"] = $id;
+		$condition["status"] = "已审核";
+		
+		$result = $Activity -> where($condition) -> find();
+		if(empty($result)){
+			$this -> error("同有找到这项活动！");
+		}
+		
+		$user_id = Session::get("id");
+		if(!empty($user_id)){
+			$Userlog = M("Userlog");
+			unset($condition);
+			$condition["user_id"] = $user_id;
+			$condition["table_name"] = "kp_activity";
+			$condition["table_id"] = $id;
+			$log = $Userlog -> where($condition) -> find();
+			if(!empty($log)){
+				$this -> assign("joined", $log["insert_time"]);
+			}
+		} else {
+			$this -> assign("unlogin", true);
+		}
+		$introduce = split("\n",str_replace("\r","",$result["introduce"]));
+		$describ_text = split("\n",str_replace("\r","",$result["describ_text"]));
+		$this -> assign("result", $result);
+		$this -> assign("introduce", $introduce);
+		$this -> assign("describ_text", $describ_text);
+		$this -> display();
+	}
+	
+	private function saveForm($preview){
+
 		$id = $_REQUEST["id"];
 		$error = $_FILES["photo"]["error"];
 		foreach($error as $e){
@@ -138,6 +182,8 @@ class ActivityAction extends Action
 		}
 		$Activity = M("Activity");
 		$Activity -> create();
+		
+		
 		
 		if($uploadFlag){
 			import("ORG.Net.UploadFile");
@@ -172,7 +218,13 @@ class ActivityAction extends Action
 		}
 		if(empty($id)){
 			$Activity -> insert_time = date("Y-m-d H:i:s");
-			$Activity -> status = "待审核";
+			
+			//判断是否为预览
+			if($preview){
+				$Activity -> status = "预览";
+			} else {
+				$Activity -> status = "待审核";
+			}
 			$Activity -> create_user_id = 0;
 		}
 		$Activity -> update_time = date("Y-m-d H:i:s");
@@ -181,49 +233,13 @@ class ActivityAction extends Action
 		} else {
 			$Activity -> save();
 		}
-		
-		
-		echo '<script type="text/javascript">alert("保存成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
+		return $id;		
 	}
-	
-	public function show(){
-		$id = $_REQUEST["id"];
-		$Activity = M("Activity");
-		$condition["id"] = $id;
-		$condition["start_time"] = array("lt", date("Y-m-d H:i:s"));
-		$condition["end_time"] = array("gt", date("Y-m-d H:i:s"));
-		$result = $Activity -> where($condition) -> find();
-		if(empty($result)){
-			$this -> error("活动未开始或已经结束！");
-		}
-		
-		$user_id = Session::get("id");
-		if(!empty($user_id)){
-			$Userlog = M("Userlog");
-			unset($condition);
-			$condition["user_id"] = $user_id;
-			$condition["table_name"] = "kp_activity";
-			$condition["table_id"] = $id;
-			$log = $Userlog -> where($condition) -> find();
-			if(!empty($log)){
-				$this -> assign("joined", $log["insert_time"]);
-			}
-		} else {
-			$this -> assign("unlogin", true);
-		}
-		$introduce = split("\n",str_replace("\r","",$result["introduce"]));
-		$describ_text = split("\n",str_replace("\r","",$result["describ_text"]));
-		$this -> assign("result", $result);
-		$this -> assign("introduce", $introduce);
-		$this -> assign("describ_text", $describ_text);
-		$this -> display();
-	}
-	
 	
 	public function test(){
-		$Activity = M("Activity");
-		$result = $Activity -> where("id=12") -> find();
-		$this -> ajaxReturn(split("\n",str_replace("\r","",$result["introduce"])));
+		$saveForm = "saveForm";
+		$this -> $saveForm();
+		$this -> ajaxReturn($Activity);
 	}
 	
 }

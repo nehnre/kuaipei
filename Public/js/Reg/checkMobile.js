@@ -18,7 +18,22 @@ $(function(){
 			cache: false,
 			success: function(json){
 				json = nehnre.parseJSON(json);
-				showAlert(json.info);
+				showAlert(json.data.msg, function(){
+					if(json.data.success){
+						(function(){
+							if(!window._second && window._second != 0){
+								_second = 60;
+							}
+							if(_second > 0){
+								$("#btnCheck").val("发送验证码({0})".format(_second)).attr("disabled",true);
+								_second --;
+								setTimeout(arguments.callee,1000);
+							} else {
+								$("#btnCheck").val("再次发送").attr("disabled",false);
+							}
+						})();
+					}
+				});
 			},
 			error: function(){
 				showAlert("服务器出现错误，你的请求没有完成！");

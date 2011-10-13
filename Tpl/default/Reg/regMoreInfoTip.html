@@ -3,6 +3,7 @@
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/reg.css" type="text/css" media="screen" /> 
+	<title>升级用户注册——立配网</title>
 </head>
 <body>
 	<div>
@@ -11,7 +12,13 @@
 			<div style="height:30px;"></div>
 			<div class="bodycenter">
 				<div class="regtitle">
-					<div class="titletext mircroblod bold">升级用提交成功</div>
+					<div class="titletext mircroblod bold">
+					<if condition = "$result['import_flag'] eq '导入'">
+					激活
+					<else />
+					升级提交
+					</if>
+					成功</div>
 				</div>
 			</div>
 			<div class="bodycenter" style="padding-bottom:20px">
@@ -21,7 +28,16 @@
 						<tr>
 							<td align="center" valign="center">
 								<div class="mircroblod" style="font-size:20px;">
-									<span><img src="__PUBLIC__/images/ok.png" height="20" width="20"/><span><span> 您的资料已经提交，请耐心等待工作人员来审核，<span id="second">5</span>秒后跳转到首页</span>
+									<span><img src="__PUBLIC__/images/ok.png" height="20" width="20"/><span>
+									<span> 
+										<if condition = "$result['import_flag'] eq '导入'">
+										你已经激活成功！
+										<else />
+										您的资料已经提交，请耐心等待工作人员来审核，
+										</if>
+										<span id="second">5</span>
+										秒后跳转到首页
+									</span>
 								</div>
 							</td>
 						</tr>

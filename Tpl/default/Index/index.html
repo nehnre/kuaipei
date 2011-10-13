@@ -11,45 +11,12 @@
 	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
-	<title>欢迎光临——快配网</title>
+	<title>欢迎光临——立配网</title>
 	
 	<script type="text/javascript">
 		var _scroll_lock = false;
 		$(function(){
 			
-			$(".btn_goleft").click(function(){
-				var marginLeft = $("#brand_id").css("margin-left");
-				marginLeft = marginLeft.replace(/px$/g,"");
-				marginLeft = ~~ marginLeft;
-				var picCount = $("#brand_id").children().size();
-				if(picCount > 6){
-					if(marginLeft > -((picCount - 6) * 125)){
-						if(!_scroll_lock){
-							_scroll_lock = true;
-						} else {
-							return false;
-						}
-						$("#brand_id").animate({ marginLeft: marginLeft - 125}, 200, function(){
-							_scroll_lock = false;
-						});
-					}
-				}
-			});
-			$(".btn_goright").click(function(){
-				var marginLeft = $("#brand_id").css("margin-left");
-				marginLeft = marginLeft.replace(/px$/g,"");
-				marginLeft = ~~ marginLeft;
-				if(marginLeft < 0){
-					if(!_scroll_lock){
-						_scroll_lock = true;
-					} else {
-						return false;
-					}
-					$("#brand_id").animate({ marginLeft: marginLeft + 125}, 200, function(){
-						_scroll_lock = false;
-					});
-				}
-			});
 			
 			$(".promotion .tab").children().mouseover(function(){
 				$(".promotion .item1").removeClass("item1").addClass("item");
@@ -93,14 +60,6 @@
 				<div class="character">厂商专区</div>
 				<div class="btn_goleft"></div>
 				<div class="pic_brand">
-					<div id="brand_id" style="display:none">
-					<div class="brand"><img src="__PUBLIC__/images/brand/b1.jpg"/></div>
-					<div class="brand"><img src="__PUBLIC__/images/brand/b1.jpg"/></div>
-					<div class="brand"><img src="__PUBLIC__/images/brand/b1.jpg"/></div>
-					<div class="brand"><img src="__PUBLIC__/images/brand/b1.jpg"/></div>
-					<div class="brand"><img src="__PUBLIC__/images/brand/b1.jpg"/></div>
-					<div class="brand"><img src="__PUBLIC__/images/brand/b1.jpg"/></div>
-					</div>
                     <table cellspacing="1" align="center" border="0" style="margin-top:7px;">
                     <tr>
                         <td align="center" width="25px" style="display:none;">
@@ -118,40 +77,49 @@
                                             <table border="0" cellpadding="0" cellspacing="0">
                                                 <tr>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.gates.cn/" target="_blank"><img src="__PUBLIC__/images/brand/b1.jpg" border="0"/></a>
+                                                        <a href="http://www.gates.cn/" target="_blank"><img src="__PUBLIC__/images/brand/a1.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.dunlop.com.cn/" target="_blank"><img src="__PUBLIC__/images/brand/b2.jpg" border="0"/></a>
+                                                        <a href="http://www.dunlop.com.cn/" target="_blank"><img src="__PUBLIC__/images/brand/a2.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://am.delphi.com/" target="_blank"><img src="__PUBLIC__/images/brand/b3.jpg" border="0"/></a>
+                                                        <a href="http://am.delphi.com/" target="_blank"><img src="__PUBLIC__/images/brand/a3.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.zf.com.cn" target="_blank"><img src="__PUBLIC__/images/brand/b4.jpg" border="0"/></a>
+                                                        <a href="http://www.zf.com.cn" target="_blank"><img src="__PUBLIC__/images/brand/a4.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.valvoline.com.cn/" target="_blank"><img src="__PUBLIC__/images/brand/b5.jpg" border="0"/></a>
+                                                        <a href="http://www.valvoline.com.cn/" target="_blank"><img src="__PUBLIC__/images/brand/a5.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="#" target="_blank"><img src="__PUBLIC__/images/brand/b6.jpg" border="0"/></a>
+                                                        <a href="#" target="_blank"><img src="__PUBLIC__/images/brand/a6.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.gjautoparts.com.cn/" target="_blank"><img src="__PUBLIC__/images/brand/b7.jpg" border="0"/></a>
+                                                        <a href="http://www.gjautoparts.com.cn/" target="_blank"><img src="__PUBLIC__/images/brand/a7.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.honeywell-turbo.com.cn/Home/Index.asp" target="_blank"><img src="__PUBLIC__/images/brand/b8.jpg" border="0"/></a>
+                                                        <a href="http://www.honeywell-turbo.com.cn/Home/Index.asp" target="_blank"><img src="__PUBLIC__/images/brand/a8.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.trwaftermarket.com/" target="_blank"><img src="__PUBLIC__/images/brand/b9.jpg" border="0"/></a>
+                                                        <a href="http://www.trwaftermarket.com/" target="_blank"><img src="__PUBLIC__/images/brand/a9.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.car-repair.cn/affinia/Raybestos.html" target="_blank"><img src="__PUBLIC__/images/brand/b10.jpg" border="0"/></a>
+                                                        <a href="http://www.car-repair.cn/affinia/Raybestos.html" target="_blank"><img src="__PUBLIC__/images/brand/a10.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.car-repair.cn/affinia/Wix.html" target="_blank"><img src="__PUBLIC__/images/brand/b11.jpg" border="0"/></a>
+                                                        <a href="http://www.car-repair.cn/affinia/Wix.html" target="_blank"><img src="__PUBLIC__/images/brand/a11.jpg" border="0"/></a>
                                                     </td>
                                                     <td style="padding-left:10px; text-align:center;">
-                                                        <a href="http://www.mann-hummel.com/mfcn/" target="_blank"><img src="__PUBLIC__/images/brand/b12.jpg" border="0"/></a>
+                                                        <a href="http://www.mann-hummel.com/mfcn/" target="_blank"><img src="__PUBLIC__/images/brand/a12.jpg" border="0"/></a>
+                                                    </td>
+                                                    <td style="padding-left:10px; text-align:center;">
+                                                        <a href="#" target="_blank"><img src="__PUBLIC__/images/brand/a13.jpg" border="0"/></a>
+                                                    </td>
+                                                    <td style="padding-left:10px; text-align:center;">
+                                                        <a href="#" target="_blank"><img src="__PUBLIC__/images/brand/a14.jpg" border="0"/></a>
+                                                    </td>
+                                                    <td style="padding-left:10px; text-align:center;">
+                                                        <a href="#" target="_blank"><img src="__PUBLIC__/images/brand/a15.jpg" border="0"/></a>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -226,7 +194,7 @@
 	<include file="./Tpl/default/Public/index_bottom.html" />
 	<include file="./Tpl/default/Public/dialog.html" />  
     <script type="text/javascript" language="javascript">
-        var speed = 10//速度数值越大速度越慢
+        var speed = 40//速度数值越大速度越慢
         www_qpsh_com2.innerHTML = www_qpsh_com1.innerHTML
         function Marquee() {
             if (www_qpsh_com2.offsetWidth - www_qpsh_com.scrollLeft <= 0)

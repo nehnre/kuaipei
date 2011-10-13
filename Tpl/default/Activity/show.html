@@ -13,13 +13,13 @@
 	<if condition="empty($preview)">
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Activity/show.js"></script>
 	</if>
-	<title>欢迎光临——快配网</title>	
+	<title>{$result.title}——立配网</title>	
 <body>
 	<include file="./Tpl/default/Public/index_top.html" />
 	<input type="hidden" name="id" id="id" value="{$result.id}" />
 	<div class="body">
 		<div class="align_center index_body">
-			<div class="search">
+			<!--<div class="search">
 				<div class="search_text gray">请输入要查询的内容</div>
 				<div class="search_form">
 					<div class="search_input"><input type="text" /></div>
@@ -29,8 +29,8 @@
 					<a href="#" class="gray">3M</a> <a href="#" class="gray">刹车片</a> <a href="#" class="gray">机油</a> <a href="#" class="gray">导航仪</a>
 					 <a href="#" class="gray">WINX</a>
 				</div>
-			</div>
-			<div class="category" style="width:770px;">
+			</div>-->
+			<!--<div class="category" style="width:770px;">
 				<div class="category_fenlei">分类</div>
 				<div class="category_fenlei_content" style="width:550px;">
 					<a href="#" class="black">所有促销</a><span class="red">(10)</span>
@@ -44,24 +44,24 @@
 				<div class="btn_comment">
 					<input type="button" value="我要评论" />
 				</div>
-			</div>
+			</div>-->
 			<div class="clear"></div>
 			<div class="layer1">
 				<div class="left">
-					<div class="activity_ad">
+					<!--<div class="activity_ad">
 						<img src="__PUBLIC__/Uploads/{$result.topad_pic}" />
-					</div>
+					</div>-->
 					<div class="activity_content">
 						<div class="left">
 							<div class="btn">
 								<input type="button" value="活动介绍" />
-								<input type="button" value="相关产品" />
-								<input type="button" value="品牌故事" />
+								<!--<input type="button" value="相关产品" />
+								<input type="button" value="品牌故事" />-->
 							</div>
 							<div class="picture">
 								<img src="__PUBLIC__/Uploads/{$result.activity_pic}" />
 							</div>
-							<div class="text">活动结束日期：{$result.end_time}</div>
+							<div class="text"><!--{$result.end_time}-->{$result.sponsor}</div>
 						</div>
 						<div class="right">
 							<div class="title bold">{$result.title}</div>
@@ -69,7 +69,7 @@
 								<volist name="introduce" id="vo">
 								<div>{$vo}</div>
 								</volist>
-								<div>主办方：{$result.sponsor}</div>
+								<!--<div>主办方：{$result.sponsor}</div>-->
 							</div>
 							<div class="introduce_list">
 								<ul>
@@ -85,7 +85,7 @@
 						</div>
 					</div>
 					<div class="clear"></div>
-					<div class="activity_describe">
+					<!--<div class="activity_describe">
 						<div class="left_title">
 							<span>详</span>细介绍
 							<a href="#" class="gray">更多 ></a>
@@ -94,7 +94,7 @@
 							<img src="__PUBLIC__/Uploads/{$result.detail_pic}" />
 						</div>
 						<div class="left_bottom"></div>
-					</div>
+					</div>-->
 					<div class="activity_comment">
 						<div class="left_title">
 							<span>用</span>户心得
@@ -122,23 +122,21 @@
 					<div class="activity_guide">
 						<div class="activity_title1">活动指南</div>
 						<div class="activity_content1">
-							1、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
-							2、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
-							3、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
-							4、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
-							5、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
-							6、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
-							7、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
-							8、劳而无功砌砖劳而无功顶戴顶戴加加盟加有仍然无可奈何<br />
+							如何参加试用活动？<br />
+							如何获得试用品？<br />							
 						</div>
 					</div>
 					<div class="clear"></div>
 					<div class="custom_service">
-						<div class="activity_title1">客服电话</div>
-						<div class="activity_content1">021-8854354</div>
+						<div class="activity_title1">联系我们</div>
+						<div class="activity_content1" align="center">
+                        客服电话：+8621 32562997<br />
+                        客服QQ：2604517234<br />
+                        会员服务：Service@L-pei.com<br />
+</div>
 					</div>
 					<div class="clear"></div>
-					<div class="activity_faq">
+					<!--<div class="activity_faq">
 						<div class="activity_title1">FAQ常见问题</div>
 						<div class="activity_content1">
 							1、劳而无功砌<br />
@@ -147,12 +145,12 @@
 							4、劳而无功砌<br />
 						</div>
 						
-					</div>
+					</div>-->
 					<div class="ads">
-						<div><img src="__PUBLIC__/images/ad1.jpg" /></div>
+						<!--<div><img src="__PUBLIC__/images/ad1.jpg" /></div>
 						<div><img src="__PUBLIC__/images/ad2.jpg" /></div>
 						<div><img src="__PUBLIC__/images/ad2.jpg" /></div>
-						<div><img src="__PUBLIC__/images/ad3.jpg" /></div>
+						<div><img src="__PUBLIC__/images/ad3.jpg" /></div>-->
 					</div>
 				</div>
 			</div>

@@ -53,9 +53,12 @@ class RegAction extends Action
 			if("导入" == $result["import_flag"]){
 				if($check_num == $result["check_num"]){
 					Session::set("id", $result["id"]);
-					Session::set("nick_name", $result["nick_name"]);
 					$this -> ajaxReturn(2,"验证成功！",2);
+				} else {
+					$this -> ajaxReturn(1,"验证失败！",1);
 				}
+			} else {
+				$this -> ajaxReturn(1,"验证失败！",1);
 			}
 		} else {
 			if($check_num == Session::get($user_name)){
@@ -80,20 +83,26 @@ class RegAction extends Action
 		$condition['user_name'] = $user_name;
 		$result = $User -> where($condition) -> field("id, check_num, import_flag") -> find();
 		if(!empty($result)){
-			if("导入" == $result["import_flag"]){
-				$check_num = $result["check_num"];
-				Session::set($user_name, $check_num);
-				$this -> ajaxReturn("",$check_num);
-			} else {
-				$this -> ajaxReturn("","用户名已经存在，不能注册");
-			}
+			// if("导入" == $result["import_flag"]){
+				// $check_num = $result["check_num"];
+				// Session::set($user_name, $check_num);
+				// $this -> ajaxReturn("",$check_num);
+			// } else {
+				// $this -> ajaxReturn("","用户名已经存在，不能注册");
+			// }
+			
+			$json["success"] = false;
+			$json["msg"] = "用户名已经存在，不能注册！";
 		} else {
 			$check_num = rand(100000, 999999);
 			Session::set($user_name,$check_num);
 			$sendSms = "sendSms";
-			//$this -> $sendSms($user_name, $check_num);
-			$this -> ajaxReturn($status,$check_num,2);
+			$result = $this -> $sendSms($user_name, "您的手机验证码为".$check_num."，请即登录立配网（www.L-pei.com)验证。成为立配网认证会员，即可享有立配网所有的信息资源和商务服务。");
+			$json["msg"] = "验证码发送成功！";
+			$json["success"] = true;
+			
 		}
+		$this -> ajaxReturn($json);
 	}
 	
     /**
@@ -178,7 +187,10 @@ class RegAction extends Action
 		if(!Session::is_set("id")){
 			$this->error("没有登录！");
 		}
-        $this->display();
+		$User = M("User");
+		$result = $User -> where("id=".Session::get("id")) -> field("import_flag") -> find();
+		$this -> assign("result", $result);
+        $this -> display();
 	}
 
 	
@@ -236,6 +248,16 @@ class RegAction extends Action
 			Session::set("nick_name", $User -> nick_name);
 		}else {
 			$User -> id = Session::get("id");
+			//如果是导入用户，且是最后一步，则状态变为已认证
+			if("导入" == $User -> import_flag){
+				if("未激活" == $User -> activite_flag){
+					$User -> activite_flag = "已激活";
+					Session::set("nick_name", $User -> nick_name);
+				}
+				if(!empty($auth)){
+					$User -> status = "已审核";
+				}
+			}
 			$User -> save();
 		}
 		
@@ -310,7 +332,7 @@ class RegAction extends Action
 	
 	private function sendSms($mobile, $content){
 		$target = "http://219.146.191.154:6003/submitdata/Service.asmx/g_Submit";
-		$post_data = "sname=shej9233&spwd=123456&scorpid=&sprdid=1012812&sdst=" . $mobile . "&smsg=".rawurlencode($content);
+		$post_data = "sname=dlshzy03&spwd=87654321&scorpid=&sprdid=1012812&sdst=" . $mobile . "&smsg=".rawurlencode($content);
 		$post = "post";
 		$gets = $this -> $post($post_data, $target);
 		return $gets;

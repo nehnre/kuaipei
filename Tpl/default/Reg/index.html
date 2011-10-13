@@ -12,7 +12,7 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/passwordstrength.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Reg/index.js"></script>
-	<title>普通用户注册——快配网</title>
+	<title>普通用户注册——立配网</title>
 </head>
 <body>
 	<div>
@@ -30,6 +30,8 @@
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td align="center"><form class="niceform">
+								<input type="hidden" name="import_flag" value="{$result.import_flag}" />
+								<input type="hidden" name="activite_flag" value="{$result.activite_flag}" />
 								<table width="70%" border="0" cellspacing="0" cellpadding="0" id="formtable">
 									<tr>
 										<td colspan="2"></td>
@@ -77,7 +79,7 @@
 									</tr>
 									<tr>
 										<td></td>
-										<td><input type="checkbox" id="agree" checked="checked"/> 我已经阅读并同意<a href="###" id="btnAgreement">快配网协议</a></td>
+										<td><input type="checkbox" id="agree" checked="checked"/> 我已经阅读并同意<a href="###" id="btnAgreement">立配网协议</a></td>
 									</tr>
 									<tr>
 										<td></td>

@@ -42,14 +42,14 @@ a:hover{
 }
 
 .menu_promotion{
-	background:url("../images/menu_promotion.jpg");
+	background:url("../images/menu_blank.jpg");
 }
 .menu_promotion1{
 	background:url("../images/menu_promotion1.jpg");
 }
 
 .menu_news{
-	background:url("../images/menu_news.jpg");
+	background:url("../images/menu_blank.jpg");
 }
 .menu_news1{
 	background:url("../images/menu_news1.jpg");
@@ -63,7 +63,7 @@ a:hover{
 }
 
 .menu_activity{
-	background:url("../images/menu_activity.jpg");
+	background:url("../images/menu_blank.jpg");
 }
 .menu_activity1{
 	background:url("../images/menu_activity1.jpg");

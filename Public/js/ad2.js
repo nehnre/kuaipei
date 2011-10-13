@@ -15,7 +15,7 @@ $(function(){
 			    showImg(index)
 				index++;
 				if(index==len){index=0;}
-			  } , 3000);
+			  } , 5000);
 	 }).trigger("mouseleave");
 })
 // 通过控制top ，来显示不同的幻灯片

@@ -18,6 +18,31 @@ class UserCenterAction extends Action
 		$this->display();
 	}
 
+
+	public function editPassword(){
+		if(!Session::is_set("id")){
+			$this->error("没有登录！");
+		}
+		$this->display();
+	}
+
+	public function updatePassword(){
+		if(!Session::is_set("id")){
+			$this->error("没有登录！");
+		}
+		$User = M('User');
+		$User -> create();
+		$User -> update_time = date("Y-m-d H:i:s");
+		//处理密码
+		$password = $_REQUEST["password"];
+		if(!empty($password)){
+			$User -> password = md5($password); 
+		} 
+		$User -> id = Session::get("id");
+		$User -> save();
+		$this -> ajaxReturn(1,"修改成功",2);
+	}
+
 	    /**
     +----------------------------------------------------------
     * 返回认证页面

@@ -11,10 +11,17 @@ $(function(){
 
 //检测密码是否匹配
 function checkPassword(){
+	var oldpassword = $("#oldpassword").val();
 	var password = $("#password").val();
 	var passwordagain = $("#passwordagain").val();
+	if(!oldpassword){
+		showAlert("请输入原登录密码！",function(){
+			$("#oldpassword").focus();
+		});
+		return false;
+	}
 	if(!password){
-		showAlert("请输入密码！",function(){
+		showAlert("请输入新登录密码！",function(){
 			$("#password").focus();
 		});
 		return false;
@@ -39,18 +46,35 @@ function checkPassword(){
 
 function submitForm(){
 	var data = $("form").serialize();
-	console.log(data);
+	var oldpassword = $("#oldpassword").val();
 	$.ajax({
-		url:"updatePassword",
+		url:"checkPassword",
 		type:"POST",
-		data: data,
+		data: "oldpassword="+oldpassword,
 		success: function(json){
-			showAlert("修改成功",function(){
-				location.href = "userCenterDetail";
-		    });
+           	json = nehnre.parseJSON(json);
+			if(json.data.success){
+					console.log(data);
+					$.ajax({
+						url:"updatePassword",
+						type:"POST",
+						data: data,
+						success: function(json){
+							showAlert("修改成功",function(){
+								location.href = "userCenterDetail";
+							});
+						},
+						error: function(){
+							showAlert("提交失败，可能服务器出现故障。");
+						}
+					});
+			}else{
+				showAlert(json.data.msg);
+			}
 		},
 		error: function(){
 			showAlert("提交失败，可能服务器出现故障。");
 		}
 	});
+
 }

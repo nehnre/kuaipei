@@ -43,7 +43,7 @@ a.ymn:visited {	text-decoration:none;	color:#ffffff; font-weight: bold;}
 a.ymn:hover {	text-decoration: none;	color:#cccccc; font-weight: bold;}
 a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 
-
+.sj{text-indent: 25px;}
 
 /* 中间 _____*/
 #inw {  margin:0 auto;  width:1360px;  }

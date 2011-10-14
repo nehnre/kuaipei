@@ -211,8 +211,10 @@ $(function(){
 
 function checkForm(){
 	var b = true;
-	b = b && notNull("user_type1", "一级分类")
-	b = b && notNull("user_type2", "二级分类")
+	b = b && notNull("user_type1", "一级分类");
+	b = b && notNull("user_type2", "二级分类");
+	b = b && notNull("nick_name", "昵称");
+	b = b && notNull("email", "email");
 	return b;
 }
 

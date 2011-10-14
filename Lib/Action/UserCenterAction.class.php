@@ -18,6 +18,26 @@ class UserCenterAction extends Action
 		$this->display();
 	}
 
+	public function  checkPassword() {
+		if(!Session::is_set("id")){
+			$json["success"] = false;
+			$json["msg"] = "没有登录";
+		}else{
+			$condition["id"]  = Session::get("id");
+			$condition["password"] = $_REQUEST["oldpassword"];
+			$condition["password"] = md5($condition["password"]);
+			$User = M("User");
+			$result = $User -> where($condition) -> find();
+			if(empty($result)){
+				$json["success"] = false;
+				$json["msg"] = "原密码不正确！";
+			}else{
+				$json["success"] = true;
+			}
+		}
+			$this -> ajaxReturn($json);
+	}
+
 
 	public function editPassword(){
 		if(!Session::is_set("id")){

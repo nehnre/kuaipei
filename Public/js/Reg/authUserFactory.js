@@ -119,6 +119,7 @@ function checkForm(){
 	b = b && notNull("business_card", "名片");
 	b = b && notNull("company_name", "企业名称");
 	b = b && notNull("company_address", "企业地址");
+	b = b && checkEmail();
 	b = b && notNull("post_code", "邮编");
 	b = b && notNull("business_call", "商务联系电话");
 	b = b && notNull("link_man", "联系人");
@@ -147,6 +148,17 @@ function checkBirthday(){
 	if(!nehnre.reg.birthday.test(val)){
 		showAlert("请输入正确的日期格式<br>如：1984-09-11", function(){
 			$("#birthday").focus();
+		});
+		return false;
+	}
+	return true;
+}
+//检测email
+function checkEmail(){
+	var email = $("#email").val();
+	if(email && !nehnre.reg.email.test(email)){
+		showAlert("电子邮件格式不正确！",function(){
+			$("#email").focus();
 		});
 		return false;
 	}

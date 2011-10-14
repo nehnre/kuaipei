@@ -68,12 +68,15 @@ $(function(){
 		var expirse = $(this).attr("expirse");
 		var start_time = $(this).attr("start_time");
 		var end_time = $(this).attr("end_time");
+		var import_flag = $(this).attr("import_flag");
 		if(unlogin){
 			$("#login").click();
+		} else if("导入" == import_flag && status == "基本注册"){
+			showAlert("尊敬的立配网会员，您的部分信息有待补充完善，为了我们能为你提供更好的服务，<a href='/Reg/chooseType' style='text-decoration:underline;color:#ce0000'>请立即完善认证资料</a>");
 		} else if(status == "基本注册"){
-			showAlert("你的状态是：基本注册，活动只有审核用户可以参加，<a href='/Reg/chooseType'>立即申请</a>");
+			showAlert("您现在还是普通注册会员，只有认证会员才能参加活动。<a href='/Reg/chooseType' style='text-decoration:underline;color:#ce0000'>立即升级为认证会员</a>");
 		} else if(status == "待审核"){
-			showAlert("你的状态是：待审核，请耐心等待管理的审核！");
+			showAlert("尊敬的立配网会员，您的认证资料仍在审核中。通过审核认证后，我们将立即发送短信到您的手机上，敬请留意查收。");
 		} else if(~~expirse < 0){
 			showAlert("活动还没有开始，开始时间：{0}".format(start_time));
 		} else if(~~expirse > 0){

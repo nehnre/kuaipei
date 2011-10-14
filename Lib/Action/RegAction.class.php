@@ -243,6 +243,8 @@ class RegAction extends Action
 			$User -> status = "基本注册";
 			$User -> user_name = $user_name;
 			$id = $User -> add();
+			$sendSms = "sendSms";
+			$this -> $sendSms($user_name, "恭喜！您已成功注册成为立配网会员。登录立配网www.L-pei.com即可享有立配网所有的信息资源和商务服务。");
 			Session::clear();
 			Session::set("id", $id);
 			Session::set("nick_name", $User -> nick_name);

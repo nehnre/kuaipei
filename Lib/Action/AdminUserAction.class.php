@@ -150,14 +150,18 @@ class AdminUserAction extends Action
 		$data["status"] = "已审核";
 		$data["update_time"]  = date("Y-m-d H:i:s");
 		$condition["id"] = $id ;
-		$result = $User -> where($condition)->save($data);
-	   if($result !== false){
-             $json["success"] = true;
-		     $json["msg"] = "审核成功！";
-       }else{
-             $json["success"] = false;
-		     $json["msg"] = "审核失败！";
-       }
+		$User -> where($condition)->save($data);
+		$result = $User -> where($condition) -> field("user_name, true_name") -> find();
+		if(empty($result["true_name"])){
+			$true_name = "用户";
+		} else {
+			$true_name = $result["true_name"];
+		}
+		$user_name = $result["user_name"];
+		$json["success"] = true;
+		$json["msg"] = "审核成功！";
+		$sendSms = "sendSms";
+		$this -> $sendSms($user_name, "尊敬的".$true_name."，您已通过审核，成为立配网认证会员！【立配网】");
 		$this -> ajaxReturn($json);
 	}
 	
@@ -237,14 +241,15 @@ class AdminUserAction extends Action
 				$User -> import_flag = "导入";
 				$User -> activite_flag = "未激活";
 				$User -> status = "基本注册";
+				$User -> business_card = "default_business_card.jpg";
 				$User -> check_num = rand(100000, 999999);
 				$User -> insert_time = date("Y-m-d H:i:s");
 				$User -> update_time = date("Y-m-d H:i:s");
 				$User -> add();
 				/*短信发送激活码*/
 				
-				$r = $this -> $sendSms($User -> user_name, "尊敬的".$User -> true_name."您已成为立配网认证会员！您的账户名为".$User -> user_name."，激活码为".$User -> check_num."，上www.L-pei.com激活为认证会员即送好礼。");
-				echo '<div>'.$r.'</div>';
+				$r = $this -> $sendSms($User -> user_name, "尊敬的".$User -> true_name."您已成为立配网认证会员！您的账户名为".$User -> user_name."，激活码为".$User -> check_num."，上www.L-pei.com激活为认证会员即送好礼。提醒：请到武汉国际展览中心A1展厅448展位领取。");
+				//echo '<div>'.$r.'</div>';
 				/*短信发送激活码*/
 				echo '<div>用户' . $User -> user_name . '导入成功</div>';
 				flush();

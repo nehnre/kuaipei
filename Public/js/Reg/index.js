@@ -69,8 +69,8 @@ function checkNickName(){
 		});
 		return false;
 	}
-	if(nickName.length > 6){
-		showAlert("昵称长度不能超过六个汉字！", function(){
+	if(nickName.length > 12){
+		showAlert("昵称长度不能超过12个字符！", function(){
 			$("#nick_name").focus();
 		});
 		return false;

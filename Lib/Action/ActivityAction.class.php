@@ -50,8 +50,19 @@ class ActivityAction extends Action
 			$Userlog -> act_describ = "参加抽奖活动一次";
 			$Userlog -> insert_time = date("Y-m-d H:i:s");
 			$Userlog -> add();
+			$User = M("User");
+			$condition["id"] = $user_id;
+			$result = $User -> where($condition) -> field("user_name, true_name") -> find();
+			if(empty($result["true_name"])){
+				$true_name = "用户";
+			} else {
+				$true_name = $result["true_name"];
+			}
+			$user_name = $result["user_name"];
+			$sendSms = "sendSms";
+			$this -> $sendSms($user_name, "尊敬的".$true_name."，感谢您参加本次立配网活动！我们将在您获得试用资格后，发送试用通知，敬请留意。【立配网】");
 			$json["success"] = true;
-			$json["msg"] = "参加成功！感谢您参加本次活动，审定结果将会由网站工作人员与您联系！";
+			$json["msg"] = "参加成功！感谢您参加本次活动，我们将在您获得试用资格后，发送短信通知到您的手机上，敬请留意查收。";
 		}
 		$this -> ajaxReturn($json);
 	}
@@ -286,15 +297,38 @@ class ActivityAction extends Action
 		return $id;		
 	}
 	
+	
+	private function post($data, $target) {
+		$url_info = parse_url($target);
+		$httpheader = "POST " . $url_info['path'] . " HTTP/1.0\r\n";
+		$httpheader .= "Host:" . $url_info['host'] . "\r\n";
+		$httpheader .= "Content-Type:application/x-www-form-urlencoded\r\n";
+		$httpheader .= "Content-Length:" . strlen($data) . "\r\n";
+		$httpheader .= "Connection:close\r\n\r\n";
+		$httpheader .= $data;
+
+		$fd = fsockopen($url_info['host'], 80);
+		fwrite($fd, $httpheader);
+		$gets = "";
+		while(!feof($fd)) {
+			$gets .= fread($fd, 128);
+		}
+		fclose($fd);
+		return $gets;
+	}
+	
+	private function sendSms($mobile, $content){
+		$target = "http://60.28.195.138/submitdata/service.asmx/g_Submit";
+		$post_data = "sname=dlshzy03&spwd=87654321&scorpid=&sprdid=1012818&sdst=" . $mobile . "&smsg=".rawurlencode($content);
+		$post = "post";
+		$gets = $this -> $post($post_data, $target);
+		return $gets;
+	}
 	public function test(){
-		$VActivityComment = M("vactivity_comment");
-		$condition["activity_id"] = 34;
-		$count = $VActivityComment -> where($condition) -> count();
-		import("ORG.Util.Page");
- 		$Page = new Page($count, 10);
-		$foot = $Page -> show();
-		$list = $VActivityComment -> where($condition) -> order('insert_time') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
-		$this -> ajaxReturn($count);
+			$User = M("User");
+			$condition["id"] = 22;
+			$true_name = $User -> where($condition) -> field("true_name") -> find();
+			$this -> ajaxReturn($true_name);
 	}
 	
 }

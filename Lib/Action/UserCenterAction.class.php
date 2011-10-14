@@ -1,5 +1,5 @@
 <?php
-class UserCenter extends Action
+class UserCenterAction extends Action
 {	
 	
     /**
@@ -7,7 +7,7 @@ class UserCenter extends Action
     * 返回认证页面
     +----------------------------------------------------------
     */
-	public function userCenter(){
+	public function userCenterEdit(){
 		if(!Session::is_set("id")){
 			$this->error("没有登录！");
 		}
@@ -15,18 +15,32 @@ class UserCenter extends Action
 		$User = M("User");
 		$result = $User -> where("id=".$id) -> find();
 		$this -> assign("result",$result);
-		//$this -> display($template);
+		$this->display();
+	}
+
+	    /**
+    +----------------------------------------------------------
+    * 返回认证页面
+    +----------------------------------------------------------
+    */
+	public function userCenterDetail(){
+		if(!Session::is_set("id")){
+			$this->error("没有登录！");
+		}
+		$id = Session::get("id");
+		$User = M("User");
+		$result = $User -> where("id=".$id) -> find();
+		$this -> assign("result",$result);
 		$this->display();
 	}
 
     /**
     +----------------------------------------------------------
-    * 保存注册基本信息
+    * 保存基本信息
     +----------------------------------------------------------
     */
 	public function updateUser(){
 	
-		$if_insert = Session::is_set("user_name_temp");
 		if(!Session::is_set("id") && !$if_insert){
 			$this->error("没有登录！");
 		}
@@ -34,33 +48,8 @@ class UserCenter extends Action
 		$User = M('User');
 		$User -> create();
 		$User -> update_time = date("Y-m-d H:i:s");
-		
-		
-		//处理认证
-		$auth = $_REQUEST["auth"];
-		if(!empty($auth)){
-			$User -> status = "待审核";
-		}
-		
-		//处理密码
-		$password = $_REQUEST["password"];
-		if(!empty($password)){
-			$User -> password = md5($password); 
-		} 
-		
-		//判断是插入还是更新
-		if($if_insert){
-			$user_name = Session::get("user_name_temp");
-			$User -> insert_time = date("Y-m-d H:i:s");
-			$User -> status = "基本注册";
-			$User -> user_name = $user_name;
-			$id = $User -> add();
-			Session::set("id", $id);
-			Session::set("nick_name", $User -> nick_name);
-		}else {
-			$User -> id = Session::get("id");
-			$User -> save();
-		}
+		$User -> id = Session::get("id");
+		$User -> save();
 		
 		//处理附件上传
 		$moveFile = "moveFile";

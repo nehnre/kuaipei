@@ -127,7 +127,7 @@ $(function(){
 				data: data,
 				type: "POST",
 				success: function(json){
-					location.href = "userCenter";
+					location.href = "userCenterDetail";
 				},
 				error: function(){
 					showAlert("保存失败！", function(){

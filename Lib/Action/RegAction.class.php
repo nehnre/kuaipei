@@ -320,7 +320,7 @@ class RegAction extends Action
 		$httpheader .= "Connection:close\r\n\r\n";
 		$httpheader .= $data;
 
-		$fd = fsockopen($url_info['host'], 6003);
+		$fd = fsockopen($url_info['host'], 80);
 		fwrite($fd, $httpheader);
 		$gets = "";
 		while(!feof($fd)) {

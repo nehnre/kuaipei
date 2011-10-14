@@ -51,7 +51,7 @@ class ActivityAction extends Action
 			$Userlog -> insert_time = date("Y-m-d H:i:s");
 			$Userlog -> add();
 			$json["success"] = true;
-			$json["msg"] = "参加成功！感谢您参加本次抽奖活动，抽奖结果将会由网站工作人员与您联系！";
+			$json["msg"] = "参加成功！感谢您参加本次活动，审定结果将会由网站工作人员与您联系！";
 		}
 		$this -> ajaxReturn($json);
 	}

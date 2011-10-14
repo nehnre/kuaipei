@@ -400,7 +400,6 @@ a:hover{
 
 .trends_content .content{
 	padding:7px 10px 7px 10px;
-	height:254px;
 }
 .trends_content .content .row{
 	line-height:25px;
@@ -415,9 +414,7 @@ a:hover{
 	margin-top:10px;
 }
 .trends_content .content  .action{
-	overflow:hidden;
-	white-space:nowrap;
-	line-height:25px;
+	margin-top:5px;
 }
 
 

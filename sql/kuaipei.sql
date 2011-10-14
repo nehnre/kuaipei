@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-10-14 20:23:02
+Date: 2011-10-14 21:45:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -227,4 +227,4 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- View structure for `kp_vuserlog`
 -- ----------------------------
 DROP VIEW IF EXISTS `kp_vuserlog`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vuserlog` AS select `t2`.`id` AS `id`,`t1`.`nick_name` AS `nick_name`,`t2`.`act_describ` AS `act_describ`,`t2`.`insert_time` AS `insert_time` from (`kp_user` `t1` join `kp_userlog` `t2`) where ((`t1`.`id` = `t2`.`user_id`) and (`t2`.`table_name` <> 'kp_user'));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vuserlog` AS select `t2`.`id` AS `id`,`t1`.`nick_name` AS `nick_name`,`t3`.`sponsor` AS `sponsor`,`t2`.`insert_time` AS `insert_time` from ((`kp_user` `t1` join `kp_userlog` `t2`) join `kp_activity` `t3`) where ((`t1`.`id` = `t2`.`user_id`) and (`t2`.`table_name` = 'kp_activity') and (`t3`.`id` = `t2`.`table_id`));

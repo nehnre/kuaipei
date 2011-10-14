@@ -331,8 +331,8 @@ class RegAction extends Action
 	}
 	
 	private function sendSms($mobile, $content){
-		$target = "http://219.146.191.154:6003/submitdata/Service.asmx/g_Submit";
-		$post_data = "sname=dlshzy03&spwd=87654321&scorpid=&sprdid=1012812&sdst=" . $mobile . "&smsg=".rawurlencode($content);
+		$target = "http://60.28.195.138/submitdata/service.asmx/g_Submit";
+		$post_data = "sname=dlshzy03&spwd=87654321&scorpid=&sprdid=1012818&sdst=" . $mobile . "&smsg=".rawurlencode($content);
 		$post = "post";
 		$gets = $this -> $post($post_data, $target);
 		return $gets;

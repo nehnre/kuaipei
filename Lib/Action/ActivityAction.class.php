@@ -112,7 +112,7 @@ class ActivityAction extends Action
 		import("ORG.Util.Page");
  		$Page = new Page($count, 10);
 		$foot = $Page -> show();
-		$list = $Activity -> where($condition) -> order('start_time') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+		$list = $Activity -> where($condition) -> order('insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
 		
 		$this->assign('list',$list); 
 		$this->assign('foot',$foot);

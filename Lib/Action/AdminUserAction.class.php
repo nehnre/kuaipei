@@ -20,6 +20,7 @@ class AdminUserAction extends Action
 		$id = $_REQUEST["id"];
 		$User = M("User");
 		$User -> where("id=".$id) -> delete();
+		header("Content-type: text/html; charset=utf-8");
 		echo '<script>alert("删除成功！");location.href="listUser";try{window.event.returnValue=false; }catch(e){}</script>';
 	}
 	
@@ -107,6 +108,7 @@ class AdminUserAction extends Action
 		$deletePastdueFile = "deletePastdueFile";
 		$this -> $deletePastdueFile();
 		//$this -> ajaxReturn($id);
+		header("Content-type: text/html; charset=utf-8");
 		echo '<script>alert("保存成功！");location.href="listUser";try{window.event.returnValue=false; }catch(e){}</script>';
 	}
 
@@ -187,6 +189,7 @@ class AdminUserAction extends Action
 			$csv = new csvDataFile($judgeResult["rename_filename"]); 
 			$n = 0;
 			$sendSms = "sendSms";
+			header("Content-type: text/html; charset=utf-8"); 
 			while($csv->next_Row()) { 
 				++ $n;
 				$User = M("User");
@@ -240,8 +243,8 @@ class AdminUserAction extends Action
 				$User -> add();
 				/*短信发送激活码*/
 				
-				$this -> $sendSms($user_name, "尊敬的".$User -> check_num."您已成为立配网认证会员！您的账户名为” + username + “，激活码为” + active1 + ”，上www.L-pei.com激活为认证会员即送好礼。");
-			
+				$r = $this -> $sendSms($User -> user_name, "尊敬的".$User -> true_name."您已成为立配网认证会员！您的账户名为".$User -> user_name."，激活码为".$User -> check_num."，上www.L-pei.com激活为认证会员即送好礼。");
+				echo '<div>'.$r.'</div>';
 				/*短信发送激活码*/
 				echo '<div>用户' . $User -> user_name . '导入成功</div>';
 				flush();

@@ -13,8 +13,8 @@
 					<div class="top_menu menu_help"></div>
 				</div>
 				<div class="subscription">
-					<div class="red bold" style="height:18px">及时参加配件促销！</div>
-					<div style="height:22px;"><input type="text" value="输入Email订阅促销信息" style="width:150px;color:gray;" name="subEmail" id="subEmain"/> <input type="button" value=" 订 阅 " style="height:20px; width:45px;"/></div>
+					<div class="red bold" style="height:18px">及时了解促销活动！</div>
+					<div style="height:22px;"><input type="text" value="输入Email订阅促销信息" style="width:150px;color:gray;" name="subEmail" id="subEmail"/> <input type="button" id="btnSubEmail" value=" 订 阅 " style="height:20px; width:45px;"/></div>
 				</div>
 				<div class="btn_reg gray">
 					<if condition="empty($_SESSION['id'])">
@@ -37,7 +37,7 @@
 				});
 			});
 			
-			$("#subEmain").click(function(){
+			$("#subEmail").click(function(){
 				var val = $(this).val();
 				if("输入Email订阅促销信息" == val){
 					$(this).val("");
@@ -49,6 +49,37 @@
 					$(this).val("输入Email订阅促销信息");
 					$(this).css("color","gray");
 				}
+			});
+			
+			$("#btnSubEmail").click(function(){
+				var val = $("#subEmail").val();
+				if(!val || "输入Email订阅促销信息" == val){
+					showAlert("请输入Email！",function(){
+						$("#subEmail").focus();
+					});
+					return;
+				}
+				if(!nehnre.reg.email.test(val)){
+					showAlert("Email格式不正确！",function(){
+						$("#subEmail").focus();
+					});
+					return;
+				}
+				showWaiting();
+				$.ajax({
+					url:"/Subscribe/index",
+					type:"post",
+					data: "subEmail=" + val,
+					success: function(json){
+						json = nehnre.parseJSON(json);
+						showAlert(json.data.msg, function(){
+							if(json.data.success){
+								$("#subEmail").val("").blur();
+							}
+						});
+					}
+				});
+				
 			});
 			$( "#dialog-login" ).dialog({
 				height: 140,

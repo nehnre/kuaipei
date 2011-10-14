@@ -50,6 +50,7 @@ $(function(){
 				json = nehnre.parseJSON(json);
 				showAlert(json.data.msg, function(){
 					if(json.data.success){
+						$("#btnComment").attr("disabled", true);
 						location.href = location.href.replace(/#*$/ig,"");
 						try{
 							window.event.returnValue=false;  
@@ -69,8 +70,10 @@ $(function(){
 		var end_time = $(this).attr("end_time");
 		if(unlogin){
 			$("#login").click();
-		} else if(status != "已审核"){
-			showAlert("你的状态是：{0}，活动只有审核用户可以参加！".format(status));
+		} else if(status == "基本注册"){
+			showAlert("你的状态是：基本注册，活动只有审核用户可以参加，<a href='/Reg/chooseType'>立即申请</a>");
+		} else if(status == "待审核"){
+			showAlert("你的状态是：待审核，请耐心等待管理的审核！");
 		} else if(~~expirse < 0){
 			showAlert("活动还没有开始，开始时间：{0}".format(start_time));
 		} else if(~~expirse > 0){
@@ -87,6 +90,7 @@ $(function(){
 					json = nehnre.parseJSON(json);
 					showAlert(json.data.msg, function(){
 						if(json.data.success){
+							$("#btnJoin").unbind("click");
 							location.href = location.href.replace(/#*$/ig,"");
 							try{
 								window.event.returnValue=false;  

@@ -107,12 +107,14 @@ $(function(){
 	$("#btnSubmit").click(function(){
 		var user_type1 =   $("#user_type1").val();
 		var a = checkForm();
-		if(user_type1=='厂商'||user_type1=='经销商'||user_type1=='修理厂'){
-			a = checkUserFactoryForm();
-		} else if(user_type1=='车队'){
-			a = checkUserCarTeamForm();
-		}else if(user_type1=='车主'){
-			a = checUserCarHostForm();
+		if(a){
+			if(user_type1=='厂商'||user_type1=='经销商'||user_type1=='修理厂'){
+				a = checkUserFactoryForm();
+			} else if(user_type1=='车队'){
+				a = checkUserCarTeamForm();
+			}else if(user_type1=='车主'){
+				a = checUserCarHostForm();
+			}
 		}
 		if(a){
 			var data = $("#myForm").serialize();

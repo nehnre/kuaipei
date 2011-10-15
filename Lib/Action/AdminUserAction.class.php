@@ -149,6 +149,7 @@ class AdminUserAction extends Action
 		$User = M("User");
 		$data["status"] = "已审核";
 		$data["update_time"]  = date("Y-m-d H:i:s");
+		$data["audit_time"]  = date("Y-m-d H:i:s");
 		$condition["id"] = $id ;
 		$User -> where($condition)->save($data);
 		$result = $User -> where($condition) -> field("user_name, true_name") -> find();

@@ -258,6 +258,7 @@ class RegAction extends Action
 				}
 				if(!empty($auth)){
 					$User -> status = "已审核";
+					$User -> audit_time = date("Y-m-d H:i:s");
 				}
 			}
 			$User -> save();

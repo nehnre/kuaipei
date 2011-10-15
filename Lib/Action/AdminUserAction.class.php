@@ -105,8 +105,8 @@ class AdminUserAction extends Action
 		if(!empty($User -> vehicle_license)){
 			$this -> $moveFile($User -> vehicle_license);
 		}
-		$deletePastdueFile = "deletePastdueFile";
-		$this -> $deletePastdueFile();
+		// $deletePastdueFile = "deletePastdueFile";
+		// $this -> $deletePastdueFile();
 		//$this -> ajaxReturn($id);
 		header("Content-type: text/html; charset=utf-8");
 		echo '<script>alert("保存成功！");location.href="listUser";try{window.event.returnValue=false; }catch(e){}</script>';

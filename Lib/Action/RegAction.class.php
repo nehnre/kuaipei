@@ -280,8 +280,8 @@ class RegAction extends Action
 		if(!empty($User -> vehicle_license)){
 			$this -> $moveFile($User -> vehicle_license);
 		}
-		$deletePastdueFile = "deletePastdueFile";
-		$this -> $deletePastdueFile();
+		// $deletePastdueFile = "deletePastdueFile";
+		// $this -> $deletePastdueFile();
 		
 		$this -> ajaxReturn(1,"更新成功",2);
 	}

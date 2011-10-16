@@ -1,0 +1,86 @@
+<html> 
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>立配网欢迎你::系统==首页</title>
+		<link rel="stylesheet" href="__PUBLIC__/css/adminLogin.css" type="text/css"></link>
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+
+	</head>
+	<body>
+		<table width="100%" height="100%" cellpadding="0" cellspacing="0" style="font-size: 12px;" border="0" class="login_bg">
+		   <tr>
+				 <td width="35%">&nbsp;</td>
+	             <td width="65%"><table width="100%" height="59" border="0" align="center" cellpadding="0" cellspacing="0">
+						   <tr>
+							  <td width="4%">&nbsp;</td>
+							  <td width="96%" height="38" ><span class="login_txt_bt">登陆立配网后台管理</span></td>
+							</tr>
+							<tr>
+							  <td>&nbsp;</td>
+							  <td height="21" ><table cellSpacing="0" cellPadding="0" width="100%" border="0" id="table211" height="328">
+								  <tr>
+									<td height="164" colspan="2" align="middle">
+										<table cellSpacing="0" cellPadding="0" width="100%" border="0" height="143" id="table212">
+										  <tr>
+											<td width="13%" height="38" class="top_hui_text"><span class="login_txt">管理员：&nbsp;&nbsp; </span></td>
+											<td height="38" colspan="2" class="top_hui_text"><input name="user_name" class="editbox4" id="user_name" size="20">                            </td>
+										  </tr>
+										  <tr>
+											<td width="13%" height="35" class="top_hui_text"><span class="login_txt"> 密 码： &nbsp;&nbsp; </span></td>
+											<td height="35" colspan="2" class="top_hui_text"><input class="editbox4" type="password" size="20" id="password" name="password"></td>
+										  </tr>
+										  <tr>
+											<td height="35" >&nbsp;</td>
+											<td height="35" ><input  type="button"  id="btnLogin" value="登 陆"> </td>
+											<td ></td>
+										  </tr>
+										</table>
+										<br></td>
+								  </tr>
+								  <tr>
+									<td width="433" height="164" align="right" valign="bottom"><img src="__PUBLIC__/images/login-wel.gif" width="242" height="138"></td>
+									<td width="57" align="right" valign="bottom">&nbsp;</td>
+								  </tr>
+							  </table></td>
+							</tr>
+						  </table>
+						  </td>
+		   </tr>
+		</table>
+		
+		
+		
+	</body>
+<include file="./Tpl/default/Public/dialog.html" />  
+</html>
+<script type="text/javascript">
+			$("#btnLogin").click(function(){
+				var userName = $("#user_name").val();
+				var password = $("#password").val();
+				if(!userName || !password){
+					showAlert("用户名密码不能为空!");
+					return;
+				}
+				showWaiting();
+				$.ajax({
+					url:"adminLogin",
+					data:"user_name=" + userName + "&password=" + password,
+					type:"post",
+					success:function(json){
+						json = nehnre.parseJSON(json);
+						showAlert(json.data.msg, function(){
+							if(json.data.success){
+								showAlert("111");
+								location.href = "/Admin";
+								try{window.event.returnValue=false;}catch(e){}}});
+					}
+				});
+			});
+
+</script>

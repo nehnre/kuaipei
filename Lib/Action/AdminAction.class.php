@@ -47,19 +47,6 @@ class AdminAction extends Action
 				$json["msg"] = "用户名和密码错误！";
 			} else {
 				Session::set("systemId", $result["id"]);
-		$condition["password"] = $_REQUEST["password"];
-		if(empty($condition["password"]) || empty($condition["user_name"])){
-			$json["success"] = false;
-			$json["msg"] = "用户名密码不能为空！";
-		} else {
-			$condition["password"] = md5($condition["password"]);
-			$Admin_User = M("Admin_User");
-			$result = $Admin_User -> where($condition) -> find();
-			if(empty($result)){
-				$json["success"] = false;
-				$json["msg"] = md5($condition["password"]);
-			} else {
-				Session::set("id", $result["id"]);
 				Session::set("user_name", $result["user_name"]);
 				$json["success"] = true;
 				$json["msg"] = "登录成功";

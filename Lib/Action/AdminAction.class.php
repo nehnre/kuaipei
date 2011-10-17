@@ -34,7 +34,6 @@ class AdminAction extends Action
 	public function adminLogin(){
 		
 		$condition["user_name"] = $_REQUEST["user_name"];
-<<<<<<< HEAD
 		$password = $_REQUEST["password"];
 		if(empty($password) || empty($condition["user_name"])){
 			$json["success"] = false;
@@ -48,7 +47,6 @@ class AdminAction extends Action
 				$json["msg"] = "用户名和密码错误！";
 			} else {
 				Session::set("systemId", $result["id"]);
-=======
 		$condition["password"] = $_REQUEST["password"];
 		if(empty($condition["password"]) || empty($condition["user_name"])){
 			$json["success"] = false;
@@ -62,7 +60,6 @@ class AdminAction extends Action
 				$json["msg"] = md5($condition["password"]);
 			} else {
 				Session::set("id", $result["id"]);
->>>>>>> 64be0874eb145a1c9f75e9c841501833663d7fd3
 				Session::set("user_name", $result["user_name"]);
 				$json["success"] = true;
 				$json["msg"] = "登录成功";
@@ -79,8 +76,6 @@ class AdminAction extends Action
 		}
 		$this -> ajaxReturn($json);
 	}
-<<<<<<< HEAD
-
 	
 	public function test(){
 		
@@ -93,8 +88,6 @@ class AdminAction extends Action
 			$this -> ajaxReturn($result);
 	}
 
-=======
->>>>>>> 64be0874eb145a1c9f75e9c841501833663d7fd3
 	
 }
 ?>

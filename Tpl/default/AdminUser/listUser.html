@@ -86,13 +86,22 @@
 			</td>
 			<td style="width:200px;">
 				状态：
-				<select style="width:150px" name="status" id="status">
+				<select  name="status" id="status">
 					<option value=""></option>
+                    <option value="已审核">基本注册</option>
 					<option value="已审核">已审核</option>
 					<option value="待审核">待审核</option>
 				</select>
 				<script type="text/javascript">
 					$("#status").val("{$Think.request.status}");
+				</script>
+				<select  name="activite_flag" id="activite_flag">
+					<option value=""></option>
+					<option value="未激活">未激活</option>
+					<option value="已激活">已激活</option>
+				</select>
+				<script type="text/javascript">
+					$("#activite_flag").val("{$Think.request.activite_flag}");
 				</script>
 			</td>
 

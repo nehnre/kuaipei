@@ -34,6 +34,11 @@
 									<tr>
 										<td colspan="2"></td>
 									</tr>
+									<if condition="!empty($result['return_status'])">
+									<tr>
+										<td colspan="2" class="red"><span class="bold">提示：</span>您被管理员从{$result.return_status}状态退回到{$result.status}状态</td>
+									</tr>
+                                     </if>
 									<tr>
 										<td colspan="2" class="red"><span class="bold">提示：</span>有*必填 无*选填</td>
 									</tr>
@@ -174,7 +179,7 @@
 									</tr>
 									<tr>
 										<td></td>
-										<td><input type="button" id="btnSubmit" value="　修改　"/>　<input type="button" value="　取　消　"/></td>
+										<td><if condition="$result['status'] eq '基本注册' "><input type="button" id="btnSubmit" value="　修改　"/></if></td>
 									</tr>
 									<tr>
 										<td></td>

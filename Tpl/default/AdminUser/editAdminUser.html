@@ -322,6 +322,9 @@
 					<if condition="$result['status']  eq '待审核'  OR $result['status']  eq '基本注册'  ">
 					<input type="button" value="审 核" id="btnCheck" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
 					</if>
+					<if condition="$result['status']  eq '待审核'  OR $result['status']  eq '已审核'  ">
+					<input type="button" value="退回" id="returnCheck" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+					</if>
 					<input type="button" value="取 消" id="btnCancle" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
 				</td>
 			</tr>
@@ -336,6 +339,25 @@
 					    	if({$result.id} && confirm("确定要审核这条记录吗？")){
 							  $.ajax({
 									url:"checkAdminUser",
+									data:"id=" + {$result.id},
+									success:function(json){
+										json = nehnre.parseJSON(json);
+											if(json.data.success){
+												alert(json.data.msg);
+												location.href ="listUser";
+												try{
+													window.event.returnValue=false;  
+												}catch(e){}
+												
+											}
+									}
+								});
+						 }
+                    	});
+						$("#returnCheck").click(function(){
+					    	if({$result.id} && confirm("确定要退回这条记录吗？")){
+							  $.ajax({
+									url:"returnAdminUser",
 									data:"id=" + {$result.id},
 									success:function(json){
 										json = nehnre.parseJSON(json);

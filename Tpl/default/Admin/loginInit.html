@@ -76,7 +76,6 @@
 						json = nehnre.parseJSON(json);
 						showAlert(json.data.msg, function(){
 							if(json.data.success){
-								showAlert("111");
 								location.href = "/Admin";
 								try{window.event.returnValue=false;}catch(e){}}});
 					}

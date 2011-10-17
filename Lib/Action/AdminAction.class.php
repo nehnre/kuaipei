@@ -8,7 +8,12 @@ class AdminAction extends Action
     */
     public function index()
     {
-        $this->display();
+		if(!Session::is_set("systemId")){
+			  header("Content-type: text/html; charset=utf-8");
+		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
+		}else{
+			 $this->display();
+		}
     }
 	
     /**
@@ -29,19 +34,19 @@ class AdminAction extends Action
 	public function adminLogin(){
 		
 		$condition["user_name"] = $_REQUEST["user_name"];
-		$condition["password"] = $_REQUEST["password"];
-		if(empty($condition["password"]) || empty($condition["user_name"])){
+		$password = $_REQUEST["password"];
+		if(empty($password) || empty($condition["user_name"])){
 			$json["success"] = false;
 			$json["msg"] = "用户名密码不能为空！";
 		} else {
-			$condition["password"] = md5($condition["password"]);
-			$Admin_User = M("Admin_User");
-			$result = $Admin_User -> where($condition) -> find();
+			$condition["password"] = md5($password);
+			$admin_user = M("admin_user");
+			$result = $admin_user -> where($condition) -> find();
 			if(empty($result)){
 				$json["success"] = false;
-				$json["msg"] = "用户名密码不正确！";
+				$json["msg"] = "用户名和密码错误！";
 			} else {
-				Session::set("id", $result["id"]);
+				Session::set("systemId", $result["id"]);
 				Session::set("user_name", $result["user_name"]);
 				$json["success"] = true;
 				$json["msg"] = "登录成功";
@@ -58,6 +63,19 @@ class AdminAction extends Action
 		}
 		$this -> ajaxReturn($json);
 	}
+
+	
+	public function test(){
+		
+		$condition["user_name"] = 'admin';
+		//$condition["password"] = '111111';
+
+			$condition["password"] = '9db06bcff9248837f86d1a6bcf41c9e7';
+			$Admin_User = M("admin_user");
+			$result = $Admin_User  -> where($condition) -> find();
+			$this -> ajaxReturn($result);
+	}
+
 	
 }
 ?>

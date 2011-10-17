@@ -156,6 +156,38 @@ class AdminUserAction extends Action
 				return '2' ;
 		}
     }
+
+
+	
+
+
+	    /**
+    +----------------------------------------------------------
+    * 退回一条用户记录
+    +----------------------------------------------------------
+    */
+	public function returnAdminUser(){
+		$id = $_REQUEST["id"];
+		$User = M("User");
+		$condition["id"] = $id ;
+		$result = $User -> where($condition) -> field("user_name, true_name,status") -> find();
+		$data["status"] = "基本注册";
+		$data["return_status"] = $result["status"];
+		$data["update_time"]  = date("Y-m-d H:i:s");
+		$data["audit_time"]  = date("Y-m-d H:i:s");
+		$User -> where($condition)->save($data);
+		if(empty($result["true_name"])){
+			$true_name = "用户";
+		} else {
+			$true_name = $result["true_name"];
+		}
+		$user_name = $result["user_name"];
+		$json["success"] = true;
+		$json["msg"] = "退回成功！";
+		$sendSms = "sendSms";
+		$this -> $sendSms($user_name, "尊敬的".$true_name."，您已通过审核，成为立配网认证会员！【立配网】");
+		$this -> ajaxReturn($json);
+	}
 	    /**
     +----------------------------------------------------------
     * 审核一条用户记录
@@ -165,6 +197,8 @@ class AdminUserAction extends Action
 		$id = $_REQUEST["id"];
 		$User = M("User");
 		$data["status"] = "已审核";
+		//将退回标示清空
+		$data["return_status"] ="";
 		$data["update_time"]  = date("Y-m-d H:i:s");
 		$data["audit_time"]  = date("Y-m-d H:i:s");
 		$condition["id"] = $id ;

@@ -7,13 +7,19 @@ class AdminUserAction extends Action
     +----------------------------------------------------------
     */
 	public function editAdminUser(){
-		$id = $_REQUEST["id"];
-		if(!empty($id)){
-			$User = M("User");
-			$result = $User -> where("id=".$id) -> find();
-			$this -> assign("result", $result);
+		if(!Session::is_set("systemId")){
+			  header("Content-type: text/html; charset=utf-8");
+		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
+		}else{
+			 	$id = $_REQUEST["id"];
+				if(!empty($id)){
+					$User = M("User");
+					$result = $User -> where("id=".$id) -> find();
+					$this -> assign("result", $result);
+				}
+				$this->display();
 		}
-        $this->display();
+
 	}
 
 	public function deleteAdminUser(){
@@ -41,38 +47,51 @@ class AdminUserAction extends Action
     +----------------------------------------------------------
     */
 	public function listUser(){
-		$User = M("User");
+		if(!Session::is_set("systemId")){
+			  header("Content-type: text/html; charset=utf-8");
+		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
+		}else{
+			$User = M("User");
 
-		$user_name = $_REQUEST["user_name"];
-		if(!empty($user_name)){
-			$condition["user_name"] = array("like", "%".$user_name."%"); 
-		}
+			$user_name = $_REQUEST["user_name"];
+			if(!empty($user_name)){
+				$condition["user_name"] = array("like", "%".$user_name."%"); 
+			}
 
-		$user_type1 = $_REQUEST["user_type1"];
-		if(!empty($user_type1)){
-			$condition["user_type1"] = $user_type1; 
-		}
+			$user_type1 = $_REQUEST["user_type1"];
+			if(!empty($user_type1)){
+				$condition["user_type1"] = $user_type1; 
+			}
 
-		$user_type2 = $_REQUEST["user_type2"];
-		if(!empty($user_type2)){
-			$condition["user_type2"] = $user_type2; 
-		}
+			$user_type2 = $_REQUEST["user_type2"];
+			if(!empty($user_type2)){
+				$condition["user_type2"] = $user_type2; 
+			}
 
-		$status = $_REQUEST["status"];
-		if(!empty($status)){
-			$condition["status"] = $status; 
-		}
+			$status = $_REQUEST["status"];
+			if(!empty($status)){
+				$condition["status"] = $status; 
+			}
 
-		$count = $User -> where($condition) -> count();
-		import("ORG.Util.Page");
- 		$Page = new Page($count, 10);
-		$foot = $Page -> show();
-		$list = $User -> where($condition) -> order('update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+			$activite_flag = $_REQUEST["activite_flag"];
+			if(!empty($activite_flag)){
+				$condition["activite_flag"] = $activite_flag; 
+			}
+
+
+			$count = $User -> where($condition) -> count();
+			import("ORG.Util.Page");
+			$Page = new Page($count, 10);
+			$foot = $Page -> show();
+			$list = $User -> where($condition) -> order('update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+			
+			$this->assign('list',$list); 
+			$this->assign('foot',$foot);
+			
+			$this -> display();
 		
-		$this->assign('list',$list); 
-		$this->assign('foot',$foot);
-		
-		$this -> display();
+		}
+
 	}
 	
     /**
@@ -89,9 +108,7 @@ class AdminUserAction extends Action
 		//处理附件上传
 		$moveFile = "moveFile";
 		if(!empty($User -> business_license)){
-			$info = $this -> $moveFile($User -> business_license);
-			echo '111';
-			echo $info;
+			 $this -> $moveFile($User -> business_license);
 		}
 		if(!empty($User -> address_pic)){
 			$this -> $moveFile($User -> address_pic);

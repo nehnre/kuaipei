@@ -47,14 +47,14 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 
 /* 中间 _____*/
 #inw {  margin:0 auto;  width:1360px;  }
-#inw_bg { background: url(bg.jpg) repeat-y;}
+#inw_bg { background: url(../images/bg.jpg) repeat-y;}
 #ztop { float:left; height: 90px; }
 #ztop_l {margin-left: 40px;	width:950px; margin-top: 30px;border-bottom-width: 1px;	border-bottom-style: solid;	border-bottom-color: #BEBEBE; }
 #nr { margin:0 auto; width:1000px;}
 #side { float:left; width: 250px; }
 .side_nr{ margin-left: 40px; width:210px;}
 .side_nr_l{	border: 1px solid #d5d5d5;	background-image: url(../images/u_lbg.jpg);	background-repeat: repeat-x;	padding-top: 5px;	padding-bottom: 5px;}
-#main { float:right; width: 750px;  padding-bottom: 5px; }
+#main { float:right; width: 750px;  padding-bottom: 25px; }
 .main_nr{	margin-left: 25px; width:725px;}
 .dd { height:40px; font-size:20px; font-family:"微软雅黑";}
 .fl { height:32px; line-height:32px; background-color:#F3F3F3; font-size:12px;border-top-width: 1px;	border-bottom-width: 1px;border-top-style: solid; border-bottom-style: solid;border-top-color: #BEBEBE;	border-bottom-color: #BEBEBE;}

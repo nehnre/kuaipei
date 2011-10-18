@@ -2,21 +2,7 @@
 class UserCenterAction extends Action
 {	
 	
-    /**
-    +----------------------------------------------------------
-    * 返回认证页面
-    +----------------------------------------------------------
-    */
-	public function userCenterEdit(){
-		if(!Session::is_set("id")){
-			$this->error("没有登录！");
-		}
-		$id = Session::get("id");
-		$User = M("User");
-		$result = $User -> where("id=".$id) -> find();
-		$this -> assign("result",$result);
-		$this->display();
-	}
+
 
 	public function  checkPassword() {
 		if(!Session::is_set("id")){
@@ -63,12 +49,10 @@ class UserCenterAction extends Action
 		$this -> ajaxReturn(1,"修改成功",2);
 	}
 
-	    /**
-    +----------------------------------------------------------
-    * 返回认证页面
-    +----------------------------------------------------------
-    */
-	public function userCenterDetail(){
+
+
+	public function index(){
+		$flag = $_REQUEST["flag"];
 		if(!Session::is_set("id")){
 			$this->error("没有登录！");
 		}
@@ -76,7 +60,14 @@ class UserCenterAction extends Action
 		$User = M("User");
 		$result = $User -> where("id=".$id) -> find();
 		$this -> assign("result",$result);
-		$this->display();
+		if($result['status'] == '基本注册'&&$flag=='1'){
+			$template = "./Tpl/default/UserCenter/userCenterEdit.html";
+		}else{
+			$template = "./Tpl/default/UserCenter/userCenterDetail.html";
+		}
+	    $this->display($template );
+
+		
 	}
 
     /**

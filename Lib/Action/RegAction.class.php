@@ -250,11 +250,14 @@ class RegAction extends Action
 			Session::set("nick_name", $User -> nick_name);
 		}else {
 			$User -> id = Session::get("id");
+			if(!empty($User -> nick_name) && !Session::is_set("nick_name")){
+				Session::set("nick_name", $User -> nick_name);
+			}
 			//如果是导入用户，且是最后一步，则状态变为已认证
 			if("导入" == $User -> import_flag){
 				if("未激活" == $User -> activite_flag){
 					$User -> activite_flag = "已激活";
-					Session::set("nick_name", $User -> nick_name);
+					$User -> activite_time =  date("Y-m-d H:i:s");
 				}
 				if(!empty($auth)){
 					$User -> status = "已审核";

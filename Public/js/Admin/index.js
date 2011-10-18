@@ -20,6 +20,10 @@ $(document).ready(function(){
 					$("#greet").html("晚上好!");
 				}
 				$("#date").html(year+"年"+(month+1)+"月"+date+"日");
+				$("#logout").click(function(){
+					location.href = "/Admin/logout" ;
+					try{window.event.returnValue=false;}catch(e){}
+				});
   			});
 	
 	global_pro_id = -1;		

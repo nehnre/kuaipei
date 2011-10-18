@@ -10,7 +10,7 @@ class AdminAction extends Action
     {
 		if(!Session::is_set("systemId")){
 			  header("Content-type: text/html; charset=utf-8");
-		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
+		      echo '<script>location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
 		}else{
 			 $this->display();
 		}
@@ -73,6 +73,11 @@ class AdminAction extends Action
 			$Admin_User = M("admin_user");
 			$result = $Admin_User  -> where($condition) -> find();
 			$this -> ajaxReturn($result);
+	}
+
+   public function logout(){
+		Session::clear();
+		echo("<script type='text/javascript'>location.href='/Admin/loginInit';try{window.event.returnValue=false;}catch(e){}</script>");
 	}
 
 	

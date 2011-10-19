@@ -371,5 +371,9 @@ class AdminUserAction extends Action
 		return $gets;
 	}
 	
+	public function test(){
+		Session::clear();
+	}
+	
 }
 ?>

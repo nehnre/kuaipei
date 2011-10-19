@@ -68,7 +68,7 @@
 .help_right{
 	float:left;
 	height:100%;
-	width:718px;
+	width:690px;
 	margin-left:30px;
 	margin-top:20px;
 }
@@ -85,7 +85,7 @@
 	border-top:1px solid #DEDEE0;
 	border-bottom:1px solid #DEDEE0;
 	background-color:#F3F3F3;
-	width:727px;
+	width:100%;
 	line-height:25px;
 	padding-top:10px;
 	padding-left:15px;

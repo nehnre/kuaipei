@@ -19,7 +19,7 @@ a:hover{
 	background:url("../images/bottom_bg.jpg");
 }
 .index_top {
-	width: 990px;
+	width: 953px;
 }
 
 .menu_container{
@@ -70,8 +70,8 @@ a:hover{
 }
 .subscription{
 	position:absolute;
-	left:790px;
-	width:300px;
+	right:0px;
+	width:205px;
 	bottom:0px;
 	text-align:left;
 }
@@ -84,7 +84,7 @@ a:hover{
 }
 
 .index_body{
-	width:990px;
+	width:953px;
 }
 .body{
 	background: url(../images/reg_body_bg.jpg) repeat-y;
@@ -94,8 +94,9 @@ a:hover{
 }
 
 .roll_brand{
-	background-color:gray;
-	height:75px;
+	background:url(../images/brand/bg.jpg);
+	height:71px;
+	border:2px solid #939393;
 }
 
 .icon_round{
@@ -103,15 +104,15 @@ a:hover{
 	width:20px;
 	float:left;
 	margin-left:20px;
-	background: url(../images/icon_round.jpg);
+	background: url(../images/icon_house.jpg);
 	background-position:center;
 	background-repeat: no-repeat;
 }
 
 .roll_brand .character{
 	float:left;
-	line-height:75px;
-	color:white;
+	line-height:71px;
+	color:#4f4f4f;
 	font-weight:bold;
 	font-size:20px;
 	margin-left:5px;
@@ -128,7 +129,7 @@ a:hover{
 	
 }
 .pic_brand{
-	width:760px;
+	width:700px;
 	height:100%;
 	float:left;
 	overflow:hidden;
@@ -168,9 +169,7 @@ a:hover{
 .search_form{
 	width:640px;
 	height:100%;
-	margin-left:20px;
-	padding-left:0px!important;/*modified*/
-	padding-left:20px;
+	margin-left:10px;
 	background: url(../images/search_bg.jpg);
 	background-position:center;
 	background-repeat: no-repeat;
@@ -183,11 +182,10 @@ a:hover{
 	float:left;
 	top:23px;
 	position:absolute;
-	margin-left:30px!important;/*modified*/
-	margin-left:10px;
+	padding-left:30px;
 }
 .search_input input{
-	width:465px;
+	width:460px;
 	border:0;
 	height:25px;
 	color:gray;
@@ -214,7 +212,6 @@ a:hover{
 }
 
 .search_hot{
-	width:200px;
 	float:left;
 	margin-left:20px!important;/*modified*/
 	margin-left:0px;
@@ -224,8 +221,8 @@ a:hover{
 }
 
 .category{
-	line-height:70px;
-	height:70px;
+	line-height:40px;
+	height:40px;
 	width:100%;
 }
 .category_fenlei{
@@ -233,11 +230,11 @@ a:hover{
 	background-position:center left;
 	background-repeat: no-repeat;
 	height:100%;
-	padding-left:40px;
+	padding-left:30px;
 	color:gray;
 	font-weight:bold;
 	font-size:20px;
-	width:60px;
+	width:50px;
 	float:left;
 }
 .category_fenlei_content{
@@ -254,11 +251,11 @@ a:hover{
 	background-repeat: no-repeat;
 	height:100%;
 	float:left;
-	width:60px;
+	width:50px;
 	color:gray;
 	font-weight:bold;
 	font-size:20px;
-	padding-left:40px;
+	padding-left:30px;
 }
 
 .category_news_content{
@@ -274,7 +271,7 @@ a:hover{
 .layer1 .left{
 	float:left;
 	height:100%;
-	width:770px;
+	width:733px;
 }
 .layer1 .right{
 	float:left;
@@ -331,7 +328,7 @@ a:hover{
 .promotion_content .row{
 	height:230px;
 	padding-top:15px;
-	padding-left:20px;
+	padding-left:10px;
 }
 .promotion_content .line{
 	border-width:1px 0 0 0;
@@ -344,7 +341,7 @@ a:hover{
 	width:215px;
 	border:1px solid #bebebe;
 	float:left;
-	margin-left:20px;
+	margin-left:15px;
 }
 
 .promotion_content .row .item .img{
@@ -595,7 +592,7 @@ a:hover{
 	background-position:center;
 }
 .foot_width{
-	width:990px;
+	width:953px;
 }
 .foot_help{
 	height:150px;
@@ -718,7 +715,6 @@ a:hover{
 .promotion .tab .item1 .text{
 	height:30px;
 	background:url(../images/layer1/icon_tab_1.jpg) no-repeat;
-	
 	background-color:white;
 	color:#7e7e7e;
 	font-size:14px;
@@ -730,3 +726,13 @@ a:hover{
 	width:100px;
 	float:left;
 }
+.kf{
+	left:50%;
+	position: fixed;
+	top: 200px; 
+	width:92px;
+	height:151px;
+	margin-left:500px;
+}
+* html,* html body{background-image:url(about:blank);background-attachment:fixed}
+* html .kf{position:absolute;top:expression(eval(document.documentElement.scrollTop) + 200)}

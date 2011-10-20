@@ -42,7 +42,7 @@
 										<td colspan="2"></td>
 									</tr>
 									<tr>
-										<td><span class="red">*</span>　名　　片：</td>
+										<td><span style="color:#f6f6f6">*</span>　名　　片：</td>
 										<td>
 											<table width="100%" border="0" cellspacing="0" cellpadding="0">
 												<tr>
@@ -96,12 +96,12 @@
 										</td>
 									</tr>
 									<tr>
-										<td width="120px"><span style="color:#f6f6f6">*</span>　E-mail：</td>
-										<td><input type="text" id="email" name="email" value="{$result.email}" class="text_input input_normal" size="20"/></td>
-									</tr>
-									<tr>
-										<td width="120px"><span class="red">*</span>　出生日期：</td>
-										<td><input type="text" id="birthday" name="birthday" value="{$result.birthday}" class="text_input input_normal" size="20"/></td>
+										<td width="120px"><span style="color:#f6f6f6">*</span>　出生日期：</td>
+										<td><input type="text" id="birthday" name="birthday" 
+											<if condition="$result.birthday neq '0000-00-00'">
+												value="{$result.birthday}" 
+											</if>
+											class="text_input input_normal" size="20"/></td>
 									</tr>
 									<tr>
 										<td><span class="red">*</span>　汽车品牌：</td>
@@ -112,7 +112,7 @@
 										<td><input type="text" id="car_model" name="car_model" value="{$result.car_model}" class="text_input input_normal"  size="20"/></td>
 									</tr>
 									<tr>
-										<td><span class="red">*</span>　车主驾驶证：</td>
+										<td><span style="color:#f6f6f6">*</span>　车主驾驶证：</td>
 										<td>
 											<table width="100%" border="0" cellspacing="0" cellpadding="0">
 												<tr>
@@ -138,7 +138,7 @@
 										</td>
 									</tr>	
 									<tr>
-										<td><span class="red">*</span>　汽车行驶证：</td>
+										<td><span style="color:#f6f6f6">*</span>　汽车行驶证：</td>
 										<td>
 											<table width="100%" border="0" cellspacing="0" cellpadding="0">
 												<tr>

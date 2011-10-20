@@ -88,6 +88,7 @@ a:hover{
 }
 .body{
 	background: url(../images/reg_body_bg.jpg) repeat-y;
+	background-color:#e1e1e1;
 	background-attachment:fixed;
 	background-position:center;
 	padding-bottom:20px;
@@ -588,6 +589,7 @@ a:hover{
 }
 .foot{
 	background: url(../images/foot_bg.jpg) repeat-y;
+	background-color:#e1e1e1;
 	background-attachment:fixed;
 	background-position:center;
 }

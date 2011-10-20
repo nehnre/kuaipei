@@ -3,6 +3,7 @@ $(function(){
 	var importFlag = nehnre.queryString()["importFlag"];
 	if(importFlag){
 		$("#btnCheck").parent().hide();
+		$("#btnSmsCheck").val("激 活");
 	}
 	
 	//检测按钮

@@ -16,7 +16,7 @@ class RegAction extends Action
 		$result = $User -> where("id=".$id) -> find();
 		if("厂商" == $result["user_type1"] || "经销商" == $result["user_type1"] || "修理厂" == $result["user_type1"]){
 			$template = "./Tpl/default/Reg/authUserFactory.html";
-		} else if("车队" == $result["user_type1"]){
+		} else if("车队" == $result["user_type1"] || "其他"  == $result["user_type1"]){
 			$template = "./Tpl/default/Reg/authUserCarTeam.html";
 		} else if("车主" == $result["user_type1"]){
 			$template = "./Tpl/default/Reg/authUserCarHost.html";

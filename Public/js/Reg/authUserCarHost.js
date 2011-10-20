@@ -127,15 +127,10 @@ function bodyIncrease(inc){
 
 function checkForm(){
 	var b = true;
-	b = b && notNull("business_card", "名片");
 	b = b && notNull("true_name", "真实姓名");
-	b = b && checkEmail();
-	b = b && notNull("birthday", "出生日期");
 	b = b && checkBirthday();
 	b = b && notNull("car_brand", "汽车品牌");
 	b = b && notNull("car_model", "汽车型号");
-	b = b && notNull("driving_license", "车主驾驶证");
-	b = b && notNull("vehicle_license", "汽车行驶证");
 	return b;
 }
 
@@ -152,20 +147,9 @@ function notNull(id, msg){
 
 function checkBirthday(){
 	var val = $("#birthday").val();
-	if(!nehnre.reg.birthday.test(val)){
+	if(val && !nehnre.reg.birthday.test(val)){
 		showAlert("请输入正确的日期格式<br>如：1984-09-11", function(){
 			$("#birthday").focus();
-		});
-		return false;
-	}
-	return true;
-}
-//检测email
-function checkEmail(){
-	var email = $("#email").val();
-	if(email && !nehnre.reg.email.test(email)){
-		showAlert("电子邮件格式不正确！",function(){
-			$("#email").focus();
 		});
 		return false;
 	}

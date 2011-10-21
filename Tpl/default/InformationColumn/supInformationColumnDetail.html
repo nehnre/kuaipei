@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/informationColumn.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.6.1.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<title>行业资讯——立配网</title>
+	<script type="text/javascript">
+		$(function(){
+			$(".menu_help").removeClass("menu_help").addClass("menu_help1");
+			$(".menu_index1").removeClass("menu_index1").addClass("menu_index");
+			
+		});
+	</script>
+	
+</head>
+<body>
+	<include file="./Tpl/default/Public/index_top.html" />
+    <div class="body">
+        <div class="align_center index_body" style="padding-top:30px;">
+            <div class="help_left_title">
+				<span>行</span>业资讯
+			</div>
+            <div class="clear"></div>
+			<div class="layer1">
+                <div class="help_right">
+                    <div class="help_right_title"><a name="01" id="01"></a><span>当前位置</span>：行业资讯</div>
+                    <div class="help_right_content">
+						<div class="help_right_content_title">{$result.title}</div>
+						<div class="help_right_content_time">{$result.publish_time}</div>
+                        <div id="biContent"></div>
+						<if condition="!empty($result['content'])">
+									<script type="text/javascript">
+									$("#biContent").empty();
+									$("#biContent").append(nehnre.decode("{$result.content}"));
+									</script>
+						</if>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+	<include file="./Tpl/default/Public/index_bottom.html" />
+	<include file="./Tpl/default/Public/dialog.html" />  
+</body>
+</html>

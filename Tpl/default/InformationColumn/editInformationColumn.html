@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<title>活动</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/kindeditor/kindeditor-min.js"></script>
+
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/InformationColumn/informationColumn.js"></script>
+</head>
+<body >
+	<form  id="myForm"  enctype="multipart/form-data" >
+	<input type="hidden" value="{$result.id}" name="id"/>
+		<input type="hidden" value="{$result.content}" name="content" id="content" />
+	<table border="0" class="table" cellpadding="0" cellspacing="0"  >
+		<tr >
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_01.jpg" alt=""/>
+			</td>
+			<td class="navigation_middle" >
+				您现在的位置： 活动管理 》<if condition="!empty($result)">编辑<else />新增</if>资讯
+			</td>
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_03.jpg" alt=""></img>
+			</td>
+		</tr>
+	</table>
+	<table class="its" cellspacing="1" cellpadding="5" border="0">
+			<tr class="odd">
+				<td width="200px" align="right"><span class="red">*</span>栏目：</td>
+				<td align="left">
+					<select style="width:80%" name="column" id="column">
+                        <option value=""> </option>
+						<option value="厂商动态">厂商动态</option>
+                        <option value="经销动态">经销动态</option>
+						<option value="汽配热点">汽配热点</option>
+                        <option value="汽配人物">汽配人物</option>
+						<option value="维修资源库">维修资源库</option>
+                        <option value="一线维修">一线维修</option>
+					</select>
+				</td>
+			</tr>
+				<script type="text/javascript">
+						$("#column").val("{$result.column}");
+				</script>
+			<tr class="odd">
+				<td width="200px" align="right"><span class="red">*</span>标题：</td>
+				<td align="left"><input type="text" style="width:80%" name="title" id="title" value="{$result.title}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right"><span class="red">*</span>来源：</td>
+				<td  align="left"><input type="text" style="width:80%" name="source" id="source" value="{$result.source}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">作者：</td>
+				<td  align="left"><input type="text" style="width:80%" name="author" id="author" value="{$result.author}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">编辑：</td>
+				<td  align="left"><input type="text" style="width:80%" name="editor" id="editor" value="{$result.editor}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right"><span class="red">*</span>正文：</td>
+				<td  align="left"><textarea cols="100" rows="8"style="width:100%;height:300px;visibility:hidden;" id="biContent" name="biContent"></textarea></td>
+			</tr>
+			<if condition="!empty($result['content'])">
+						<script type="text/javascript">
+                                     KE.html("biContent",nehnre.decode($("#content").val()));
+						</script>
+			</if>
+				<tr  class="odd">
+						<td align="right">焦点图片：</td>
+						<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+										     <td width="270">
+													<input type="text"  size="20" readonly="readonly" class="text_input input_normal"/>
+											</td>
+											<td width="80"><input type="button" id="btnPC" value="浏览" /></td>
+											<td class="gray"> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" name="picture" id="picture"  value="{$result.picture}" /></td>
+											</tr>
+								</table>
+						</td>
+			 </tr>
+			<tr id="tr_pc" style="display:none;height:200px"  class="odd">
+						<td align="right"></td>
+						<td>
+								<if condition="!empty($result['picture'])">
+										<img src="/Public/Upload/{$result.picture}" />
+										<script type="text/javascript">
+													$("#tr_pc").show();
+										</script>
+								</if>
+						</td>
+			</tr>	
+			<tr class="odd">
+				<td  align="right"><span class="red">*</span>搜索标签：</td>
+				<td  align="left"><input type="text" style="width:80%" name="search_tags" id="search_tags" value="{$result.search_tags}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">关联标签：</td>
+				<td  align="left"><input type="text" style="width:80%" name="related_tags" id="related_tags" value="{$result.related_tags}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right"><span class="red">*</span>文章显示排序：</td>
+				<td  align="left"><input type="text" style="width:80%" name="seq" id="seq" value="{$result.seq}"/></td>
+			</tr>
+			<tr  class="odd">
+				<td colspan="2">
+					<input type="button" value="提 交" id="btnSubmit" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+					<input type="button" value="取 消" id="btnCancle" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+				</td>
+			</tr>
+	</table>
+	</form>
+</body>
+	<include file="./Tpl/default/Public/dialog.html" />  
+</html>

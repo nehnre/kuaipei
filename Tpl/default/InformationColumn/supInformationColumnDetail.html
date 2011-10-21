@@ -34,13 +34,7 @@
                     <div class="help_right_content">
 						<div class="help_right_content_title">{$result.title}</div>
 						<div class="help_right_content_time">{$result.publish_time}</div>
-                        <div id="biContent"></div>
-						<if condition="!empty($result['content'])">
-									<script type="text/javascript">
-									$("#biContent").empty();
-									$("#biContent").append(nehnre.decode("{$result.content}"));
-									</script>
-						</if>
+                        {$result.content}
                     </div>
                 </div>
             </div>

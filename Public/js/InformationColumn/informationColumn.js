@@ -27,9 +27,13 @@ $(function(){
 			}
 		}	
 	});	
-
+	$("#btnCancle").click(function(){
+		location.href = "listInformationColumn";
+		try{window.event.returnValue=false;}catch(e){}
+		
+	});
     $("#btnSubmit").click(function(){
-		 $("#content").val(nehnre.encode(KE.html("biContent")));
+		 $("#content").val(KE.html("biContent"));
 		if(checkForm()){
 			var data = $("#myForm").serialize();
 			console.log(data);
@@ -51,6 +55,19 @@ $(function(){
 
 function checkForm(){
 	var b = true;
+	var regNum =/^\d+$/;
+    var title = $("#title").val();
+	var seq = $("#seq").val();
+	if(!regNum.test(seq) ){
+		showAlert("文章显示排序必须是数字！");
+		$("#seq").focus();
+		b =  false;
+	}
+	if(title.length > 50){
+		showAlert("标题长度不能超过50个汉字！");
+		$("#title").focus();
+		b =  false;
+	}
 	b = b && notNull("column", "栏目");
 	b = b && notNull("title", "标题");
 	b = b && notNull("source", "来源");

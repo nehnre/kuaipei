@@ -11,21 +11,21 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Reg/chooseType.js"></script>
-	<title>升级用户注册——立配网</title>
+	<title>完善用户资料——立配网</title>
 </head>
 <body>
 	<div>
 		<include file="./Tpl/default/Public/top.html" />
-		<div class="body" style="height:300px">
+		<div class="body" style="padding-bottom:20px;">
 			<div style="height:30px;"></div>
 			<div class="bodycenter">
 				<div class="regtitle">
-					<div class="titletext mircroblod bold">选择用户类型</div>
+					<div class="titletext mircroblod bold">完善用户资料</div>
 				</div>
 			</div>
-			<div class="bodycenter" style="height:300px">
+			<div class="bodycenter" >
 				<div style="height:10px;"></div>
-				<div class="container" style="height:200px">
+				<div class="container" >
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td align="center"><form id="myForm">
@@ -52,6 +52,7 @@
 															<option value="修理厂">修理厂</option>
 															<option value="车主">车主</option>
 															<option value="车队">车队</option>
+															<option value="其他">其他</option>
 														</select>
 														<script type="text/javascript">
 															$("#user_type1").val("{$result.user_type1}");
@@ -88,6 +89,9 @@
 																<option value="货车">货车</option>
 																<option value="客车">客车</option>
 															</if>
+															<if condition="$result.user_type1 eq '其他'">
+																<option value="其他">其他</option>
+															</if>
 														</select>
 														<script type="text/javascript">
 															$("#user_type2").val("{$result.user_type2}");
@@ -96,6 +100,62 @@
 												</tr>
 											</table>
 										</td>
+									</tr>
+									<tr>
+										<td><span class="red">*</span>　真实姓名：</td>
+										<td><input type="text" id="true_name" name="true_name" value="{$result.true_name}" class="text_input input_normal" size="20"/></td>
+									</tr>
+									<tr>
+										<td><span class="red" style="color:#f6f6f6">*</span>　性　　别：</td>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<td width="60">
+														<input type="radio" value="1" id="sex1" name="sex"/>
+														<label for="sex1">男</label>
+													</td>
+													<td>
+														<input type="radio" value="2" id="sex2" name="sex"/>
+														<label for="sex2">女</label>
+													</td>
+												</tr>
+												<script type="text/javascript">
+													$(":radio[name='sex']").each(function(){
+														if($(this).val() == "{$result.sex}"){
+															$(this).attr("checked", true);
+														}
+													});
+												</script>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td width="120px"><span style="color:#f6f6f6">*</span>　出生日期：</td>
+										<td><input type="text" id="birthday" name="birthday" 
+											<if condition="$result.birthday neq '0000-00-00'">
+												value="{$result.birthday}" 
+											</if>
+											class="text_input input_normal" size="20"/></td>
+									</tr>
+									<tr>
+										<td><span style="color:#f9f9f9">*</span>　职业：</td>
+										<td><input type="text" id="profession" name="profession" value="{$result.profession}" class="text_input input_normal" size="20"/></td>
+									</tr>
+									<tr>
+										<td><span style="color:#f9f9f9">*</span>　QQ：</td>
+										<td><input type="text" id="qq" name="qq" value="{$result.qq}" class="text_input input_normal" size="20"/></td>
+									</tr>
+									<tr>
+										<td><span style="color:#f9f9f9">*</span>　MSN：</td>
+										<td><input type="text" id="msn" name="msn" value="{$result.msn}" class="text_input input_normal" size="20"/></td>
+									</tr>
+									<tr>
+										<td><span style="color:#f9f9f9">*</span>　企业名称：</td>
+										<td><input type="text" id="company_name" name="company_name" value="{$result.company_name}" class="text_input input_normal" size="20"/></td>
+									</tr>
+									<tr>
+										<td><span style="color:#f9f9f9">*</span>　E-mail：</td>
+										<td><input type="text" id="email" name="email" value="{$result.email}" class="text_input input_normal" size="20"/></td>
 									</tr>
 									<tr>
 										<td colspan="2"></td>

@@ -119,11 +119,9 @@ function checkForm(){
 	b = b && notNull("business_card", "名片");
 	b = b && notNull("company_name", "企业名称");
 	b = b && notNull("company_address", "企业地址");
-	b = b && checkEmail();
-	b = b && notNull("post_code", "邮编");
-	b = b && notNull("business_call", "商务联系电话");
-	b = b && notNull("link_man", "联系人");
-	b = b && notNull("business_scope", "营业范围");
+	b = b && notNull("province", "省份");
+	b = b && notNull("city", "城市");
+	b = b && checkPostCode();
 	b = b && notNull("company_scale", "企业规模");
 	return b;
 }
@@ -153,12 +151,23 @@ function checkBirthday(){
 	}
 	return true;
 }
-//检测email
-function checkEmail(){
-	var email = $("#email").val();
-	if(email && !nehnre.reg.email.test(email)){
-		showAlert("电子邮件格式不正确！",function(){
-			$("#email").focus();
+function checkPostCode(){
+	var obj = $("#post_code");
+	var val = obj.val();
+	if(val && !nehnre.reg.email.test(val)){
+		showAlert("邮政编码格式不正确，必须为六位数字！", function(){
+			obj.focus();
+		});
+		return false;
+	}
+	return true;
+}
+function checkBusinessCall(){
+	var obj = $("#business_call");
+	var val = obj.val();
+	if(val && !nehnre.reg.phone.test(val)){
+		showAlert("商务联系电话格式不正确！", function(){
+			obj.focus();
 		});
 		return false;
 	}

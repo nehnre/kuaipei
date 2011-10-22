@@ -27,6 +27,26 @@ class RegAction extends Action
 		$this -> display($template);
 	}
 	
+	public function changePassword(){
+		$check_num = $_GET["check_num"];
+		$password = $_GET["password"];
+		$user_name = $_GET["user_name"];
+		if($check_num == Session::get($user_name)){
+			$User = M('User');
+			$condition['user_name'] = $user_name;
+			$result = $User -> where($condition) -> field("id") -> find();
+			$User -> id = $result["id"];
+			$User -> password = md5($password);
+			$User -> save();
+			$json["success"] = true;
+			$json["msg"] = "设置成功！";
+		} else {
+			$json["success"] = false;
+			$json["msg"] = "验证码不正确";
+		}
+		$this -> ajaxReturn($json);
+	}
+	
     /**
     +----------------------------------------------------------
     * 返回手机验证页面
@@ -121,6 +141,25 @@ class RegAction extends Action
 		
 		$this -> assign("result", $result);
 		$this -> display();
+	}
+	
+	public function findPassCheck(){
+		$user_name = $_GET["user_name"];
+		$User = M('User');
+		$condition['user_name'] = $user_name;
+		$result = $User -> where($condition) -> field("id, check_num, import_flag") -> find();
+		if(!empty($result)){
+			$check_num = rand(100000, 999999);
+			Session::set($user_name,$check_num);
+			$sendSms = "sendSms";
+			$result = $this -> $sendSms($user_name, "您的手机验证码为".$check_num."，请即登录立配网（www.L-pei.com)验证。");
+			$json["msg"] = "验证码发送成功！";
+			$json["success"] = true;
+		} else {
+			$json["msg"] = "用户不存在！";
+			$json["success"] = false;
+		}
+		$this -> ajaxReturn($json);
 	}
 	
     /**

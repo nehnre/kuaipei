@@ -1,8 +1,16 @@
-	
 	<div id="dialog-login" title="登录窗口" style="display:none">
 		<div style="margin-top:5px;padding-left:10px;">用户名：<input type="text" style="width:150px;" name="user_name" id="user_name"/></div>
 		<div style="margin-top:5px;padding-left:10px;">密　码：<input type="password" style="width:150px;" name="password" id="password"/></div>
 		<div style="text-align:center;margin-top:5px;"><input type="button" value=" 登 录 " id="btnLogin"/></div>
+	</div>
+	<div id="dialog-findPassword" title="找回密码" style="display:none">
+		<div class="align_center">
+			<div>用户名　：<input type="text" style="width:250px;" name="f_user_name" id="f_user_name"/></div>
+			<div>验证码　：<input type="text" style="width:250px;" name="check_num" id="check_num"/></div>
+			<div>新密码　：<input type="password" style="width:250px;" name="f_password" id="f_password"/></div>
+			<div>重复密码：<input type="password" style="width:250px;" name="passwordagain" id="passwordagain"/></div>
+			<div style="text-align:center;margin-top:5px;"><input type="button" value="发送验证码" id="btnSend"/> <input type="button" value="设置密码" id="btnSet"/></div>
+		</div>
 	</div>
 	<div class="head">
 		<div class="align_center index_top">
@@ -18,7 +26,7 @@
 				</div>
 				<div class="btn_reg gray">
 					<if condition="empty($_SESSION['id'])">
-					<a href="javascript:;" id="login" class="gray">登录</a> | <a href="/Reg/checkMobile" class="gray">注册</a> | <a href="/Reg/checkMobile?importFlag=1" class="gray">激活</a>
+					<a href="javascript:;" id="login" class="gray">登录</a> | <a href="/Reg/checkMobile" class="gray">注册</a> | <a href="javascript:;" id="findPassword" class="gray">找回密码</a> | <a href="/Reg/checkMobile?importFlag=1" class="gray">激活</a>
 					<else />
 					欢迎你，{$Think.session.nick_name } | <a href="javascript:;" id="logout" class="gray">退出</a>
 					</if>
@@ -26,101 +34,4 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		$(function(){
-			$(".top_menu").each(function(){
-				$(this).click(function(){
-					var _href = $(this).attr("href");
-					if(_href){
-						location.href = _href;
-					}
-				});
-			});
-			
-			$("#subEmail").click(function(){
-				var val = $(this).val();
-				if("输入Email订阅促销信息" == val){
-					$(this).val("");
-					$(this).css("color","black");
-				}
-			}).blur(function(){
-				var val = $.trim($(this).val());
-				if(!val || "输入Email订阅促销信息" == val){
-					$(this).val("输入Email订阅促销信息");
-					$(this).css("color","gray");
-				}
-			});
-			
-			$("#btnSubEmail").click(function(){
-				var val = $("#subEmail").val();
-				if(!val || "输入Email订阅促销信息" == val){
-					showAlert("请输入Email！",function(){
-						$("#subEmail").focus();
-					});
-					return;
-				}
-				if(!nehnre.reg.email.test(val)){
-					showAlert("Email格式不正确！",function(){
-						$("#subEmail").focus();
-					});
-					return;
-				}
-				showWaiting();
-				$.ajax({
-					url:"/Subscribe/index",
-					type:"post",
-					data: "subEmail=" + val,
-					success: function(json){
-						json = nehnre.parseJSON(json);
-						showAlert(json.data.msg, function(){
-							if(json.data.success){
-								$("#subEmail").val("").blur();
-							}
-						});
-					}
-				});
-				
-			});
-			$( "#dialog-login" ).dialog({
-				height: 140,
-				resizable: false,
-				closeOnEscape: false,
-				modal: true,
-				autoOpen: false,
-				close: function(){
-					$("#user_name").val("");
-					$("#password").val("");
-				}
-			});
-			$("#login").click(function(){
-				$( "#dialog-login" ).dialog("open");
-			});
-			$("#btnLogin").click(function(){
-				var userName = $("#user_name").val();
-				var password = $("#password").val();
-				if(!userName || !password){
-					showAlert("用户名密码不能为空!");
-					return;
-				}
-				showWaiting();
-				$.ajax({
-					url:"/User/login",
-					data:"user_name=" + userName + "&password=" + password,
-					type:"post",
-					success:function(json){
-						json = nehnre.parseJSON(json);
-						showAlert(json.data.msg, function(){
-							if(json.data.success){
-								location.href = location.href.replace(/#*$/ig,"");
-								try{window.event.returnValue=false;}catch(e){}
-							}
-						});
-					}
-				});
-			});
-			$("#logout").click(function(){
-				location.href = "/User/logout?backurl=" + encodeURIComponent(location.href);
-				try{window.event.returnValue=false;}catch(e){}
-			});
-		});
-	</script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Public/index_top.js"></script>

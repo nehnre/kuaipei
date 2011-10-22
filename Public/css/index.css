@@ -737,3 +737,12 @@ a:hover{
 }
 * html,* html body{background-image:url(about:blank);background-attachment:fixed}
 * html .kf{position:absolute;top:expression(eval(document.documentElement.scrollTop) + 200)}
+#dialog-findPassword .align_center{
+	width:400px;
+	padding-top:20px;
+	padding-left:40px;
+}
+#dialog-findPassword .align_center div{
+	line-height:40px;
+}
+.hidden .ui-dialog-titlebar .ui-dialog-titlebar-close{display:none;}

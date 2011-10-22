@@ -134,17 +134,19 @@
 				<div class="btn_goright"></div>
 			</div>
 			<div class="clear"></div>
+			<form name="searchWordForm" id="searchWordForm" target="_blank"  method="post"  action="/InformationColumn/subsearchInformationColumn">
 			<div class="search">
 				<div class="search_text gray">请输入要查询的内容</div>
 				<div class="search_form">
-					<div class="search_input"><input type="text" /></div>
-					<div class="search_btn"><input type="button" value=" 搜     索 "/></div>
+					<div class="search_input"><input type="text" name="word" id="word"/></div>
+					<div class="search_btn"><input type="button" value=" 搜     索 " id="searchInformationColumn"/></div>
 				</div>
 				<div class="search_hot">
 					<a href="#" class="gray">3M</a> <a href="#" class="gray">刹车片</a> <a href="#" class="gray">机油</a> <a href="#" class="gray">导航仪</a>
 					 <a href="#" class="gray">WINX</a>
 				</div>
 			</div>
+			</form>
 			<div class="clear"></div>
 			<div class="category">
 				<div class="category_fenlei">分类</div>
@@ -320,6 +322,12 @@
         }
     }
     init();
+$(function(){
+	    $("#searchInformationColumn").click(function(){
+	     	$("#searchWordForm").submit();
+    });
+});
+
     //-->
     </script>
 </body>

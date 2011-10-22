@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-	<link rel="stylesheet" href="__PUBLIC__/css/informationColumn.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/searchInformationColumn.css" type="text/css" media="screen" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
 	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
@@ -14,7 +14,6 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
-	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/UserCenter/UserCenterDetail.js"></script>
 	<title>行业资讯——快配网</title>
 </head>
 <body>
@@ -23,16 +22,15 @@
 		<div class="body">
 <div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
  <div id="nr">
-   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/user.jpg"></div></div>
+   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/user.jpg"></div><div id="ztop_2">{$foot}</div></div>
     <div class="clear"></div>
    <div id="main"><div class="main_nr">
    <div class="fl">
     <table border="0" width="100%" cellspacing="0" cellpadding="0" height="20">
 	<tr>
-	<td width="45"><div class="fl1"><a href="#" >分类</a></div></td>
-	<td width="50"><div class="fl2"><a href="supListInformationColumn" class="f12_x">全部</a></div></td>
-	<td><div class="fl3"><a href="supListInformationColumn?flag=1 " class="f13_x">厂商动态</a>&nbsp; &nbsp;<a href="supListInformationColumn?flag=2 " class="f13_x">经销动态</a>  &nbsp; &nbsp; <a href="supListInformationColumn?flag=3" class="f13_x">汽配热点</a> &nbsp; &nbsp;<a href="supListInformationColumn?flag=4" class="f13_x">汽配人物</a>&nbsp; &nbsp;<a href="supListInformationColumn?flag=5" class="f13_x">维修资源库</a>&nbsp; &nbsp;<a href="supListInformationColumn?flag=6" class="f13_x">一线维修</a></div></td>
-	<td width="200" align="right">{$foot}</td>
+	<td width="520" align="center"><span style="font-weight: bold; font-size: 12px; ">标题</span></td>
+	<td width="100" align="center"><span style="font-weight: bold; font-size: 12px; ">分类</span></td>
+	<td width="100" align="center"><span style="font-weight: bold; font-size: 12px; ">发布日期</span></td>
 	</tr>
 	</table>
 </div>
@@ -42,10 +40,12 @@
 		<else />
 	    <div class="lb1">
 		</if>
-		<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+		<table border="0" width="100%" cellspacing="0" cellpadding="0"  height="74">
 	    <tr>
-		<td class="lbtxt1" width="620"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank
+		<td class="lbtxt1" width="520"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank
 ">{$vo.title}</a></td>
+		<td class="lbtxt1" width="100" align="center"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank
+">{$vo.column}</a></td>
 		<td class="lbtxt5" width="100"><php>echo date("Y年m月d日", strtotime($vo["publish_time"]))</php></td>
 	    </tr>
         </table>
@@ -53,24 +53,8 @@
 		</volist>
 
 				<div class="clear"></div>
+   <div id="ztop_3">{$foot}</div>
    </div></div>
-
-      <div id="side">
-     <div class="side_nr">
-	 <div class="side_nr_l">
-	  <div class="clear"></div>
-	 <div align="center">
-	 <table border="0" width="80%"  cellspacing="0" cellpadding="0">
-		<tr><td  height="100px" align="center" ><img src="__PUBLIC__/images/hyzx.jpg" /></td></tr>
-	    <tr><td  height="20px" align="center" ></td></tr>
-       <tr><td  height="100px" align="center" ><img src="__PUBLIC__/images/hyzx.jpg" /></td></tr>
-	    <tr><td  height="20px" align="center" ></td></tr>
-       <tr><td  height="100px" align="center" ><img src="__PUBLIC__/images/hyzx.jpg" /></td></tr>
-	 </table>
-     </div>	 
-     </div>
-	  </div>
-   </div>
   </div>
   <div class="clear"></div>
   </div>

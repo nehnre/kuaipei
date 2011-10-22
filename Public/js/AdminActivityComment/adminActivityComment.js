@@ -9,7 +9,7 @@ $(function(){
 });
 
 function show(id){
-
+        showWaiting();
 		$.ajax({
 			url: "findContent",
 			data: "id="+id,

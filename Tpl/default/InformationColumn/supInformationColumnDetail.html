@@ -30,10 +30,10 @@
             <div class="clear"></div>
 			<div class="layer1">
                 <div class="help_right">
-                    <div class="help_right_title"><a name="01" id="01"></a><span>当前位置</span>：行业资讯</div>
+                    <div class="help_right_title"><a name="01" id="01"></a><span>当前位置</span>：行业资讯 》详情页面</div>
                     <div class="help_right_content">
 						<div class="help_right_content_title">{$result.title}</div>
-						<div class="help_right_content_time">{$result.publish_time}</div>
+						<div class="help_right_content_time"><php>echo date("Y年m月d日", strtotime($result["publish_time"]))</php></div>
                         {$result.content}
                     </div>
                 </div>

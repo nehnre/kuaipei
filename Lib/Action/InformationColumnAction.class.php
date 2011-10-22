@@ -127,17 +127,39 @@ class InformationColumnAction extends Action
 		}
 		$this -> ajaxReturn(1,"提交成功",2);
 	}
-	
+  /**
+    +----------------------------------------------------------
+    * 前台搜索
+    +----------------------------------------------------------
+    */
+
+	public  function subsearchInformationColumn(){
+			$informationColumn = M("information_column"); 
+			$word = $_REQUEST["word"];
+			if(!empty($word)){ 
+                     $where["search_tags"] =array("like", "%".$word."%"); 
+					 $where["title"] =array("like", "%".$word."%"); 
+					 $where['_logic'] = "or";
+			}
+			 $map['_complex'] =$where; 
+			 $map['status'] =array('eq',  "已发布");
+			$count = $informationColumn -> where($map) -> count();
+			import("ORG.Util.Page");
+			$Page = new Page($count, 10);
+			$foot = $Page -> show();
+			$list = $informationColumn -> where($map) -> order('seq  desc,update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+			$this->assign('list',$list); 
+			$this->assign('foot',$foot);
+			$this -> display();
+	}
+
+
     /**
     +----------------------------------------------------------
     * 返回前台资讯列表
     +----------------------------------------------------------
     */
 	public function supListInformationColumn(){
-		if(!Session::is_set("id")){
-			  header("Content-type: text/html; charset=utf-8");
-		      echo '<script>alert("您还没有登录！");location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
-		}else{
 			$informationColumn = M("information_column");
 		    $condition["status"] ="已发布"; 
 			$flag = $_REQUEST["flag"];
@@ -164,7 +186,6 @@ class InformationColumnAction extends Action
 			$this->assign('list',$list); 
 			$this->assign('foot',$foot);
 			$this -> display();
-		}
 		
 	}
 
@@ -174,10 +195,6 @@ class InformationColumnAction extends Action
     +----------------------------------------------------------
     */
 	public function supInformationColumnDetail(){
-		if(!Session::is_set("id")){
-			  header("Content-type: text/html; charset=utf-8");
-		      echo '<script>alert("您还没有登录！");location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
-		}else{
 			$id = $_REQUEST["id"];
 			if(!empty($id)){
 				$InformationColumn = M("information_column");
@@ -185,7 +202,6 @@ class InformationColumnAction extends Action
 				$this -> assign("result", $result);
 			}
 			$this->display();
-		}
 		
 	}
 	

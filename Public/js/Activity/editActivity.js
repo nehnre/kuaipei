@@ -1,5 +1,7 @@
 $(function(){
-
+	KE.show({
+		id:"detail_text"
+	});
 	var dataConfig = {
 		minDate:new Date(),
 		monthNames:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']	,
@@ -25,10 +27,11 @@ $(function(){
 	});
 	
 	$("#btnPreview").click(function(){
-		$("form").attr("action","preview");
-		$("form").attr("target", "_blank");
-		$("form").submit();
-		$("form").attr("action","saveOrUpdateActivity");
-		$("form").attr("target", "_self");
+		$("#myForm").attr("action","preview?_=" + new Date().getTime());
+		$("#myForm").attr("target", "_blank");
+		$("#detail_text").val(KE.html("detail_text"));
+		$("#myForm").submit();
+		$("#myForm").attr("action","saveOrUpdateActivity");
+		$("#myForm").attr("target", "_self");
 	});
 });

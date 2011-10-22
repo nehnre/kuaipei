@@ -8,10 +8,11 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="/kindeditor/kindeditor-min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Activity/editActivity.js"></script>
 </head>
 <body >
-	<form method="post" action="saveOrUpdateActivity" enctype="multipart/form-data" >
+	<form method="post" action="saveOrUpdateActivity" enctype="multipart/form-data" id="myForm">
 	<input type="hidden" value="{$result.id}" name="id"/>
 	<table border="0" class="table" cellpadding="0" cellspacing="0"  >
 		<tr >
@@ -40,7 +41,7 @@
 				<td align="left"><input type="text" style="width:80%" name="title" id="title" value="{$result.title}"/></td>
 			</tr>
 			<tr class="odd">
-				<td  align="right">主办方名称：</td>
+				<td  align="right">产品名称：</td>
 				<td  align="left"><input type="text" style="width:80%" name="sponsor" id="sponsor" value="{$result.sponsor}"/></td>
 			</tr>
 			<tr class="odd">
@@ -50,6 +51,10 @@
 			<tr class="odd">
 				<td  align="right">活动说明：</td>
 				<td  align="left"><textarea cols="100" style="width:80%" rows="8" id="describ_text" name="describ_text">{$result.describ_text}</textarea></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">活动详情：</td>
+				<td  align="left"><textarea cols="100" style="width:80%" rows="24" id="detail_text" name="detail_text" style="visibility:hidden;">{$result.detail_text}</textarea></td>
 			</tr>
 			<tr class="odd">
 				<td width="200px" align="right">活动开始时间：</td>
@@ -94,23 +99,6 @@
 				</if>
 			</tr>
 			<tr class="odd">
-				<td width="200px" align="right">详情图片：</td>
-				<if condition="empty($result['detail_pic'])">
-				<td align="left"><input type="file" style="width:80%" name="photo[]"/></td>
-				<else />
-				<td align="left">
-					<table cellspacing="0" border="0" cellpadding="0" width="100%">
-						<tr>
-							<td><input type="file" style="width:80%" name="photo[]"/></td>
-						</tr>
-						<tr>
-							<td><a href="__PUBLIC__/Uploads/{$result.detail_pic}" target="blank">查看</a></td>
-						</tr>
-					</table>
-				</td>
-				</if>
-			</tr>
-			<tr class="odd">
 				<td width="200px" align="right">首页图片：</td>
 				<if condition="empty($result['index_pic'])">
 				<td align="left"><input type="file" style="width:80%" name="photo[]"/></td>
@@ -122,6 +110,23 @@
 						</tr>
 						<tr>
 							<td><a href="__PUBLIC__/Uploads/{$result.index_pic}" target="blank">查看</a></td>
+						</tr>
+					</table>
+				</td>
+				</if>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">首页切换图片：</td>
+				<if condition="empty($result['index_change_pic'])">
+				<td align="left"><input type="file" style="width:80%" name="photo[]"/></td>
+				<else />
+				<td align="left">
+					<table cellspacing="0" border="0" cellpadding="0" width="100%">
+						<tr>
+							<td><input type="file" style="width:80%" name="photo[]"/></td>
+						</tr>
+						<tr>
+							<td><a href="__PUBLIC__/Uploads/{$result.index_change_pic}" target="blank">查看</a></td>
 						</tr>
 					</table>
 				</td>

@@ -269,11 +269,11 @@ class ActivityAction extends Action
 				$n = $n + 1;
 			}
 			if($error[2] == 0){
-				$Activity -> detail_pic = $info[$n]["savename"];
+				$Activity -> index_pic = $info[$n]["savename"];
 				$n = $n + 1;
 			}
 			if($error[3] == 0){
-				$Activity -> index_pic = $info[$n]["savename"];
+				$Activity -> index_change_pic = $info[$n]["savename"];
 				$n = $n + 1;
 			}
 		}

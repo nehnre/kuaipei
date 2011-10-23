@@ -116,6 +116,7 @@ $(function(){
 				a = checUserCarHostForm();
 			}
 		}
+
 		if(a){
 			var data = $("#myForm").serialize();
 			if ($.browser.msie && $.browser.version < 7){
@@ -123,7 +124,7 @@ $(function(){
 			}
 			showWaiting();
 			$.ajax({
-				url: "updateUser",
+				url: "/UserCenter/updateUser",
 				data: data,
 				type: "POST",
 				success: function(json){
@@ -286,25 +287,22 @@ function checkBirthday(){
 function checUserCarHostForm(){
 	var b = true;
 	b = b && notNull("true_name", "真实姓名");
-	b = b && notNull("birthday", "出生日期");
 	b = b && checkBirthday();
 	b = b && notNull("car_brand", "汽车品牌");
 	b = b && notNull("car_model", "汽车型号");
-	b = b && notNull("driving_license", "车主驾驶证");
-	b = b && notNull("vehicle_license", "汽车行驶证");
-	b = b && notNull("business_card", "名片");
 	return b;
 }
 
 function checkUserCarTeamForm(){
 	var b = true;
-	b = b && notNull("company_name", "企业名称");
-	b = b && notNull("company_address", "企业地址");
-	b = b && notNull("post_code", "邮编");
-	b = b && notNull("business_call", "商务联系电话");
-	b = b && notNull("link_man", "联系人");
-	b = b && notNull("company_scale", "企业规模");
 	b = b && notNull("business_card", "名片");
+	b = b && notNull("company_name", "企业名称");
+	b = b && checkCompanyAddress();
+	b = b && notNull("province", "省份");
+	b = b && notNull("city", "城市");
+	b = b && checkPostCode();
+	b = b && checkBusinessCall();
+	b = b && notNull("company_scale", "企业规模");
 	return b;
 }
 function checkUserFactoryForm(){
@@ -312,10 +310,9 @@ function checkUserFactoryForm(){
 	b = b && notNull("business_card", "名片");
 	b = b && notNull("company_name", "企业名称");
 	b = b && notNull("company_address", "企业地址");
-	b = b && notNull("post_code", "邮编");
-	b = b && notNull("business_call", "商务联系电话");
-	b = b && notNull("link_man", "联系人");
-	b = b && notNull("business_scope", "营业范围");
+	b = b && notNull("province", "省份");
+	b = b && notNull("city", "城市");
+	b = b && checkPostCode();
 	b = b && notNull("company_scale", "企业规模");
 	return b;
 }
@@ -329,6 +326,38 @@ function filterPic(file, extension){
 	}
 	showAlert("你上传的文件格式不正确！");
 	return false;
+}
+
+function checkCompanyAddress(){
+	var objCA =  $("#company_address");
+	var companyAddress = objCA.val();
+	if(!companyAddress){
+		showAlert("请正确填写，系统将默认这是您的寄送地址。", function(){
+			objCA.focus();
+		});
+	}
+}
+function checkPostCode(){
+	var obj = $("#post_code");
+	var val = obj.val();
+	if(val && !nehnre.reg.email.test(val)){
+		showAlert("邮政编码格式不正确，必须为六位数字！", function(){
+			obj.focus();
+		});
+		return false;
+	}
+	return true;
+}
+function checkBusinessCall(){
+	var obj = $("#business_call");
+	var val = obj.val();
+	if(val && !nehnre.reg.phone.test(val)){
+		showAlert("商务联系电话格式不正确！", function(){
+			obj.focus();
+		});
+		return false;
+	}
+	return true;
 }
 function bodyIncrease(){
 	// if(!inc) inc = 200;

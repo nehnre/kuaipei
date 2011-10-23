@@ -5,7 +5,7 @@ $(function(){
 	
 	//提交按钮
 	$("#btnSubmit").click(function(){
-			location.href = "UserCenter?flag=1";	
+			location.href = "/UserCenter?flag=1";	
 	});
 	
 	showMeg($("#user_type1").val());

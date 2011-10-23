@@ -1,4 +1,5 @@
 ﻿/*  
+/*  
  *	powered by nehnre
  */
 body{ font-size:12px;}
@@ -49,10 +50,16 @@ a:hover{
 }
 
 .menu_news{
-	background:url("../images/menu_blank.jpg");
+	background:url("../images/menu_news.jpg");
 }
 .menu_news1{
 	background:url("../images/menu_news1.jpg");
+}
+.menu_usercenter{
+	background:url("../images/menu_usercenter.jpg");
+}
+.menu_usercenter1{
+	background:url("../images/menu_usercenter1.jpg");
 }
 
 .menu_help{
@@ -466,15 +473,15 @@ a:hover{
 	padding-top:10px;
 }
 .layer3 .left{
-	width:380px;
+	width:360px;
 	height:100%;
 	float:left;
 }
 .layer3 .center{
-	width:380px;
+	width:360px;
 	height:100%;
 	float:left;
-	margin-left:10px;
+	margin-left:13px;
 }
 .layer3 .right{
 	float:left;
@@ -500,7 +507,7 @@ a:hover{
 	padding-right:5px;
 } 
 .layer3  .title a{
-	margin-left:220px;
+	margin-left:200px;
 	padding-right:10px;
 	padding-top:5px;
 	font-family: 宋体;

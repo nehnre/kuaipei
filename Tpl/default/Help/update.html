@@ -13,9 +13,12 @@
 	<title>关于立配——立配网</title>
 	<script type="text/javascript">
 		$(function(){
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
 			$(".menu_help").removeClass("menu_help").addClass("menu_help1");
-			$(".menu_index1").removeClass("menu_index1").addClass("menu_index");
-			
 		});
 	</script>
 	

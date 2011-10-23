@@ -15,16 +15,6 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
 	<title>行业资讯——快配网</title>
-	<script type="text/javascript">
-		$(function(){
-			$(".menu_container div").each(function(){
-				var className = $(this).attr("class");
-				className = className.replace(/1$/ig, "");
-				$(this).attr("class", className);
-			});
-			$(".menu_news").removeClass("menu_news").addClass("menu_news1");
-		});
-	</script>
 </head>
 <body>
 	<div>
@@ -44,23 +34,21 @@
 	</tr>
 	</table>
 </div>
-		<volist name='list' id='vo' > 
+	<volist name='list' id='vo' > 
        <if condition="$i%2==1">
 	    <div class="lb2">
 		<else />
 	    <div class="lb1">
 		</if>
-		<table border="0" width="100%" cellspacing="0" cellpadding="0"  height="74">
-	    <tr>
-		<td class="lbtxt1" width="520"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank
-">{$vo.title}</a></td>
-		<td class="lbtxt1" width="100" align="center"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank
-">{$vo.column}</a></td>
-		<td class="lbtxt5" width="100"><php>echo date("Y年m月d日", strtotime($vo["publish_time"]))</php></td>
-	    </tr>
-        </table>
+			<table border="0" width="100%" cellspacing="0" cellpadding="0"  height="74">
+				<tr>
+					<td class="lbtxt1" width="520"><a href="{$vo.link}" target="_blank">{$vo.title}</a></td>
+					<td class="lbtxt1" width="100" align="center">{$vo.type}</td>
+					<td class="lbtxt5" width="100"><php>echo date("Y年m月d日", strtotime($vo["insert_time"]))</php></td>
+				</tr>
+			</table>
 		</div>
-		</volist>
+	</volist>
 
 				<div class="clear"></div>
    <div id="ztop_3">{$foot}</div>

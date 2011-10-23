@@ -26,6 +26,17 @@ class IndexAction extends Action
 		$Vuserlog = M("Vuserlog");
 		$log = $Vuserlog -> where("") -> order('insert_time desc') -> limit(7) -> select();
 		$this -> assign("log", $log);
+		
+		//显示活动相关信息
+		$Information_column = M("information_column");
+		$hot = $Information_column -> where("`column`='汽配热点'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$this -> assign("hot", $hot);
+		$people = $Information_column -> where("`column`='汽配人物'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$this -> assign("people", $people);
+		$resource = $Information_column -> where("`column`='维修资源库'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$this -> assign("resource", $resource);
+		
+		
         $this->display();
     }
 

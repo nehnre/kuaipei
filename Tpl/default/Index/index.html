@@ -19,8 +19,6 @@
 	<script type="text/javascript">
 		var _scroll_lock = false;
 		$(function(){
-			
-			
 			$(".promotion .tab").children().mouseover(function(){
 				$(".promotion .item1").removeClass("item1").addClass("item");
 				$(this).removeClass("item").addClass("item1");
@@ -134,7 +132,7 @@
 				<div class="btn_goright"></div>
 			</div>
 			<div class="clear"></div>
-			<form name="searchWordForm" id="searchWordForm" target="_blank"  method="post"  action="/InformationColumn/subsearchInformationColumn">
+			<form name="searchWordForm" id="searchWordForm" target="_blank"  method="get"  action="/Search/index">
 			<div class="search">
 				<div class="search_text gray">请输入要查询的内容</div>
 				<div class="search_form">
@@ -234,6 +232,89 @@
 					</div>
 					<div class="clear"></div>
 				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="layer3">
+				<div class="left">
+					<div class="title"><span>汽</span>配热点<a href="/InformationColumn/supListInformationColumn?flag=3" class="gray" target="_blank">更多 ></a></div>
+					<div class="content">
+						<volist name="hot" id="vo">
+						<if condition="$i eq 1">
+						<div class="pic_news">
+							<div class="pic">
+								<if condition="!empty($vo['picture'])">
+								<img src="__PUBLIC__/Upload/{$vo.picture}" width="100" height="100"/>
+								<else />
+								<img src="__PUBLIC__/images/layer3/pic_news.jpg" />
+								</if>
+								</div>
+							<div class="news">
+								<div class="news_title bold"><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
+								<div class="news_abstract"><php>echo mb_substr(strip_tags($vo["content"]),0,60,"utf-8")."..."</php></div>
+							</div>
+						</div>
+						</if>
+						</volist>
+						<div class="clear"></div>
+						<div class="news_list">
+							<volist name="hot" id="vo">
+							<if condition="$i gt 1">
+							<div><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="gray" target="_blank">{$vo.title}</a></div>
+							</if>
+							</volist>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+					<div class="bottom"></div>
+				</div>
+				<div class="center">
+					<div class="title"><span>汽</span>配人物<a href="/InformationColumn/supListInformationColumn?flag=4" class="gray" target="_blank">更多 ></a></div>
+					<div class="content">
+						<volist name="people" id="vo">
+						<if condition="$i eq 1">
+						<div class="pic_news">
+							<div class="pic">
+								<if condition="!empty($vo['picture'])">
+								<img src="__PUBLIC__/Upload/{$vo.picture}" width="100" height="100"/>
+								<else />
+								<img src="__PUBLIC__/images/layer3/pic_news.jpg" />
+								</if>
+								</div>
+							<div class="news">
+								<div class="news_title bold"><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
+								<div class="news_abstract"><php>echo mb_substr(strip_tags($vo["content"]),0,60,"utf-8")."..."</php></div>
+							</div>
+						</div>
+						</if>
+						</volist>
+						<div class="clear"></div>
+						<div class="news_list">
+							<volist name="people" id="vo">
+							<if condition="$i gt 1">
+							<div><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="gray" target="_blank">{$vo.title}</a></div>
+							</if>
+							</volist>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>
+				<div class="right">
+					<div class="title"><span>维</span>修资源库<a href="/InformationColumn/supListInformationColumn?flag=5" class="gray" style="margin-left:40px;" target="_blank">更多 ></a></div>
+					<div class="content">
+						<div class="news_list">
+							<volist name="resource" id="vo">
+							<if condition="$i gt 1">
+							<div class="line"></div>
+							</if>
+							<div><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="gray" target="_blank">{$vo.title}</a></div>
+							</volist>
+						</div>
+					</div>
+					<div class="right_bottom"></div>
+				</div>
+				<div class="clear"></div>
 			</div>
 			<div class="clear"></div>
 		</div>

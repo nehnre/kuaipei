@@ -335,7 +335,9 @@ function checkCompanyAddress(){
 		showAlert("请正确填写，系统将默认这是您的寄送地址。", function(){
 			objCA.focus();
 		});
+		return false;
 	}
+	return true;
 }
 function checkPostCode(){
 	var obj = $("#post_code");

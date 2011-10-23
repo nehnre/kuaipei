@@ -24,6 +24,12 @@
 				$(this).removeClass("item").addClass("item1");
 			});
 			
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
+			$(".menu_index").removeClass("menu_index").addClass("menu_index1");
 		});	
 	</script>	
 </head>
@@ -232,6 +238,10 @@
 					</div>
 					<div class="clear"></div>
 				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="layer2">
+				<img src="__PUBLIC__/images/layer2/ad1.jpg" />
 			</div>
 			<div class="clear"></div>
 			<div class="layer3">

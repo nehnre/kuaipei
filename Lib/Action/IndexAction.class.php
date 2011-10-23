@@ -29,11 +29,11 @@ class IndexAction extends Action
 		
 		//显示活动相关信息
 		$Information_column = M("information_column");
-		$hot = $Information_column -> where("`column`='汽配热点'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$hot = $Information_column -> where("`column`='汽配热点' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
 		$this -> assign("hot", $hot);
-		$people = $Information_column -> where("`column`='汽配人物'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$people = $Information_column -> where("`column`='汽配人物' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
 		$this -> assign("people", $people);
-		$resource = $Information_column -> where("`column`='维修资源库'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$resource = $Information_column -> where("`column`='维修资源库' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
 		$this -> assign("resource", $resource);
 		
 		

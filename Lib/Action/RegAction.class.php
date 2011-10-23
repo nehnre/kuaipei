@@ -275,6 +275,21 @@ class RegAction extends Action
 			$User -> password = md5($password); 
 		} 
 		
+		//处理email
+		$email = $_REQUEST["email"];
+		if(!empty($email)){
+			$Subscribe = M("Subscribe");
+			$condition["email"] = $email;
+			$result = $Subscribe -> where($condition) -> count();
+			$json["result"] = $result;
+			if($result <= 0){
+				$Subscribe -> email = $email;
+				$Subscribe -> insert_time = date("Y-m-d H:i:s");
+				$Subscribe -> add();
+			}		
+		}
+		
+		
 		//判断是插入还是更新
 		if($if_insert){
 			$user_name = Session::get("user_name_temp");

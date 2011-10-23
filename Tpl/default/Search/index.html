@@ -15,7 +15,6 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
 	<title>行业资讯——快配网</title>
-<<<<<<< HEAD
 	<script type="text/javascript">
 		$(function(){
 			$(".menu_container div").each(function(){
@@ -26,8 +25,6 @@
 			$(".menu_index").removeClass("menu_index").addClass("menu_index1");
 		});
 	</script>
-=======
->>>>>>> a20119f5fab5e112f216d383e664197e5c9a7169
 </head>
 <body>
 	<div>
@@ -47,6 +44,15 @@
 	</tr>
 	</table>
 </div>
+	<if condition="count($list) elt 0">
+	    <div class="lb2">
+			<table border="0" width="100%" cellspacing="0" cellpadding="0"  height="74">
+				<tr>
+					<td class="lbtxt1 gray" align="center">没有相关数据</td>
+				</tr>
+			</table>
+		</div>
+	</if>
 	<volist name='list' id='vo' > 
        <if condition="$i%2==1">
 	    <div class="lb2">

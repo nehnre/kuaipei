@@ -52,6 +52,21 @@
 				来源：<input type="text" style="width:150px;" name="source" value="{$Think.request.source}"/>
 			</td>
 			<td style="width:200px;">
+				分类：
+				<select  name="column" id="column">
+					<option value=""></option>
+                    <option value="厂商动态">厂商动态</option>
+					<option value="经销动态">经销动态</option>
+					<option value="汽配人物">汽配人物</option>
+                   <option value="汽配热点">汽配热点</option>
+					<option value="维修资源库">维修资源库</option>
+					<option value="一线维修">一线维修</option>
+				</select>
+				<script type="text/javascript">
+					$("#column").val("{$Think.request.column}");
+				</script>
+			</td>
+			<td style="width:200px;">
 				状态：
 				<select  name="status" id="status">
 					<option value=""></option>

@@ -59,7 +59,7 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 .dd { height:40px; font-size:20px; font-family:"微软雅黑";}
 .fl { height:32px; line-height:32px; background-color:#F3F3F3; font-size:12px;border-top-width: 1px;	border-bottom-width: 1px;border-top-style: solid; border-bottom-style: solid;border-top-color: #BEBEBE;	border-bottom-color: #BEBEBE;}
 .fl1 { font-size: 12px; color:#666666;margin-left: 10px;width:30px; line-height:22px; }
-.fl2 { font-size: 12px; color:#ffffff; width:50px;	height:22px; line-height:22px; background-color:#FFB400; text-align: center;}
+.fl2 { font-size: 12px; color:#ffffff; 	height:22px; line-height:22px; background-color:#FFB400; text-align: center;}
 .fl3 { font-size: 12px; color:#FD791E; margin-left: 10px; }
 .ym1 { font-size: 14px;width:22px;	height:22px;color:#ffffff;	border: 1px solid #91AAED;	background-color: #0196CE;	font-weight: bold;	line-height:22px;	text-align: center;
 }

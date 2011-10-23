@@ -66,9 +66,14 @@ class InformationColumnAction extends Action
 				$condition["title"] = array("like", "%".$title."%"); 
 			}
 			
-			$type = $_REQUEST["source"];
+			$source = $_REQUEST["source"];
 			if(!empty($type)){
-				$condition["source"] = $type; 
+				$condition["source"] = $source; 
+			}
+
+			$column = $_REQUEST["column"];
+			if(!empty($column)){
+				$condition["column"] = $column; 
 			}
 			
 			$status = $_REQUEST["status"];

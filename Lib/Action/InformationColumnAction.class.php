@@ -93,8 +93,8 @@ class InformationColumnAction extends Action
 		$id = $_REQUEST["id"];
 		$informationColumn = M("information_column");
 		$data["status"] = "已发布";
-		$data["update_time"] = date("Y-m-d");
-        $data["publish_time"] = date("Y-m-d");
+		$data["update_time"] = date("Y-m-d H:i:s");
+        $data["publish_time"] = date("Y-m-d H:i:s");
 		$informationColumn -> where("id=".$id) -> save($data);
 		echo '<script>alert("发布成功！");location.href="listInformationColumn";try{window.event.returnValue=false; }catch(e){}</script>';
 	}
@@ -198,10 +198,18 @@ class InformationColumnAction extends Action
 			$id = $_REQUEST["id"];
 			if(!empty($id)){
 				$InformationColumn = M("information_column");
-				$result = $InformationColumn -> where("id=".$id) -> find();
-				$this -> assign("result", $result);
+				$condition["id"] = $id;
+				$condition["status"] = "已发布";
+				$result = $InformationColumn -> where($condition) -> find();
+				if(!empty($result)){
+					$this -> assign("result", $result);
+					$this->display();
+				} else {
+					$this -> error("文章不存在或未发布！");
+				}
+			} else {
+				$this -> error("参数错误！");
 			}
-			$this->display();
 		
 	}
 	

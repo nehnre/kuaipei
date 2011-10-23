@@ -16,6 +16,16 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/UserCenter/UserCenter.js"></script>
 	<title>升级用户注册——快配网</title>
+	<script type="text/javascript">
+		$(function(){
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
+			$(".menu_usercenter").removeClass("menu_usercenter").addClass("menu_usercenter1");
+		});
+	</script>
 </head>
 <body>
 	<div>

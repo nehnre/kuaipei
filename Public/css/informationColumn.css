@@ -47,7 +47,12 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 
 /* 中间 _____*/
 #inw {  margin:0 auto;  width:1360px;  }
-#inw_bg { background: url(../images/bg.jpg) repeat-y;}
+#inw_bg { 
+	background: url(../images/bg.jpg) repeat-y;
+    background-color:#e1e1e1;
+    background-attachment:fixed;
+    background-position:center;
+}
 #ztop { float:left; height: 90px; }
 #ztop_l {margin-left: 40px;	width:950px; margin-top: 30px;border-bottom-width: 1px;	border-bottom-style: solid;	border-bottom-color: #BEBEBE; }
 #nr { margin:0 auto; width:1000px;}
@@ -143,8 +148,9 @@ h3 {
 }
 .body {
 	background: url(../images/reg_body_bg.jpg) repeat-y;
-	background-attachment:fixed;
-	background-position:center;
+    background-color:#e1e1e1;
+    background-attachment:fixed;
+    background-position:center;
 }
 .bottominfo {
 	text-align:center;

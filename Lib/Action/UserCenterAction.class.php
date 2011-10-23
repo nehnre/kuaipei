@@ -70,7 +70,9 @@ class UserCenterAction extends Action
 
 	public function editPassword(){
 		if(!Session::is_set("id")){
-			$this->error("没有登录！");
+			header("Content-type: text/html; charset=utf-8");
+			echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
+			return;
 		}
 		$condition["id"]  = Session::get("id");
 		$User = M("User");
@@ -111,7 +113,9 @@ class UserCenterAction extends Action
 	public function index(){
 		$flag = $_REQUEST["flag"];
 		if(!Session::is_set("id")){
-			$this->error("没有登录！");
+			  header("Content-type: text/html; charset=utf-8");
+		      echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
+			  return;
 		}
 		$id = Session::get("id");
 		$User = M("User");

@@ -16,6 +16,16 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Activity/show.js"></script>
 	</if>
 	<title>{$result.title}——立配网</title>	
+	<script type="text/javascript">
+		$(function(){
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
+			$(".menu_index").removeClass("menu_index").addClass("menu_index1");
+		});
+	</script>
 <body>
 	<include file="./Tpl/default/Public/index_top.html" />
 	<input type="hidden" name="id" id="id" value="{$result.id}" />
@@ -65,7 +75,7 @@
 							</div>
 							<div class="text"><!--{$result.end_time}-->{$result.sponsor}</div>
 						</div>
-						<div class="right">
+						<div class="right1">
 							<div class="title bold">{$result.title}</div>
 							<div class="abstract">
 								<volist name="introduce" id="vo">

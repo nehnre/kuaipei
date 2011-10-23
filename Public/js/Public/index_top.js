@@ -3,7 +3,16 @@ $(function(){
 		$(this).click(function(){
 			var _href = $(this).attr("href");
 			if(_href){
+				var flag = $(this).attr("flag");
+				if("true" == flag){
+					var objLogin = $("#login");
+					if(objLogin.size() > 0){
+						objLogin.click();
+						return;
+					}
+				}
 				location.href = _href;
+				try{window.event.returnValue=false;}catch(e){}
 			}
 		});
 	});
@@ -82,6 +91,7 @@ $(function(){
 				json = nehnre.parseJSON(json);
 				showAlert(json.data.msg, function(){
 					if(json.data.success){
+						showWaiting();
 						location.href = location.href.replace(/#*$/ig,"");
 						try{window.event.returnValue=false;}catch(e){}
 					}

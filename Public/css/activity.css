@@ -27,7 +27,7 @@
 	float:left;
 	padding-left:10px;
  }
- .activity_content .right{
+ .activity_content .right1{
 	float:left;
  }
  .activity_content .left .btn {
@@ -61,33 +61,33 @@
 	text-align:center;
 	font-family:黑体;
  }
- .activity_content .right {
+ .activity_content .right1 {
 	margin-left:20px;
  }
- .activity_content .right .title{
+ .activity_content .right1 .title{
 	padding-top:20px;
 	font-size:24px;
 	font-family:微软雅黑;
 	margin-bottom:20px;
 	height:35px;
  }
- .activity_content .right .abstract{
+ .activity_content .right1 .abstract{
 	font-size:16px;
 	font-family:黑体;
 	line-height:22px;
 	margin-bottom:20px;
  }
- .activity_content .right .introduce_list ul{
+ .activity_content .right1 .introduce_list ul{
 	margin-left:15px;
 	line-height:25px;
  }
- .activity_content .right .introduce_list{
+ .activity_content .right1 .introduce_list{
 	margin-bottom:20px;
  }
- .activity_content .right .download{
+ .activity_content .right1 .download{
 	float:left;
  }
- .activity_content .right .attention{
+ .activity_content .right1 .attention{
 	float:left;
 	margin-left:30px;
  }

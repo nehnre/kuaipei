@@ -121,12 +121,14 @@ function checkCompanyAddress(){
 		showAlert("请正确填写，系统将默认这是您的寄送地址。", function(){
 			objCA.focus();
 		});
+		return false;
 	}
+	return true;
 }
 function checkPostCode(){
 	var obj = $("#post_code");
 	var val = obj.val();
-	if(val && !nehnre.reg.email.test(val)){
+	if(val && !nehnre.reg.post.test(val)){
 		showAlert("邮政编码格式不正确，必须为六位数字！", function(){
 			obj.focus();
 		});

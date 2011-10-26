@@ -260,7 +260,7 @@
 								</div>
 							<div class="news">
 								<div class="news_title bold"><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
-								<div class="news_abstract"><php>echo mb_substr(strip_tags($vo["content"]),0,60,"utf-8")."..."</php></div>
+								<div class="news_abstract"><php>echo mb_substr(strip_tags($vo["content"]),0,40,"utf-8")."..."</php></div>
 							</div>
 						</div>
 						</if>
@@ -272,7 +272,6 @@
 							<div><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="gray" target="_blank">{$vo.title}</a></div>
 							</if>
 							</volist>
-							<div class="clear"></div>
 						</div>
 						<div class="clear"></div>
 					</div>
@@ -294,7 +293,7 @@
 								</div>
 							<div class="news">
 								<div class="news_title bold"><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
-								<div class="news_abstract"><php>echo mb_substr(strip_tags($vo["content"]),0,60,"utf-8")."..."</php></div>
+								<div class="news_abstract"><php>echo mb_substr(strip_tags($vo["content"]),0,40,"utf-8")."..."</php></div>
 							</div>
 						</div>
 						</if>
@@ -328,6 +327,7 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+		<div class="clear"></div>
 	</div>
 	<include file="./Tpl/default/Public/index_bottom.html" />
 	<include file="./Tpl/default/Public/dialog.html" />  

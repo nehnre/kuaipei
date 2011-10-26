@@ -528,11 +528,10 @@ a:hover{
 	background:url(../images/layer3/bottom_bg.jpg) no-repeat;
 	height:6px;
 }
-
 .pic_news .pic{
 	width:100px;
 	height:100px;
-	margin:20px 20px 20px 20px;
+	padding:10px 10px 10px 10px;
 	float:left;
 }
 
@@ -544,8 +543,10 @@ a:hover{
 	padding:20px 20px 20px 0px;
 }
 .pic_news .news_title{
-	padding-bottom:10px;
+	margin-bottom:10px;
 	color:#cc071e;
+	overflow:hidden;
+	height:14px;
 }
 .pic_news .news_abstract{
 	color:#737373;

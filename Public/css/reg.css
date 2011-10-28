@@ -129,3 +129,12 @@ h3 {
 .input_focus{
 	background-position: -1px -26px;
 }
+.kf{
+	left:50%;
+	position: fixed;
+	top: 200px; 
+	width:92px;
+	height:151px;
+	margin-left:500px;
+	background:url(../images/kf.png);
+}

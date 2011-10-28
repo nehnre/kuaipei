@@ -194,7 +194,7 @@
 				<td></td>						
 				<td>
 						<if condition="!empty($result['business_card'])">
-								<img src="/Public/Upload/{$result.business_card}" />
+								<a href ="/Temp/<php>echo preg_replace('/thumb_/i','',$result['business_card'])</php>" target="_blank"><img src="/Public/Upload/{$result.business_card}" border="0"/></a>
 								<script type="text/javascript">
 										bodyIncrease();	
 										$("#tr_bc").show();

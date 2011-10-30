@@ -9,7 +9,7 @@ class ActivityAction extends Action
 		$data["status"] = "未发布";
 		$data["update_time"] = date("Y-m-d");
 		$Activity -> where("id=".$id) -> save($data);
-		echo '<script>alert("取消成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
+		echo '<script>alert("取消成功！");location.href="listActivity";</script>';
 	}
 
     /**
@@ -31,7 +31,7 @@ class ActivityAction extends Action
 		$id = $_REQUEST["id"];
 		$Activity = M("Activity");
 		$Activity -> where("id=".$id) -> delete();
-		echo '<script>alert("删除成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
+		echo '<script>alert("删除成功！");location.href="listActivity";</script>';
 	}
 	
 	public function join(){
@@ -155,7 +155,7 @@ class ActivityAction extends Action
 		$data["status"] = "已发布";
 		$data["update_time"] = date("Y-m-d");
 		$Activity -> where("id=".$id) -> save($data);
-		echo '<script>alert("发布成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
+		echo '<script>alert("发布成功！");location.href="listActivity";</script>';
 	}
 	
     /**
@@ -166,7 +166,7 @@ class ActivityAction extends Action
 	public function saveOrUpdateActivity(){
 		$saveForm = "saveForm";
 		$this -> $saveForm(false);
-		echo '<script type="text/javascript">alert("保存成功！");location.href="listActivity";try{window.event.returnValue=false; }catch(e){}</script>';
+		echo '<script type="text/javascript">alert("保存成功！");location.href="listActivity";</script>';
 	}
 	
 	public function show(){

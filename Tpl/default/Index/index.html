@@ -30,6 +30,12 @@
 				$(this).attr("class", className);
 			});
 			$(".menu_index").removeClass("menu_index").addClass("menu_index1");
+			$(".promotion_content .item .img").click(function(){
+				_href = $(this).attr("href");
+				if(_href){
+					location.href = _href;
+				}
+			});
 		});	
 	</script>	
 </head>
@@ -145,10 +151,6 @@
 					<div class="search_input"><input type="text" name="word" id="word"/></div>
 					<div class="search_btn"><input type="button" value=" 搜     索 " id="searchInformationColumn"/></div>
 				</div>
-				<div class="search_hot">
-					<a href="#" class="gray">3M</a> <a href="#" class="gray">刹车片</a> <a href="#" class="gray">机油</a> <a href="#" class="gray">导航仪</a>
-					 <a href="#" class="gray">WINX</a>
-				</div>
 			</div>
 			</form>
 			<div class="clear"></div>
@@ -164,12 +166,12 @@
 				</div>
 				<div class="category_news">资讯</div>
 				<div class="category_news_content">
-					<a href="#" class="black">汽配资讯</a>
-					<a href="#" class="black">产品报告</a>
-					<a href="#" class="black">厂商动态</a>
-					<a href="#" class="black">经销动态</a>
-					<a href="#" class="black">一线维修</a>
-					<a href="#" class="black">汽配人物</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=1" class="black">厂商动态</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=2" class="black">经销动态</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=3" class="black">汽配热点</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=4" class="black">汽配人物</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=5" class="black">维修资源</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=6" class="black">一线维修</a>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -187,7 +189,7 @@
 							<div class="row">
 								<volist name="child" id="vo">
 								<div class="item">
-									<div class="img align_center"><div style="width:200px;margin-left:7px;height:148px;overflow:hidden;background:url(__PUBLIC__/Uploads/{$vo.index_pic});">
+									<div class="img align_center" style="cursor:pointer" href="/Activity/show?id={$vo.id}"><div style="width:200px;margin-left:7px;height:148px;overflow:hidden;background:url(__PUBLIC__/Uploads/{$vo.index_pic});">
 										<if condition="!empty($vo['index_change_pic'])">
 										<img src="__PUBLIC__/Uploads/{$vo.index_change_pic}" style="margin-left:-600px" />
 										</if>
@@ -229,12 +231,6 @@
 							</div>
 						</div>
 						<div class="right_bottom"></div>
-					</div>
-					<div class="clear"></div>
-					<div class="ads">
-						<div><img src="__PUBLIC__/images/ad1.jpg" /></div>
-						<div><img src="__PUBLIC__/images/ad2.jpg" /></div>
-						<div><img src="__PUBLIC__/images/ad3.jpg" /></div>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -330,11 +326,8 @@
 		<div class="clear"></div>
 	</div>
 	<include file="./Tpl/default/Public/index_bottom.html" />
-	<include file="./Tpl/default/Public/dialog.html" />  
-	<div class="kf">
-		<div><img src="__PUBLIC__/images/kf_top.png" /></div>
-		<div><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2604517234&site=qq&menu=yes"><img src="__PUBLIC__/images/kf_bottom.png" border="0"/></a></div>
-	</div>
+	<include file="./Tpl/default/Public/dialog.html" />
+	<include file="./Tpl/default/Public/qq_dialog.html" />
     <script type="text/javascript" language="javascript">
         var speed = 40//速度数值越大速度越慢
         www_qpsh_com2.innerHTML = www_qpsh_com1.innerHTML

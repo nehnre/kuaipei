@@ -742,6 +742,7 @@ a:hover{
 	width:92px;
 	height:151px;
 	margin-left:500px;
+	background:url(../images/kf.png);
 }
 * html,* html body{background-image:url(about:blank);background-attachment:fixed}
 * html .kf{position:absolute;top:expression(eval(document.documentElement.scrollTop) + 200)}

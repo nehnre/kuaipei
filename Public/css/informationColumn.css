@@ -322,6 +322,7 @@ h3 {
 	margin-right:auto;
 	font-weight:bold;
 	font-size:18px;
+	font-family:黑体;
 
 }
 .help_right_content_time
@@ -339,4 +340,8 @@ h3 {
 }
 .red {
 	color:#ce0000;
+}
+.hr{
+	border-bottom:1px solid gray;
+	margin:10px 0 10px 0;
 }

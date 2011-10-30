@@ -9,12 +9,16 @@
 	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/queryString.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
 	<title>行业资讯——快配网</title>
+	<style type="text/css">
+	
+	</style>
 	<script type="text/javascript">
 		$(function(){
 			$(".menu_container div").each(function(){
@@ -23,6 +27,36 @@
 				$(this).attr("class", className);
 			});
 			$(".menu_index").removeClass("menu_index").addClass("menu_index1");
+			$("#btnSearch").click(function(){
+				location.href="/Search/?word=" + encodeURIComponent($("#word").val());
+			});
+			
+			$(".tab .text").click(function(){
+				var type = $(this).html();
+				if(type == "全部"){
+					type = "";
+				} else {
+					type = "&type=" + type;
+				}
+				var _href = location.href;
+				if(/\?/ig.test(_href)){
+					_href = _href.replace(/\&type=[^&]*/ig,"");
+					_href += type;
+
+				} else {
+					_href += "?" + type;
+				}
+				location.href = _href;
+			});
+			var type = nehnre.queryString()["type"];
+			if(!type){
+				type = "全部";
+			}
+			$(".tab .text").each(function(){
+				if(type == $(this).html()){
+					$(this).parent().removeClass("item").addClass("item1");
+				}
+			});
 		});
 	</script>
 </head>
@@ -32,46 +66,63 @@
 		<div class="body">
 <div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
  <div id="nr">
-   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/title_search_result.jpg"></div><div id="ztop_2">{$foot}</div></div>
+   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/title_search_result.jpg"></div></div>
     <div class="clear"></div>
-   <div id="main"><div class="main_nr">
-   <div class="fl">
-    <table border="0" width="100%" cellspacing="0" cellpadding="0" height="20">
-	<tr>
-	<td width="520" align="center"><span style="font-weight: bold; font-size: 12px; ">标题</span></td>
-	<td width="100" align="center"><span style="font-weight: bold; font-size: 12px; ">分类</span></td>
-	<td width="100" align="center"><span style="font-weight: bold; font-size: 12px; ">发布日期</span></td>
-	</tr>
-	</table>
-</div>
-	<if condition="count($list) elt 0">
-	    <div class="lb2">
-			<table border="0" width="100%" cellspacing="0" cellpadding="0"  height="74">
-				<tr>
-					<td class="lbtxt1 gray" align="center">没有相关数据</td>
-				</tr>
-			</table>
+	<div class="search">
+		<div class="search_text gray">请输入要查询的内容</div>
+		<div class="search_form">
+			<div class="search_input"><input type="text" name="word" id="word" value="{$Think.request.word}"/></div>
+			<div class="search_btn"><input type="button" value=" 搜     索 " id="btnSearch"/></div>
 		</div>
+	</div>
+	<if condition="!empty($_REQUEST['word'])">
+		<div class="searchTip">查询<font color="red">{$Think.request.word}</font>，共有（<font color="red">{$count}</font>）条记录</div>
 	</if>
-	<volist name='list' id='vo' > 
-       <if condition="$i%2==1">
-	    <div class="lb2">
-		<else />
-	    <div class="lb1">
-		</if>
-			<table border="0" width="100%" cellspacing="0" cellpadding="0"  height="74">
-				<tr>
-					<td class="lbtxt1" width="520"><a href="{$vo.link}" target="_blank">{$vo.title}</a></td>
-					<td class="lbtxt1" width="100" align="center">{$vo.type}</td>
-					<td class="lbtxt5" width="100"><php>echo date("Y年m月d日", strtotime($vo["insert_time"]))</php></td>
-				</tr>
-			</table>
+	<div id="main">
+		<div class="main_nr">
+			<div class="promotion1">
+				<div class="title1">
+					<div class="search_title bold" style="margin-left:20px;">标 题</div>
+					<div class="search_pub_time1 bold">发布时间</div>
+					<div class="tab">
+						<div class="item">
+							<div class="text">全部</div>
+						</div>
+						<div class="item">
+							<div class="text">立配活动</div>
+						</div>
+						<div class="item">
+							<div class="text">行业资讯</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				
+				<if condition="count($list) elt 0">
+				<div class="promotion_content1 gray" style="text-align:center">没有检索到相关数据</div>
+				</if>
+				<volist name='list' id='vo' > 
+				<if condition="$i%2==1">
+				<div class="promotion_content1">
+				<else />
+				<div class="promotion_content">
+				</if>
+					<div class="search_title"><a href="{$vo.link}" target="_blank">{$vo.title}</a></div>
+					<div class="search_pub_time"><php>echo date("Y年m月d日", strtotime($vo["insert_time"]))</php></div>
+					<div class="search_type">{$vo.type}</div>
+					<div class="clear"></div>
+				</div>
+				</volist>
+				<if condition="count($list)%2==1">
+				<div class="promotion_content" style="text-align:right;padding-right:10px;">
+				<else />
+				<div class="promotion_content1" style="text-align:right;padding-right:10px;">
+				</if>
+					{$foot}
+				</div>
+				<div class="left_bottom1"></div>
+			</div>
 		</div>
-	</volist>
-
-				<div class="clear"></div>
-   <div id="ztop_3">{$foot}</div>
-   </div></div>
   </div>
   <div class="clear"></div>
   </div>

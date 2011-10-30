@@ -1,0 +1,15 @@
+	.focus {font-size:12px; font-family:\5B8B\4F53; color:#000; width:350px; height:225px; position:relative; background:#DBDBDB;float:left;margin-bottom:10px;margin-left: 23px;display:inline;}
+	.focus a { color:#000; text-decoration:none; }
+	.focus a:hover { color:#f60; text-decoration:underline; }
+	.focus img { border:none; vertical-align:middle; }
+	.focus i, em { font-style:normal; }
+	.focus img { width:350px; height:200px }
+	.focus .dPic { border-bottom:1px solid #FFF; }
+	.focus .pagination { width:100%; height:16px; clear:both; position:absolute; top:205px; right:0px; _right:-1px; }
+	.focus .pagination .subLineTab { width:100%; display:none; }
+	.focus .pagination .subPageTab { float:right }
+	.focus .pagination a { width:14px; height:14px; line-height:14px; display:inline; float:left; border:1px #AFC1CD solid; color:#000; background:#FFF; text-align:center; text-decoration:none; font-weight:bold; margin-right:3px; }
+	.focus .pagination a:hover, .focus .pagination a.selected { color:#FFF; background:#F60 }
+	.focus .dTitle { font-weight:bold; line-height:24px; text-align:center; width:230px; }
+	.ivyLeft { border:1px solid #ddd; overflow:hidden; width:348px; }
+	.ivyLeft .p1 { float:left; font-size:14px; height:24px; line-height:24px; overflow:hidden; width:165px; display:inline; }

@@ -10,6 +10,11 @@ class SearchAction extends Action
 			$where['_logic'] = "or";
 			$map['_complex'] =$where; 
 		}
+		
+		$type = $_REQUEST["type"];
+		if(!empty($type)){
+			$map["type"] = $type;
+		}
 		$count = $Vsearch -> where($map) -> count();
 		import("ORG.Util.Page");
 		$Page = new Page($count, 10);
@@ -17,6 +22,7 @@ class SearchAction extends Action
 		$list = $Vsearch -> where($map) -> order('seq  desc,insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
 		$this->assign('list',$list); 
 		$this->assign('foot',$foot);
+		$this -> assign('count', $count);
 		$this -> display();
 	}
 }

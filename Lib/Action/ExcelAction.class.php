@@ -96,23 +96,24 @@ class ExcelAction extends Action
 		    }else{//输出头信息
 			$iconvstr = "iconvstr";
 				$filename = "export".date("YmdHis");
-				header("Content-type: text/html; ");
+				header("Content-type: text/plain; ");
 				header("Content-Disposition: attachment; filename=$filename.csv;");
 				header('Pragma: cache');
 				header('Cache-Control: public, must-revalidate, max-age=0');
 				//由于 Excel 无法直接识别 utf-8 的数据，所以需要转换一下
-				//echo iconv( 'utf-8', 'GB2312//IGNORE',"\xEF\xBB\xBF用户名,活动名称,参加时间\n");
-                echo  $iconvstr ("用户名,活动名称,参加时间\n");
-				$vactivity_comment = M('vactivity_comment');
-				$result = $vactivity_comment -> field("user_name, activity_title, insert_time") -> findAll();
+				echo auto_charset( "用户名,活动名称,参加时间\n",'utf-8', 'gbk');
+                //echo  $iconvstr ("用户名,活动名称,参加时间\n");
+				$vuserlog = M('vuserlog');
+				$result = $vuserlog -> field("nick_name, title, insert_time") -> findAll();
 				foreach ($result  as $row) {
-				$contents = $iconvstr ($row['user_name']);
+				$contents = $row['nick_name'];
 				$contents .= ',';
-				$contents .= $iconvstr ($row['activity_title']);
+				$contents .= $row['title'];
 				$contents .= ',';
-				$contents .= $iconvstr ($row['insert_time']);
+				$contents .= $row['insert_time'];
 				$contents .= "\n"; 
-				echo $contents;
+				//echo $contents;
+				echo auto_charset($contents,'utf-8', 'gbk');
 				//echo iconv( 'utf-8', 'GB2312//IGNORE',$contents);
 				}
 			}

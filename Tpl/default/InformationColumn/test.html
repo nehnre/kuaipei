@@ -82,7 +82,13 @@
 	 <div align="center">
 	 <table border="0" width="80%"  cellspacing="0" cellpadding="0">
 		<tr><td  align="center" ><span class="newactivity">立配网新上市新资讯新活动</span></td></tr>
-	    <tr><td  ></td></tr>
+		<tr><td  align="center" ><volist name="list" id="vo" mod="5"  offset="0" length='10'  >
+           {$vo.title}
+         <eq name="mod" value="2"><br/></eq>
+         </volist></td></tr>
+
+
+	    
        <tr><td   ></td></tr>
 	    <tr><td ></td></tr>
        <tr><td></td></tr>
@@ -134,16 +140,18 @@
 		<else />
 	    <div class="lb1">
 		</if>
+		<div class="contentFloat">
 		<table border="0" width="100%" cellspacing="0" cellpadding="0" >
 	    <tr>
 		<td class="lbtxt1" width="620"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank
-">{$vo.title}</a></td>
+">{$vo.title}<php>echo "：".mb_substr(strip_tags($vo["content"]),0,40,"utf-8")."..."</php></a></td>
 		<td class="lbtxt5" width="100"><php>echo date("Y年m月d日", strtotime($vo["publish_time"]))</php></td>
 	    </tr>
         </table>
 		</div>
+		</div>
 		</volist>
-	    <div class="lb2"><div class="foot">{$foot}</div></div>
+
 		<div class="clear"></div>
    </div></div>
 

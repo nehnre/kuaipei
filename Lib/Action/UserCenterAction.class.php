@@ -2,7 +2,25 @@
 class UserCenterAction extends Action
 {	
 	
+	
+	public function  userActivity() {
+		if(!Session::is_set("id")){
+			header("Content-type: text/html; charset=utf-8");
+			echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
+			return;
+		}
+		$condition["user_id"]  = Session::get("id");
+		$Vuserlog = M("vuserlog");
+		$count = $Vuserlog -> where($condition) -> count();
+		import("ORG.Util.Page");
+		$Page = new Page($count, 10);
+		$foot = $Page -> show();
+		$list = $Vuserlog -> where($condition) -> order('insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+		$this->assign('list',$list); 
+		$this->assign('foot',$foot);
+		$this -> display();
 
+	}
 
 	public function  checkPassword() {
 		if(!Session::is_set("id")){
@@ -121,14 +139,28 @@ class UserCenterAction extends Action
 		$User = M("User");
 		$result = $User -> where("id=".$id) -> find();
 		$this -> assign("result",$result);
-		if($result['status'] == '基本注册'&&$flag=='1'){
-			$template = "./Tpl/default/UserCenter/userCenterEdit.html";
+		if($result['status'] == '基本注册'||$result['status'] == '已退回'){
+			if($flag=='1'){
+				$template = "./Tpl/default/UserCenter/userCenterEditBasic.html";
+			}else if($flag=='2'){
+				$template = "./Tpl/default/UserCenter/userCenterEditPerfect.html";
+			}else if($flag=='3'){
+				if("厂商" == $result["user_type1"] || "经销商" == $result["user_type1"] || "修理厂" == $result["user_type1"]){
+					$template = "./Tpl/default/UserCenter/userCenterEditUserFactory.html";
+				} else if("车队" == $result["user_type1"] || "其他"  == $result["user_type1"]){
+					$template = "./Tpl/default/UserCenter/userCenterEditUserCarTeam.html";
+				} else if("车主" == $result["user_type1"]){
+					$template = "./Tpl/default/UserCenter/userCenterEditUserCarHost.html";
+				} else {
+					$this -> error("还没有<a href='chooseType'>选择分类</a>");
+				}
+			}else{
+				$template = "./Tpl/default/UserCenter/userCenterDetail.html";
+			}
 		}else{
 			$template = "./Tpl/default/UserCenter/userCenterDetail.html";
 		}
 	    $this->display($template );
-
-		
 	}
 
     /**
@@ -198,7 +230,19 @@ class UserCenterAction extends Action
     }
 	
 
-	
+		public function test(){
+		if(!Session::is_set("id")){
+			header("Content-type: text/html; charset=utf-8");
+			echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
+			return;
+		}
+		$condition["id"]  = Session::get("id");
+		$User = M("User");
+		$result = $User -> where($condition) -> find();
+		$this -> assign("result",$result);
+		$this->display();
+	}
+
 
 	
 }

@@ -103,12 +103,12 @@ class ExcelAction extends Action
 				//由于 Excel 无法直接识别 utf-8 的数据，所以需要转换一下
 				echo auto_charset( "用户名,活动名称,参加时间\n",'utf-8', 'gbk');
                 //echo  $iconvstr ("用户名,活动名称,参加时间\n");
-				$vactivity_comment = M('vactivity_comment');
-				$result = $vactivity_comment -> field("user_name, activity_title, insert_time") -> findAll();
+				$vuserlog = M('vuserlog');
+				$result = $vuserlog -> field("nick_name, title, insert_time") -> findAll();
 				foreach ($result  as $row) {
-				$contents = $row['user_name'];
+				$contents = $row['nick_name'];
 				$contents .= ',';
-				$contents .= $row['activity_title'];
+				$contents .= $row['title'];
 				$contents .= ',';
 				$contents .= $row['insert_time'];
 				$contents .= "\n"; 

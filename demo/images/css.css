@@ -111,6 +111,12 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 .clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden; } 
 .clearfix { display:inline-block; } /* Hide from IE Mac */
 .clearfix { display:block;} /* End hide from IE Mac */ /* end of clearfix */ 
+
+.container {
+
+	background-color:#f6f6f6;
+	border:solid 1px #d9d9d9;
+}
  
 
 

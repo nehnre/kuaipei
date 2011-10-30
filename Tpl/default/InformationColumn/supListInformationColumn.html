@@ -85,20 +85,24 @@
      <div class="side_nr">
 	 <div class="side_nr_l">
 	  <div class="clear"></div>
-	 <div align="center"><span class="newactivity">立配网新上市新资讯新活动</span></div>
-	  <div class="clear"></div>
-	  	<volist name='list' id='vo' > 
-       <if condition="$i%2==1">
-	     <div class="tt1t">
-		<else />
-	    <div class="ttt">
-		</if><a href="supInformationColumnDetail?id={$vo.id}" target="_blank"><lt name="vo.content|mb_convert_encoding='auto','UTF-8'|mb_strlen" value="23">{$vo.title}<else/>{$vo.title|mb_substr=0,23,'utf-8'}...</lt> </a></div>
-			
 
-
+	 <div align="center">
+		<div class="newactivity">
+		<volist name="top16" id="vo">
+			<if condition="$i eq 1">
+				<a href="supInformationColumnDetail?id={$vo.id}" target="_blank" style="color:red">{$vo.title}</a>
+			</if>
 		</volist>
-
+		</div>
+		
+		<volist name="top16" id="vo">
+		<if condition="$i gt 1">
+			<div class="ac"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank">{$vo.title}</a></div>
+		</if>
+		</volist>
+			<div class="clear"></div>
      </div>	 
+     </div>
 	  </div>
    </div>
 
@@ -133,11 +137,11 @@
 </div>
 
 
-
-
-
-   <div class="main"><div class="main_nr">
-		<volist name='list' id='vo' > 
+   <div class="main"><div class="main_nr">	
+		<if condition="count($list) elt 0">
+				<div class="lb2 gray" style="text-align:center">没有找到相关数据</div>
+			</if>
+	   <volist name='list' id='vo' > 
        <if condition="$i%2==1">
 	    <div class="lb2">
 		<else />
@@ -153,6 +157,14 @@
 		</div>
 		</div>
 		</volist>
+		
+		<if condition="count($list)%2==1">
+		<div class="lb1" style="text-align:right;padding-right:10px;">
+		<else />
+		<div class="lb2" style="text-align:right;padding-right:10px;">
+		</if>
+			{$foot}
+		</div>
 
 		<div class="clear"></div>
    </div></div>

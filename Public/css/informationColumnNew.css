@@ -58,9 +58,9 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 #nr { margin:0 auto; width:1000px;}
 #side { float:right; width: 609px;}
 .side_nr{ margin-left: 10px; width:575px;}
-.side_nr_l{	border: 1px solid #d5d5d5;	height:210px; 	background-image: url(../images/u_lbg.jpg);background-repeat: repeat-x;	padding-top: 10px;	padding-bottom: 5px;	}
+.side_nr_l{	border: 1px solid #d5d5d5;	height:210px; 	background-image: url(../images/u_lbg1.jpg);background-repeat: repeat-x;	padding-top: 10px;	padding-bottom: 5px;	}
 .main {float:left; width: 1000px;  padding-bottom: 25px; }
-.main_nr{margin-left: 23px; width:953px;border: 1px solid #d5d5d5;	}
+.main_nr{margin-left: 23px; width:951px;border: 1px solid #d5d5d5;	}
 .dd { height:40px; font-size:20px; font-family:"微软雅黑";}
 .fl { height:32px; line-height:32px; background-color:#F3F3F3; font-size:12px;border-top-width: 1px;	border-bottom-width: 1px;border-top-style: solid; border-bottom-style: solid;border-top-color: #BEBEBE;	border-bottom-color: #BEBEBE;}
 .fl1 { font-size: 12px; color:#666666;margin-left: 10px;width:30px; line-height:22px; }
@@ -342,7 +342,7 @@ h3 {
 	color:#ce0000;
 }
 .newactivity{
-	font-family: "宋体"
+	font-family: "宋体";
     font-weight:bold;
 	font-size:24px;
 	color:#ce0000;
@@ -481,5 +481,13 @@ h3 {
 	padding-right:7px;
 	padding-top: 7px;
 }
-
-
+.ac{
+	display:inline;
+	width:270px;
+	float:left;
+	padding-left:10px;
+	text-align:left;
+	line-height:24px;
+	height:24px;
+	overflow:hidden;
+}

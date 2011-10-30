@@ -14,7 +14,7 @@ class ExcelAction extends Action
 		    }else{
 				//输出头信息
 				$filename = "export".date("YmdHis");
-				header("Content-Type: text/plain");
+				header("Content-Type: text/csv");
 				header("Content-Disposition: attachment; filename=$filename.csv;");
 				header('Pragma: cache');
 				header('Cache-Control: public, must-revalidate, max-age=0');
@@ -94,24 +94,26 @@ class ExcelAction extends Action
 			  header("Content-type: text/html; charset=utf-8");
 		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
 		    }else{//输出头信息
+			$iconvstr = "iconvstr";
 				$filename = "export".date("YmdHis");
-				header("Content-Type: text/plain");
+				header("Content-type: text/html; ");
 				header("Content-Disposition: attachment; filename=$filename.csv;");
 				header('Pragma: cache');
 				header('Cache-Control: public, must-revalidate, max-age=0');
 				//由于 Excel 无法直接识别 utf-8 的数据，所以需要转换一下
-				echo auto_charset( "用户名,活动名称,参加时间\n",'utf-8', 'gbk');
-
+				//echo iconv( 'utf-8', 'GB2312//IGNORE',"\xEF\xBB\xBF用户名,活动名称,参加时间\n");
+                echo  $iconvstr ("用户名,活动名称,参加时间\n");
 				$vactivity_comment = M('vactivity_comment');
 				$result = $vactivity_comment -> field("user_name, activity_title, insert_time") -> findAll();
 				foreach ($result  as $row) {
-				$contents = $row['user_name'];
+				$contents = $iconvstr ($row['user_name']);
 				$contents .= ',';
-				$contents .= $row['activity_title'];
+				$contents .= $iconvstr ($row['activity_title']);
 				$contents .= ',';
-				$contents .= $row['insert_time'];
+				$contents .= $iconvstr ($row['insert_time']);
 				$contents .= "\n"; 
-				echo auto_charset($contents,'utf-8', 'gbk');
+				echo $contents;
+				//echo iconv( 'utf-8', 'GB2312//IGNORE',$contents);
 				}
 			}
     }
@@ -133,6 +135,7 @@ class ExcelAction extends Action
 				header('Pragma: cache');
 				header('Cache-Control: public, must-revalidate, max-age=0');
 				//由于 Excel 无法直接识别 utf-8 的数据，所以需要转换一下
+				$iconvstr = "iconvstr";
 				echo auto_charset( "Email,订阅时间\n",'utf-8', 'gbk');
 
 				$subscribe = M('subscribe');
@@ -148,7 +151,18 @@ class ExcelAction extends Action
 			
     }
 
+private function escapeCSV($str){
+  $str = str_replace(array(',','"',"\n\r"),array('','""',''),$str);
+  if($str == ""){
+    $str = '""';
+  }
+  return $str;
+}
 
+private function iconvstr($str){
+	$escapeCSV = "escapeCSV";
+	return iconv('utf-8','gb2312',$escapeCSV($str));
+}
     /**
     +----------------------------------------------------------
     * 测试

@@ -58,7 +58,7 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 #nr { margin:0 auto; width:1000px;}
 #side { float:right; width: 609px;}
 .side_nr{ margin-left: 10px; width:575px;}
-.side_nr_l{	border: 1px solid #d5d5d5;	height:210px; 	background-image: url(../images/u_lbg.jpg);background-repeat: repeat-x;	padding-top: 10px;	padding-bottom: 5px;	}
+.side_nr_l{	border: 1px solid #d5d5d5;	height:210px; 	background-image: url(../images/u_lbg1.jpg);background-repeat: repeat-x;	padding-top: 10px;	padding-bottom: 5px;	}
 .main {float:left; width: 1000px;  padding-bottom: 25px; }
 .main_nr{margin-left: 23px; width:953px;border: 1px solid #d5d5d5;	}
 .dd { height:40px; font-size:20px; font-family:"微软雅黑";}

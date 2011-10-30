@@ -8,7 +8,7 @@ class InformationColumnAction extends Action
 		$InformationColumn = M("information_column");
 		$data["status"] = "未发布";
 		$InformationColumn -> where("id=".$id) -> save($data);
-		echo '<script>alert("取消成功！");location.href="listInformationColumn";try{window.event.returnValue=false; }catch(e){}</script>';
+		echo '<script>alert("取消成功！");location.href="listInformationColumn";</script>';
 	}
 
     /**
@@ -19,7 +19,7 @@ class InformationColumnAction extends Action
 	public function editInformationColumn(){
 		if(!Session::is_set("systemId")){
 			  header("Content-type: text/html; charset=utf-8");
-		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
+		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";</script>';
 		}else{
 			$id = $_REQUEST["id"];
 			if(!empty($id)){
@@ -35,7 +35,7 @@ class InformationColumnAction extends Action
 		$id = $_REQUEST["id"];
 		$informationColumn = M("information_column");
 		$informationColumn -> where("id=".$id) -> delete();
-		echo '<script>alert("删除成功！");location.href="listInformationColumn";try{window.event.returnValue=false; }catch(e){}</script>';
+		echo '<script>alert("删除成功！");location.href="listInformationColumn";</script>';
 	}
 	
     /**
@@ -57,7 +57,7 @@ class InformationColumnAction extends Action
 	public function listInformationColumn(){
 		if(!Session::is_set("systemId")){
 			  header("Content-type: text/html; charset=utf-8");
-		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
+		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";</script>';
 		}else{
 			$informationColumn = M("information_column");
 			
@@ -101,7 +101,7 @@ class InformationColumnAction extends Action
 		$data["update_time"] = date("Y-m-d H:i:s");
         $data["publish_time"] = date("Y-m-d H:i:s");
 		$informationColumn -> where("id=".$id) -> save($data);
-		echo '<script>alert("发布成功！");location.href="listInformationColumn";try{window.event.returnValue=false; }catch(e){}</script>';
+		echo '<script>alert("发布成功！");location.href="listInformationColumn";</script>';
 	}
 	
     /**
@@ -194,7 +194,7 @@ class InformationColumnAction extends Action
 			
 			unset($condition);
 		    $condition["status"] ="已发布"; 
-			$top16 = $informationColumn -> where($condition) -> order('seq  desc,update_time desc') -> limit(16) -> select();
+			$top16 = $informationColumn -> where($condition) -> order('seq  desc,update_time desc') -> limit(15) -> select();
 			$this->assign('top16',$top16);
 			
 			//显示滚动图片信息
@@ -314,6 +314,5 @@ class InformationColumnAction extends Action
 			$this -> assign("picNews", $picNews);
 			$this -> display();
 	}
-	
 }
 ?>

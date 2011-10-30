@@ -13,6 +13,7 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/queryString.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/min_contentslider.js"></script>
 	<title>行业资讯——快配网</title>
 	<script type="text/javascript">
@@ -150,7 +151,7 @@
 		<div class="contentFloat">
 		<table border="0" width="100%" cellspacing="0" cellpadding="0" >
 	    <tr>
-		<td class="lbtxt1" width="620"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank">{$vo.title}<php>echo "：".mb_substr(strip_tags($vo["content"]),0,40,"utf-8")."..."</php></a></td>
+		<td class="lbtxt1" width="620"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank">{$vo.title}<php>echo "：".mb_substr(strip_tags($vo["content"]),0,25,"utf-8")."..."</php></a></td>
 		<td class="lbtxt5" width="100"><php>echo date("Y年m月d日", strtotime($vo["publish_time"]))</php></td>
 	    </tr>
         </table>

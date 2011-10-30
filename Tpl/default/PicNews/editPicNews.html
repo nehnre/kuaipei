@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<title>编辑图片新闻</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="/kindeditor/kindeditor-min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Activity/editActivity.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("#btnCancle").click(function(){
+			location.href = "listPicNews";		
+		});
+	});
+	</script>
+</head>
+<body >
+	<form method="post" action="saveOrUpdatePicNews" enctype="multipart/form-data" id="myForm">
+	<input type="hidden" value="{$result.id}" name="id"/>
+	<table border="0" class="table" cellpadding="0" cellspacing="0"  >
+		<tr >
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_01.jpg" alt=""/>
+			</td>
+			<td class="navigation_middle" >
+				您现在的位置： 活动管理 》<if condition="!empty($result)">编辑<else />新增</if>资讯
+			</td>
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_03.jpg" alt=""></img>
+			</td>
+		</tr>
+	</table>
+	<table class="its" cellspacing="1" cellpadding="5" border="0">
+			<tr class="odd">
+				<td width="200px" align="right">资讯标题：</td>
+				<td align="left"><input type="text" style="width:80%" name="title" id="title" value="{$result.title}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">资讯类型：</td>
+				<td  align="left">
+					<select style="width:80%" name="type">
+						<option value="首页资讯">首页资讯</option>
+						<option value="活动资讯">活动资讯</option>
+					</select>
+					<script type="text/javascript">
+						$("#type").val("{$result.type}");
+					</script>
+				</td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">资讯链接：</td>
+				<td  align="left"><input type="text" style="width:80%" name="link" id="link" value="{$result.link}"/></td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">资讯图片：</td>
+				<if condition="empty($result['pic'])">
+				<td align="left"><input type="file" style="width:80%" name="photo[]"/></td>
+				<else />
+				<td align="left">
+					<table cellspacing="0" border="0" cellpadding="0" width="100%">
+						<tr>
+							<td><input type="file" style="width:80%" name="photo[]"/></td>
+						</tr>
+						<tr>
+							<td><a href="__PUBLIC__/Uploads/{$result.pic}" target="blank">查看</a></td>
+						</tr>
+					</table>
+				</td>
+				</if>
+			</tr>
+			<tr  class="odd">
+				<td colspan="2">
+					<input type="submit" value="提 交" id="btnSubmit" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+					<input type="button" value="取 消" id="btnCancle" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+				</td>
+			</tr>
+	</table>
+	</form>
+</body>
+
+</html>

@@ -290,6 +290,14 @@ class InformationColumnAction extends Action
 			$list = $informationColumn -> where($condition) -> order('seq  desc,update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
 			$this->assign('list',$list); 
 			$this->assign('foot',$foot);
+			
+			//显示滚动图片信息
+			$pic_news = M("pic_news");
+			unset($condition);
+			$condition["status"] = "已发布";
+			$condition["type"] = "活动资讯";
+			$picNews = $pic_news -> where($condition) -> order("insert_time desc") -> limit(5) -> select();
+			$this -> assign("picNews", $picNews);
 			$this -> display();
 	}
 	

@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="__PUBLIC__/css/informationColumnNew.css" type="text/css" media="screen" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/contentslider.css" type="text/css" media="screen" /> 
 	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
 	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
@@ -12,7 +13,7 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/queryString.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/js/ad2.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/min_contentslider.js"></script>
 	<title>行业资讯——快配网</title>
 	<script type="text/javascript">
 		$(function(){
@@ -46,6 +47,17 @@
 			$(".column .item").eq(n).removeClass("item").addClass("item1");
 
 
+			featuredcontentslider.init({
+				id: "slider1",
+				contentsource: ["inline", ""],
+				toc: "#increment",
+				nextprev: ["", ""],
+				revealtype: "mouseover", 
+				enablefade: [false, 0.15], 
+				autorotate: [true, 3500], 
+				onChange: function(previndex, curindex){
+				}
+			});
 		});
 	</script>
 </head>
@@ -57,23 +69,21 @@
  <div id="nr">
    <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/title_hyzx.jpg"></div></div>
     <div class="clear"></div>
+		<div class="focus" id="FocusPic">
+			<div class="sliderwrapper" id="slider1">
+				<volist name="picNews" id="vo">
+				<div class="contentdiv" >
+					<div class="dPic"><a href="{$vo.link}" target="_blank"><img src="/Public/Uploads/{$vo.pic}" width=350 height=200 alt="{$vo.title}" /></a></div>
+					<div class="dTitle">
+					<a href="{$vo.link}" target="_blank" title="{$vo.title}">{$vo.title}</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+				</volist>
+			</div>
+			<div id="paginate-slider1" class="pagination"> <i class="toc"></i><i class="toc"></i><i class="toc"></i><i class="toc"></i><i class="toc"></i><i class="toc"></i> </div>
 
-	<div class="ad" >
-		<ul class="slider" >
-			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
-			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
-			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
-			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
-			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
-		</ul>
-		<ul class="num" >
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
-			<li>5</li>
-		</ul>
-	</div>
+		</div>
 
       <div id="side">
      <div class="side_nr">

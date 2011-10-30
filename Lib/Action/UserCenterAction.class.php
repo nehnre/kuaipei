@@ -152,7 +152,7 @@ class UserCenterAction extends Action
 				} else if("车主" == $result["user_type1"]){
 					$template = "./Tpl/default/UserCenter/userCenterEditUserCarHost.html";
 				} else {
-					$this -> error("还没有<a href='chooseType'>选择分类</a>");
+					$this -> error("还没有<a href='/UserCenter?flag=2'>选择分类</a>");
 				}
 			}else{
 				$template = "./Tpl/default/UserCenter/userCenterDetail.html";

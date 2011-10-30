@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/userCenter.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/citynew.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/UserCenter/userCenterEditPerfect.js"></script>
+	<title>升级用户注册——快配网</title>
+	<script type="text/javascript">
+		$(function(){
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
+			$(".menu_usercenter").removeClass("menu_usercenter").addClass("menu_usercenter1");
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/index_top.html" />
+		<div class="body">
+<div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
+ <div id="nr">
+   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/user.jpg"></div></div>
+    <div class="clear"></div>
+<include file="./Tpl/default/Public/left.html" />
+   <div id="main"><div class="main_nr"><form class="niceform" id="myForm">
+   <input type="hidden" name="flag" id="flag" value="{$Think.request.flag}">
+        <div   class="title" ><span class="titleFont">完善个人信息</span></div>
+		<div class="c"></div>
+        <div   class="lb2" >
+			<table border="0" width="50%" cellspacing="0" cellpadding="0" >
+			<tr>
+			<td width="50"><a href="/UserCenter?flag=1" target="_self">基本信息</a></td>
+			<td width="50"><a href="/UserCenter?flag=2" target="_self"><span style="font-weight:bold; ">完善信息</span></a></td>
+			<td width="50"><a href="/UserCenter?flag=3" target="_self">升级信息</a></td>
+			</tr>
+			</table>
+		</div>
+		<div class="c"></div>
+
+		<div class=q_ht><div class="l w85 "><span class="red">*</span>用户类型：</div>
+		<div class="l c6 w430 ml20">
+						  <select name="user_type1" size="1"  id="user_type1">
+								<option value="">请选择</option>
+								<option value="厂商">厂商</option>
+								<option value="经销商">经销商</option>
+								<option value="修理厂">修理厂</option>
+								<option value="车主">车主</option>
+								<option value="车队">车队</option>
+								<option value="其他">其他</option>
+							</select>
+							<script type="text/javascript">
+								$("#user_type1").val("{$result.user_type1}");
+							</script>
+							<select name="user_type2" size="1" style="width:160px;" id="user_type2">
+								<option value="">请选择</option>
+								<if condition="$result.user_type1 eq '厂商'">
+									<option value="外资">外资</option>
+									<option value="合资">合资</option>
+									<option value="民营">民营</option>
+									<option value="国有">国有</option>
+								</if>
+								<if condition="$result.user_type1 eq '经销商'">
+									<option value="代理">代理</option>
+									<option value="分销商">分销商</option>
+								</if>
+								<if condition="$result.user_type1 eq '修理厂'">
+									<option value="综合修理厂(一类资质)">综合修理厂(一类资质)</option>
+									<option value="综合修理厂(二类资质)">综合修理厂(二类资质)</option>
+									<option value="综合修理厂(三类资质)">综合修理厂(三类资质)</option>
+									<option value="快修店">快修店</option>
+									<option value="专项修理">专项修理</option>
+									<option value="轮胎店">轮胎店</option>
+									<option value="美容养护">美容养护</option>
+									<option value="4S店">4S店</option>
+								</if>
+								<if condition="$result.user_type1 eq '车主'">
+									<option value="商用车">商用车</option>
+									<option value="私家车">私家车</option>
+								</if>
+								<if condition="$result.user_type1 eq '车队'">
+									<option value="货车">货车</option>
+									<option value="客车">客车</option>
+								</if>
+								<if condition="$result.user_type1 eq '其他'">
+									<option value="其他">其他</option>
+								</if>
+							</select>
+							<script type="text/javascript">
+								$("#user_type2").val("{$result.user_type2}");
+							</script>
+		 </div>
+		<div class="c"></div></div>
+
+		<div class=q_ht><div class="l w85 tar"><span class="red">*</span>真实姓名：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="true_name"  name="true_name" value="{$result.true_name}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w85 tar"><span class="red" style="color:#f6f6f6">*</span>性　　别：</div>
+		<div class="l c6 w430 ml20">
+		<div><input type="radio" value="1" id="sex1" name="sex"/>男&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="2" id="sex2" name="sex"/>女
+		 </div></div>
+				<script type="text/javascript">
+			$(":radio[name='sex']").each(function(){
+				if($(this).val() == "{$result.sex}"){
+					$(this).attr("checked", true);
+				}
+			});
+		</script>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w85 tar">出生日期：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="birthday"  name="birthday"  <if condition="$result.birthday neq '0000-00-00'">value="{$result.birthday}" </if> >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w85 tar"><span style="color:#f9f9f9">*</span>职　　业：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="profession"  name="profession" value="{$result.profession}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w85 tar"><span style="color:#f9f9f9">*</span>QQ：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="qq"  name="qq" value="{$result.qq}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w85 tar"><span style="color:#f9f9f9">*</span>MSN：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="msn"  name="msn" value="{$result.msn}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w85 tar"><span style="color:#f9f9f9">*</span>企业名称：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="company_name"  name="company_name" value="{$result.company_name}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w85 tar"><span style="color:#f9f9f9">*</span>E-mail：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="email"  name="email" value="{$result.email}" >
+		 </div></div>
+		<div class=c></div></div>
+
+
+        <div   style="padding-top: 10px;text-align: center;" ><input type="button" id="btnSubmit" value="　提交　"/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btnSubmit" value="　取消　"/></div>
+</form>
+   </div></div>
+  </div>
+  <div class="clear"></div>
+  </div>
+</div>
+	<div class="clear"></div>
+		</div>
+	<include file="./Tpl/default/Public/index_bottom.html" />
+	</div>
+	<include file="./Tpl/default/Public/dialog.html" />  
+	<include file="./Tpl/default/Public/qq_dialog.html" />
+</body>
+</html>

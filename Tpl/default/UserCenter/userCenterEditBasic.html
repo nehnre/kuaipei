@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/userCenter.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/citynew.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/UserCenter/userCenterEditBasic.js"></script>
+	<title>升级用户注册——快配网</title>
+	<script type="text/javascript">
+		$(function(){
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
+			$(".menu_usercenter").removeClass("menu_usercenter").addClass("menu_usercenter1");
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/index_top.html" />
+		<div class="body">
+<div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
+ <div id="nr">
+   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/user.jpg"></div></div>
+    <div class="clear"></div>
+<include file="./Tpl/default/Public/left.html" />
+   <div id="main"><div class="main_nr"><form class="niceform" id="myForm">
+   <input type="hidden" name="flag" id="flag" value="{$Think.request.flag}">
+        <div   class="title" ><span class="titleFont">完善个人信息</span></div>
+		<div class="c"></div>
+        <div   class="lb2" >
+			<table border="0" width="50%" cellspacing="0" cellpadding="0" >
+			<tr>
+			<td width="50"><a href="/UserCenter?flag=1" target="_self"><span style="font-weight:bold; ">基本信息</span></a></td>
+			<td width="50"><a href="/UserCenter?flag=2" target="_self">完善信息</a></td>
+			<td width="50"><a href="/UserCenter?flag=3" target="_self">升级信息</a></td>
+			</tr>
+			</table>
+		</div>
+		<div class="c"></div>
+
+		<div class=q_ht><div class="l w65 ">手机号：</div>
+		<div class="l c6 w430 ml20">{$result.user_name}</div>
+		<div class="c"></div></div>
+
+		<div class=q_ht><div class="l w65 tar"><span class="red">*</span>昵称：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="nick_name"  name="nick_name" value="{$result.nick_name}" >
+		 </div></div>
+		<div class=c></div></div>
+
+        <div   style="padding-top: 10px;text-align: center;" ><input type="button" id="btnSubmit" value="　提交　"/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btnSubmit" value="　取消　"/></div>
+</form>
+   </div></div>
+  </div>
+  <div class="clear"></div>
+  </div>
+</div>
+	<div class="clear"></div>
+		</div>
+	<include file="./Tpl/default/Public/index_bottom.html" />
+	</div>
+	<include file="./Tpl/default/Public/dialog.html" />  
+	<include file="./Tpl/default/Public/qq_dialog.html" />
+</body>
+</html>

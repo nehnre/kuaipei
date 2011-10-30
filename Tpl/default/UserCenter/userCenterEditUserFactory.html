@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/userCenter.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/citynew.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/UserCenter/userCenterEditUserFactory.js"></script>
+	<title>升级用户注册——快配网</title>
+	<script type="text/javascript">
+		$(function(){
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
+			$(".menu_usercenter").removeClass("menu_usercenter").addClass("menu_usercenter1");
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/index_top.html" />
+		<div class="body">
+<div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
+ <div id="nr">
+   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/user.jpg"></div></div>
+    <div class="clear"></div>
+<include file="./Tpl/default/Public/left.html" />
+   <div id="main"><div class="main_nr"><form class="niceform" id="myForm">
+   <input type="hidden" name="flag" id="flag" value="{$Think.request.flag}">
+        <div   class="title" ><span class="titleFont">完善个人信息</span></div>
+		<div class="c"></div>
+        <div   class="lb2" >
+			<table border="0" width="50%" cellspacing="0" cellpadding="0" >
+			<tr>
+			<td width="50"><a href="#" target="_blank">基本信息</a></td>
+			<td width="50"><a href="#" target="_blank">完善信息</a></td>
+			<td width="50"><a href="#" target="_blank"><span style="font-weight:bold; ">升级信息</span></a></td>
+			</tr>
+			</table>
+		</div>
+		<div class="c"></div>
+
+		<div class=q_ht><div class="l w105 "><span class="red">*</span>　名片：</div>
+		<div class="l c6 w430 ml20"><input type="text"   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  readonly="readonly" /><input type="button" id="btnBC" value="浏览" /><br/> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.business_card}" name="business_card" id="business_card" /></div>
+		<div class="c"></div></div>
+		<div class=q_ht id="tr_bc" style="display:none"><div class="l w105 "></div>
+		<div class="l c6 w430 ml20">	<if condition="!empty($result['business_card'])">
+												<img src="/Public/Upload/{$result.business_card}" />
+												<script type="text/javascript">
+													bodyIncrease();	
+													$("#tr_bc").show();
+												</script>
+											</if></div>
+		<div class="c"></div></div>
+
+		<div class=q_ht><div class="l w105 tar"><span class="red">*</span>企业名称：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="company_name"  name="company_name" value="{$result.company_name}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w105 tar"><span class="red">*</span>企业地址：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="company_address"  name="company_address" value="{$result.company_address}" >
+		 </div></div>
+		<div class=c></div></div>
+
+
+		<div class=q_ht><div class="l w105 tar"><span class="red">*</span>所在地区：</div>
+		<div class="l c6 w430 ml20">
+		<div>	<select id="province" name="province"></select>　<select id="city" name="city" ></select>
+											<script type="text/javascript">
+												$.initProv("province", "city", "{$result.province}", "{$result.city}");
+											</script>
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w105 tar"><span style="color:#f9f9f9">*</span>邮　　编：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="post_code"  name="post_code" value="{$result.post_code}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w105 tar"><span style="color:#f9f9f9">*</span>商务联系电话：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="business_call"  name="business_call" value="{$result.business_call}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w105 tar"><span style="color:#f9f9f9">*</span>联系人(负责人)：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="link_man"  name="link_man" value="{$result.link_man}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w105 tar"><span style="color:#f9f9f9">*</span>营业范围：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="business_scope"  name="business_scope" value="{$result.business_scope}" >
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w105 tar"><span class="red">*</span>企业规模：</div>
+		<div class="l c6 w430 ml20">
+		<div>											
+				 <select name="company_scale" size="1"  id="company_scale" >
+						<option value="1">10人以下</option>
+						<option value="2">10-100人</option>
+						<option value="3">100人以上</option>
+					</select>
+					<script type="text/javascript">
+						$("#company_scale").val("{$reuslt.company_scale}");
+					</script>
+		 </div></div>
+		<div class=c></div></div>
+
+		<div class=q_ht><div class="l w105 "><span style="color:#f9f9f9">*</span>工商营业执照：</div>
+		<div class="l c6 w430 ml20"><input type="text"   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  readonly="readonly" /><input type="button" id="btnBL" value="浏览" /><br/> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.business_license}" name="business_license" id="business_license" /></div>
+		<div class="c"></div></div>
+		<div class=q_ht id="tr_bl" style="display:none"><div class="l w105 "></div>
+		<div class="l c6 w430 ml20">	<if condition="!empty($result['business_license'])">
+												<img src="/Public/Upload/{$result.business_license}" />
+												<script type="text/javascript">
+													bodyIncrease();	
+													$("#tr_bl").show();
+												</script>
+											</if></div>
+		<div class="c"></div></div>
+
+		<div class=q_ht><div class="l w105 "><span style="color:#f9f9f9">*</span>所在位置地图：</div>
+		<div class="l c6 w430 ml20"><input type="text"   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  readonly="readonly" /><input type="button" id="btnAP" value="浏览" /><br/> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.address_pic}" name="address_pic" id="address_pic" /></div>
+		<div class="c"></div></div>
+		<div class=q_ht id="tr_ap" style="display:none"><div class="l w105 "></div>
+		<div class="l c6 w430 ml20">	<if condition="!empty($result['address_pic'])">
+												<img src="/Public/Upload/{$result.address_pic}" />
+												<script type="text/javascript">
+													bodyIncrease();	
+													$("#tr_ap").show();
+												</script>
+											</if></div>
+		<div class="c"></div></div>
+
+
+        <div   style="padding-top: 10px;text-align: center;" ><input type="button" id="btnSubmit" value="　提交　"/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btnSubmit" value="　取消　"/></div>
+</form>
+   </div></div>
+  </div>
+  <div class="clear"></div>
+  </div>
+</div>
+	<div class="clear"></div>
+		</div>
+	<include file="./Tpl/default/Public/index_bottom.html" />
+	</div>
+	<include file="./Tpl/default/Public/dialog.html" />  
+	<include file="./Tpl/default/Public/qq_dialog.html" />
+</body>
+</html>

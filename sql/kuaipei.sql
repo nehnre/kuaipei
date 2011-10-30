@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-10-30 18:07:29
+Date: 2011-10-31 01:14:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -223,7 +223,7 @@ CREATE TABLE `kp_user` (
 -- ----------------------------
 -- Records of kp_user
 -- ----------------------------
-INSERT INTO `kp_user` VALUES ('1216', '18602123502', '1a100d2c0dab19c4430e7d73762b3423', 'nehnre', 'nehnre@yahoo.com.cn', null, '', '', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ea8260cdf4df.jpg', '', '', '', '', '', '', null, null, '2011-10-20 21:40:35', '2011-10-26 23:24:02');
+INSERT INTO `kp_user` VALUES ('1216', '18602123502', '1a100d2c0dab19c4430e7d73762b3423', 'nehnre', 'nehnre@yahoo.com.cn', null, '厂商', '外资', '聂红雷', '1', '1991-10-01', '', '', '1', '', '已审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ea8260cdf4df.jpg', '', '', '', '', '', '', null, '2011-10-31 01:09:07', '2011-10-20 21:40:35', '2011-10-31 01:09:07');
 
 -- ----------------------------
 -- Table structure for `kp_userlog`
@@ -237,7 +237,7 @@ CREATE TABLE `kp_userlog` (
   `act_describ` varchar(200) DEFAULT NULL,
   `insert_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_userlog
@@ -290,6 +290,10 @@ INSERT INTO `kp_userlog` VALUES ('87', '1', 'kp_admin_user', '1', '登录一次'
 INSERT INTO `kp_userlog` VALUES ('88', '1216', 'kp_user', '1216', '登录一次', '2011-10-28 23:37:33');
 INSERT INTO `kp_userlog` VALUES ('89', '1', 'kp_admin_user', '1', '登录一次', '2011-10-29 11:43:52');
 INSERT INTO `kp_userlog` VALUES ('90', '1', 'kp_admin_user', '1', '登录一次', '2011-10-30 11:35:43');
+INSERT INTO `kp_userlog` VALUES ('91', '1216', 'kp_user', '1216', '登录一次', '2011-10-31 00:00:49');
+INSERT INTO `kp_userlog` VALUES ('92', '1216', 'kp_user', '1216', '登录一次', '2011-10-31 01:08:20');
+INSERT INTO `kp_userlog` VALUES ('93', '1', 'kp_admin_user', '1', '登录一次', '2011-10-31 01:08:32');
+INSERT INTO `kp_userlog` VALUES ('94', '1216', 'kp_activity', '37', '参加抽奖活动一次', '2011-10-31 01:09:31');
 
 -- ----------------------------
 -- View structure for `kp_vactivity_comment`
@@ -301,10 +305,10 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- View structure for `kp_vsearch`
 -- ----------------------------
 DROP VIEW IF EXISTS `kp_vsearch`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vsearch` AS (select `t`.`title` AS `title`,'立配活动' AS `type`,`t`.`insert_time` AS `insert_time`,concat('/Activity/show?id=',`t`.`id`) AS `link`,`t`.`sponsor` AS `tags`,0 AS `seq` from `kp_activity` `t` where (`t`.`status` = '已发布')) union all (select `t`.`title` AS `title`,`t`.`column` AS `type`,`t`.`insert_time` AS `insert_time`,concat('/InformationColumn/supInformationColumnDetail?id=',`t`.`id`) AS `link`,`t`.`search_tags` AS `tags`,`t`.`seq` AS `seq` from `kp_information_column` `t`);
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vsearch` AS (select `t`.`title` AS `title`,'立配活动' AS `type`,`t`.`insert_time` AS `insert_time`,concat('/Activity/show?id=',`t`.`id`) AS `link`,`t`.`sponsor` AS `tags`,0 AS `seq` from `kp_activity` `t` where (`t`.`status` = '已发布')) union all (select `t`.`title` AS `title`,`t`.`column` AS `type`,`t`.`insert_time` AS `insert_time`,concat('/InformationColumn/supInformationColumnDetail?id=',`t`.`id`) AS `link`,`t`.`search_tags` AS `tags`,`t`.`seq` AS `seq` from `kp_information_column` `t` where (`t`.`status` = '已发布'));
 
 -- ----------------------------
 -- View structure for `kp_vuserlog`
 -- ----------------------------
 DROP VIEW IF EXISTS `kp_vuserlog`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vuserlog` AS select `t2`.`id` AS `id`,`t1`.`nick_name` AS `nick_name`,`t3`.`sponsor` AS `sponsor`,`t2`.`insert_time` AS `insert_time` from ((`kp_user` `t1` join `kp_userlog` `t2`) join `kp_activity` `t3`) where ((`t1`.`id` = `t2`.`user_id`) and (`t2`.`table_name` = 'kp_activity') and (`t3`.`id` = `t2`.`table_id`));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vuserlog` AS select `t2`.`id` AS `id`,`t1`.`nick_name` AS `nick_name`,`t3`.`sponsor` AS `sponsor`,`t2`.`insert_time` AS `insert_time`,`t3`.`title` AS `title`,`t2`.`act_describ` AS `act_describ`,`t1`.`id` AS `user_id` from ((`kp_user` `t1` join `kp_userlog` `t2`) join `kp_activity` `t3`) where ((`t1`.`id` = `t2`.`user_id`) and (`t2`.`table_name` = 'kp_activity') and (`t3`.`id` = `t2`.`table_id`));

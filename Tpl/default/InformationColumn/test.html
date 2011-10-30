@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/informationColumnNew.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/queryString.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/ad2.js"></script>
+	<title>行业资讯——快配网</title>
+	<script type="text/javascript">
+		$(function(){
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
+			$(".menu_news").removeClass("menu_news").addClass("menu_news1");
+			
+			//资讯分类
+			var n = nehnre.queryString()["flag"];
+			if(n){
+				n = ~~n;
+			} else {
+				n = 0;
+			}
+            $(".column .tab").children().mouseover(function () {
+                $(".column .item1").removeClass("item1").addClass("item");
+                $(this).removeClass("item").addClass("item1");
+            });
+
+			//资讯分类
+			var n = nehnre.queryString()["flag"];
+			if(n){
+				n = ~~n;
+			} else {
+				n = 0;
+			}
+			$(".column .item1").removeClass("item1").addClass("item");
+			$(".column .item").eq(n).removeClass("item").addClass("item1");
+
+
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/index_top.html" />
+		<div class="body">
+<div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
+ <div id="nr">
+   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/title_hyzx.jpg"></div></div>
+    <div class="clear"></div>
+
+	<div class="ad" >
+		<ul class="slider" >
+			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
+			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
+			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
+			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
+			<img src="__PUBLIC__/images/activity/activity_pic.jpg" width="368" height="227"/>
+		</ul>
+		<ul class="num" >
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+
+      <div id="side">
+     <div class="side_nr">
+	 <div class="side_nr_l">
+	  <div class="clear"></div>
+	 <div align="center">
+	 <table border="0" width="80%"  cellspacing="0" cellpadding="0">
+		<tr><td  align="center" ><span class="newactivity">立配网新上市新资讯新活动</span></td></tr>
+	    <tr><td  ></td></tr>
+       <tr><td   ></td></tr>
+	    <tr><td ></td></tr>
+       <tr><td></td></tr>
+	 </table>
+     </div>	 
+     </div>
+	  </div>
+   </div>
+
+<div class="column">
+	<div class="column_nr">
+		<div class="colum_title">
+			<div class="title"><span>最</span>新促销</div>
+			<div class="tab">
+				<div class="item1">
+					<div class="text"><a href="supListInformationColumn">全部</a></div>
+				</div>
+				<div class="item">
+					<div class="text"><a href="supListInformationColumn?flag=1 " >厂商动态</a></div>
+				</div>
+				<div class="item">
+					<div class="text"><a href="supListInformationColumn?flag=2 ">经销动态</a></div>
+				</div>
+				<div class="item">
+					<div class="text"><a href="supListInformationColumn?flag=3 ">汽配热点</a></div>
+				</div>
+				<div class="item">
+					<div class="text"><a href="supListInformationColumn?flag=4 " >汽配人物</a></div>
+				</div>
+				<div class="item">
+					<div class="text"><a href="supListInformationColumn?flag=5 ">维修资源库</a></div>
+				</div>
+				<div class="item">
+					<div class="text"><a href="supListInformationColumn?flag=6 " >一线维修</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+   <div class="main"><div class="main_nr">
+		<volist name='list' id='vo' > 
+       <if condition="$i%2==1">
+	    <div class="lb2">
+		<else />
+	    <div class="lb1">
+		</if>
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+	    <tr>
+		<td class="lbtxt1" width="620"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank
+">{$vo.title}</a></td>
+		<td class="lbtxt5" width="100"><php>echo date("Y年m月d日", strtotime($vo["publish_time"]))</php></td>
+	    </tr>
+        </table>
+		</div>
+		</volist>
+	    <div class="lb2"><div class="foot">{$foot}</div></div>
+		<div class="clear"></div>
+   </div></div>
+
+
+
+
+  </div>
+  <div class="clear"></div>
+  </div>
+</div>
+	<div class="clear"></div>
+</div>
+		<include file="./Tpl/default/Public/index_bottom.html" />  
+	<include file="./Tpl/default/Public/dialog.html" />  
+</body>
+</html>

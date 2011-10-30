@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=gbk" />
+	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<title>资讯列表</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script>
+		function del(id){
+			if(id && confirm("确定要删除这条记录吗？")){
+				location.href = "deletePicNews?id=" + id;
+				try{window.event.returnValue=false;}catch(e){}
+			}
+		}
+		function pub(id){
+			if(id){
+				location.href = "publishPicNews?id=" + id;
+				try{window.event.returnValue=false;}catch(e){}
+			}
+		}
+		function canclePub(id){
+			if(id){
+				location.href = "canclePublishPicNews?id=" + id;
+				try{window.event.returnValue=false;}catch(e){}
+			}
+		}
+	</script>
+</head>
+<body>
+	<form method="get" action="listPicNews">
+	<table border="0" class="table" cellpadding="0" cellspacing="0"  >
+		<tr >
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_01.jpg" alt=""/>
+			</td>
+			<td class="navigation_middle" >
+				您现在的位置： 图片资讯 》资讯列表
+			</td>
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_03.jpg" alt=""></img>
+			</td>
+		</tr>
+	</table>
+	
+	<table cellpadding="0" cellspacing="0" class="table" border="0" style="padding-bottom: 5px;padding-top: 5px" >
+		<tr>
+			<td style="width:200px;">
+				标题：<input type="text" style="width:150px;" name="title" value="{$Think.request.title}"/>
+			</td>
+			<td style="width:200px;">
+				类型：
+				<select style="width:150px" name="type" id="type">
+					<option value=""></option>
+					<option value="首页资讯">首页资讯</option>
+					<option value="活动资讯">活动资讯</option>
+				</select>
+				<script type="text/javascript">
+					$("#type").val("{$Think.request.type}");
+				</script>
+			</td>
+			<td style="width:200px;">
+				状态：
+				<select style="width:150px" name="status" id="status">
+					<option value=""></option>
+					<option value="未发布">未发布</option>
+					<option value="已发布">已发布</option>
+				</select>
+				<script type="text/javascript">
+					$("#status").val("{$Think.request.status}");
+				</script>
+			</td>
+			<td>
+				<input type="submit" value=" 查 询 " id="btnSearch" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+			</td>
+		</tr>
+	</table>
+	<table class="its" cellspacing="1" id="ufile" border="0">
+		<tr>
+			<th nowrap="nowrap">
+				标题
+			</th>
+			<th nowrap="nowrap">
+				类型
+			</th>
+			<th nowrap="nowrap">
+				链接
+			</th>
+			<th nowrap="nowrap">
+				状态
+			</th>
+			<th nowrap="nowrap">
+				操作
+			</th>
+		</tr>
+		<!-- odd even-->
+		
+		<volist name='list' id='vo' > 
+			<if condition="$i%2==1">
+			<tr class="odd">
+			<else />
+			<tr class="even">
+			</if>
+				<td>{$vo.title}</td>
+				<td>{$vo.type}</td>
+				<td>{$vo.link}</td>
+				<td>{$vo.status}</td>
+				<td><a href="editPicNews?id={$vo.id}">编辑</a> 
+				<a href="javascript:;" onclick="del('{$vo.id}')">删除</a>
+				<if condition="$vo.status eq '已发布'">
+				<a href="javascript:;" onclick="canclePub('{$vo.id}')">取消发布</a> 
+				<else />
+				<a href="javascript:;" onclick="pub('{$vo.id}')">发布资讯</a> 
+				</if>
+				
+				</td>
+			</tr>
+		</volist>
+		<tr class="odd"><td colspan="7" align="right">{$foot}</td></tr>
+	</table>
+	</form>
+</body>
+
+</html>

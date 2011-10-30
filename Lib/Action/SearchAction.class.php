@@ -13,7 +13,11 @@ class SearchAction extends Action
 		
 		$type = $_REQUEST["type"];
 		if(!empty($type)){
-			$map["type"] = $type;
+			if("行业资讯" == $type){
+				$map["type"] = array('neq',"立配活动");;
+			} else {
+				$map["type"] = $type;
+			}
 		}
 		$count = $Vsearch -> where($map) -> count();
 		import("ORG.Util.Page");

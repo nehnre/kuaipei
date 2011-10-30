@@ -265,10 +265,32 @@ class InformationColumnAction extends Action
     }
 
 	public function test(){
-			$User = M("User");
-			$condition["id"] = 22;
-			$true_name = $User -> where($condition) -> field("true_name") -> find();
-			$this -> ajaxReturn($true_name);
+			$informationColumn = M("information_column");
+		    $condition["status"] ="已发布"; 
+			$flag = $_REQUEST["flag"];
+			if(!empty($flag)){ 
+				if($flag==1){
+					$condition["column"] ="厂商动态"; 
+				}else if($flag==2){
+					$condition["column"] ="经销动态"; 
+				}else if($flag==3){
+					$condition["column"] ="汽配热点"; 
+				}else if($flag==4){
+					$condition["column"] ="汽配人物"; 
+				}else if($flag==5){
+					$condition["column"] ="维修资源库"; 
+				}else if($flag==6){
+					$condition["column"] ="一线维修"; 
+				}
+			}
+			$count = $informationColumn -> where($condition) -> count();
+			import("ORG.Util.Page");
+			$Page = new Page($count, 10);
+			$foot = $Page -> show();
+			$list = $informationColumn -> where($condition) -> order('seq  desc,update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+			$this->assign('list',$list); 
+			$this->assign('foot',$foot);
+			$this -> display();
 	}
 	
 }

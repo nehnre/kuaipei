@@ -348,28 +348,27 @@ h3 {
 	color:#ce0000;
 }
 .column .tab{
-	width:580px;
-	left:330px;
 	bottom:1px;
 	height:30px;
 	position:absolute;
 	
 }
 .column .tab .item{
-	width:70px;
+	width:90px;
 	height:100%;
 	float:left;
 	cursor:pointer;
+	margin-right:2px;
 	
 }
 .column .tab .item .top
 {
 	height:4px;
-	background:url(../images/layer1/icon_tab.jpg) no-repeat;
+	background:url(../images/activity/icon_tab.jpg) no-repeat;
 }
 .column .tab .item .text{
 	height:30px;
-	background:url(../images/layer1/icon_tab.jpg) no-repeat;
+	background:url(../images/activity/icon_tab.jpg) no-repeat;
 	
 	background-color:#eeeeee;
 	color:#7e7e7e;
@@ -379,19 +378,19 @@ h3 {
 	line-height:30px;
 }
 .column .tab .item1{
-	width:70px;
+	width:90px;
 	height:100%;
-	padding-left:2px;
 	float:left;
 	cursor:pointer;
+	margin-right:2px;
 }
 .column .tab .item1 .top{
 	height:4px;
-	background:url(../images/layer1/icon_tab_1.jpg) no-repeat;
+	background:url(../images/activity/icon_tab_1.jpg) no-repeat;
 }
 .column .tab .item1 .text{
 	height:30px;
-	background:url(../images/layer1/icon_tab_1.jpg) no-repeat;
+	background:url(../images/activity/icon_tab_1.jpg) no-repeat;
 	background-color:white;
 	color:#7e7e7e;
 	font-size:14px;

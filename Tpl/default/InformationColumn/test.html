@@ -31,10 +31,6 @@
 			} else {
 				n = 0;
 			}
-            $(".column .tab").children().mouseover(function () {
-                $(".column .item1").removeClass("item1").addClass("item");
-                $(this).removeClass("item").addClass("item1");
-            });
 
 			//资讯分类
 			var n = nehnre.queryString()["flag"];
@@ -111,7 +107,6 @@
 <div class="column">
 	<div class="column_nr">
 		<div class="colum_title">
-			<div class="title"><span>最</span>新促销</div>
 			<div class="tab">
 				<div class="item1">
 					<div class="text"><a href="supListInformationColumn">全部</a></div>

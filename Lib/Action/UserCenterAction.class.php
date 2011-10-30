@@ -108,7 +108,7 @@ class UserCenterAction extends Action
 		$User -> create();
 		$User -> update_time = date("Y-m-d H:i:s");
 		//处理密码
-		$password = $_REQUEST["password"];
+		$password = $_REQUEST["newPassword"];
 		if(!empty($password)){
 			$User -> password = md5($password); 
 		} 

@@ -92,7 +92,7 @@ class ExcelAction extends Action
 			
 			if(!Session::is_set("systemId")){
 			  header("Content-type: text/html; charset=utf-8");
-		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
+		      echo '<script>alert("您还没有登录！");location.href="Admin/loginInit";</script>';
 		    }else{//输出头信息
 			$iconvstr = "iconvstr";
 				$filename = "export".date("YmdHis");
@@ -104,9 +104,9 @@ class ExcelAction extends Action
 				echo auto_charset( "用户名,活动名称,参加时间\n",'utf-8', 'gbk');
                 //echo  $iconvstr ("用户名,活动名称,参加时间\n");
 				$vuserlog = M('vuserlog');
-				$result = $vuserlog -> field("nick_name, title, insert_time") -> findAll();
+				$result = $vuserlog -> field("user_name, title, insert_time") -> findAll();
 				foreach ($result  as $row) {
-				$contents = $row['nick_name'];
+				$contents = $row['user_name'];
 				$contents .= ',';
 				$contents .= $row['title'];
 				$contents .= ',';

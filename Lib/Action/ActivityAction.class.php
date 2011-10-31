@@ -266,8 +266,8 @@ class ActivityAction extends Action
 			$this -> error("没有这项活动或者活动还未被审核！");
 		}
 		
-		$result["title"] = "产品故事";
-		$result["titleSpan"] = "<span>产</span>品故事";
+		$result["title"] = "品牌故事";
+		$result["titleSpan"] = "<span>品</span>牌故事";
 		$result["insert_time"] = $ac["insert_time"];
 		$result["content"] = $ac["product_story"];
 		$result["sponsor"] = $ac["sponsor"];

@@ -25,6 +25,11 @@ class InformationColumnAction extends Action
 			if(!empty($id)){
 				$InformationColumn = M("information_column");
 				$result = $InformationColumn -> where("id=".$id) -> find();
+				$getTags = "getTags";
+				$search_tags = $this -> $getTags("kp_information_column", $id);
+				if(!empty($search_tags)){
+					$result["search_tags"] = $search_tags;
+				}
 				$this -> assign("result", $result);
 			}
 			$this->display();
@@ -129,6 +134,17 @@ class InformationColumnAction extends Action
 		$moveFile = "moveFile";
 		if(!empty($informationColumn -> picture)){
 			$this -> $moveFile($informationColumn -> picture);
+		}
+		
+		
+		//处理TAGS
+		$clearTags = "clearTags";
+		$this -> $clearTags("kp_information_column", $id);
+		
+		$tags = $_REQUEST["search_tags"];
+		if(!empty($tags)){
+			$saveTags = "saveTags";
+			$this -> $saveTags($tags, "kp_information_column", $id);
 		}
 		$this -> ajaxReturn(1,"提交成功",2);
 	}
@@ -314,5 +330,58 @@ class InformationColumnAction extends Action
 			$this -> assign("picNews", $picNews);
 			$this -> display();
 	}
+	
+	private function clearTags($table_name, $table_id){
+		if(!empty($table_name) && !empty($table_id)){
+			$table_tags = M("table_tags");
+			$condition["table_name"] = $table_name;
+			$condition["table_id"] = $table_id;
+			$table_tags -> where($condition) -> delete();
+		}
+	}
+	
+	private function getTags($table_name, $table_id){
+		$value = "";
+		if(!empty($table_name) && !empty($table_id)){
+			$condition["table_name"] = $table_name;
+			$condition["table_id"] = $table_id;
+			$vtable_tags = M("vtable_tags");
+			$results = $vtable_tags -> where($condition) -> select();
+			foreach($results as $result){
+				if(!empty($value)){
+					$value = $value . ",";
+				}
+				$value = $value . $result["tag_name"];
+				echo json_encode($value);
+
+			}
+		}
+		return $value;
+	}
+	
+	private function saveTags($tags1, $table_name, $table_id){
+		if(!empty($tags1)){
+			$arrTags = split(",",str_replace("，","," ,$tags1));
+			$table_tags = M("table_tags");
+			$tags = M("tags");
+			foreach($arrTags as $tag){
+				$tag = trim($tag);
+				$condition["tag_name"] = $tag;
+				$t = $tags -> where($condition) -> find();
+				if(empty($t)){
+					$tags -> id = "";
+					$tags -> tag_name = $tag;
+					$tags -> insert_time = date("Y-m-d H:i:s");
+					$tags_id = $tags -> add();
+				} else {
+					$tags_id = $t["id"];
+				}
+				$table_tags -> tags_id = $tags_id;
+				$table_tags -> table_name = $table_name;
+				$table_tags -> table_id = $table_id;
+				$table_tags -> add();
+			}
+		}
+	}	
 }
 ?>

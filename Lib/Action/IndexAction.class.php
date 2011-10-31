@@ -37,6 +37,12 @@ class IndexAction extends Action
 		$this -> assign("resource", $resource);
 		
 		
+		//显示热门关键词
+		$vhot_tags = M("vhot_tags");
+		$hot_tags = $vhot_tags -> where("") -> order('num desc') -> limit(4) -> select();
+		$this -> assign("hot_tags", $hot_tags);
+		
+		
         $this->display();
     }
 

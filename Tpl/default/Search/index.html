@@ -78,6 +78,9 @@
 	<if condition="!empty($_REQUEST['word'])">
 		<div class="searchTip">查询<font color="red">{$Think.request.word}</font>，共有（<font color="red">{$count}</font>）条记录</div>
 	</if>
+	<if condition="!empty($_REQUEST['tags'])">
+		<div class="searchTip">查询标签<font color="red">{$Think.request.tags}</font>，共有（<font color="red">{$count}</font>）条记录</div>
+	</if>
 	<div id="main">
 		<div class="main_nr">
 			<div class="promotion1">

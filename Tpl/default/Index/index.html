@@ -157,12 +157,11 @@
 			<div class="category">
 				<div class="category_fenlei">分类</div>
 				<div class="category_fenlei_content">
+					<volist name="hot_tags" id="vo">
+					<a href="/Search/?tags={$vo.tag_name}" class="black">{$vo.tag_name}</a><span class="red">({$vo.num})</span>
+					</volist>
 					<a href="#" class="black">热门促销</a><span class="red">(10)</span>
 					<a href="#" class="black">本月促销</a><span class="red">(10)</span>
-					<a href="#" class="black">往期促销</a><span class="red">(10)</span>
-					<a href="#" class="black">易耗配件</a><span class="red">(10)</span>
-					<a href="#" class="black">机修促销</a><span class="red">(10)</span>
-					<a href="#" class="black">汽车用品</a><span class="red">(10)</span>
 				</div>
 				<div class="category_news">资讯</div>
 				<div class="category_news_content">

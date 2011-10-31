@@ -22,7 +22,10 @@ class ActivityAction extends Action
 		if(!empty($id)){
 			$Activity = M("Activity");
 			$result = $Activity -> where("id=".$id) -> find();
+			$getTags = "getTags";
+			$result["tags"] = $this -> $getTags("kp_activity", $id);
 			$this -> assign("result", $result);
+			
 		}
         $this->display();
 	}
@@ -333,6 +336,16 @@ class ActivityAction extends Action
 		} else {
 			$Activity -> save();
 		}
+		
+		//处理TAGS
+		$clearTags = "clearTags";
+		$this -> $clearTags("kp_activity", $id);
+		
+		$tags = $_REQUEST["tags"];
+		if(!empty($tags)){
+			$saveTags = "saveTags";
+			$this -> $saveTags($tags, "kp_activity", $id);
+		}
 		return $id;		
 	}
 	
@@ -356,6 +369,59 @@ class ActivityAction extends Action
 		return $gets;
 	}
 	
+	private function clearTags($table_name, $table_id){
+		if(!empty($table_name) && !empty($table_id)){
+			$table_tags = M("table_tags");
+			$condition["table_name"] = $table_name;
+			$condition["table_id"] = $table_id;
+			$table_tags -> where($condition) -> delete();
+		}
+	}
+	
+	private function getTags($table_name, $table_id){
+		$value = "";
+		if(!empty($table_name) && !empty($table_id)){
+			$condition["table_name"] = $table_name;
+			$condition["table_id"] = $table_id;
+			$vtable_tags = M("vtable_tags");
+			$results = $vtable_tags -> where($condition) -> select();
+			foreach($results as $result){
+				if(!empty($value)){
+					$value = $value . ",";
+				}
+				$value = $value . $result["tag_name"];
+				echo json_encode($value);
+
+			}
+		}
+		return $value;
+	}
+	
+	private function saveTags($tags1, $table_name, $table_id){
+		if(!empty($tags1)){
+			$arrTags = split(",",str_replace("，","," ,$tags1));
+			$table_tags = M("table_tags");
+			$tags = M("tags");
+			foreach($arrTags as $tag){
+				$tag = trim($tag);
+				$condition["tag_name"] = $tag;
+				$t = $tags -> where($condition) -> find();
+				if(empty($t)){
+					$tags -> id = "";
+					$tags -> tag_name = $tag;
+					$tags -> insert_time = date("Y-m-d H:i:s");
+					$tags_id = $tags -> add();
+				} else {
+					$tags_id = $t["id"];
+				}
+				$table_tags -> tags_id = $tags_id;
+				$table_tags -> table_name = $table_name;
+				$table_tags -> table_id = $table_id;
+				$table_tags -> add();
+			}
+		}
+	}
+	
 	private function sendSms($mobile, $content){
 		$target = "http://60.28.195.138/submitdata/service.asmx/g_Submit";
 		$post_data = "sname=dlshzy03&spwd=87654321&scorpid=&sprdid=1012818&sdst=" . $mobile . "&smsg=".rawurlencode($content);
@@ -364,10 +430,10 @@ class ActivityAction extends Action
 		return $gets;
 	}
 	public function test(){
-			$User = M("User");
-			$condition["id"] = 22;
-			$true_name = $User -> where($condition) -> field("true_name") -> find();
-			$this -> ajaxReturn($true_name);
+	
+			$value = "a";
+			$value = $value + ",";
+			echo $value;
 	}
 	
 }

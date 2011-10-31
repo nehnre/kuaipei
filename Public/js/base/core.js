@@ -1,6 +1,5 @@
 (function(){
-	var _nehnre = window.nehnre;
-	nehnre = _nehnre || {};
+	nehnre = window.nehnre || {};
 	nehnre.encode = function (url){
 		url = encodeURIComponent(url);
 		url = url.replace(/\%/g,"@");
@@ -55,8 +54,107 @@
 				return args[i];
 			});
 	}
-	var _console = window.console;
 	
-	console = _console || {};
+	console = window.console || {};
 	console.log = console.log || function(){};
+	
+	
+	//storage
+	nehnre.storage = (function() {
+		var a = window.localStorage;
+		if (window.ActiveXObject) {
+			store = document.documentElement;
+			STORE_NAME = "localstorage";
+			try {
+				store.addBehavior("#default#userdata");
+				store.save(STORE_NAME)
+			} catch(b) {}
+			return {
+				set: function(g, h) {
+					try {
+						store.setAttribute(g, h);
+						store.save(STORE_NAME)
+					} catch(j) {}
+				},
+				get: function(g) {
+					try {
+						store.load(STORE_NAME);
+						return store.getAttribute(g)
+					} catch(h) {
+						return ""
+					}
+				},
+				del: function(g) {
+					try {
+						store.removeAttribute(g);
+						store.save(STORE_NAME)
+					} catch(h) {}
+				}
+			}
+		} else {
+			if (a) {
+				return {
+					get: function(g) {
+						return a.getItem(g) == null ? null: unescape(a.getItem(g))
+					},
+					set: function(g, h, j) {
+						a.setItem(g, escape(h))
+					},
+					del: function(g) {
+						a.removeItem(g)
+					},
+					clear: function() {
+						a.clear()
+					},
+					getAll: function() {
+						var g = a.length,
+						j = null,
+						m = [];
+						for (var h = 0; h < g; h++) {
+							j = a.key(h),
+							m.push(j + "=" + this.getKey(j))
+						}
+						return m.join("; ")
+					}
+				}
+			} else {
+				return {
+					get: function(n) {
+						var j = document.cookie.split("; "),
+						h = j.length,
+						g = [];
+						for (var m = 0; m < h; m++) {
+							g = j[m].split("=");
+							if (n === g[0]) {
+								return unescape(g[1])
+							}
+						}
+						return null
+					},
+					set: function(g, h, j) {
+						if (! (j && typeof j === date)) {
+							j = new Date(),
+							j.setDate(j.getDate() + 1)
+						}
+						document.cookie = g + "=" + escape(h) + "; expires=" + j.toGMTString()
+					},
+					del: function(g) {
+						document.cookie = g + "=''; expires=Fri, 31 Dec 1999 23:59:59 GMT;"
+					},
+					clear: function() {
+						var j = document.cookie.split("; "),
+						h = j.length,
+						g = [];
+						for (var m = 0; m < h; m++) {
+							g = j[m].split("=");
+							this.deleteKey(g[0])
+						}
+					},
+					getAll: function() {
+						return unescape(document.cookie.toString())
+					}
+				}
+			}
+		}
+	})(); 
 })();

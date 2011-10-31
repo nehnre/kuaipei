@@ -8,11 +8,11 @@ $(function(){
 					var objLogin = $("#login");
 					if(objLogin.size() > 0){
 						objLogin.click();
+						nehnre.storage.set("_href", _href);
 						return;
 					}
 				}
 				location.href = _href;
-				try{window.event.returnValue=false;}catch(e){}
 			}
 		});
 	});
@@ -92,8 +92,13 @@ $(function(){
 				showAlert(json.data.msg, function(){
 					if(json.data.success){
 						showWaiting();
-						location.href = location.href.replace(/#*$/ig,"");
-						try{window.event.returnValue=false;}catch(e){}
+						var _href = nehnre.storage.get("_href");
+						if(_href){
+							nehnre.storage.del("_href");
+							location.href = _href;
+						} else {
+							location.href = location.href.replace(/#*$/ig,"");
+						}
 					}
 				});
 			}

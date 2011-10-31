@@ -3,6 +3,8 @@
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/reg.css" type="text/css" media="screen" /> 
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.6.1.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
 	<title>升级用户注册——立配网</title>
 </head>
 <body>
@@ -36,7 +38,8 @@
 										您的资料已经提交，请耐心等待工作人员来审核，
 										</if>
 										<span id="second">5</span>
-										秒后跳转到首页
+										<span style="display:none" id="index">秒后跳转到首页</span>
+										<span style="display:none" id="back">秒后返回</span>
 									</span>
 								</div>
 							</td>
@@ -52,6 +55,13 @@
 	</div>
 	<script type="text/javascript">
 		var second = document.getElementById("second");
+		var _href = nehnre.storage.get("_href");
+		if(_href){
+			$("#back").show();
+		} else {
+			$("#index").show();
+			_href = "/";
+		}
 		var s = 6;
 		(function(){
 			if(s > 0){
@@ -59,7 +69,8 @@
 				second.innerText = s;
 				setTimeout(arguments.callee,1000);
 			} else {
-				location.href = "/";
+				location.href = _href;
+				nehnre.storage.del("_href");
 			}
 		})();
 	</script>

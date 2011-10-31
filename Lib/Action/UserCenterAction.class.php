@@ -42,6 +42,24 @@ class UserCenterAction extends Action
 			$this -> ajaxReturn($json);
 	}
 
+	public function  checkStatus() {
+		if(!Session::is_set("id")){
+			$json["success"] = false;
+			$json["msg"] = "没有登录";
+		}else{
+			$condition["id"]  = Session::get("id");
+			$User = M("User");
+			$result = $User -> where($condition) -> find();
+			if($result['status'] == '待审核'||$result['status'] == '已审核'){
+				$json["success"] = false;
+				$json["msg"] = "您的个人信息已经进入".$result['status'] ."状态无法再修改";
+			}else{
+				$json["success"] = true;
+			}
+		}
+			$this -> ajaxReturn($json);
+	}
+
 
 	public function checkCheckNum(){
 		    $user_name = $_GET["user_name"];
@@ -139,7 +157,7 @@ class UserCenterAction extends Action
 		$User = M("User");
 		$result = $User -> where("id=".$id) -> find();
 		$this -> assign("result",$result);
-		if($result['status'] == '基本注册'||$result['status'] == '已退回'){
+//		if($result['status'] == '基本注册'||$result['status'] == '已退回'){
 			if($flag=='1'){
 				$template = "./Tpl/default/UserCenter/userCenterEditBasic.html";
 			}else if($flag=='2'){
@@ -155,11 +173,11 @@ class UserCenterAction extends Action
 					$this -> error("还没有<a href='/UserCenter?flag=2'>选择分类</a>");
 				}
 			}else{
-				$template = "./Tpl/default/UserCenter/userCenterDetail.html";
+					$template = "./Tpl/default/UserCenter/userCenterEditBasic.html";
 			}
-		}else{
-			$template = "./Tpl/default/UserCenter/userCenterDetail.html";
-		}
+//		}else{
+//				$template = "./Tpl/default/UserCenter/userCenterEditBasic.html";
+//		}
 	    $this->display($template );
 	}
 

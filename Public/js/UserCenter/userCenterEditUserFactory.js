@@ -68,24 +68,39 @@ $(function(){
 	$("#btnSubmit").click(function(){
 		var a = checkForm();
 		if(a){
-			var data = $("#myForm").serialize();
-			if ($.browser.msie && $.browser.version < 7){
-				$("select").hide();
-			}
-			showWaiting();
-			$.ajax({
-				url: "/UserCenter/updateUser",
-				data: data,
-				type: "POST",
-				success: function(json){
-					location.href = "UserCenter";
-				},
-				error: function(){
-					showAlert("保存失败！", function(){
-						$("select").show();
-					});
-				}
-			});
+				$.ajax({
+					url:"/UserCenter/checkStatus",
+					type:"POST",
+					success: function(json){
+						json = nehnre.parseJSON(json);
+						if(json.data.success){
+								console.log(data);
+								var data = $("#myForm").serialize();
+								if ($.browser.msie && $.browser.version < 7){
+									$("select").hide();
+								}
+								showWaiting();
+								$.ajax({
+									url: "/UserCenter/updateUser",
+									data: data,
+									type: "POST",
+									success: function(json){
+										location.href = "UserCenter";
+									},
+									error: function(){
+										showAlert("保存失败！", function(){
+											$("select").show();
+										});
+									}
+								});
+						}else{
+							showAlert(json.data.msg);
+						}
+					},
+					error: function(){
+						showAlert("提交失败，可能服务器出现故障。");
+					}
+				});
 		}
 	});
 	

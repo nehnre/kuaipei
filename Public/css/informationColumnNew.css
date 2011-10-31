@@ -71,8 +71,8 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 .ym2 { font-size: 14px;width:22px;	height:22px;color:#3366cc;	border: 1px solid #cccccc;	background-color: #ffffff;	line-height:22px;	text-align: center; }
 .ym3 { font-size: 12px;	width:59px;	height:22px; color:#3366cc;	border: 1px solid #cccccc; background-color: #ffffff; line-height:22px; text-indent: 5px; background-image: url(ym.jpg);	background-repeat: no-repeat;}
 .ddlb {height:40px; font-size:18px; font-family:"宋体"; font-weight: bold;	line-height:40px;}
-.lb1 { background-color: #f1f1f1; height:37px; line-height:37px;}
-.lb2 { background-color: #ffffff; height:37px; line-height:37px;}
+.lb1 { background-color: #f1f1f1; height:37px; line-height:37px; overflow:hidden;}
+.lb2 { background-color: #ffffff; height:37px; line-height:37px; overflow:hidden;}
 
 
 

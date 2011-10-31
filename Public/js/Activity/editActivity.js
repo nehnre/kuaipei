@@ -2,6 +2,12 @@ $(function(){
 	KE.show({
 		id:"detail_text"
 	});
+	KE.show({
+		id:"related_product"
+	});
+	KE.show({
+		id:"product_story"
+	});
 	var dataConfig = {
 		minDate:new Date(),
 		monthNames:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']	,

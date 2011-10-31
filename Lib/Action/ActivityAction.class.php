@@ -176,7 +176,7 @@ class ActivityAction extends Action
 		$condition["status"] = "已发布";
 		
 		$result = $Activity -> where($condition) -> find();
-		if(empty($result)){
+		if(empty($id) || empty($result)){
 			$this -> error("没有这项活动或者活动还未被审核！");
 		}
 		
@@ -231,6 +231,45 @@ class ActivityAction extends Action
 		$this -> assign("user", $loginUser);
 		
 		$this -> display();
+	}
+	
+	public function showRelatedProduct(){
+		$id = $_REQUEST["id"];
+		$Activity = M("Activity");
+		$condition["id"] = $id;
+		$condition["status"] = "已发布";
+		$ac = $Activity -> where($condition) -> find();
+		if(empty($id) || empty($ac)){
+			$this -> error("没有这项活动或者活动还未被审核！");
+		}
+		$result["title"] = "相关产品";
+		$result["titleSpan"] = "<span>相</span>关产品";
+		$result["insert_time"] = $ac["insert_time"];
+		$result["content"] = $ac["related_product"];
+		$result["sponsor"] = $ac["sponsor"];
+		$this -> assign("result", $result);
+		
+		$this -> display('./Tpl/default/Activity/introduce.html');
+	}
+	
+	public function showProductStory(){
+		$id = $_REQUEST["id"];
+		$Activity = M("Activity");
+		$condition["id"] = $id;
+		$condition["status"] = "已发布";
+		
+		$ac = $Activity -> where($condition) -> find();
+		if(empty($id) || empty($ac)){
+			$this -> error("没有这项活动或者活动还未被审核！");
+		}
+		
+		$result["title"] = "产品故事";
+		$result["titleSpan"] = "<span>产</span>品故事";
+		$result["insert_time"] = $ac["insert_time"];
+		$result["content"] = $ac["product_story"];
+		$result["sponsor"] = $ac["sponsor"];
+		$this -> assign("result", $result);
+		$this -> display('./Tpl/default/Activity/introduce.html');
 	}
 	private function saveForm($preview){
 

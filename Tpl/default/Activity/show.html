@@ -66,9 +66,9 @@
 					<div class="activity_content">
 						<div class="left">
 							<div class="btn">
-								<input type="button" value="活动介绍" />
-								<!--<input type="button" value="相关产品" />
-								<input type="button" value="品牌故事" />-->
+								<input type="button" value="活动介绍" onclick="location.href='show?id={$result.id}#detail';"/>
+								<input type="button" value="相关产品" onclick="window.open('showRelatedProduct?id={$result.id}');" />
+								<input type="button" value="品牌故事" onclick="window.open('showProductStory?id={$result.id}');"/>
 							</div>
 							<div class="picture">
 								<img src="__PUBLIC__/Uploads/{$result.activity_pic}" width="368" height="227"/>
@@ -96,7 +96,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="clear"></div>
+					<div class="clear"></div><a name="detail"></a>
 					<div class="activity_describe">
 						<div class="left_title">
 							<span>详</span>细介绍

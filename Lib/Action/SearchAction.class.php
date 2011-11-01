@@ -7,7 +7,7 @@ class SearchAction extends Action
 		if(!empty($word)){ 
 			$where["tags"] =array("like", "%".$word."%"); 
 			$where["title"] =array("like", "%".$word."%"); 
-			$where["other"] =array("like", "%".$other."%"); 
+			$where["other"] =array("like", "%".$word."%"); 
 			$where['_logic'] = "or";
 			$map['_complex'] =$where; 
 		} else {

@@ -80,7 +80,7 @@
 									<img src="__PUBLIC__/Uploads/{$result.activity_pic}" width="368" height="227"/>
 								</div>
 								<div class="activity_text">
-									<div class="start_time">开始时间：<php>echo date("Y年m月d日", strtotime($result["start_time"]));</php></div>
+									<!--div class="start_time">开始时间：<php>echo date("Y年m月d日", strtotime($result["start_time"]));</php></div-->
 									<div class="activity_abstract">
 										<volist name="introduce" id="vo">
 										<div>{$vo}</div>
@@ -93,7 +93,7 @@
 											</volist>
 										</ul>
 									</div>
-									<div class="join_btn"><img src="/Public/images/activity/btn_join.png" /></div>
+									<div class="join_btn"><img src="/Public/images/activity/btn_join.png" style="cursor:pointer" id="btnJoin" status="{$user.status}" unlogin="{$unlogin}" joined="{$joined}" expirse="{$expirse}" start_time="{$result.start_time}" end_time="{$result.end_time}" import_flag="{$user.import_flag}"/></div>
 								</div>
 							</div>
 							<div class="clear"></div>

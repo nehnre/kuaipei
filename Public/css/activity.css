@@ -18,80 +18,119 @@
 	border:1px solid #bebebe;
  }
  .activity_content{
-	height:365px;
-	border:1px solid #bebebe;
-	background-color:#f1f1f1;
+	width:733px;
+	height:368px;
+	background:url(../images/activity/activity_bg.jpg);
  }
- .activity_content .left{
-	width:390px;
+ .activity_content .activity_buttons{
+	height:40px;
+	margin-left:5px;
+ }
+ .activity_content .activity_buttons .items{
+	width:60px;
+	height:20px;
 	float:left;
-	padding-left:10px;
- }
- .activity_content .right1{
-	float:left;
- }
- .activity_content .left .btn {
-	margin-bottom:20px;
-	padding-top:20px;
- }
- .activity_content .left .btn input{
-	width:123px;
-	height:35px;
-	background:url(../images/activity/btn_bg2.jpg);
-	border:0px;
+	color:#a5a5a5;
+	font-family:黑体;
 	font-weight:bold;
-	font-size:16px;
-	color:white;
-	margin-left:0px;
-}
- .activity_content .left .picture{
+	font-size:14px;
+	padding:20px 0 0 20px;
+	cursor:pointer;
+ }
+ .activity_content .activity_buttons .line{
+	width:20px;
+	height:40px;
+	float:left;
+	border-right:1px solid #cbcbcb;
+ }
+ .activity_content .activity_title{
+	height:25px;
+	margin-left:25px;
+	padding:30px 0 0 0;
+	color:#616161;
+	font-size:18px;
+	font-family:黑体;
+	font-weight:bold;
+ }
+ .activity_content .activity_describ{
+	height:240px;
+	margin-left:25px;
+	margin-top:10px;
+ }
+ .activity_content .activity_picture{
 	width:375px;
 	height:235px;
+	float:left;
 	background-color:white;
 	border:1px solid #c0c0c0;
+	
  }
- .activity_content .left .picture img{
+ .activity_content .activity_picture img{
 	border:1px solid #bebebe;
 	margin-left:3px;
 	margin-top:3px;
  }
- .activity_content .left .text{
-	line-height:50px;
-	font-size:20px;
-	text-align:center;
+ .activity_content .activity_text{
+	height:240px;
+	width:265px;
+	padding-left:30px;
+	float:left;
+	position:relative;
+	overflow:hidden;
+ }
+ .activity_content .activity_text .start_time{
+	font-size:18px;
 	font-family:黑体;
  }
- .activity_content .right1 {
-	margin-left:20px;
- }
- .activity_content .right1 .title{
-	padding-top:20px;
-	font-size:24px;
-	font-family:微软雅黑;
-	margin-bottom:20px;
-	height:35px;
- }
- .activity_content .right1 .abstract{
-	font-size:16px;
+ .activity_content .activity_text .activity_abstract{
+	font-size:18px;
 	font-family:黑体;
 	line-height:22px;
-	margin-bottom:20px;
+	margin-top:40px;
+	margin-bottom:10px;
  }
- .activity_content .right1 .introduce_list ul{
+ .activity_content .activity_text .introduce_list ul{
 	margin-left:15px;
 	line-height:25px;
  }
- .activity_content .right1 .introduce_list{
-	margin-bottom:20px;
+ .activity_content .activity_text .join_btn{
+	position:absolute;
+	bottom:5px;
+	left:35px;
  }
- .activity_content .right1 .download{
+ .activity_content .introduce_container{
+	width:695px;
+	height:290px;
+	border:1px solid #d4d4d4;
+	background-color:white;
+	margin:18px 0 0 18px;
+  }
+ .activity_content .introduce_container .product_introduce{
+	width:405px;
+	height:250px;
+	float:left;
+	padding:20px 0 0 20px;
+	overflow-x:none;
+	overflow-y:auto;
+ }
+ .activity_content .introduce_container .product_pic{
+	width:260px;
+	height:290px;
 	float:left;
  }
- .activity_content .right1 .attention{
+ .activity_content .introduce_container .brand_introduce{
+	width:510px;
+	height:250px;
 	float:left;
-	margin-left:30px;
+	padding:20px 0 0 20px;
+	overflow-x:none;
+	overflow-y:auto;
  }
- 
+ .activity_content .introduce_container .brand_pic{
+	width:160px;
+	height:290px;
+	float:left;
+ }
  .activity_describe{
 	margin-top:10px;
  }

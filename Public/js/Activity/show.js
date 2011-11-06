@@ -105,6 +105,32 @@ $(function(){
 			});
 		}
 	});
+	
+	$(".activity_content .activity_buttons .items").each(function(i){
+		$(this).click(function(){
+			$(".activity_content .activity_buttons .items").css("color","#a5a5a5");
+			$(this).css("color","#bf1d2d");
+			if(i == 0){
+				$("#tab_1").show();
+				$("#tab_2").hide();
+				$("#tab_3").hide();
+				$(".activity_content").css("background","url(/Public/images/activity/activity_bg.jpg)");
+				//$("activity_text").css("");
+			}
+			if(i == 1){
+				$("#tab_1").hide();
+				$("#tab_2").show();
+				$("#tab_3").hide();
+				$(".activity_content").css("background","url(/Public/images/activity/activity_bg1.jpg)");
+			}
+			if(i == 2){
+				$("#tab_1").hide();
+				$("#tab_2").hide();
+				$("#tab_3").show();
+				$(".activity_content").css("background","url(/Public/images/activity/activity_bg1.jpg)");
+			}
+		});
+	});
 
 });	
 function reg(){

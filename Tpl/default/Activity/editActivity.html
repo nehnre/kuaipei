@@ -57,11 +57,11 @@
 				<td  align="left"><textarea cols="100" style="width:80%" rows="24" id="detail_text" name="detail_text" style="visibility:hidden;">{$result.detail_text}</textarea></td>
 			</tr>
 			<tr class="odd">
-				<td  align="right">相关产品：</td>
+				<td  align="right">产品介绍：</td>
 				<td  align="left"><textarea cols="100" style="width:80%" rows="24" id="related_product" name="related_product" style="visibility:hidden;">{$result.related_product}</textarea></td>
 			</tr>
 			<tr class="odd">
-				<td  align="right">品牌故事：</td>
+				<td  align="right">品牌介绍：</td>
 				<td  align="left"><textarea cols="100" style="width:80%" rows="24" id="product_story" name="product_story" style="visibility:hidden;">{$result.product_story}</textarea></td>
 			</tr>
 			<tr class="odd">
@@ -139,6 +139,40 @@
 						</tr>
 						<tr>
 							<td><a href="__PUBLIC__/Uploads/{$result.index_change_pic}" target="blank">查看</a></td>
+						</tr>
+					</table>
+				</td>
+				</if>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">产品介绍图片：</td>
+				<if condition="empty($result['related_product_pic'])">
+				<td align="left"><input type="file" style="width:80%" name="photo[]"/>（260*290）</td>
+				<else />
+				<td align="left">
+					<table cellspacing="0" border="0" cellpadding="0" width="100%">
+						<tr>
+							<td><input type="file" style="width:80%" name="photo[]"/>（260*290）</td>
+						</tr>
+						<tr>
+							<td><a href="__PUBLIC__/Uploads/{$result.related_product_pic}" target="blank">查看</a></td>
+						</tr>
+					</table>
+				</td>
+				</if>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">品牌介绍图片：</td>
+				<if condition="empty($result['product_story_pic'])">
+				<td align="left"><input type="file" style="width:80%" name="photo[]"/>（160*290）</td>
+				<else />
+				<td align="left">
+					<table cellspacing="0" border="0" cellpadding="0" width="100%">
+						<tr>
+							<td><input type="file" style="width:80%" name="photo[]"/>（160*290）</td>
+						</tr>
+						<tr>
+							<td><a href="__PUBLIC__/Uploads/{$result.product_story_pic}" target="blank">查看</a></td>
 						</tr>
 					</table>
 				</td>

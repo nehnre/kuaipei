@@ -357,6 +357,14 @@ class ActivityAction extends Action
 				$Activity -> index_change_pic = $info[$n]["savename"];
 				$n = $n + 1;
 			}
+			if($error[4] == 0){
+				$Activity -> related_product_pic = $info[$n]["savename"];
+				$n = $n + 1;
+			}
+			if($error[5] == 0){
+				$Activity -> product_story_pic = $info[$n]["savename"];
+				$n = $n + 1;
+			}
 		}
 		if(empty($id)){
 			$Activity -> insert_time = date("Y-m-d H:i:s");
@@ -429,8 +437,6 @@ class ActivityAction extends Action
 					$value = $value . ",";
 				}
 				$value = $value . $result["tag_name"];
-				echo json_encode($value);
-
 			}
 		}
 		return $value;

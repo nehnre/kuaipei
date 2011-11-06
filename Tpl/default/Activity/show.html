@@ -60,40 +60,57 @@
 			<div class="clear"></div>
 			<div class="layer1">
 				<div class="left">
-					<!--<div class="activity_ad">
-						<img src="__PUBLIC__/Uploads/{$result.topad_pic}" />
-					</div>-->
 					<div class="activity_content">
-						<div class="left">
-							<div class="btn">
-								<input type="button" value="活动介绍" onclick="location.href='show?id={$result.id}#detail';"/>
-								<input type="button" value="相关产品" onclick="window.open('showRelatedProduct?id={$result.id}');" />
-								<input type="button" value="品牌故事" onclick="window.open('showProductStory?id={$result.id}');"/>
-							</div>
-							<div class="picture">
-								<img src="__PUBLIC__/Uploads/{$result.activity_pic}" width="368" height="227"/>
-							</div>
-							<div class="text"><!--{$result.end_time}-->{$result.sponsor}</div>
+						<div class="activity_buttons">
+							<div class="items" style="color:#bf1d2d;">活动介绍</div>
+							<if condition="!empty($result['related_product'])">
+							<div class="line"></div>
+							<div class="items">产品介绍</div>
+							</if>
+							<if condition="!empty($result['product_story'])">
+							<div class="line"></div>
+							<div class="items">品牌介绍</div>
+							</if>
+							<div class="clear"></div>
 						</div>
-						<div class="right1">
-							<div class="title bold">{$result.title}</div>
-							<div class="abstract">
-								<volist name="introduce" id="vo">
-								<div>{$vo}</div>
-								</volist>
-								<!--<div>主办方：{$result.sponsor}</div>-->
+						<div id="tab_1" >
+							<div class="activity_title">{$result.sponsor}</div>
+							<div class="activity_describ">
+								<div class="activity_picture">
+									<img src="__PUBLIC__/Uploads/{$result.activity_pic}" width="368" height="227"/>
+								</div>
+								<div class="activity_text">
+									<!--div class="start_time">开始时间：<php>echo date("Y年m月d日", strtotime($result["start_time"]));</php></div-->
+									<div class="activity_abstract">
+										<volist name="introduce" id="vo">
+										<div>{$vo}</div>
+										</volist>								
+									</div>
+									<div class="introduce_list">
+										<ul>
+											<volist name="describ_text" id="vo">
+											<li>{$vo}</li>
+											</volist>
+										</ul>
+									</div>
+									<div class="join_btn"><img src="/Public/images/activity/btn_join.png" style="cursor:pointer" id="btnJoin" status="{$user.status}" unlogin="{$unlogin}" joined="{$joined}" expirse="{$expirse}" start_time="{$result.start_time}" end_time="{$result.end_time}" import_flag="{$user.import_flag}"/></div>
+								</div>
 							</div>
-							<div class="introduce_list">
-								<ul>
-									<volist name="describ_text" id="vo">
-									<li>{$vo}</li>
-									</volist>
-								</ul>
+							<div class="clear"></div>
+						</div>
+						<div id="tab_2" style="display:none">
+							<div class="introduce_container">
+								<div class="product_introduce">{$result.related_product}</div>
+								<div class="product_pic"><img src="/Public/Uploads/{$result.related_product_pic}" width="260" height="290"/></div>
 							</div>
-							<div class="btn">
-								<div class="download"><img src="__PUBLIC__/images/activity/btn_join.gif" style="cursor:pointer" id="btnJoin" status="{$user.status}" unlogin="{$unlogin}" joined="{$joined}" expirse="{$expirse}" start_time="{$result.start_time}" end_time="{$result.end_time}" import_flag="{$user.import_flag}"/></div>
-								<!--<div class="attention"><img src="__PUBLIC__/images/activity/btn_attention.jpg" style="cursor:pointer"/></div>-->
+							<div class="clear"></div>
+						</div>
+						<div id="tab_3" style="display:none">
+							<div class="introduce_container">
+								<div class="brand_introduce">{$result.product_story}</div>
+								<div class="brand_pic"><img src="/Public/Uploads/{$result.product_story_pic}" width="160" height="290"/></div>
 							</div>
+							<div class="clear"></div>
 						</div>
 					</div>
 					<div class="clear"></div><a name="detail"></a>
@@ -116,9 +133,9 @@
 							</if>
 							<volist name="list" id="vo">
 							<div class="comment">
-								<div class="title">{$vo.title} 【{$vo.nick_name}】于 {$vo.insert_time} 评论</div>
+								<div class="title"><php>echo strip_tags($vo["title"]);</php>【{$vo.nick_name}】于 {$vo.insert_time} 评论</div>
 								<div class="line"></div>
-								<div class="comment_content">{$vo.content}</div>
+								<div class="comment_content"><php>echo strip_tags($vo["content"]);</php></div>
 							</div>
 							</volist>
 							<div style="text-align:right; line-height:30px;">{$foot}</div>

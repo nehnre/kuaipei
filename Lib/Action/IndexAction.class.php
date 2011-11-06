@@ -10,7 +10,7 @@ class IndexAction extends Action
     public function index()
     {
 		$Activity = M("Activity");
-		$result = $Activity -> where("status='已发布'") -> order('insert_time desc') -> limit(21) -> select();
+		$result = $Activity -> where("status='已发布'") -> order('insert_time desc') -> limit(15) -> select();
 		$len = count($result);
 		for($i=0;$i< $len/3;$i++){
 			$temp[$i][0] = $result[$i*3];
@@ -29,11 +29,11 @@ class IndexAction extends Action
 		
 		//显示活动相关信息
 		$Information_column = M("information_column");
-		$hot = $Information_column -> where("`column`='汽配热点' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$hot = $Information_column -> where("`column`='厂商报道' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
 		$this -> assign("hot", $hot);
-		$people = $Information_column -> where("`column`='汽配人物' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$people = $Information_column -> where("`column`='汽配热点' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
 		$this -> assign("people", $people);
-		$resource = $Information_column -> where("`column`='维修资源库' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$resource = $Information_column -> where("`column`='配件营销' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
 		$this -> assign("resource", $resource);
 		
 		

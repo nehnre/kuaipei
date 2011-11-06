@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-	<meta name="keywords" content="{$result.title} 汽配促销 知名配件 原厂配件 正品配件 外资配件 配件促销 汽配网 配件免费试用 优质配件 提高配件利润 配件利润高 找配件 好配件 配件直销 厂家直销配件 抢购配件 立配网"/>
+	<meta name="keywords" content="{$result.title}汽配促销,知名配件,原厂配件,正品配件,外资配件,配件促销,汽配网,配件免费试用,优质配件,提高配件利润,配件利润高 找配件,好配件,配件直销,厂家直销配件,抢购配件,立配网"/>
 	<meta name="description" content="立配网是国内汽配行业特有的以促销为手段的垂直网络营销平台。我们致力于推动汽车产品替换市场对规格、质量、声誉及品牌的一手买卖资讯，让消费者享用到更多优质优价的产品；我们积极帮助汽配企业创造机遇，做汽车后市场最给力的营销网站。" />
 	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
-	<title>行业资讯——立配网</title>
+	<title>行业资讯：{$result.title}——立配网</title>
 	<script type="text/javascript">
 		$(function(){
 			$(".menu_container div").each(function(){
@@ -28,27 +28,25 @@
 <body>
 	<include file="./Tpl/default/Public/index_top.html" />
     <div class="body">
-        <div class="align_center index_body" style="padding-top:30px;">
-            <div class="help_left_title">
-				<span>行</span>业资讯
-			</div>
-            <div class="clear"></div>
+        <div class="align_center index_body" style="padding-top:10px;">
 			<div class="layer1">
                 <div class="help_right">
 					<php>
-						$type["厂商动态"] = 1;
-						$type["经销动态"] = 2;
-						$type["汽配热点"] = 3;
-						$type["汽配人物"] = 4;
-						$type["维修资源库"] = 5;
-						$type["一线维修"] = 6;
+						$type["厂商报道"] = 1;
+						$type["汽配热点"] = 2;
+						$type["配件营销"] = 3;
+						$type["最新商情"] = 4;
+						$type["配件一览"] = 5;
 					</php>
                     <div class="help_right_title"><a name="01" id="01"></a><span>当前位置</span>：<a href="/InformationColumn/supListInformationColumn">行业资讯</a> &gt; <a href="/InformationColumn/supListInformationColumn?flag=<php>echo $type[$result[column]]</php>">{$result.column}</a></div>
                     <div class="help_right_content">
 						<div class="help_right_content_title">{$result.title}</div>
 						<div class="hr"></div>
-						<div class="help_right_content_time"><php>echo date("Y年m月d日", strtotime($result["publish_time"]))</php></div>
-                        {$result.content}
+						<div class="help_right_content_time"><p><span><php>echo date("Y年m月d日", strtotime($result["publish_time"]))</php></span><if condition="!empty($result['source']) "><span>出处：
+{$result.source}</span></if><if condition="!empty($result['author']) "><span>作者：
+{$result.author}</span></if><if condition="!empty($result['editor']) "><span>责任编辑：
+{$result.editor}</span></if><p></div>
+                        <div style="line-height:24px;font-size:14px">{$result.content}</div>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-	<meta name="keywords" content="汽配促销 知名配件 原厂配件 正品配件 外资配件 配件促销 汽配网 配件免费试用 优质配件 提高配件利润 配件利润高 找配件 好配件 配件直销 厂家直销配件 抢购配件 立配网"/>
+	<meta name="keywords" content="汽配促销,知名配件,原厂配件,正品配件,外资配件,配件促销,汽配网,配件免费试用,优质配件,提高配件利润,配件利润高 找配件,好配件,配件直销,厂家直销配件,抢购配件,立配网"/>
 	<meta name="description" content="立配网是国内汽配行业特有的以促销为手段的垂直网络营销平台。我们致力于推动汽车产品替换市场对规格、质量、声誉及品牌的一手买卖资讯，让消费者享用到更多优质优价的产品；我们积极帮助汽配企业创造机遇，做汽车后市场最给力的营销网站。" />
 	<link rel="stylesheet" href="__PUBLIC__/css/informationColumnNew.css" type="text/css" media="screen" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
@@ -17,7 +17,7 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/min_contentslider.js"></script>
-	<title>行业资讯——快配网</title>
+	<title>行业资讯——立配网</title>
 	<script type="text/javascript">
 		$(function(){
 			$(".menu_container div").each(function(){
@@ -26,14 +26,6 @@
 				$(this).attr("class", className);
 			});
 			$(".menu_news").removeClass("menu_news").addClass("menu_news1");
-			
-			//资讯分类
-			var n = nehnre.queryString()["flag"];
-			if(n){
-				n = ~~n;
-			} else {
-				n = 0;
-			}
 
 			//资讯分类
 			var n = nehnre.queryString()["flag"];
@@ -66,8 +58,7 @@
 		<div class="body">
 <div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
  <div id="nr">
-   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/title_hyzx.jpg"></div></div>
-    <div class="clear"></div>
+      <div style="height:10px;"></div>
 		<div class="focus" id="FocusPic">
 			<div class="sliderwrapper" id="slider1">
 				<volist name="picNews" id="vo">
@@ -117,22 +108,19 @@
 					<div class="text"><a href="supListInformationColumn">全部</a></div>
 				</div>
 				<div class="item">
-					<div class="text"><a href="supListInformationColumn?flag=1 " >厂商动态</a></div>
+					<div class="text"><a href="supListInformationColumn?flag=1 " >厂商报道</a></div>
 				</div>
 				<div class="item">
-					<div class="text"><a href="supListInformationColumn?flag=2 ">经销动态</a></div>
+					<div class="text"><a href="supListInformationColumn?flag=2 ">汽配热点</a></div>
 				</div>
 				<div class="item">
-					<div class="text"><a href="supListInformationColumn?flag=3 ">汽配热点</a></div>
+					<div class="text"><a href="supListInformationColumn?flag=3 ">配件营销</a></div>
 				</div>
 				<div class="item">
-					<div class="text"><a href="supListInformationColumn?flag=4 " >汽配人物</a></div>
+					<div class="text"><a href="supListInformationColumn?flag=4 " >最新商情</a></div>
 				</div>
 				<div class="item">
-					<div class="text"><a href="supListInformationColumn?flag=5 ">维修资源库</a></div>
-				</div>
-				<div class="item">
-					<div class="text"><a href="supListInformationColumn?flag=6 " >一线维修</a></div>
+					<div class="text"><a href="supListInformationColumn?flag=5 ">配件一览</a></div>
 				</div>
 			</div>
 		</div>

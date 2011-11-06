@@ -1,4 +1,4 @@
-﻿/*  
+/*  
 /*  
  *	powered by nehnre
  */
@@ -25,7 +25,7 @@ a:hover{
 
 .menu_container{
 	position:absolute;
-	left:320px;
+	left:280px;
 	bottom:0px;
 }
 .top_menu{
@@ -70,7 +70,7 @@ a:hover{
 }
 
 .menu_activity{
-	background:url("../images/menu_blank.jpg");
+	background:url("../images/menu_activity.jpg");
 }
 .menu_activity1{
 	background:url("../images/menu_activity1.jpg");
@@ -306,7 +306,8 @@ a:hover{
 	padding-right:5px;
 }
 .left_title a{
-	margin-left:610px;
+	margin-left:580px;
+	padding-right:10px;
 	padding-top:5px;
 	font-family: 宋体;
 	font-size:12px;

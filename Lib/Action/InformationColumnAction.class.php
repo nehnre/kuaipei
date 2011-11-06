@@ -1,5 +1,5 @@
 <?php
-class InformationColumnAction extends Action
+class InformationColumnAction extends Action 
 {
 
 
@@ -186,22 +186,23 @@ class InformationColumnAction extends Action
 			$flag = $_REQUEST["flag"];
 			if(!empty($flag)){ 
 				if($flag==1){
-					$condition["column"] ="厂商动态"; 
+					$condition["column"] ="厂商报道"; 
 				}else if($flag==2){
-					$condition["column"] ="经销动态"; 
-				}else if($flag==3){
 					$condition["column"] ="汽配热点"; 
+				}else if($flag==3){
+					$condition["column"] ="配件营销"; 
 				}else if($flag==4){
-					$condition["column"] ="汽配人物"; 
+					$condition["column"] ="最新商情"; 
 				}else if($flag==5){
-					$condition["column"] ="维修资源库"; 
-				}else if($flag==6){
-					$condition["column"] ="一线维修"; 
+					$condition["column"] ="配件一览"; 
 				}
 			}
 			$count = $informationColumn -> where($condition) -> count();
 			import("ORG.Util.Page");
 			$Page = new Page($count, 10);
+
+            //s$pagep = new PhptdPage($count,10); // 实例化分页类
+			//$foot = $pagep->showPage($setPage);
 			$foot = $Page -> show();
 			$list = $informationColumn -> where($condition) -> order('seq  desc,update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
 			$this->assign('list',$list); 

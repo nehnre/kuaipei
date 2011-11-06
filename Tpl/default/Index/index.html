@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="keywords" content="汽配促销 知名配件 原厂配件 正品配件 外资配件 配件促销 汽配网 配件免费试用 优质配件 提高配件利润 配件利润高 找配件 好配件 配件直销 厂家直销配件 抢购配件 立配网"/>
+	<meta name="keywords" content="汽配促销,知名配件,原厂配件,正品配件,外资配件,配件促销,汽配网,配件免费试用,优质配件,提高配件利润,配件利润高 找配件,好配件,配件直销,厂家直销配件,抢购配件,立配网"/>
 	<meta name="description" content="立配网是国内汽配行业特有的以促销为手段的垂直网络营销平台。我们致力于推动汽车产品替换市场对规格、质量、声誉及品牌的一手买卖资讯，让消费者享用到更多优质优价的产品；我们积极帮助汽配企业创造机遇，做汽车后市场最给力的营销网站。" />
 	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
@@ -165,12 +165,11 @@
 				</div>
 				<div class="category_news">资讯</div>
 				<div class="category_news_content">
-					<a href="/InformationColumn/supListInformationColumn?flag=1" class="black">厂商动态</a>
-					<a href="/InformationColumn/supListInformationColumn?flag=2" class="black">经销动态</a>
-					<a href="/InformationColumn/supListInformationColumn?flag=3" class="black">汽配热点</a>
-					<a href="/InformationColumn/supListInformationColumn?flag=4" class="black">汽配人物</a>
-					<a href="/InformationColumn/supListInformationColumn?flag=5" class="black">维修资源</a>
-					<a href="/InformationColumn/supListInformationColumn?flag=6" class="black">一线维修</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=1" class="black">厂商报道</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=2" class="black">汽配热点</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=3" class="black">配件营销</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=4" class="black">最新商情</a>
+					<a href="/InformationColumn/supListInformationColumn?flag=5" class="black">配件一览</a>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -178,7 +177,7 @@
 				<div class="left">
 					<div class="promotion">
 						<div class="left_title">
-							<div class="title"><span>最</span>新促销</div>
+							<span>最</span>新促销<a href="/Activity/listIndexActivity" class="gray" target="_blank">更多 ></a>
 						</div>
 						<div class="promotion_content">
 							<volist name="result" id="child">
@@ -241,7 +240,7 @@
 			<div class="clear"></div>
 			<div class="layer3">
 				<div class="left">
-					<div class="title"><span>汽</span>配热点<a href="/InformationColumn/supListInformationColumn?flag=3" class="gray" target="_blank">更多 ></a></div>
+					<div class="title"><span>厂</span>商报道<a href="/InformationColumn/supListInformationColumn?flag=3" class="gray" target="_blank">更多 ></a></div>
 					<div class="content">
 						<volist name="hot" id="vo">
 						<if condition="$i eq 1">
@@ -255,7 +254,7 @@
 								</div>
 							<div class="news">
 								<div class="news_title bold"><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
-								<div class="news_abstract"><php>echo mb_substr(strip_tags($vo["content"]),0,40,"utf-8")."..."</php></div>
+								<div class="news_abstract"><div style="overflow:hidden;"><lt name="vo.content|strip_tags|mb_convert_encoding='auto','UTF-8'|mb_strlen" value="60">{$vo.content}<else/>{$vo.content|strip_tags|mb_substr=0,60,'utf-8'}...</lt></div></div>
 							</div>
 						</div>
 						</if>
@@ -274,7 +273,7 @@
 					<div class="bottom"></div>
 				</div>
 				<div class="center">
-					<div class="title"><span>汽</span>配人物<a href="/InformationColumn/supListInformationColumn?flag=4" class="gray" target="_blank">更多 ></a></div>
+					<div class="title"><span>汽</span>配热点<a href="/InformationColumn/supListInformationColumn?flag=4" class="gray" target="_blank">更多 ></a></div>
 					<div class="content">
 						<volist name="people" id="vo">
 						<if condition="$i eq 1">
@@ -288,7 +287,7 @@
 								</div>
 							<div class="news">
 								<div class="news_title bold"><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
-								<div class="news_abstract"><php>echo mb_substr(strip_tags($vo["content"]),0,40,"utf-8")."..."</php></div>
+								<div class="news_abstract"><div style="overflow:hidden;"><lt name="vo.content|strip_tags|mb_convert_encoding='auto','UTF-8'|mb_strlen" value="60">{$vo.content}<else/>{$vo.content|strip_tags|mb_substr=0,60,'utf-8'}...</lt></div></div>
 							</div>
 						</div>
 						</if>
@@ -305,7 +304,7 @@
 					<div class="bottom"></div>
 				</div>
 				<div class="right">
-					<div class="title"><span>维</span>修资源库<a href="/InformationColumn/supListInformationColumn?flag=5" class="gray" style="margin-left:40px;" target="_blank">更多 ></a></div>
+					<div class="title"><span>配</span>件营销<a href="/InformationColumn/supListInformationColumn?flag=5" class="gray" style="margin-left:40px;" target="_blank">更多 ></a></div>
 					<div class="content">
 						<div class="news_list">
 							<volist name="resource" id="vo">

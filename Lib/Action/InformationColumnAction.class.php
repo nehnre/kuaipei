@@ -353,7 +353,7 @@ class InformationColumnAction extends Action
 					$value = $value . ",";
 				}
 				$value = $value . $result["tag_name"];
-				echo json_encode($value);
+				//echo json_encode($value);
 
 			}
 		}

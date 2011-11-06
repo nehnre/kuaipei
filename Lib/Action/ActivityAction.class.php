@@ -3,6 +3,45 @@ class ActivityAction extends Action
 {
 
 
+
+    /**
+    +----------------------------------------------------------
+    * 前台活动页面
+    +----------------------------------------------------------
+    */
+    public function listIndexActivity()
+    {
+		$Activity = M("Activity");
+        $condition["status"] = "已发布";
+		$flag = $_REQUEST["flag"];
+		if(!empty($flag)){
+		    $condition["type"] = "免费试用";
+		}
+		$count = $Activity -> where($condition) -> count();
+		import("ORG.Util.Page");
+ 		$Page = new Page($count, 12);
+		$foot = $Page -> show();
+		$result = $Activity -> where($condition) -> order('insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+		$len = count($result);
+		for($i=0;$i< $len/3;$i++){
+			$temp[$i][0] = $result[$i*3];
+			if($len > $i*3 + 1){
+				$temp[$i][1] = $result[$i*3 + 1];
+			}
+			if($len > $i*3 + 2){
+				$temp[$i][2] = $result[$i*3 + 2];
+			}
+		}
+		$this -> assign("result", $temp);
+		$this->assign('foot',$foot);
+
+		$Vuserlog = M("Vuserlog");
+		$log = $Vuserlog -> where("") -> order('insert_time desc') -> limit(7) -> select();
+		$this -> assign("log", $log);
+
+        $this->display();
+    }
+
 	public function canclePublishActivity(){
 		$id = $_REQUEST["id"];
 		$Activity = M("Activity");

@@ -1,0 +1,88 @@
+a:link {color:#666666; TEXT-DECORATION: none;} /* 未访问的链接 underline*/
+a:visited {color:#666666; TEXT-DECORATION: none;} /* 已访问的链接 */
+a:hover {color: #FF0000; TEXT-DECORATION: none;} /* 鼠标移动到链接上 */
+a:active {color:#666666; TEXT-DECORATION: none;} /* 选定的链接 */
+
+.layer1 .left_activity{
+	float:left;
+	height:100%;
+	width:210px;
+
+}
+.layer1 .right_activity{
+
+	float:left;
+	height:100%;
+	width:733px;
+	margin-left:9px;
+}
+
+.left_activitytitle{
+	background: url(../images/index_title_bg_left.jpg);
+	line-height:30px;
+	height:35px;
+	font-size:16px;
+	color:#999;
+	font-weight:bold;
+	padding-left:20px;
+	position:relative;
+}
+.left_activitytitle span{
+	font-family: 微软雅黑;
+	font-size:24px;
+	font-weight:normal;
+	color:black;
+	padding-right:5px;
+}
+
+.left_activitytitle .tabActivity{
+	bottom:1px;
+	height:30px;
+	margin-left:500px;
+	position:absolute;
+	
+}
+.left_activitytitle .tabActivity .itemActivity{
+	width:90px;
+	height:100%;
+	float:left;
+	cursor:pointer;
+	margin-right:2px;
+	
+}
+.left_activitytitle .tabActivity .itemActivity .top
+{
+	height:4px;
+	background:url(../images/activity/icon_tab.jpg) no-repeat;
+}
+.left_activitytitle .tabActivity .itemActivity .textActivity{
+	height:30px;
+	background:url(../images/activity/icon_tab.jpg) no-repeat;
+	
+	background-color:#eeeeee;
+	color:#7e7e7e;
+	font-size:14px;
+	font-weight:normal;
+	text-align:center;
+	line-height:30px;
+}
+.left_activitytitle .tabActivity .itemActivity1{
+	width:90px;
+	height:100%;
+	float:left;
+	cursor:pointer;
+	margin-right:2px;
+}
+.left_activitytitle .tabActivity .itemActivity1 .topActivity{
+	height:4px;
+	background:url(../images/activity/icon_tab_1.jpg) no-repeat;
+}
+.left_activitytitle .tabActivity .itemActivity1 .textActivity{
+	height:30px;
+	background:url(../images/activity/icon_tab_1.jpg) no-repeat;
+	background-color:white;
+	color:#7e7e7e;
+	font-size:14px;
+	text-align:center;
+	line-height:30px;
+}

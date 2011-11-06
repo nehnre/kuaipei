@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="汽配促销,知名配件,原厂配件,正品配件,外资配件,配件促销,汽配网,配件免费试用,优质配件,提高配件利润,配件利润高 找配件,好配件,配件直销,厂家直销配件,抢购配件,立配网"/>
+	<meta name="description" content="立配网是国内汽配行业特有的以促销为手段的垂直网络营销平台。我们致力于推动汽车产品替换市场对规格、质量、声誉及品牌的一手买卖资讯，让消费者享用到更多优质优价的产品；我们积极帮助汽配企业创造机遇，做汽车后市场最给力的营销网站。" />
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/listIndexActivity.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+    <link rel="stylesheet" href="__PUBLIC__/css/ad.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/queryString.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.6.1.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Index/index.js"></script>
+	<title>欢迎光临——立配网</title>
+	
+	<script type="text/javascript">
+		var _scroll_lock = false;
+		$(function(){
+			$(".tabActivity").children().mouseover(function(){
+				$(".itemActivity1").removeClass("itemActivity1").addClass("itemActivity");
+				$(this).removeClass("itemActivity").addClass("itemActivity1");
+			});
+			$(".promotion_content .item .img").click(function(){
+				_href = $(this).attr("href");
+				if(_href){
+					location.href = _href;
+				}
+			});
+
+			//资讯分类
+			var n = nehnre.queryString()["flag"];
+			if(n){
+				n = ~~n;
+			} else {
+				n = 0;
+			}
+			$(".itemActivity1").removeClass("itemActivity1").addClass("itemActivity");
+			$(".itemActivity").eq(n).removeClass("itemActivity").addClass("itemActivity1");
+
+		});	
+	</script>	
+</head>
+<body>
+	<include file="./Tpl/default/Public/index_top.html" />
+	<div class="body">
+		<div class="align_center index_body">
+			<div class="layer1">
+
+				<div class="left_activity">
+					<div class="trends">
+						<div class="right_title">用户互动</div>
+						<div class="trends_content">
+							<div class="content">
+								<if condition="empty($log)">
+								<div class="nick_name"></div>
+								<div class="act_time" style="color:gray;">马上参加免费试用活动！</div>
+								<div class="action"></div>
+								<div class="clear"></div>
+								</if>
+								<volist name="log" id="vo">
+								<div class="nick_name">[{$vo.nick_name}]</div>
+								<div class="act_time"><php>echo '于'.date("Y年m月d日 H:i:s", strtotime($vo["insert_time"]));</php></div>
+								<div class="action">参加了{$vo.sponsor}的免费试用活动</div>
+								<div class="clear"></div>
+								</volist>
+							</div>
+						</div>
+						<div class="right_bottom"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="right_activity">
+						<div class="left_activitytitle">
+							<div class="title"><span>配</span>件促销</div>
+							<div class="tabActivity">
+								<div class="itemActivity1">
+									<div class="textActivity"><a href="listIndexActivity">全部</a></div>
+								</div>
+								<div class="itemActivity">
+									<div class="textActivity"><a href="listIndexActivity?flag=1 " >免费试用</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="promotion_content">
+							<volist name="result" id="child">
+							<if condition="$i  gt 1">
+							<div class="line"></div>
+							</if>
+							<div class="row">
+								<volist name="child" id="vo">
+								<div class="item">
+									<div class="img align_center" style="cursor:pointer" href="/Activity/show?id={$vo.id}"><div style="width:200px;margin-left:7px;height:148px;overflow:hidden;background:url(__PUBLIC__/Uploads/{$vo.index_pic});">
+										<if condition="!empty($vo['index_change_pic'])">
+										<img src="__PUBLIC__/Uploads/{$vo.index_change_pic}" style="margin-left:-600px" />
+										</if>
+									</div></div>
+									<div class="red bold text">{$vo.sponsor}</div>
+									<div class="gray bold text">{$vo.title}</div>
+									<div class="button">
+										<div>{$vo.start_time}</div>
+										<a href="/Activity/show?id={$vo.id}" style="color:white">点击查看</a>
+									</div>
+								</div>
+								</volist>
+							</div>
+							</volist>
+                          
+							<div style="height:20px;"></div>
+                             <div  style="text-align:right;padding-right:10px;">{$foot}</div>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="left_bottom"></div>
+				</div>
+
+			</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<include file="./Tpl/default/Public/index_bottom.html" />
+	<include file="./Tpl/default/Public/dialog.html" />
+	<include file="./Tpl/default/Public/qq_dialog.html" />
+</body>
+</html>

@@ -108,7 +108,7 @@
 						<div id="tab_3" style="display:none">
 							<div class="introduce_container">
 								<div class="brand_introduce">{$result.product_story}</div>
-								<div class="brand_pic"><img src="/Public/Uploads/{$result.related_product_pic}" width="160" height="290"/></div>
+								<div class="brand_pic"><img src="/Public/Uploads/{$result.product_story_pic}" width="160" height="290"/></div>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -133,9 +133,9 @@
 							</if>
 							<volist name="list" id="vo">
 							<div class="comment">
-								<div class="title">{$vo.title} 【{$vo.nick_name}】于 {$vo.insert_time} 评论</div>
+								<div class="title"><php>echo strip_tags($vo["title"]);</php>【{$vo.nick_name}】于 {$vo.insert_time} 评论</div>
 								<div class="line"></div>
-								<div class="comment_content">{$vo.content}</div>
+								<div class="comment_content"><php>echo strip_tags($vo["content"]);</php></div>
 							</div>
 							</volist>
 							<div style="text-align:right; line-height:30px;">{$foot}</div>

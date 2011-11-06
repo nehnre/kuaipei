@@ -146,7 +146,7 @@
 			</tr>
 			<tr class="odd">
 				<td width="200px" align="right">产品介绍图片：</td>
-				<if condition="empty($result['index_change_pic'])">
+				<if condition="empty($result['related_product_pic'])">
 				<td align="left"><input type="file" style="width:80%" name="photo[]"/>（260*290）</td>
 				<else />
 				<td align="left">
@@ -155,7 +155,7 @@
 							<td><input type="file" style="width:80%" name="photo[]"/>（260*290）</td>
 						</tr>
 						<tr>
-							<td><a href="__PUBLIC__/Uploads/{$result.index_change_pic}" target="blank">查看</a></td>
+							<td><a href="__PUBLIC__/Uploads/{$result.related_product_pic}" target="blank">查看</a></td>
 						</tr>
 					</table>
 				</td>
@@ -163,7 +163,7 @@
 			</tr>
 			<tr class="odd">
 				<td width="200px" align="right">品牌介绍图片：</td>
-				<if condition="empty($result['index_change_pic'])">
+				<if condition="empty($result['product_story_pic'])">
 				<td align="left"><input type="file" style="width:80%" name="photo[]"/>（160*290）</td>
 				<else />
 				<td align="left">
@@ -172,7 +172,7 @@
 							<td><input type="file" style="width:80%" name="photo[]"/>（160*290）</td>
 						</tr>
 						<tr>
-							<td><a href="__PUBLIC__/Uploads/{$result.index_change_pic}" target="blank">查看</a></td>
+							<td><a href="__PUBLIC__/Uploads/{$result.product_story_pic}" target="blank">查看</a></td>
 						</tr>
 					</table>
 				</td>

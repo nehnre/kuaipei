@@ -318,11 +318,11 @@ class ActivityAction extends Action
 				$Activity -> index_change_pic = $info[$n]["savename"];
 				$n = $n + 1;
 			}
-			if($error[3] == 0){
+			if($error[4] == 0){
 				$Activity -> related_product_pic = $info[$n]["savename"];
 				$n = $n + 1;
 			}
-			if($error[3] == 0){
+			if($error[5] == 0){
 				$Activity -> product_story_pic = $info[$n]["savename"];
 				$n = $n + 1;
 			}

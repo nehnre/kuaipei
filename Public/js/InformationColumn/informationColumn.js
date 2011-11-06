@@ -1,8 +1,9 @@
-KE.show({
-    id:"biContent",
-});
+
 
 $(function(){
+	KE.show({
+      id:"biContent",
+    });
 		//焦点图片上传
 	new AjaxUpload('btnPC', {
 		action: '../Upload/index',

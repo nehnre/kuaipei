@@ -20,10 +20,13 @@
 	<script type="text/javascript">
 		var _scroll_lock = false;
 		$(function(){
-			$(".tabActivity").children().mouseover(function(){
-				$(".itemActivity1").removeClass("itemActivity1").addClass("itemActivity");
-				$(this).removeClass("itemActivity").addClass("itemActivity1");
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
 			});
+			$(".menu_activity").removeClass("menu_activity").addClass("menu_activity1");
+
 			$(".promotion_content .item .img").click(function(){
 				_href = $(this).attr("href");
 				if(_href){
@@ -31,15 +34,32 @@
 				}
 			});
 
-			//资讯分类
-			var n = nehnre.queryString()["flag"];
-			if(n){
-				n = ~~n;
-			} else {
-				n = 0;
+			$(".tab .text").click(function(){
+				var type = $(this).html();
+				if(type == "全部"){
+					type = "";
+				} else {
+					type = "&type=" + type;
+				}
+				var _href = location.href;
+				if(/\?/ig.test(_href)){
+					_href = _href.replace(/\&type=[^&]*/ig,"");
+					_href += type;
+
+				} else {
+					_href += "?" + type;
+				}
+				location.href = _href;
+			});
+			var type = nehnre.queryString()["type"];
+			if(!type){
+				type = "全部";
 			}
-			$(".itemActivity1").removeClass("itemActivity1").addClass("itemActivity");
-			$(".itemActivity").eq(n).removeClass("itemActivity").addClass("itemActivity1");
+			$(".tab .text").each(function(){
+				if(type == $(this).html()){
+					$(this).parent().removeClass("item").addClass("item1");
+				}
+			});
 
 		});	
 	</script>	
@@ -48,43 +68,19 @@
 	<include file="./Tpl/default/Public/index_top.html" />
 	<div class="body">
 		<div class="align_center index_body">
-			<div class="layer1">
-
-				<div class="left_activity">
-					<div class="trends">
-						<div class="right_title">用户互动</div>
-						<div class="trends_content">
-							<div class="content">
-								<if condition="empty($log)">
-								<div class="nick_name"></div>
-								<div class="act_time" style="color:gray;">马上参加免费试用活动！</div>
-								<div class="action"></div>
-								<div class="clear"></div>
-								</if>
-								<volist name="log" id="vo">
-								<div class="nick_name">[{$vo.nick_name}]</div>
-								<div class="act_time"><php>echo '于'.date("Y年m月d日 H:i:s", strtotime($vo["insert_time"]));</php></div>
-								<div class="action">参加了{$vo.sponsor}的免费试用活动</div>
-								<div class="clear"></div>
-								</volist>
+			<div class="layer1" style="padding-top:20px;">
+				<div class="left">
+					<div class="promotion">
+						<div class="left_title">
+							<span>立</span>配活动</a>
+						<div class="tab" style="margin-left:270px;">
+							<div class="item">
+								<div class="text">全部</div>
+							</div>
+							<div class="item">
+								<div class="text">免费试用</div>
 							</div>
 						</div>
-						<div class="right_bottom"></div>
-					</div>
-					<div class="clear"></div>
-				</div>
-
-				<div class="right_activity">
-						<div class="left_activitytitle">
-							<div class="title"><span>配</span>件促销</div>
-							<div class="tabActivity">
-								<div class="itemActivity1">
-									<div class="textActivity"><a href="listIndexActivity">全部</a></div>
-								</div>
-								<div class="itemActivity">
-									<div class="textActivity"><a href="listIndexActivity?flag=1 " >免费试用</a></div>
-								</div>
-							</div>
 						</div>
 						<div class="promotion_content">
 							<volist name="result" id="child">
@@ -109,15 +105,38 @@
 								</volist>
 							</div>
 							</volist>
-                          
 							<div style="height:20px;"></div>
-                             <div  style="text-align:right;padding-right:10px;">{$foot}</div>
+							 <div  style="text-align:right;padding-right:10px;">{$foot}</div>
 							<div class="clear"></div>
 						</div>
 						<div class="clear"></div>
 						<div class="left_bottom"></div>
+					</div>
 				</div>
-
+				<div class="right">
+					<div class="trends">
+						<div class="right_title">用户互动</div>
+						<div class="trends_content">
+							<div class="content">
+								<if condition="empty($log)">
+								<div class="nick_name"></div>
+								<div class="act_time" style="color:gray;">马上参加免费试用活动！</div>
+								<div class="action"></div>
+								<div class="clear"></div>
+								</if>
+								<volist name="log" id="vo">
+								<div class="nick_name">[{$vo.nick_name}]</div>
+								<div class="act_time"><php>echo '于'.date("Y年m月d日 H:i:s", strtotime($vo["insert_time"]));</php></div>
+								<div class="action">参加了{$vo.sponsor}的免费试用活动</div>
+								<div class="clear"></div>
+								</volist>
+							  <div style="height:20px;"></div>
+							</div>
+						</div>
+						<div class="right_bottom"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
 			</div>
 			</div>
 			<div class="clear"></div>

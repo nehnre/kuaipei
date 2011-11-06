@@ -13,9 +13,9 @@ class ActivityAction extends Action
     {
 		$Activity = M("Activity");
         $condition["status"] = "已发布";
-		$flag = $_REQUEST["flag"];
-		if(!empty($flag)){
-		    $condition["type"] = "免费试用";
+		$type = $_REQUEST["type"];
+		if(!empty($type)){
+		    $condition["type"] =$type;
 		}
 		$count = $Activity -> where($condition) -> count();
 		import("ORG.Util.Page");

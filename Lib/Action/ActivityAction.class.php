@@ -19,7 +19,7 @@ class ActivityAction extends Action
 		}
 		$count = $Activity -> where($condition) -> count();
 		import("ORG.Util.Page");
- 		$Page = new Page($count, 12);
+ 		$Page = new Page($count, 15);
 		$foot = $Page -> show();
 		$result = $Activity -> where($condition) -> order('insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
 		$len = count($result);

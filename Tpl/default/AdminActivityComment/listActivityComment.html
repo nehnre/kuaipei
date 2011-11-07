@@ -80,7 +80,7 @@
 				<td>{$vo.user_name}</td>
 				<td>{$vo.activity_title}</td>
 				<td>{$vo.insert_time}</td>
-				<td><lt name="vo.content|mb_convert_encoding='auto','UTF-8'|mb_strlen" value="20">{$vo.content}<else/><a href="javascript:;"  onclick="show({$vo.id})">{$vo.content|mb_substr=0,20,'utf-8'}...</a></lt> </td>
+				<td><lt name="vo.content|strip_tags|mb_convert_encoding='auto','UTF-8'|mb_strlen" value="20">{$vo.content}<else/><a href="javascript:;"  onclick="show({$vo.id})">{$vo.content|strip_tags|mb_substr=0,20,'utf-8'}...</a></lt> </td>
 				<td> <a href="javascript:;" onclick="del('{$vo.id}')">删除</a></td>
 			</tr>
 		</volist>

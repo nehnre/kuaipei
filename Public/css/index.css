@@ -4,9 +4,9 @@
  */
 body{ font-size:12px;}
 *{ margin:0; padding:0;}
-a:link{
-	text-decoration: none;
-}
+a:link { text-decoration: none;} 
+a:visited {text-decoration: none;} 
+a:active { text-decoration: none;} 
 a:hover{
 	text-decoration: underline;
 }
@@ -579,7 +579,7 @@ a:hover{
 	margin-left:5px;
 	padding-left:10px;
 	text-align:left;
-	line-height:30px;
+	line-height:20px;
 	color:#737373;
 }
 .layer3 .right .news_list .line{
@@ -589,6 +589,7 @@ a:hover{
 	border-color: #BEBEBE;
 	margin-left:15px;
 	margin-right:15px;
+	height:10px;
 }
 .layer4{
 	width:100%;

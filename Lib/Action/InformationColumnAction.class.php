@@ -192,8 +192,10 @@ class InformationColumnAction extends Action
 				}else if($flag==3){
 					$condition["column"] ="配件营销"; 
 				}else if($flag==4){
-					$condition["column"] ="最新商情"; 
+					$condition["column"] ="汽配人物"; 
 				}else if($flag==5){
+					$condition["column"] ="最新商情"; 
+				}else if($flag==6){
 					$condition["column"] ="配件一览"; 
 				}
 			}

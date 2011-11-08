@@ -225,7 +225,7 @@ a:hover{
 	margin-left:0px;
 }
 .search_hot a:link{
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 }
 
 .category{
@@ -250,7 +250,7 @@ a:hover{
 	float:left;
 }
 .category a:link{
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 }
 
 .category_news{
@@ -271,7 +271,7 @@ a:hover{
 }
 
 .category_news_content a:link{
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 }
 
 .layer1{
@@ -318,7 +318,7 @@ a:hover{
 	font-weight:normal;
 }
 .left_title a:link{
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 }
 
 .seckill_content{
@@ -520,7 +520,7 @@ a:hover{
 	font-weight:normal;
 }
 .layer3  .title a:link{
-	text-decoration:underline;
+	/*text-decoration:underline;*/
 }
 .layer3 .content{
 	height:260px;

@@ -10,7 +10,7 @@ class IndexAction extends Action
     public function index()
     {
 		$Activity = M("Activity");
-		$result = $Activity -> where("status='已发布'") -> order('insert_time desc') -> limit(15) -> select();
+		$result = $Activity -> where("status='已发布'") -> order('insert_time desc') -> limit(12) -> select();
 		$len = count($result);
 		for($i=0;$i< $len/3;$i++){
 			$temp[$i][0] = $result[$i*3];

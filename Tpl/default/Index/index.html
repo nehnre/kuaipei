@@ -251,7 +251,7 @@
 								</div>
 							<div class="news">
 								<div class="news_title bold"><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
-								<div class="news_abstract"><div style="overflow:hidden; height:54px;"><lt name="vo.content|strip_tags|mb_convert_encoding='auto','UTF-8'|mb_strlen" value="50">{$vo.content}<else/>{$vo.content|strip_tags|mb_substr=0,50,'utf-8'}...</lt></div></div>
+								<div class="news_abstract"><div style="overflow:hidden; height:54px;"><php>echo strip_tags($vo["content"])</php></div><div style="float:;">...</div></div>
 							</div>
 						</div>
 						</if>
@@ -284,7 +284,7 @@
 								</div>
 							<div class="news">
 								<div class="news_title bold"><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
-								<div class="news_abstract"><div style="overflow:hidden; height:54px;"><lt name="vo.content|strip_tags|mb_convert_encoding='auto','UTF-8'|mb_strlen" value="50">{$vo.content}<else/>{$vo.content|strip_tags|mb_substr=0,50,'utf-8'}...</lt></div></div>
+								<div class="news_abstract"><div style="overflow:hidden; height:54px;"><php>echo strip_tags($vo["content"])</php></div><div style="float:;">...</div></div>
 							</div>
 						</div>
 						</if>

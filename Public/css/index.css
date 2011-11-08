@@ -270,6 +270,10 @@ a:hover{
 	float:left;
 }
 
+.category_news_content a:link{
+	text-decoration: underline;
+}
+
 .layer1{
 	width:100%;
 	height:100%;

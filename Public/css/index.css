@@ -573,20 +573,22 @@ a:hover{
 .layer3 .right .title{
 	background:url(../images/index_title_bg_right.jpg);
 }
-.layer3 .right .news_list {
+.layer3 .right .news_list1 {
 	padding-top:20px;
-	padding-bottom:20px;
+	padding-bottom:15px;
 }
-.layer3 .right .news_list div{
+.layer3 .right .news_list1 .it1{
 	background:url(../images/layer3/icon_item.jpg) no-repeat;
-	background-position:center left;
-	margin-left:5px;
-	padding-left:10px;
+	background-position:0px 10px;
+	margin-left:15px;
+	padding-left:15px;
 	text-align:left;
+	height:20px;
 	line-height:20px;
+	overflow:hidden;
 	color:#737373;
 }
-.layer3 .right .news_list .line{
+.layer3 .right .news_list1 .line{
 	background:none;
 	border-width: 1px 0 0 0;
 	border-style: dashed;

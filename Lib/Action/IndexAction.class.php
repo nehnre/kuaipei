@@ -33,7 +33,7 @@ class IndexAction extends Action
 		$this -> assign("hot", $hot);
 		$people = $Information_column -> where("`column`='汽配热点' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
 		$this -> assign("people", $people);
-		$resource = $Information_column -> where("`column`='配件营销' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(7) -> select();
+		$resource = $Information_column -> where("`column`='配件营销' and status='已发布'") -> order("seq desc, insert_time desc") -> limit(8) -> select();
 		$this -> assign("resource", $resource);
 		
 		

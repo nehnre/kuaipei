@@ -304,12 +304,13 @@
 				<div class="right">
 					<div class="title"><span>配</span>件营销<a href="/InformationColumn/supListInformationColumn?flag=3" class="gray" style="margin-left:40px;" target="_blank">更多 ></a></div>
 					<div class="content">
-						<div class="news_list">
+						<div class="news_list1">
+							<div class="clear"></div>
 							<volist name="resource" id="vo">
 							<if condition="$i gt 1">
 							<div class="line"></div>
 							</if>
-							<div><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="gray" target="_blank">{$vo.title}</a></div>
+							<div class="it1"><a href="/InformationColumn/supInformationColumnDetail?id={$vo.id}" class="gray" target="_blank">{$vo.title}</a></div>
 							</volist>
 						</div>
 					</div>

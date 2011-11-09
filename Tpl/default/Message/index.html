@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/userCenter.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" />
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<title>站内短消息——立配网</title>
+	<script type="text/javascript">
+		$(function(){
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
+			$(".menu_usercenter").removeClass("menu_usercenter").addClass("menu_usercenter1");
+			
+			$(".message_menu").click(function(){
+				var _href = $(this).attr("href");
+				if(_href){
+					location.href = _href;
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/index_top.html" />
+		<div class="body">
+			<div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
+				<div id="nr">
+					<div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/user.jpg"></div></div>
+					<div class="clear"></div>
+					<include file="./Tpl/default/Public/left.html" />
+					<div id="main">
+						<div class="main_nr">
+							<div class="dd">收件箱</div>
+							<div class="fl_toolbar">
+								<div class="message_menu" href="newMessage.shtml">发送消息</div>
+								<div class="message_menu">收件箱</div>
+								<div class="message_menu">发件箱</div>
+								<div class="message_splitpage gray">{$foot}</div>
+							</div>
+
+							<div class=ddlb>
+								<table border=0 cellspacing=0 cellpadding=0 width="100%">
+									<tbody>
+										<tr>
+											<td class="z14_z" width="100">发送人</td>
+											<td class="z14_z" width="350">消息标题</td>
+											<td class="z14_z" width="200">发送时间</td>
+											<td class="z14_z" >操作</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<volist name="list" id="vo">
+							<if condition="$i%2==1">
+							<div class=lb1>
+							<else />
+							<div class=lb2>
+							</if>
+								<table border=0 cellspacing=0 cellpadding=0 width="100%">
+									<tbody>
+										<tr>
+											<td class="lbtxt1" width="100">{$vo.sender_name}</td>
+											<td class="lbtxt1" width="350">{$vo.title}</td>
+											<td class="lbtxt1" width="200">{$vo.insert_time}</td>
+											<td class="lbtxt1"><a href="#">删除</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							</volist>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<include file="./Tpl/default/Public/index_bottom.html" />  
+	</div>
+	<include file="./Tpl/default/Public/dialog.html" />  
+	<include file="./Tpl/default/Public/qq_dialog.html" />
+</body>
+</html>

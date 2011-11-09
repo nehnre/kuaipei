@@ -71,8 +71,8 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 .ym2 { font-size: 14px;width:22px;	height:22px;color:#3366cc;	border: 1px solid #cccccc;	background-color: #ffffff;	line-height:22px;	text-align: center; }
 .ym3 { font-size: 12px;	width:59px;	height:22px; color:#3366cc;	border: 1px solid #cccccc; background-color: #ffffff; line-height:22px; text-indent: 5px; background-image: url(ym.jpg);	background-repeat: no-repeat;}
 .ddlb {height:40px; font-size:18px; font-family:"宋体"; font-weight: bold;	line-height:40px;}
-.lb1 { background-color: #f1f1f1; height:74px; line-height:74px;}
-.lb2 { background-color: #ffffff; height:74px; line-height:74px;}
+.lb1 { background-color: #f1f1f1; height:40px; line-height:40px;}
+.lb2 { background-color: #ffffff; height:40px; line-height:40px;}
 
 
 
@@ -81,7 +81,7 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 .z1 {color: #000;font-weight: bold;font-size:15px;font-family:"微软雅黑";	}
 .z14 {color: #333333;font-weight: bold;font-size:14px; text-indent: 15px;}
 .z14_z {color: #333333;font-weight: bold;font-size:14px; text-align: center;}
-.lbtxt1 {color: #333333; font-size:14px;	text-align: center;	border-right-width: 1px; border-right-style: solid;	border-right-color: #FFFFFF;}
+.lbtxt1 {color: #333333; font-size:12px;	text-align: center;	border-right-width: 1px; border-right-style: solid;	border-right-color: #FFFFFF;}
 .lbtxt2 {font-size:13px; text-align: center; }
 .lbtxt3 {color: #626061;font-size:13px; text-align: left;border-right-width: 1px; border-right-style: solid; border-right-color: #FFFFFF; line-height:20px;}
 .lbtxt4 {font-size:14px; text-align: center; border-right-width: 1px; border-right-style: solid; border-right-color: #FFFFFF;}
@@ -223,4 +223,36 @@ h3 {
 }
 .input_focus{
 	background-position: -1px -26px;
+}
+
+/*nehnre添加*/
+.fl_toolbar{
+	height:32px;
+	background-color:#F3F3F3;
+	line-height: 32px;
+	font-size: 12px;
+}
+.message_menu{
+	height:32px;
+	line-height: 32px;
+	width:60px;
+	float:left;
+	margin-left:10px;
+	text-align:center;
+	cursor:pointer;
+}
+.message_splitpage{
+	height:32px;
+	line-height: 32px;
+	width:450px;
+	float:right;
+	margin-right:10px;
+	text-align:right;
+}
+.message_row {
+	border-bottom: #CDCDCD 1px dotted;
+	padding-bottom: 7px;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-top: 7px;
 }

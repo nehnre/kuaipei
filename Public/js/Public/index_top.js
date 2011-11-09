@@ -76,8 +76,8 @@ $(function(){
 		$( "#dialog-login" ).dialog("open");
 	});
 	$("#btnLogin").click(function(){
-		var userName = $("#user_name").val();
-		var password = $("#password").val();
+		var userName = $("#l_user_name").val();
+		var password = $("#l_password").val();
 		if(!userName || !password){
 			showAlert("用户名密码不能为空!");
 			return;
@@ -127,7 +127,7 @@ $(function(){
 		$( "#dialog-findPassword" ).dialog("open");
 	});
 	$("#btnSend").click(function(){
-		if(!checkUserName()){
+		if(!topCheckUserName()){
 			return;
 		}
 		var user_name = $("#f_user_name").val();
@@ -163,13 +163,13 @@ $(function(){
 		});
 	});
 	$("#btnSet").click(function(){
-		if(!checkUserName()){
+		if(!topCheckUserName()){
 			return;
 		}
-		if(!checkCheckNum()){
+		if(!topCheckCheckNum()){
 			return;
 		}
-		if(!checkPassword()){
+		if(!topCheckPassword()){
 			return;
 		}
 		var user_name = $("#f_user_name").val();
@@ -196,7 +196,7 @@ $(function(){
 
 });	
 //检测用户名
-function checkUserName(){
+function topCheckUserName(){
 	var user_name = $("#f_user_name").val();
 	user_name = $.trim(user_name);
 	if(!user_name){
@@ -214,7 +214,7 @@ function checkUserName(){
 	return true;
 }
 
-function checkCheckNum(){
+function topCheckCheckNum(){
 	var check_num = $("#check_num").val();
 	if(!check_num){
 		showAlert("请输入验证码");
@@ -229,7 +229,7 @@ function checkCheckNum(){
 
 
 //检测密码是否匹配
-function checkPassword(){
+function topCheckPassword(){
 	var password = $("#f_password").val();
 	var passwordagain = $("#passwordagain").val();
 	if(!password){

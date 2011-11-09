@@ -1,43 +1,42 @@
 $(function(){
-	
-	
+		$("#perfect").next().addClass("red");
+		$("#perfect").click(function(){
+	  	$.ajax({
+			url:"/UserCenter/checkStatus",
+			type:"POST",
+			success: function(json){
+				json = nehnre.parseJSON(json);
+				if(json.data.success){
+								location.href = "/UserCenter/perfectUser";
+				}else{
+					showAlert(json.data.msg);
+				}
+			},
+			error: function(){
+				showAlert("提交失败，可能服务器出现故障。");
+			}
+		});
+
+	 });
 	//提交按钮
 	$("#btnSubmit").click(function(){
-		var a = checkForm();
-		if(a){
-				$.ajax({
-					url:"/UserCenter/checkStatus",
-					type:"POST",
-					success: function(json){
-						json = nehnre.parseJSON(json);
-						if(json.data.success){
-								console.log(data);
-								var data = $("#myForm").serialize();
-								if ($.browser.msie && $.browser.version < 7){
-									$("select").hide();
-								}
-								showWaiting();
-								$.ajax({
-									url: "/UserCenter/updateUser",
-									data: data,
-									type: "POST",
-									success: function(json){
-										location.href = "UserCenter";
-									},
-									error: function(){
-										showAlert("保存失败！", function(){
-											$("select").show();
-										});
-									}
-								});
-						}else{
-							showAlert(json.data.msg);
-						}
-					},
-					error: function(){
-						showAlert("提交失败，可能服务器出现故障。");
-					}
-				});
+		if(checkForm()){
+			var data = $("#myForm").serialize();
+			if ($.browser.msie && $.browser.version < 7){
+				$("select").hide();
+			}
+			showWaiting();
+			$.ajax({
+				url: "/UserCenter/updateUser",
+				data: data,
+				type: "POST",
+				success: function(json){
+					location.href = "/UserCenter/editUser";
+				},
+				error: function(){
+					showAlert("保存失败！");
+				}
+			});
 		}
 	});
 	//一级分类选择事件
@@ -112,7 +111,6 @@ function checkForm(){
 	var b = true;
 	b = b && notNull("user_type1", "一级分类");
 	b = b && notNull("user_type2", "二级分类");
-	b = b && notNull("true_name", "真实姓名");
 	return b;
 }
 

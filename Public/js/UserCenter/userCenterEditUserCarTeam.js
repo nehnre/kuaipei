@@ -1,4 +1,23 @@
 $(function(){
+		$("#perfect").next().addClass("red");
+	  $("#perfect").click(function(){
+		$.ajax({
+			url:"/UserCenter/checkStatus",
+			type:"POST",
+			success: function(json){
+				json = nehnre.parseJSON(json);
+				if(json.data.success){
+								location.href = "/UserCenter/perfectUser";
+				}else{
+					showAlert(json.data.msg);
+				}
+			},
+			error: function(){
+				showAlert("提交失败，可能服务器出现故障。");
+			}
+		});
+
+	 });
 	
 	//名片上传
 	new AjaxUpload('btnBC', {
@@ -43,7 +62,9 @@ $(function(){
 									data: data,
 									type: "POST",
 									success: function(json){
-										location.href = "UserCenter";
+										showAlert("保存成功！", function(){
+									        	location.href = "/UserCenter/perfectUser";
+										});
 									},
 									error: function(){
 										showAlert("保存失败！", function(){
@@ -194,7 +215,7 @@ function checkCompanyAddress(){
 function checkPostCode(){
 	var obj = $("#post_code");
 	var val = obj.val();
-	if(val && !nehnre.reg.email.test(val)){
+	if(val && !nehnre.reg.post.test(val)){
 		showAlert("邮政编码格式不正确，必须为六位数字！", function(){
 			obj.focus();
 		});
@@ -202,6 +223,7 @@ function checkPostCode(){
 	}
 	return true;
 }
+
 function checkBusinessCall(){
 	var obj = $("#business_call");
 	var val = obj.val();

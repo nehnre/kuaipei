@@ -50,9 +50,14 @@ class UserCenterAction extends Action
 			$condition["id"]  = Session::get("id");
 			$User = M("User");
 			$result = $User -> where($condition) -> find();
-			if($result['status'] == '待审核'||$result['status'] == '已审核'){
+			//if($result['status'] == '待审核'){
+			//	$json["success"] = false;
+			//	$json["msg"] = "您的个人信息已经进入待审核状态无法再修改";
+			//}else
+				
+			if($result['status'] == '已审核'){
 				$json["success"] = false;
-				$json["msg"] = "您的个人信息已经进入".$result['status'] ."状态无法再修改";
+				$json["msg"] = "您已成为认证会员，如要修改资料，请联系客服人员";
 			}else{
 				$json["success"] = true;
 			}
@@ -144,10 +149,13 @@ class UserCenterAction extends Action
 		
 	}
 
-
+    /**
+    +----------------------------------------------------------
+    * 完善个人信息
+    +----------------------------------------------------------
+    */
 
 	public function index(){
-		$flag = $_REQUEST["flag"];
 		if(!Session::is_set("id")){
 			  header("Content-type: text/html; charset=utf-8");
 		      echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
@@ -158,43 +166,104 @@ class UserCenterAction extends Action
 		$result = $User -> where("id=".$id) -> find();
 		$this -> assign("result",$result);
 //		if($result['status'] == '基本注册'||$result['status'] == '已退回'){
-			if($flag=='1'){
-				$template = "./Tpl/default/UserCenter/userCenterEditBasic.html";
-			}else if($flag=='2'){
-				$template = "./Tpl/default/UserCenter/userCenterEditPerfect.html";
-			}else if($flag=='3'){
-				if("厂商" == $result["user_type1"] || "经销商" == $result["user_type1"] || "修理厂" == $result["user_type1"]){
-					$template = "./Tpl/default/UserCenter/userCenterEditUserFactory.html";
-				} else if("车队" == $result["user_type1"] || "其他"  == $result["user_type1"]){
-					$template = "./Tpl/default/UserCenter/userCenterEditUserCarTeam.html";
-				} else if("车主" == $result["user_type1"]){
-					$template = "./Tpl/default/UserCenter/userCenterEditUserCarHost.html";
-				} else {
-					$this -> error("还没有<a href='/UserCenter?flag=2'>选择分类</a>");
-				}
-			}else{
-					$template = "./Tpl/default/UserCenter/userCenterEditBasic.html";
-			}
+//			if($flag=='1'){
+		$template = "./Tpl/default/UserCenter/userCenterEditBasic.html";
+//			}else if($flag=='2'){
+//				$template = "./Tpl/default/UserCenter/userCenterEditPerfect.html";
+//			}else if($flag=='3'){
+//				if("厂商" == $result["user_type1"] || "经销商" == $result["user_type1"] || "修理厂" == $result["user_type1"]){
+//					$template = "./Tpl/default/UserCenter/userCenterEditUserFactory.html";
+//				} else if("车队" == $result["user_type1"] || "其他"  == $result["user_type1"]){
+//					$template = "./Tpl/default/UserCenter/userCenterEditUserCarTeam.html";
+//				} else if("车主" == $result["user_type1"]){
+//					$template = "./Tpl/default/UserCenter/userCenterEditUserCarHost.html";
+//				} else {
+//					$this -> error("还没有<a href='/UserCenter?flag=2'>选择分类</a>");
+//				}
+//			}else{
+//					$template = "./Tpl/default/UserCenter/userCenterEditBasic.html";
+//			}
 //		}else{
 //				$template = "./Tpl/default/UserCenter/userCenterEditBasic.html";
 //		}
 	    $this->display($template );
 	}
 
+	    /**
+    +----------------------------------------------------------
+    * 升级个人信息(选择类别)
+    +----------------------------------------------------------
+    */
+
+	public function perfectUser(){
+		if(!Session::is_set("id")){
+			  header("Content-type: text/html; charset=utf-8");
+		      echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
+			  return;
+		}
+		$id = Session::get("id");
+		$User = M("User");
+		$result = $User -> where("id=".$id) -> find();
+		$this -> assign("result",$result);
+		if($result['status'] == '已审核'){
+			$this -> error("您已成为认证会员，如要修改资料，请联系客服人员");
+		}else{
+			$template = "./Tpl/default/UserCenter/userCenterEditPerfect.html";
+		}
+	    $this->display($template );
+	}
+
+		    /**
+    +----------------------------------------------------------
+    * 升级个人信息(根据类别选择不同用户页面)
+    +----------------------------------------------------------
+    */
+
+	public function editUser(){
+		if(!Session::is_set("id")){
+			  header("Content-type: text/html; charset=utf-8");
+		      echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
+			  return;
+		}
+		$id = Session::get("id");
+		$User = M("User");
+		$result = $User -> where("id=".$id) -> find();
+		$this -> assign("result",$result);
+		if($result['status'] == '已审核'){
+			$this -> error("您已成为认证会员，如要修改资料，请联系客服人员");
+		}else{
+				if("厂商" == $result["user_type1"] || "经销商" == $result["user_type1"] || "修理厂" == $result["user_type1"]){
+ 				    $template = "./Tpl/default/UserCenter/userCenterEditUserFactory.html";
+				} else if("车队" == $result["user_type1"] || "其他"  == $result["user_type1"]){
+					$template = "./Tpl/default/UserCenter/userCenterEditUserCarTeam.html";
+				} else if("车主" == $result["user_type1"]){
+					$template = "./Tpl/default/UserCenter/userCenterEditUserCarHost.html";
+				} else {
+					$this -> error("还没有<a href='/UserCenter/perfectUser'>选择分类</a>");
+				}
+		}
+	    $this->display($template );
+	}
+
     /**
     +----------------------------------------------------------
-    * 保存基本信息
+    * 保存用户信息
     +----------------------------------------------------------
     */
 	public function updateUser(){
-	
+	    $flag = $_REQUEST["flag"];
 		if(!Session::is_set("id") && !$if_insert){
 			$this->error("没有登录！");
 		}
+
+		
 		
 		$User = M('User');
 		$User -> create();
 		$User -> update_time = date("Y-m-d H:i:s");
+		if(!empty($flag)&&$flag=="1"){
+			 $User -> status = "待审核";
+		}
 		$User -> id = Session::get("id");
 		$User -> save();
 		

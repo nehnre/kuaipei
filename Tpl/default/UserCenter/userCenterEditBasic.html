@@ -34,7 +34,7 @@
 		<div class="body">
 <div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
  <div id="nr">
-   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/user.jpg"></div></div>
+   <div style="height:20px;"></div>
     <div class="clear"></div>
 <include file="./Tpl/default/Public/left.html" />
    <div id="main"><div class="main_nr"><form class="niceform" id="myForm">
@@ -42,27 +42,102 @@
         <div   class="title" ><span class="titleFont">完善个人信息</span></div>
 		<div class="c"></div>
         <div   class="lb2" >
-			<table border="0" width="50%" cellspacing="0" cellpadding="0" >
-			<tr>
-			<td width="50"><a href="/UserCenter?flag=1" target="_self"><span style="font-weight:bold; ">基本信息</span></a></td>
-			<td width="50"><a href="/UserCenter?flag=2" target="_self">完善信息</a></td>
-			<td width="50"><a href="/UserCenter?flag=3" target="_self">升级信息</a></td>
-			</tr>
+			<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+			<tr> 	<td align="center"><span style="font-weight:bold;font-size:14px; ">基本信息</span></a></td></tr>
 			</table>
 		</div>
 		<div class="c"></div>
 
-		<div class=q_ht><div class="l w65 ">手机号：</div>
+		<div class=q_ht><div class="l w85 ">用户名：</div>
 		<div class="l c6 w430 ml20">{$result.user_name}</div>
 		<div class="c"></div></div>
 
-		<div class=q_ht><div class="l w65 tar"><span class="red">*</span>昵称：</div>
+		<div class=q_ht><div class="l w85 tar"><span class="red">*</span>昵称：</div>
 		<div class="l c6 w430 ml20">
 		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="nick_name"  name="nick_name" value="{$result.nick_name}" >
 		 </div></div>
-		<div class=c></div></div>
+		<div class="c"></div></div>
 
-        <div   style="padding-top: 10px;text-align: center;" ><input type="button" id="btnSubmit" value="　提交　"/>&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btnSubmit" value="　取消　"/></div>
+
+		<div class="q_ht"><div class="l w85 tar"><span class="red">*</span>真实姓名：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="true_name"  name="true_name" value="{$result.true_name}" >
+		 </div></div>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar"><span class="red" style="color:#f6f6f6">*</span>性　　别：</div>
+		<div class="l c6 w430 ml20">
+		<div><input type="radio" value="1" id="sex1" name="sex"/>男&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="2" id="sex2" name="sex"/>女
+		 </div></div>
+				<script type="text/javascript">
+			$(":radio[name='sex']").each(function(){
+				if($(this).val() == "{$result.sex}"){
+					$(this).attr("checked", true);
+				}
+			});
+		</script>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar">出生日期：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="birthday"  name="birthday"  <if condition="$result.birthday neq '0000-00-00'">value="{$result.birthday}" </if> >
+		 </div></div>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar">地　　区：</div>
+		<div class="l c6 w430 ml20">
+		<div>	<select id="province" name="province"></select>　<select id="city" name="city" ></select>
+											<script type="text/javascript">
+												$.initProv("province", "city", "{$result.province}", "{$result.city}");
+											</script>
+		 </div></div>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar">地　　址：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="address"  name="address" value="{$result.address}" >
+		 </div></div>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>邮　　编：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="post_code"  name="post_code" value="{$result.post_code}" >
+		 </div></div>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>职　　业：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="profession"  name="profession" value="{$result.profession}" >
+		 </div></div>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>QQ：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="qq"  name="qq" value="{$result.qq}" >
+		 </div></div>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>MSN：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="msn"  name="msn" value="{$result.msn}" >
+		 </div></div>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>企业名称：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="company_name"  name="company_name" value="{$result.company_name}" >
+		 </div></div>
+		<div class="c"></div></div>
+
+		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>E-mail：</div>
+		<div class="l c6 w430 ml20">
+		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="email"  name="email" value="{$result.email}" >
+		 </div></div>
+		<div class="c"></div></div>
+
+
+
+        <div   style="padding-top: 10px;text-align: center;" ><input type="button" id="btnSubmit" value="　提交　"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 </form>
    </div></div>
   </div>

@@ -1,5 +1,23 @@
 $(function(){
+	 $("#baisc").next().addClass("red");
+		$("#perfect").click(function(){
+		$.ajax({
+			url:"/UserCenter/checkStatus",
+			type:"POST",
+			success: function(json){
+				json = nehnre.parseJSON(json);
+				if(json.data.success){
+								location.href = "/UserCenter/perfectUser";
+				}else{
+					showAlert(json.data.msg);
+				}
+			},
+			error: function(){
+				showAlert("提交失败，可能服务器出现故障。");
+			}
+		});
 
+	 });
 	//提交按钮
 	$("#btnSubmit").click(function(){
 		var a = checkForm();
@@ -45,6 +63,7 @@ $(function(){
 function checkForm(){
 	var b = true;
 	b = b && notNull("nick_name", "昵称");
+	b = b && notNull("true_name", "真实姓名");
 	return b;
 }
 

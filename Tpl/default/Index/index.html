@@ -159,7 +159,7 @@
 				<div class="category_fenlei">分类</div>
 				<div class="category_fenlei_content">
 					<volist name="hot_tags" id="vo">
-					<a href="/Search/?tags={$vo.tag_name}" class="black">{$vo.tag_name}</a><span class="red">({$vo.num})</span>
+					<a href="/Search/?tags={$vo.tag_name|urlencode}" class="black">{$vo.tag_name}</php></a><span class="red">({$vo.num})</span>
 					</volist>
 					<a href="#" class="black">热门促销</a><span class="red">(10)</span>
 					<a href="#" class="black">本月促销</a><span class="red">(10)</span>
@@ -302,7 +302,7 @@
 					<div class="bottom"></div>
 				</div>
 				<div class="right">
-					<div class="title"><span>配</span>件营销<a href="/InformationColumn/supListInformationColumn?flag=3" class="gray" style="margin-left:40px;" target="_blank">更多 ></a></div>
+					<div class="title"><span>配</span>件营销<a href="/InformationColumn/supListInformationColumn?flag=3" class="gray" style="margin-left:60px;" target="_blank">更多 ></a></div>
 					<div class="content">
 						<div class="news_list1">
 							<div class="clear"></div>

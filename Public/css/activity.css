@@ -83,7 +83,7 @@
 	font-family:黑体;
  }
  .activity_content .activity_text .activity_abstract{
-	font-size:18px;
+	font-size:14px;
 	font-family:黑体;
 	line-height:22px;
 	margin-bottom:10px;
@@ -112,6 +112,9 @@
 	overflow-x:none;
 	overflow-y:auto;
  }
+ .activity_content .introduce_container .product_introduce ul li{
+	margin:0 0 0 20px;
+ }
  .activity_content .introduce_container .product_pic{
 	width:260px;
 	height:290px;
@@ -124,6 +127,7 @@
 	padding:20px 0 0 20px;
 	overflow-x:none;
 	overflow-y:auto;
+	line-height:1.5;
  }
  .activity_content .introduce_container .brand_pic{
 	width:160px;

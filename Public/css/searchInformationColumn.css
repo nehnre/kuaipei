@@ -47,7 +47,12 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 
 /* 中间 _____*/
 #inw {  margin:0 auto;  width:1360px;  }
-#inw_bg { background: url(../images/bg.jpg) repeat-y;}
+#inw_bg { 
+	background: url(../images/reg_body_bg.jpg) repeat-y;
+	background-color: #E1E1E1;
+	background-attachment: fixed;
+	background-position: center;
+}
 #ztop { float:left; }
 #ztop_l {width:953px; margin-top: 30px;border-bottom-width: 1px;	border-bottom-style: solid;	border-bottom-color: #BEBEBE; }
 #ztop_2 { float:right; height: 30px; margin-top: 10px; }

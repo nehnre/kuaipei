@@ -28,6 +28,8 @@ a:hover{
 	position:absolute;
 	left:280px;
 	bottom:0px;
+}
+*+html .menu_container{
 	bottom:2px!important;
 }
 .top_menu{

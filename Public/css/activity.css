@@ -112,6 +112,9 @@
 	overflow-x:none;
 	overflow-y:auto;
  }
+ .activity_content .introduce_container .product_introduce ul li{
+	margin:0 0 0 20px;
+ }
  .activity_content .introduce_container .product_pic{
 	width:260px;
 	height:290px;
@@ -124,6 +127,7 @@
 	padding:20px 0 0 20px;
 	overflow-x:none;
 	overflow-y:auto;
+	line-height:1.5;
  }
  .activity_content .introduce_container .brand_pic{
 	width:160px;

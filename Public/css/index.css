@@ -27,6 +27,7 @@ a:hover{
 	position:absolute;
 	left:280px;
 	bottom:0px;
+	bottom:2px!important;
 }
 .top_menu{
 	width:85px;
@@ -80,6 +81,7 @@ a:hover{
 	right:0px;
 	width:205px;
 	bottom:0px;
+	bottom:2px!important;
 	text-align:left;
 }
 
@@ -579,12 +581,12 @@ a:hover{
 }
 .layer3 .right .news_list1 .it1{
 	background:url(../images/layer3/icon_item.jpg) no-repeat;
-	background-position:0px 10px;
+	background-position:0px 5px;
 	margin-left:15px;
 	padding-left:15px;
 	text-align:left;
-	height:20px;
-	line-height:20px;
+	height:15px;
+	line-height:15px;
 	overflow:hidden;
 	color:#737373;
 }

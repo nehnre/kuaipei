@@ -214,6 +214,7 @@ function checkForm(){
 	b = b && notNull("province", "省份");
 	b = b && notNull("city", "城市");
 	b = b && notNull("post_code", "邮编");
+	b = b && checkPostCode();
 	return b;
 }
 
@@ -249,6 +250,17 @@ function checkBirthday(){
 	if(val && !nehnre.reg.birthday.test(val)){
 		showAlert("请输入正确的日期格式<br>如：1984-09-11", function(){
 			$("#birthday").focus();
+		});
+		return false;
+	}
+	return true;
+}
+function checkPostCode(){
+	var obj = $("#post_code");
+	var val = obj.val();
+	if(val && !nehnre.reg.post.test(val)){
+		showAlert("邮政编码格式不正确，必须为六位数字！", function(){
+			obj.focus();
 		});
 		return false;
 	}

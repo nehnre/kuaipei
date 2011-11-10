@@ -17,7 +17,7 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/UserCenter/userCenterEditUserCarTeam.js"></script>
 
-	<title>升级用户注册——快配网</title>
+	<title>升级个人信息——立配网</title>
 	<script type="text/javascript">
 		$(function(){
 			$(".menu_container div").each(function(){
@@ -50,7 +50,7 @@
 		<div class="c"></div>
 
 		<div class=q_ht><div class="l w105 "><span class="red">*</span>　名片：</div>
-		<div class="l c6 w430 ml20"><input type="text"   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  readonly="readonly" /><input type="button" id="btnBC" value="浏览" /><br/> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.business_card}" name="business_card" id="business_card" /></div>
+		<div class="l c6 w430 ml20"><input type="text"  class="inputClass" readonly="readonly" /><input type="button" id="btnBC" value="浏览" /><br/> 提示：上传图片，限定2MB大小，JPG格式<input type="hidden" value="{$result.business_card}" name="business_card" id="business_card" /></div>
 		<div class="c"></div></div>
 		<div class=q_ht id="tr_bc" style="display:none"><div class="l w105 "></div>
 		<div class="l c6 w430 ml20">	<if condition="!empty($result['business_card'])">
@@ -64,13 +64,13 @@
 
 		<div class=q_ht><div class="l w105 tar"><span class="red">*</span>企业名称：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="company_name"  name="company_name" value="{$result.company_name}" >
+		<div><input  class="inputClass" type="text" id="company_name"  name="company_name" value="{$result.company_name}" >
 		 </div></div>
 		<div class=c></div></div>
 
 		<div class=q_ht><div class="l w105 tar"><span class="red">*</span>企业地址：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="company_address"  name="company_address" value="{$result.company_address}" >
+		<div><input  class="inputClass" type="text" id="company_address"  name="company_address" value="{$result.company_address}" >
 		 </div></div>
 		<div class=c></div></div>
 
@@ -86,19 +86,19 @@
 
 		<div class=q_ht><div class="l w105 tar"><span style="color:#f9f9f9">*</span>邮　　编：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="post_code"  name="post_code" value="{$result.post_code}" >
+		<div><input  class="inputClass" type="text" id="post_code"  name="post_code" value="{$result.post_code}" >
 		 </div></div>
 		<div class=c></div></div>
 
 		<div class=q_ht><div class="l w105 tar"><span style="color:#f9f9f9">*</span>商务联系电话：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="business_call"  name="business_call" value="{$result.business_call}" >
+		<div><input  class="inputClass" type="text" id="business_call"  name="business_call" value="{$result.business_call}" >
 		 </div></div>
 		<div class=c></div></div>
 
 		<div class=q_ht><div class="l w105 tar"><span style="color:#f9f9f9">*</span>联系人(负责人)：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="link_man"  name="link_man" value="{$result.link_man}" >
+		<div><input  class="inputClass" type="text" id="link_man"  name="link_man" value="{$result.link_man}" >
 		 </div></div>
 		<div class=c></div></div>
 

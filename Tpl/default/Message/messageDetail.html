@@ -10,17 +10,16 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
-	<title>站内短消息——立配网</title>
+	<title>升级用户注册——快配网</title>
 	<script type="text/javascript">
 		$(function(){
 			$(".menu_container div").each(function(){
 				var className = $(this).attr("class");
 				className = className.replace(/1$/ig, "");
 				$(this).attr("class", className);
+
 			});
 			$(".menu_usercenter").removeClass("menu_usercenter").addClass("menu_usercenter1");
-			$(".recever").removeClass("recever").addClass("message_menu");
-			
 			$(".message_menu").click(function(){
 				var _href = $(this).attr("href");
 				if(_href){
@@ -45,10 +44,17 @@
 					location.href = _href;
 				}
 			});
+			$("#btnCancleMessage").click(function(){
+				var _href = $(this).attr("href");
+				if(_href){
+					location.href = _href;
+				}
+			});
 		});
 	</script>
 </head>
 <body>
+	<form id="myForm">
 	<div>
 		<include file="./Tpl/default/Public/index_top.html" />
 		<div class="body">
@@ -59,42 +65,15 @@
 					<include file="./Tpl/default/Public/left.html" />
 					<div id="main">
 						<div class="main_nr">
-							<div class="dd">收件箱</div>
+							<div class="dd">短消息详情</div>
 							<div class="fl_toolbar">
 								<include file="./Tpl/default/Public/message_menu.html" />
-								<div class="message_splitpage gray">{$foot}</div>
 							</div>
-
-							<div class=ddlb>
-								<table border=0 cellspacing=0 cellpadding=0 width="100%">
-									<tbody>
-										<tr>
-											<td class="z14_z" width="100">发送人</td>
-											<td class="z14_z" width="350">消息标题</td>
-											<td class="z14_z" width="200">发送时间</td>
-											<td class="z14_z" >操作</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<volist name="list" id="vo">
-							<if condition="$i%2==1">
-							<div class=lb1>
-							<else />
-							<div class=lb2>
-							</if>
-								<table border=0 cellspacing=0 cellpadding=0 width="100%">
-									<tbody>
-										<tr>
-											<td class="lbtxt1" width="100">{$vo.sender_name}</td>
-											<td class="lbtxt1" width="350"><a href="/Message/messageDetail?id={$vo.id}"><span <eq name="vo.read_status" value="未读">  style="font-weight:bold;"</eq> >{$vo.title}</span></a></td>
-											<td class="lbtxt1" width="200">{$vo.insert_time}</td>
-											<td class="lbtxt1"><a href="#">删除</a></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							</volist>
+							<div class="message_row">　发件人：{$result.sender_name}({$result.sender_true_name})</div>
+							<div class="message_row">　收件人：{$result.recever_name}({$result.recever_true_name})</div>
+							<div class="message_row">消息标题：{$result.title}</div>
+							<div class="message_row">消息内容：<textarea style="width:80%" rows="10" name="content" id="content">{$result.content}</textarea></div>
+							<div class="message_row" style="text-align:center"><input type="button" href="./" id="btnCancleMessage" value="取 消"/></div>
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -106,5 +85,6 @@
 	</div>
 	<include file="./Tpl/default/Public/dialog.html" />  
 	<include file="./Tpl/default/Public/qq_dialog.html" />
+	</form>
 </body>
 </html>

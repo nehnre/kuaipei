@@ -213,6 +213,34 @@ padding-top: 3px
 	margin-left:10px;
 	text-align:center;
 	cursor:pointer;
+	font-weight:bold;
+}
+.outbox{
+	height:32px;
+	line-height: 32px;
+	width:60px;
+	float:left;
+	margin-left:10px;
+	text-align:center;
+	cursor:pointer;
+}
+.newMessage{
+	height:32px;
+	line-height: 32px;
+	width:60px;
+	float:left;
+	margin-left:10px;
+	text-align:center;
+	cursor:pointer;
+}
+.recever{
+	height:32px;
+	line-height: 32px;
+	width:60px;
+	float:left;
+	margin-left:10px;
+	text-align:center;
+	cursor:pointer;
 }
 .message_splitpage{
 	height:32px;

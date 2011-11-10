@@ -5,7 +5,31 @@ $(function(){
 		$(this).attr("class", className);
 	});
 	$(".menu_usercenter").removeClass("menu_usercenter").addClass("menu_usercenter1");
-	
+    $(".newMessage").removeClass("newMessage").addClass("message_menu");
+	$(".message_menu").click(function(){
+		var _href = $(this).attr("href");
+		if(_href){
+			location.href = _href;
+		}
+	});	
+	$(".recever").click(function(){
+		var _href = $(this).attr("href");
+		if(_href){
+			location.href = _href;
+		}
+	});
+	$(".outbox").click(function(){
+		var _href = $(this).attr("href");
+		if(_href){
+			location.href = _href;
+		}
+	});
+	$(".newMessage").click(function(){
+		var _href = $(this).attr("href");
+		if(_href){
+			location.href = _href;
+		}
+	});
 	$("#btnCancleMessage").click(function(){
 		var _href = $(this).attr("href");
 		if(_href){

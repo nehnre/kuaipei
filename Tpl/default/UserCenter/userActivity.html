@@ -32,46 +32,53 @@
 		<div class="body">
 <div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
  <div id="nr">
-   <div id="ztop"><div id="ztop_l"><img border="0" src="__PUBLIC__/images/user.jpg"></div></div>
+   <div style="height:20px;"></div>
     <div class="clear"></div>
 <include file="./Tpl/default/Public/left.html" />
    <div id="main"><div class="main_nr">
-<div class=dd>活动记录</div>
-<div class=fl>
-<table border=0 cellspacing=0 cellpadding=0 width="100%" height=20>
-<tbody>
-<tr>
-<td width=45></td>
-<td width=50></td>
-<td></td>
-<td width=200>
-<table border=0 cellspacing=0 cellpadding=0 width="100%">
-<tbody>
-<tr>
-<td width=128  align="right">{$foot}</td></tr></tbody></table></td></tr></tbody></table></div>
+		<if condition="count($list) elt 0">
+				<div class="lb2 gray" style="text-align:center"><a href="/Activity/listIndexActivity" target="_blank"  >您还没有参加记录，请参加。</a></div>
+		<else />
+		<div class="lb1">
+				<div class="contentFloat">
+					<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+					<tr>
+					<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">活动名称</div></td>
+					<td class="lbtxt1" width="250"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">促销产品名称</div></td>
+					<td class="lbtxt1" width="150"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">参加时间</div></td>
+					</tr>
+					</table>
+	        	</div>
+		</div>
+			</if>
 
-<div class=ddlb>
-<table border=0 cellspacing=0 cellpadding=0 width="100%">
-<tbody>
-<tr>
-<td class=z14_z width=620>活动名称</td>
-<td class=z14_z width=200>参加时间</td></tr></tbody></table></div>
-<volist name='list' id='vo' > 
-	<if condition="$i%2==1">
-	<div class=lb1>
-	<else />
-	<div class=lb2>
-	</if>
+	   <volist name='list' id='vo' > 
+       <if condition="$i%2==1">
+	    <div class="lb2">
+		<else />
+	    <div class="lb1">
+		</if>
+		<div class="contentFloat">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+	    <tr>
+		<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:12px;float:left;"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank"  >{$vo.title}</div></td>
+		<td class="lbtxt1"   width="250"><div style="height:37px;overflow:hidden;font-size:12px;float:left;">{$vo.sponsor}</td>
+		<td class="lbtxt5" width="150"><php>echo date("Y年m月d日", strtotime($vo["inter_time"]))</php></td>
+	    </tr>
+        </table>
+		</div>
+		</div>
+		</volist>
+		
+		<if condition="count($list)%2==1">
+		<div class="lb1" style="text-align:right;padding-right:10px;">
+		<else />
+		<div class="lb2" style="text-align:right;padding-right:10px;">
+		</if>
+			{$foot}
+		</div>
 
-<table border=0 cellspacing=0 cellpadding=0 width="100%">
-<tbody>
-<tr>
-<td class=lbtxt1 width=620>{$vo.title}</td>
-<td class=lbtxt4 width=200>{$vo.insert_time}</td>
-</tr>
-</tbody></table>
-</div>
-	</volist>
+		<div class="clear"></div>
   
    
    

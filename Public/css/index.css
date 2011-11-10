@@ -2,6 +2,7 @@
 /*  
  *	powered by nehnre
  */
+
 body{ font-size:12px;}
 *{ margin:0; padding:0;}
 a:link { text-decoration: none;} 
@@ -497,6 +498,9 @@ a:hover{
 	height:100%;
 	margin-left:10px;
 	width:210px;
+	zoom:1;
+	overflow:hidden;
+
 }
 .layer3 .title{
 	height:35px;
@@ -532,6 +536,7 @@ a:hover{
 	border-width:0 1px 0 1px;
 	border-color:#bebebe;
 	background-color:white;
+	zoom:1;
 }
 .layer3 .bottom{
 	background:url(../images/layer3/bottom_bg.jpg) no-repeat;
@@ -580,6 +585,7 @@ a:hover{
 .layer3 .right .news_list1 {
 	padding-top:20px;
 	padding-bottom:15px;
+	zoom:1; /* 针对IE6.0*/
 }
 .layer3 .right .news_list1 .it1{
 	background:url(../images/layer3/icon_item.jpg) no-repeat;
@@ -587,8 +593,8 @@ a:hover{
 	margin-left:15px;
 	padding-left:15px;
 	text-align:left;
-	height:15px;
-	line-height:15px;
+	height:20px;
+	line-height:20px;
 	overflow:hidden;
 	color:#737373;
 }

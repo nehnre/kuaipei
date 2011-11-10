@@ -1,4 +1,23 @@
 $(function(){
+	$("#perfect").next().addClass("red");
+	 $("#perfect").click(function(){
+		$.ajax({
+			url:"/UserCenter/checkStatus",
+			type:"POST",
+			success: function(json){
+				json = nehnre.parseJSON(json);
+				if(json.data.success){
+								location.href = "/UserCenter/perfectUser";
+				}else{
+					showAlert(json.data.msg);
+				}
+			},
+			error: function(){
+				showAlert("提交失败，可能服务器出现故障。");
+			}
+		});
+
+	 });
 	
 	//工商营业执照上传
 	new AjaxUpload('btnBL', {
@@ -85,7 +104,9 @@ $(function(){
 									data: data,
 									type: "POST",
 									success: function(json){
-										location.href = "UserCenter";
+										showAlert("保存成功！", function(){
+									        	location.href = "/UserCenter/perfectUser";
+										});
 									},
 									error: function(){
 										showAlert("保存失败！", function(){

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-11-09 10:38:37
+Date: 2011-11-10 10:58:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -192,6 +192,32 @@ INSERT INTO `kp_information_column` VALUES ('93', '汽配人物', '渠道为王�
 INSERT INTO `kp_information_column` VALUES ('94', '汽配人物', '渠道为王时代的掘金者（4）——经销商谈汽车售后市场5年发展', '立配网', '菲利', '', '已发布', '2011-10-31 14:26:52', '', '<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;“这是一个渠道<span style=\"font-family:KaiTi_GB2312;\">为王的时代。这也是他们的时代。”在历经采访的国内知名一线品牌汽配代理商后，我们得出一个这样的评价。品牌配件代理商是目前中国汽车配件市场的中流砥柱和核心力量。一张张品牌的大网通过这些一线的品牌配件商之手，在全国繁忙地运作着。</span></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-family:KaiTi_GB2312;\">是多年前的卖方市场不同的是，目前的市场已经发展到一个多元化的时期——多种形态的代理商服务发展模式并存，同时对未来都进行着努力地创新和探索。</span></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-family:KaiTi_GB2312;\">我们依稀可以看到的成熟市场是，未来的汽配服务是专业化汽车配件服务。目前国内常态的服务模式主要是代理下的分销，还有市场前景看好的终端连锁汽配以及B-C电子商务模式的尝试。在国外，渠道内的经销商模式是连锁的配件终端服务，例如美国NAPA。另一种模式就是完全的B-C模式，成熟的消费者自行选购汽车配件。例如美国的AUTO&nbsp;ZONE。业界普遍看法，NAPA模式将会优先于AUTO&nbsp;ZONE模式在中国兴起。毕竟，等待消费者成熟起来，国内还为时尚早。</span></span></p>\r\n<p></p>\r\n<p align=\"center\">&nbsp;</p>\r\n<p align=\"center\"><span style=\"font-size:14px;\"><strong>上海骜顺——品牌支持赢得市场占有</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 上海骜顺实业有限公司是一家非常有资质的索菲玛滤清器经销商，本着“客户第一，诚信至上”的经营理念，已在上海汽车零配件销售企业中独占鳌头，索菲玛滤清器是其主营滤清器产品。就让我们走近骜顺的老板陈越，听听他的经营故事。</span></p>\r\n<p align=\"center\"><span style=\"font-size:14px;\"><img alt=\"\" src=\"/kindeditor/attached/image/20111031/20111031072445_29276.jpg\" width=\"350\" /></span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:14px;\"><strong>成立五年，规模不断壮大</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 当记者来到骜顺的门口，就被大幅的索菲玛宣传海报所吸引，店内员工不多，但却非常井然有序，电话不断地发出响声，足以见得其业务的繁忙，这时，迎面走来一位西装革履，步态稳重的男士，原来他就是骜顺的老板陈越。他向我们介绍道，索菲玛对于滤清器经销企业非常重视，给予他们不小支持，这给他们带来了不少收获和财富。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 老陈说，骜顺成立于2005年，目前拥有员工22人，主营汽车易损件，包括滤清器、刹车片、刹车盘、雨刮片等，目前在上海已有3家直营店，除了我们当天采访的汶水路店，还有虹梅店和七星店2家。说到经验，老陈感慨良多，1993年开始做汽车配件的他起初是开修理厂，只卖刹车片，后来闻知国内滤清器的需求量巨大，他决定做索菲玛品牌滤清器的独家代理商，从此走上了致富的道路，赚到了人生的第一桶金，也改变了他的生活，他非常感谢索菲玛给予他们的支持和帮助，为他带来了巨大的财富。</span></p>\r\n<p><span style=\"font-size:14px;\"><strong>国内滤清器市场前景向好</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 老陈说，他现在代理的索菲玛品牌滤清器，客户群主要针对修理厂，未来还会针对快修店，目标是维修终端市场或直接面对用户。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 由于索菲玛滤清器的口碑、质量和信誉，销量不断攀升，客户到他们公司，一进店直接就会询问索菲玛滤清器的情况，给他们带来了很大商机，并且他们和新老客户都保持了良好的关系，有一些稳定的客源。索菲玛滤清器的巨大销量还带动了店内二线品牌和其他产品的销售，使得他们的利润大幅增长，每家店每月的销售额在80万左右，并且有不断增长的势头，这让他感到非常幸运和满足。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对于目前滤清器市场的不断发展壮大，老陈对其前景非常看好，未来还会继续代理索菲玛滤清器，并且会努力扩大经营，为广大客户服务。</span></p>\r\n<p><span style=\"font-size:14px;\"><strong>品牌优势，成就今天的骜顺</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 谈到索菲玛滤清器给他们带来的商机，老陈说，这不得不归功于索菲玛品牌的优势。他总结索菲玛滤清器具有4大明显优势：</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.索菲玛与大众汽车、通用汽车，一汽奥迪的车型配套，甚至包括一些出租车，如上海街头可见的海博以及途安的混合动力出租车，这是其它品牌无法做到的，强大的OE配套，给索菲玛带来了稳固的客户群，也给经销商创造了很大商机。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.新产品开发进度快。索菲玛目前已有200多个品种，并且今年又增加了100多个型号，能和更多的车型相匹配，为更多的车主服务。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.产品质量好，外包装颜色容易辨认。老陈说他代理索菲玛滤清器至今，卖到现在没有出现过一个问题，客户对于索菲玛质量也相当信任</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.售后服务有保障。虽然索菲玛的品质是值得信赖、经得起考验的，但同时，它的售后保证也相当到位，客户如遇问题都可以找经销商或索菲玛，他们都会予以及时解决，甚至一些技术问题也可以咨询他们。</span></p>\r\n<p><span style=\"font-size:14px;\"><strong>厂商支持助成长，快速配货提效率</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 对于品牌厂商的支持，老陈十分感激，他说索菲玛给予他们的支持很多：</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 首先，广告宣传力度很大，会定期印一些产品宣传单页给他们，由于销量大，这些单页用得很快，希望品牌厂商能多印一些给他们，满足不同客户群的需求，还有一些纸箱子和广告衫，也为他们经销的索菲玛产品做宣传；其次，索菲玛会提供给他们联合培训，给予他们员工技术上的指导和建议，以及定期举办经销商大会，让他们和行业内更多的同行交流经验，这些大会一般在上海举行，为期3天，有20来家经销商参与，期间索菲玛会带他们参观设在青浦的工厂，优良的设备给他们留下了深刻的印象；还有，索菲玛定期会和他们举办促销活动，促进产品更快的销售，例如，今年9月针对索菲玛配套的奥迪2款、途安和别克总共4款车型10送1的促销，引起了很大的反响，客户的订单增多了，促进了年定任务的消化；最后要提的就是配货速度的加快，以前断货是常有的事，但现在货隔一天就能配送到位，极大降低了断货率，若是外地经销商，索菲玛也与指定的物流公司合作，一般都不会耽误。老陈说，修理厂一般是月结账，所以他们会遇到资金紧张的问题，希望索菲玛能够提供一个经销商信用额度，压一点货款，能够缓解这种局面。</span></p>\r\n<p><span style=\"font-size:14px;\"><strong>对于未来充满信心</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 谈到未来计划，老陈显得自信满满。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在针对下级经销商或修理厂的推广中，他说：首先，在配送环节，他们会定期做产品推广，一般会分区域，以信用额度月结的方式送货上门，并且因为门店费贵，而郊区仓库费便宜，他们会在郊区开仓储，如现在在奉贤和金山就已经设立了仓库，方便及时配送；其次希望能把产品线做全，甚至小车都包括在内，以满足客户的需要；还有，对于客户没有想到的，他们要尽量考虑周全，这样才能更好的为客户服务，他们会以网络的方式和客户保持联系，例如，建立了QQ群，客户有问题可以和他们及时沟通询问。</span></p>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p align=\"center\"><span style=\"font-size:14px;\"><strong>南京康众——务实让“康众”更出色</strong></span></p>\r\n<p align=\"center\">&nbsp;</p>\r\n<p></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 南京康众汽车配件有限公司是一家专业汽车用易损件的经销商，于今年开始代理索菲玛品牌的滤清器。目前在南京、天津、昆山、苏州、常州、连云港、宿迁、唐山等地都设有分店。康众的总经理商宝国是个务实的人，在他看来，只要能更好的为客户服务，让客户满意，就是他的经营理念。现在让我们走近康众，听听商总为我们讲讲他的经营之道。</span></p>\r\n<p align=\"center\"><span style=\"font-size:14px;\"><img alt=\"\" src=\"/kindeditor/attached/image/20111031/20111031072543_61919.jpg\" width=\"350\" /></span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:14px;\"><strong>两次重要转折，康众更成熟</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 说起康众的今天，商总感慨良多。康众成立于1996年，成立之初公司主要经销品牌车型件。1999年，公司意识到，随着国内汽车销量的增长，汽车易损件需求也有增长的势头，他们觉得如果能从纵向向横向过渡，在易损件上投入更多，那就能满足更多客户的需求。于是，他们开始为广大客户提供汽车易损配件综合解决方案，这是他们的第一个重要转折点。从此，公司规模开始不断壮大。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2007年，康众接受花旗银行的投资并购，更名为优配汽车配件（江苏）有限公司，这在很大程度上提高了康众在区域内的影响力，也成为了公司发展的第二个重要转折点。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 今年，花旗银行退出了对康众的投资，这时，康众在汽车配件行业内已具有了良好的声誉和知名度，在江苏已拥有10多个家分店，总共160多名员工，每年在江苏地区的销售额达到8000万人民币。</span></p>\r\n<p><span style=\"font-size:14px;\"><strong>索菲玛滤清器优势明显</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 谈到代理索菲玛品牌滤清器的感受时，商总说，虽然我们代理索菲玛的时间还不长，但我们对这个品牌相当的有信心。</span></p>\r\n<p><span style=\"font-size:14px;\">首先索菲玛滤清器OE配套率高，用户对它有很大的信任感和忠诚度。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 其次索菲玛滤清器质量方面是业内公认的好，客户满意度高，很少出问题，并且销量在不断增长，有良好的口碑。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 而且，索菲玛提供给了他们的服务也很到位，包括售前服务和售后服务，也给予他们一定的信用额度，这样就能大幅缓解了他们的资金紧张问题。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 商总认为索菲玛仍然能够有更大的市场开拓空间。他希望索菲玛在广告宣传方面能够加大力度，更为提高在客户中的品牌知名度，抵制假冒索菲玛滤清器对客户造成的损害，并且希望索菲玛厂商能够给予他们更多更有效的支持，如组织培训，以此来提高员工的技术水平。同时商总也希望能够与索菲玛保持更多的沟通与交流，提高产品的销量。</span></p>\r\n<p><span style=\"font-size:14px;\"><strong>让产品线更全，配送更人性</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 商总说，目前索菲玛品牌有200多个零件号，大多和大众品牌车OE配套，这方面的优势非常明显，能够增加消费者对索菲玛的产品忠诚度，并且也一直在努力增加产品型号。但是索菲玛和一般品牌滤清器厂商700到800个零件号数相比，索菲玛产品型号增加的速度并不快，因为它更多地是和整车配套，他希望索菲玛能够提高产品的开发速度，让产品线更全，更专业，能够满足更多客户的需求。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 配送和服务方面，商总对索菲玛相当满意，他说索菲玛配送速度快，没有出现过库存紧张的情况，并且他们会与可靠的物流公司合作，跟踪物流到南京。同时，他又希望索菲玛能在配送上做得更为人性，给予他们苏州，常州等分店直接的配送服务。</span></p>\r\n<p><span style=\"font-size:14px;\"><strong>对代理索菲玛滤清器有信心</strong></span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 商总说，随着国内汽车销量的不断增长，汽车用易损件的需求也在不断提高，滤清器又是易损、耗材的配件产品，更换频率高，所以，对滤清器市场的前景是非常看好的，特别是索菲玛OE配套的明显优势以及优良的品质，客户认可度越来越高。虽然和索菲玛合作的时间并不长，但他对代理索菲玛滤清器的信心很足。会继续代理索菲玛滤清器，为更多的用户服务。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;他说康众经销的产品很全，正是因为这个优势，维修终端很愿意与他们合作，这是他们的成功所在。在未来针对下一级经销商和修理厂的过程中，他计划继续扩大产品的供应，这样能更加实在地为客户提供品种齐全的索菲玛滤清器。</span></p>\r\n<p><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在整个采访过程中，记者感受到了这个企业是真正为客户着想的企业，就如同它的总经理一样，务实的经营理念必定会让他们在这个行业里越来越成功。</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p></p>', '渠道,经销商,索菲玛,滤清器', '渠道,经销商,索菲玛,滤清器', '19', '2011-10-31 14:26:34', '2011-10-31 22:51:31');
 
 -- ----------------------------
+-- Table structure for `kp_message`
+-- ----------------------------
+DROP TABLE IF EXISTS `kp_message`;
+CREATE TABLE `kp_message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) DEFAULT NULL,
+  `content` varchar(512) DEFAULT NULL,
+  `sender_id` int(11) DEFAULT NULL,
+  `recever_id` int(11) DEFAULT NULL,
+  `send_status` varchar(50) DEFAULT NULL COMMENT '普通，删除',
+  `receve_status` varchar(50) DEFAULT NULL COMMENT '普通，删除',
+  `read_status` varchar(50) DEFAULT NULL COMMENT '未读，已读',
+  `insert_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of kp_message
+-- ----------------------------
+INSERT INTO `kp_message` VALUES ('2', '111', '11', '1216', '1216', '普通', '普通', '未读', '2011-11-09 23:16:04');
+INSERT INTO `kp_message` VALUES ('3', '222', '222', '1216', '1215', '普通', '普通', '未读', '2011-11-09 23:19:03');
+INSERT INTO `kp_message` VALUES ('4', 'adasd', 'dafsd', '1216', '1215', '普通', '普通', '未读', '2011-11-09 23:34:32');
+INSERT INTO `kp_message` VALUES ('5', '你好，这是一封测试消息', '你好：\r\n这是一封测试消息', '1215', '1216', '普通', '普通', '未读', '2011-11-09 23:42:10');
+INSERT INTO `kp_message` VALUES ('6', '你好，这是第二封', '第二封邮件，哈哈', '1215', '1216', '普通', '普通', '未读', '2011-11-09 23:43:07');
+
+-- ----------------------------
 -- Table structure for `kp_pic_news`
 -- ----------------------------
 DROP TABLE IF EXISTS `kp_pic_news`;
@@ -345,7 +371,8 @@ CREATE TABLE `kp_user` (
 -- ----------------------------
 -- Records of kp_user
 -- ----------------------------
-INSERT INTO `kp_user` VALUES ('1216', '18602123502', '1a100d2c0dab19c4430e7d73762b3423', 'nehnre', 'nehnre@yahoo.com.cn', null, '厂商', '外资', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ea8260cdf4df.jpg', '', '', '', '', '', '', null, '2011-10-31 20:14:11', '2011-10-20 21:40:35', '2011-10-31 20:20:01');
+INSERT INTO `kp_user` VALUES ('1215', '18602123503', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre', 'nehnre@yahoo.com.cn', '', '厂商', '外资', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ea8260cdf4df.jpg', '', '', '', '', '', '', '0000-00-00 00:00:00', '2011-10-31 20:14:00', '2011-10-20 21:40:00', '2011-10-31 20:20:00');
+INSERT INTO `kp_user` VALUES ('1216', '18602123502', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre1', 'nehnreyahoo.com.cn', null, '经销商', '代理', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ebb247a5a35c.jpg', '', '', '', '', '', '', null, '2011-10-31 20:14:11', '2011-10-20 21:40:35', '2011-11-10 09:16:54');
 
 -- ----------------------------
 -- Table structure for `kp_userlog`
@@ -359,7 +386,7 @@ CREATE TABLE `kp_userlog` (
   `act_describ` varchar(200) DEFAULT NULL,
   `insert_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_userlog
@@ -429,6 +456,14 @@ INSERT INTO `kp_userlog` VALUES ('104', '1', 'kp_admin_user', '1', '登录一次
 INSERT INTO `kp_userlog` VALUES ('105', '1', 'kp_admin_user', '1', '登录一次', '2011-11-08 19:52:42');
 INSERT INTO `kp_userlog` VALUES ('106', '1', 'kp_admin_user', '1', '登录一次', '2011-11-08 23:29:55');
 INSERT INTO `kp_userlog` VALUES ('107', '1', 'kp_admin_user', '1', '登录一次', '2011-11-09 09:20:25');
+INSERT INTO `kp_userlog` VALUES ('108', '1216', 'kp_user', '1216', '登录一次', '2011-11-09 20:32:11');
+INSERT INTO `kp_userlog` VALUES ('109', '1216', 'kp_user', '1216', '登录一次', '2011-11-09 20:52:40');
+INSERT INTO `kp_userlog` VALUES ('110', '1216', 'kp_user', '1216', '登录一次', '2011-11-09 22:51:57');
+INSERT INTO `kp_userlog` VALUES ('111', '1216', 'kp_user', '1216', '登录一次', '2011-11-09 22:59:00');
+INSERT INTO `kp_userlog` VALUES ('112', '1216', 'kp_user', '1216', '登录一次', '2011-11-09 23:06:16');
+INSERT INTO `kp_userlog` VALUES ('113', '1215', 'kp_user', '1215', '登录一次', '2011-11-09 23:34:51');
+INSERT INTO `kp_userlog` VALUES ('114', '1216', 'kp_user', '1216', '登录一次', '2011-11-09 23:43:28');
+INSERT INTO `kp_userlog` VALUES ('115', '1216', 'kp_user', '1216', '登录一次', '2011-11-10 09:05:48');
 
 -- ----------------------------
 -- View structure for `kp_vactivity_comment`
@@ -441,6 +476,12 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- ----------------------------
 DROP VIEW IF EXISTS `kp_vhot_tags`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vhot_tags` AS select `t`.`tag_name` AS `tag_name`,count(1) AS `num` from `kp_vtable_tags` `t` group by `t`.`tag_name`;
+
+-- ----------------------------
+-- View structure for `kp_vmessage`
+-- ----------------------------
+DROP VIEW IF EXISTS `kp_vmessage`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vmessage` AS select `t1`.`id` AS `id`,`t1`.`title` AS `title`,`t1`.`content` AS `content`,`t1`.`sender_id` AS `sender_id`,`t1`.`recever_id` AS `recever_id`,`t1`.`send_status` AS `send_status`,`t1`.`receve_status` AS `receve_status`,`t1`.`read_status` AS `read_status`,`t1`.`insert_time` AS `insert_time`,`t2`.`user_name` AS `sender_name` from (`kp_message` `t1` join `kp_user` `t2`) where (`t1`.`sender_id` = `t2`.`id`);
 
 -- ----------------------------
 -- View structure for `kp_vsearch`

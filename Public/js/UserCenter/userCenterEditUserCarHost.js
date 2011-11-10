@@ -1,5 +1,23 @@
 $(function(){
-	
+	 $("#perfect").next().addClass("red");
+	 $("#perfect").click(function(){
+		$.ajax({
+			url:"/UserCenter/checkStatus",
+			type:"POST",
+			success: function(json){
+				json = nehnre.parseJSON(json);
+				if(json.data.success){
+								location.href = "/UserCenter/perfectUser";
+				}else{
+					showAlert(json.data.msg);
+				}
+			},
+			error: function(){
+				showAlert("提交失败，可能服务器出现故障。");
+			}
+		});
+
+	 });
 	$( "#birthday" ).datepicker({
 		maxDate:new Date(),
 		monthNames:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']	,
@@ -97,7 +115,9 @@ $(function(){
 									data: data,
 									type: "POST",
 									success: function(json){
-										location.href = "UserCenter";
+										showAlert("保存成功！", function(){
+									        	location.href = "/UserCenter/perfectUser";
+										});
 									},
 									error: function(){
 										showAlert("保存失败！", function(){
@@ -190,9 +210,12 @@ function checkForm(){
 	b = b && checkBirthday();
 	b = b && notNull("car_brand", "汽车品牌");
 	b = b && notNull("car_model", "汽车型号");
+	b = b && notNull("address", "地址");
+	b = b && notNull("province", "省份");
+	b = b && notNull("city", "城市");
+	b = b && notNull("post_code", "邮编");
 	return b;
 }
-
 
 
 function notNull(id, msg){

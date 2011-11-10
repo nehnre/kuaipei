@@ -8,40 +8,6 @@ a.le:visited {	text-decoration:none;	color:#000000;}
 a.le:hover {	text-decoration: none;	color:#ff0000;}
 a.le:active{	text-decoration: none;	color:#000000;}
 
-a.red:link {	text-decoration:none;	color:#ff0000;}
-a.red:visited {	text-decoration:none;	color:#ff0000;}
-a.red:hover {	text-decoration: none;	color:#0000ff;}
-a.red:active{	text-decoration: none;	color:#ff0000;}
-
-a.f13_x:link {	text-decoration:none;	color:#FD791E;}
-a.f13_x:visited {	text-decoration:none;	color:#FD791E;}
-a.f13_x:hover {	text-decoration: none;	color:#0196CE;}
-a.f13_x:active{	text-decoration: none;	color:#FD791E;}
-
-a.f12_x:link {	text-decoration:none; color:#ffffff;}
-a.f12_x:visited {	text-decoration:none; color:#ffffff;}
-a.f12_x:hover {	text-decoration: none; color:#000000;}
-a.f12_x:active{	text-decoration: none; color:#ffffff;}
-
-a.di:link {	text-decoration:none; color:#767676;}
-a.di:visited {	text-decoration:none;	color:#767676;}
-a.di:hover {	text-decoration: none;	color:#ff0000;}
-a.di:active{	text-decoration: none;	color:#767676;}
-
-a.die:link {	text-decoration:none;	color:#626061;}
-a.die:visited {	text-decoration:none;	color:#626061;}
-a.die:hover {	text-decoration: none;	color:#ff0000;}
-a.die:active{	text-decoration: none;	color:#626061;}
-
-a.ymm:link {	text-decoration:none;	color:#3366cc;}
-a.ymm:visited {	text-decoration:none;	color:#3366cc;}
-a.ymm:hover {	text-decoration: none;	color:#ff0000;}
-a.ymm:active{	text-decoration: none;	color:#3366cc;}
-
-a.ymn:link {	text-decoration:none;	color:#ffffff; font-weight: bold;}
-a.ymn:visited {	text-decoration:none;	color:#ffffff; font-weight: bold;}
-a.ymn:hover {	text-decoration: none;	color:#cccccc; font-weight: bold;}
-a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 
 .sj{text-indent: 25px;}
 
@@ -84,7 +50,7 @@ a.ymn:active{	text-decoration: none;	color:#ffffff; font-weight: bold;}
 .lbtxt1 {color: #333333; font-size:12px;	text-align: center;	border-right-width: 1px; border-right-style: solid;	border-right-color: #FFFFFF;}
 .lbtxt2 {font-size:13px; text-align: center; }
 .lbtxt3 {color: #626061;font-size:13px; text-align: left;border-right-width: 1px; border-right-style: solid; border-right-color: #FFFFFF; line-height:20px;}
-.lbtxt4 {font-size:14px; text-align: center; border-right-width: 1px; border-right-style: solid; border-right-color: #FFFFFF;}
+.lbtxt4 {font-size:12px; text-align: center; border-right-width: 1px; border-right-style: solid; border-right-color: #FFFFFF;}
 .lbtxt6 {text-align: center; border-right-width: 1px; border-right-style: solid; border-right-color: #FFFFFF;}
 .lbtxt5 {font-size:13px; text-align: center; line-height:25px;}
 

@@ -47,6 +47,51 @@ class MessageAction extends Action{
 		$this -> assign("list", $list);
 		$this -> display();
 	}
+		//返回用户短消息列表
+	public function outbox(){
+		if(!Session::is_set("id")){
+			header("Content-type: text/html; charset=utf-8");
+			echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
+			return;
+		}
+		$user_id = Session::get("id");
+		
+		$vmessage = M("vmessage");
+		$condition["sender_id"] = $user_id;
+		$condition["send_status"] = "普通";
+		
+		
+		$count = $vmessage -> where($condition) -> count();
+		import("ORG.Util.Page");
+ 		$Page = new Page($count, 10);
+		$foot = $Page -> show();
+		$list = $vmessage -> where($condition) -> order('insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); 
+		
+		$this -> assign('foot',$foot);
+		$this -> assign("list", $list);
+		$this -> display();
+	}
+
+			//返回用户短消息列表
+	public function messageDetail(){
+		if(!Session::is_set("id")){
+			header("Content-type: text/html; charset=utf-8");
+			echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
+			return;
+		}
+	    $id = $_REQUEST["id"];
+		if(!empty($id)){
+				$Message = M("Message");
+                $data["read_status"] = "已读";
+                $data["id"] =  $id;
+				$Message -> save($data);
+				$vmessage = M("vmessage");
+				$result = $vmessage -> where("id=".$id) -> find();
+				$this -> assign("result", $result);
+		}
+			$this->display();
+	}
+	
 	
 	//新增短消息
 	public function newMessage(){

@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql
+Source Server         : host
 Source Server Version : 50508
 Source Host           : localhost:3306
 Source Database       : kuaipei
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-11-10 10:58:30
+Date: 2011-11-11 00:18:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -211,11 +211,11 @@ CREATE TABLE `kp_message` (
 -- ----------------------------
 -- Records of kp_message
 -- ----------------------------
-INSERT INTO `kp_message` VALUES ('2', '111', '11', '1216', '1216', '普通', '普通', '未读', '2011-11-09 23:16:04');
-INSERT INTO `kp_message` VALUES ('3', '222', '222', '1216', '1215', '普通', '普通', '未读', '2011-11-09 23:19:03');
-INSERT INTO `kp_message` VALUES ('4', 'adasd', 'dafsd', '1216', '1215', '普通', '普通', '未读', '2011-11-09 23:34:32');
-INSERT INTO `kp_message` VALUES ('5', '你好，这是一封测试消息', '你好：\r\n这是一封测试消息', '1215', '1216', '普通', '普通', '未读', '2011-11-09 23:42:10');
-INSERT INTO `kp_message` VALUES ('6', '你好，这是第二封', '第二封邮件，哈哈', '1215', '1216', '普通', '普通', '未读', '2011-11-09 23:43:07');
+INSERT INTO `kp_message` VALUES ('2', '111', '11', '1216', '1216', '普通', '普通', '已读', '2011-11-09 23:16:04');
+INSERT INTO `kp_message` VALUES ('3', '222', '222', '1217', '1215', '普通', '普通', '已读', '2011-11-09 23:19:03');
+INSERT INTO `kp_message` VALUES ('4', 'adasd', 'dafsd', '1217', '1215', '普通', '普通', '已读', '2011-11-09 23:34:32');
+INSERT INTO `kp_message` VALUES ('5', '你好，这是一封测试消息', '你好：\r\n这是一封测试消息', '1215', '1217', '普通', '普通', '已读', '2011-11-09 23:42:10');
+INSERT INTO `kp_message` VALUES ('6', '你好，这是第二封', '第二封邮件，哈哈', '1215', '1217', '普通', '普通', '已读', '2011-11-09 23:43:07');
 
 -- ----------------------------
 -- Table structure for `kp_pic_news`
@@ -366,13 +366,14 @@ CREATE TABLE `kp_user` (
   `insert_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1217 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1218 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_user
 -- ----------------------------
 INSERT INTO `kp_user` VALUES ('1215', '18602123503', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre', 'nehnre@yahoo.com.cn', '', '厂商', '外资', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ea8260cdf4df.jpg', '', '', '', '', '', '', '0000-00-00 00:00:00', '2011-10-31 20:14:00', '2011-10-20 21:40:00', '2011-10-31 20:20:00');
 INSERT INTO `kp_user` VALUES ('1216', '18602123502', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre1', 'nehnreyahoo.com.cn', null, '经销商', '代理', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ebb247a5a35c.jpg', '', '', '', '', '', '', null, '2011-10-31 20:14:11', '2011-10-20 21:40:35', '2011-11-10 09:16:54');
+INSERT INTO `kp_user` VALUES ('1217', '13585801360', '96e79218965eb72c92a549dd5a330112', '昵称', null, null, null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, '2011-11-10 21:59:39', '2011-11-10 21:59:39');
 
 -- ----------------------------
 -- Table structure for `kp_userlog`
@@ -481,7 +482,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- View structure for `kp_vmessage`
 -- ----------------------------
 DROP VIEW IF EXISTS `kp_vmessage`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vmessage` AS select `t1`.`id` AS `id`,`t1`.`title` AS `title`,`t1`.`content` AS `content`,`t1`.`sender_id` AS `sender_id`,`t1`.`recever_id` AS `recever_id`,`t1`.`send_status` AS `send_status`,`t1`.`receve_status` AS `receve_status`,`t1`.`read_status` AS `read_status`,`t1`.`insert_time` AS `insert_time`,`t2`.`user_name` AS `sender_name` from (`kp_message` `t1` join `kp_user` `t2`) where (`t1`.`sender_id` = `t2`.`id`);
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vmessage` AS select `t1`.`id` AS `id`,`t1`.`title` AS `title`,`t1`.`content` AS `content`,`t1`.`sender_id` AS `sender_id`,`t1`.`recever_id` AS `recever_id`,`t1`.`send_status` AS `send_status`,`t1`.`receve_status` AS `receve_status`,`t1`.`read_status` AS `read_status`,`t1`.`insert_time` AS `insert_time`,`t2`.`user_name` AS `sender_name`,`t2`.`true_name` AS `sender_true_name`,`t3`.`user_name` AS `recever_name`,`t3`.`true_name` AS `recever_true_name` from ((`kp_message` `t1` join `kp_user` `t2`) join `kp_user` `t3`) where ((`t1`.`sender_id` = `t2`.`id`) and (`t1`.`recever_id` = `t3`.`id`));
 
 -- ----------------------------
 -- View structure for `kp_vsearch`

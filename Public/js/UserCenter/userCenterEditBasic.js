@@ -18,6 +18,20 @@ $(function(){
 		});
 
 	 });
+	$( "#birthday" ).datepicker({
+		maxDate:new Date(),
+		monthNames:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']	,
+		showMonthAfterYear: true,
+		dayNamesMin:['日', '一', '二', '三', '四', '五', '六'],
+		firstDay:1,
+		selectOtherMonths :true,
+		showOtherMonths :true,
+		dateFormat: 'yy-mm-dd',
+		prevText:'上一月',
+		nextText:'下一月',
+		changeYear:true,
+		defaultDate: '-20y'
+	});
 	//提交按钮
 	$("#btnSubmit").click(function(){
 		var a = checkForm();
@@ -64,10 +78,44 @@ function checkForm(){
 	var b = true;
 	b = b && notNull("nick_name", "昵称");
 	b = b && notNull("true_name", "真实姓名");
+	b = b&&checkPostCode();
+	b = b&&checkBirthday();
+	b = b&&checkEmail();
 	return b;
 }
 
+function checkBirthday(){
+	var val = $("#birthday").val();
+	if(val &&!nehnre.reg.birthday.test(val)){
+		showAlert("请输入正确的日期格式<br>如：1984-09-11", function(){
+			$("#birthday").focus();
+		});
+		return false;
+	}
+	return true;
+}
+function checkEmail(){
+	var val = $("#email").val();
+	if(val &&!nehnre.reg.email.test(val)){
+		showAlert("Email格式不正确！", function(){
+			$("#email").focus();
+		});
+		return false;
+	}
+	return true;
+}
 
+function checkPostCode(){
+	var obj = $("#post_code");
+	var val = obj.val();
+	if(val && !nehnre.reg.post.test(val)){
+		showAlert("邮政编码格式不正确，必须为六位数字！", function(){
+			obj.focus();
+		});
+		return false;
+	}
+	return true;
+}
 
 function notNull(id, msg){
 	var val = $("#" + id).val();

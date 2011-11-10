@@ -190,3 +190,10 @@ h3 {
 .input_focus{
 	background-position: -1px -26px;
 }
+.inputClass{
+width:80%;
+padding-left: 3px;
+padding-right: 3px;
+font-size: 12px;
+padding-top: 3px
+}

@@ -16,7 +16,7 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/ajaxupload.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/UserCenter/userCenterEditBasic.js"></script>
-	<title>升级用户注册——快配网</title>
+	<title>完善个人信息——立配网</title>
 	<script type="text/javascript">
 		$(function(){
 			$(".menu_container div").each(function(){
@@ -54,14 +54,14 @@
 
 		<div class=q_ht><div class="l w85 tar"><span class="red">*</span>昵称：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="nick_name"  name="nick_name" value="{$result.nick_name}" >
+		<div><input   class="inputClass" type="text" id="nick_name"  name="nick_name" value="{$result.nick_name}" >
 		 </div></div>
 		<div class="c"></div></div>
 
 
 		<div class="q_ht"><div class="l w85 tar"><span class="red">*</span>真实姓名：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="true_name"  name="true_name" value="{$result.true_name}" >
+		<div><input   class="inputClass" type="text" id="true_name"  name="true_name" value="{$result.true_name}" >
 		 </div></div>
 		<div class="c"></div></div>
 
@@ -80,7 +80,7 @@
 
 		<div class="q_ht"><div class="l w85 tar">出生日期：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="birthday"  name="birthday"  <if condition="$result.birthday neq '0000-00-00'">value="{$result.birthday}" </if> >
+		<div><input   class="inputClass" type="text" id="birthday"  name="birthday"  readonly <if condition="$result.birthday neq '0000-00-00'">value="{$result.birthday}" </if> >
 		 </div></div>
 		<div class="c"></div></div>
 
@@ -95,43 +95,43 @@
 
 		<div class="q_ht"><div class="l w85 tar">地　　址：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="address"  name="address" value="{$result.address}" >
+		<div><input   class="inputClass" type="text" id="address"  name="address" value="{$result.address}" >
 		 </div></div>
 		<div class="c"></div></div>
 
 		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>邮　　编：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="post_code"  name="post_code" value="{$result.post_code}" >
+		<div><input   class="inputClass" type="text" id="post_code"  name="post_code" value="{$result.post_code}" >
 		 </div></div>
 		<div class="c"></div></div>
 
 		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>职　　业：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="profession"  name="profession" value="{$result.profession}" >
+		<div><input   class="inputClass" type="text" id="profession"  name="profession" value="{$result.profession}" >
 		 </div></div>
 		<div class="c"></div></div>
 
 		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>QQ：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="qq"  name="qq" value="{$result.qq}" >
+		<div><input   class="inputClass" type="text" id="qq"  name="qq" value="{$result.qq}" >
 		 </div></div>
 		<div class="c"></div></div>
 
 		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>MSN：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="msn"  name="msn" value="{$result.msn}" >
+		<div><input   class="inputClass" type="text" id="msn"  name="msn" value="{$result.msn}" >
 		 </div></div>
 		<div class="c"></div></div>
 
 		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>企业名称：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="company_name"  name="company_name" value="{$result.company_name}" >
+		<div><input   class="inputClass" type="text" id="company_name"  name="company_name" value="{$result.company_name}" >
 		 </div></div>
 		<div class="c"></div></div>
 
 		<div class="q_ht"><div class="l w85 tar"><span style="color:#f9f9f9">*</span>E-mail：</div>
 		<div class="l c6 w430 ml20">
-		<div><input   style="padding-left: 3px;padding-right: 3px;font-size: 12px;padding-top: 3px"  type="text" id="email"  name="email" value="{$result.email}" >
+		<div><input   class="inputClass" type="text" id="email"  name="email" value="{$result.email}" >
 		 </div></div>
 		<div class="c"></div></div>
 

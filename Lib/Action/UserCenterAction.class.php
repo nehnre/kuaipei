@@ -65,6 +65,24 @@ class UserCenterAction extends Action
 			$this -> ajaxReturn($json);
 	}
 
+	public function  findStatus() {
+		if(!Session::is_set("id")){
+			$json["success"] = false;
+			$json["msg"] = "没有登录";
+		}else{
+			$condition["id"]  = Session::get("id");
+			$User = M("User");
+			$result = $User -> where($condition) -> find();
+			//if($result['status'] == '待审核'){
+			//	$json["success"] = false;
+			//	$json["msg"] = "您的个人信息已经进入待审核状态无法再修改";
+			//}else
+			$json["success"] = true;
+			$json["status"] = $result['status'];
+
+		}
+			$this -> ajaxReturn($json);
+	}
 
 	public function checkCheckNum(){
 		    $user_name = $_GET["user_name"];

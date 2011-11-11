@@ -1,4 +1,23 @@
-         <div id="side">
+
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url:"/UserCenter/findStatus",
+				type:"POST",
+				success: function(json){
+					json = nehnre.parseJSON(json);
+					if(json.data.success){
+									if(json.data.status=='已审核'){
+										 $("#perfect").find("span").text('认证用户信息');
+								    }
+					}else{
+						showAlert(json.data.msg);
+					}
+				}
+			});
+		});
+	</script> 
+		 <div id="side">
      <div class="side_nr">
 	 <div class="side_nr_l">
 	  <div class="clear"></div>

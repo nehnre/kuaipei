@@ -63,7 +63,7 @@ class AdminActivityCommentAction extends Action
 		$result = $vactivity_comment -> where($condition) -> find();
 		if(empty($result)){
 				$json["success"] = false;
-				$json["msg"] = "原密码不正确！";
+				$json["msg"] = "未查到该记录详情，可能由于网络或数据库原因";
 		}else{
 				$json["success"] = true;
 				$json["msg"] = $result["content"];

@@ -46,6 +46,12 @@
 				}
 			});
 		});
+		function del(id){
+			if(id && confirm("确定要删除这条记录吗？")){
+				location.href = "deleteMessage?id=" + id;
+				try{window.event.returnValue=false;}catch(e){}
+			}
+		}
 	</script>
 </head>
 <body>
@@ -89,7 +95,7 @@
 											<td class="lbtxt1" width="100">{$vo.sender_name}</td>
 											<td class="lbtxt1" width="350"><a href="/Message/messageDetail?id={$vo.id}"><span <eq name="vo.read_status" value="未读">  style="font-weight:bold;"</eq> >{$vo.title}</span></a></td>
 											<td class="lbtxt1" width="200">{$vo.insert_time}</td>
-											<td class="lbtxt1"><a href="#">删除</a></td>
+											<td class="lbtxt1"><a href="javascript:;" onclick="del('{$vo.id}')">删除</a></td>
 										</tr>
 									</tbody>
 								</table>

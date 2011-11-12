@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-11-11 00:18:40
+Date: 2011-11-12 21:03:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,6 +41,7 @@ CREATE TABLE `kp_activity` (
   `status` varchar(50) DEFAULT NULL,
   `create_user_id` int(11) DEFAULT NULL,
   `insert_time` datetime DEFAULT NULL,
+  `seq` int(11) DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
@@ -48,11 +49,11 @@ CREATE TABLE `kp_activity` (
 -- ----------------------------
 -- Records of kp_activity
 -- ----------------------------
-INSERT INTO `kp_activity` VALUES ('34', '抽奖活动', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '', '', null, '', null, '2011-10-12', '2011-10-30', '4e9598e8c5dfc.jpg', '4e9598e8c6d9e.jpg', '4e9598e8c7d3b.jpg', '4e9598e8c94a8.jpg', null, null, '已发布', '0', '2011-10-12 21:40:56', '2011-10-31 21:50:03');
-INSERT INTO `kp_activity` VALUES ('35', '抽奖活动', '汽车加油卡抽奖活动', '上海大众公司', '活动性质：公益\r\n活动类别：抽奖', '所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网', '', '', null, '', null, '2011-10-12', '2011-10-14', '4e9599975b317.jpg', '4e9599975c2b6.jpg', '4e9599975d257.jpg', '4e9eb321a4593.jpg', null, null, '已发布', '0', '2011-10-12 21:43:51', '2011-10-31 21:49:22');
-INSERT INTO `kp_activity` VALUES ('36', '抽奖活动', '活动标题', '主办方', '活动介绍', '活动说明', 'sdfsdf', '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\"><span style=\"background-color:#e53333;\">相关产</span>品</span>', null, '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\">牌故事</span>', null, '2011-10-19', '2011-10-30', null, null, null, '4e9ee41a31590.jpg', null, null, '已发布', '0', '2011-10-19 22:52:10', '2011-10-31 21:48:56');
-INSERT INTO `kp_activity` VALUES ('37', '抽奖活动', 'sdfsdf', 'sdf', 'sdfsd', 'sdfsd活动说', '<i><span style=\"background-color:#e56600;\">金金金金金222222222222222222金金金金金金<img src=\"/kindeditor/attached/image/20111022/20111022042219_87950.jpg\" alt=\"\" /></span></i>', '', null, '', null, '2011-10-19', '2011-11-04', null, null, null, '4ea245819f867.jpg', '4ea246c5a51c8.png', '中国,哈哈,我们', '已发布', '0', '2011-10-19 22:55:43', '2011-10-31 22:03:40');
-INSERT INTO `kp_activity` VALUES ('38', '抽奖活动', '', '', '', '', '<span style=\"background-color:#e53333;\">asdasdasdas</span>', null, null, null, null, '0000-00-00', '0000-00-00', null, null, null, null, null, null, '预览', '0', '2011-10-22 12:38:54', '2011-10-22 12:38:54');
+INSERT INTO `kp_activity` VALUES ('34', '免费试用', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '', '', null, '', null, '2011-10-12', '2011-10-30', '4e9598e8c5dfc.jpg', '4e9598e8c6d9e.jpg', '4e9598e8c7d3b.jpg', '4e9598e8c94a8.jpg', null, '我们,的家', '已发布', '0', '2011-10-12 21:40:56', '10', '2011-11-12 21:02:17');
+INSERT INTO `kp_activity` VALUES ('35', '免费试用', '汽车加油卡抽奖活动', '上海大众公司', '活动性质：公益\r\n活动类别：抽奖', '所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网', '', '', null, '', null, '2011-10-12', '2011-10-14', '4e9599975b317.jpg', '4e9599975c2b6.jpg', '4e9599975d257.jpg', '4e9eb321a4593.jpg', null, '志向,远大', '已发布', '0', '2011-10-12 21:43:51', '0', '2011-11-12 21:02:32');
+INSERT INTO `kp_activity` VALUES ('36', '抽奖活动', '活动标题', '主办方', '活动介绍', '活动说明', 'sdfsdf', '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\"><span style=\"background-color:#e53333;\">相关产</span>品</span>', null, '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\">牌故事</span>', null, '2011-10-19', '2011-10-30', null, null, null, '4e9ee41a31590.jpg', null, null, '已发布', '0', '2011-10-19 22:52:10', null, '2011-10-31 21:48:56');
+INSERT INTO `kp_activity` VALUES ('37', '抽奖活动', 'sdfsdf', 'sdf', 'sdfsd', 'sdfsd活动说', '<i><span style=\"background-color:#e56600;\">金金金金金222222222222222222金金金金金金<img src=\"/kindeditor/attached/image/20111022/20111022042219_87950.jpg\" alt=\"\" /></span></i>', '', null, '', null, '2011-10-19', '2011-11-04', null, null, null, '4ea245819f867.jpg', '4ea246c5a51c8.png', '中国,哈哈,我们', '已发布', '0', '2011-10-19 22:55:43', null, '2011-10-31 22:03:40');
+INSERT INTO `kp_activity` VALUES ('38', '抽奖活动', '', '', '', '', '<span style=\"background-color:#e53333;\">asdasdasdas</span>', null, null, null, null, '0000-00-00', '0000-00-00', null, null, null, null, null, null, '预览', '0', '2011-10-22 12:38:54', null, '2011-10-22 12:38:54');
 
 -- ----------------------------
 -- Table structure for `kp_activity_comment`
@@ -206,16 +207,16 @@ CREATE TABLE `kp_message` (
   `read_status` varchar(50) DEFAULT NULL COMMENT '未读，已读',
   `insert_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_message
 -- ----------------------------
-INSERT INTO `kp_message` VALUES ('2', '111', '11', '1216', '1216', '普通', '普通', '已读', '2011-11-09 23:16:04');
-INSERT INTO `kp_message` VALUES ('3', '222', '222', '1217', '1215', '普通', '普通', '已读', '2011-11-09 23:19:03');
-INSERT INTO `kp_message` VALUES ('4', 'adasd', 'dafsd', '1217', '1215', '普通', '普通', '已读', '2011-11-09 23:34:32');
-INSERT INTO `kp_message` VALUES ('5', '你好，这是一封测试消息', '你好：\r\n这是一封测试消息', '1215', '1217', '普通', '普通', '已读', '2011-11-09 23:42:10');
-INSERT INTO `kp_message` VALUES ('6', '你好，这是第二封', '第二封邮件，哈哈', '1215', '1217', '普通', '普通', '已读', '2011-11-09 23:43:07');
+INSERT INTO `kp_message` VALUES ('3', '222', '222', '1217', '1215', '普通', '普通', '未读', '2011-11-09 23:19:03');
+INSERT INTO `kp_message` VALUES ('4', 'adasd', 'dafsd', '1217', '1215', '删除', '普通', '未读', '2011-11-09 23:34:32');
+INSERT INTO `kp_message` VALUES ('5', '你好，这是一封测试消息', '你好：\r\n这是一封测试消息', '1215', '1217', '普通', '普通', '未读', '2011-11-09 23:42:10');
+INSERT INTO `kp_message` VALUES ('6', '你好，这是第二封', '第二封邮件，哈哈第二封邮件，哈哈第二封邮件，哈哈第二封邮件，哈哈第二封邮件，哈哈第二封邮件，哈哈第二封邮件，哈哈第二封邮件，哈哈', '1215', '1217', '普通', '删除', '已读', '2011-11-09 23:43:07');
+INSERT INTO `kp_message` VALUES ('7', '11111', '11', '1', '1217', '普通', '普通', '已读', '2011-11-12 20:40:27');
 
 -- ----------------------------
 -- Table structure for `kp_pic_news`
@@ -269,23 +270,23 @@ CREATE TABLE `kp_table_tags` (
   `table_name` varchar(50) DEFAULT NULL,
   `table_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_table_tags
 -- ----------------------------
 INSERT INTO `kp_table_tags` VALUES ('35', '17', 'kp_activity', '36');
 INSERT INTO `kp_table_tags` VALUES ('36', '18', 'kp_activity', '36');
-INSERT INTO `kp_table_tags` VALUES ('37', '19', 'kp_activity', '35');
-INSERT INTO `kp_table_tags` VALUES ('38', '20', 'kp_activity', '35');
-INSERT INTO `kp_table_tags` VALUES ('46', '21', 'kp_activity', '34');
-INSERT INTO `kp_table_tags` VALUES ('47', '22', 'kp_activity', '34');
 INSERT INTO `kp_table_tags` VALUES ('48', '14', 'kp_activity', '37');
 INSERT INTO `kp_table_tags` VALUES ('49', '18', 'kp_activity', '37');
 INSERT INTO `kp_table_tags` VALUES ('50', '21', 'kp_activity', '37');
 INSERT INTO `kp_table_tags` VALUES ('51', '14', 'kp_information_column', '18');
 INSERT INTO `kp_table_tags` VALUES ('52', '23', 'kp_information_column', '18');
 INSERT INTO `kp_table_tags` VALUES ('53', '24', 'kp_information_column', '33');
+INSERT INTO `kp_table_tags` VALUES ('54', '21', 'kp_activity', '34');
+INSERT INTO `kp_table_tags` VALUES ('55', '22', 'kp_activity', '34');
+INSERT INTO `kp_table_tags` VALUES ('56', '19', 'kp_activity', '35');
+INSERT INTO `kp_table_tags` VALUES ('57', '20', 'kp_activity', '35');
 
 -- ----------------------------
 -- Table structure for `kp_tags`
@@ -373,7 +374,7 @@ CREATE TABLE `kp_user` (
 -- ----------------------------
 INSERT INTO `kp_user` VALUES ('1215', '18602123503', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre', 'nehnre@yahoo.com.cn', '', '厂商', '外资', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ea8260cdf4df.jpg', '', '', '', '', '', '', '0000-00-00 00:00:00', '2011-10-31 20:14:00', '2011-10-20 21:40:00', '2011-10-31 20:20:00');
 INSERT INTO `kp_user` VALUES ('1216', '18602123502', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre1', 'nehnreyahoo.com.cn', null, '经销商', '代理', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ebb247a5a35c.jpg', '', '', '', '', '', '', null, '2011-10-31 20:14:11', '2011-10-20 21:40:35', '2011-11-10 09:16:54');
-INSERT INTO `kp_user` VALUES ('1217', '13585801360', '96e79218965eb72c92a549dd5a330112', '昵称', null, null, null, null, null, null, null, null, null, null, null, '基本注册', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '', '', null, null, '2011-11-10 21:59:39', '2011-11-10 21:59:39');
+INSERT INTO `kp_user` VALUES ('1217', '13585801360', '96e79218965eb72c92a549dd5a330112', '昵称', '', null, '车主', '商用车', '222', '1', '1991-11-13', '', '', '', '', '已审核', null, '天津市', '天津市', '222222', null, null, null, null, null, null, '', '22', '22', '', '', '', '', null, null, '2011-11-10 21:59:39', '2011-11-11 10:04:41');
 
 -- ----------------------------
 -- Table structure for `kp_userlog`
@@ -387,7 +388,7 @@ CREATE TABLE `kp_userlog` (
   `act_describ` varchar(200) DEFAULT NULL,
   `insert_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_userlog
@@ -465,6 +466,10 @@ INSERT INTO `kp_userlog` VALUES ('112', '1216', 'kp_user', '1216', '登录一次
 INSERT INTO `kp_userlog` VALUES ('113', '1215', 'kp_user', '1215', '登录一次', '2011-11-09 23:34:51');
 INSERT INTO `kp_userlog` VALUES ('114', '1216', 'kp_user', '1216', '登录一次', '2011-11-09 23:43:28');
 INSERT INTO `kp_userlog` VALUES ('115', '1216', 'kp_user', '1216', '登录一次', '2011-11-10 09:05:48');
+INSERT INTO `kp_userlog` VALUES ('116', '1217', 'kp_user', '1217', '登录一次', '2011-11-11 10:01:34');
+INSERT INTO `kp_userlog` VALUES ('117', '1217', 'kp_user', '1217', '登录一次', '2011-11-11 16:52:57');
+INSERT INTO `kp_userlog` VALUES ('118', '1217', 'kp_user', '1217', '登录一次', '2011-11-12 17:11:55');
+INSERT INTO `kp_userlog` VALUES ('119', '1', 'kp_admin_user', '1', '登录一次', '2011-11-12 17:38:27');
 
 -- ----------------------------
 -- View structure for `kp_vactivity_comment`
@@ -482,7 +487,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- View structure for `kp_vmessage`
 -- ----------------------------
 DROP VIEW IF EXISTS `kp_vmessage`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vmessage` AS select `t1`.`id` AS `id`,`t1`.`title` AS `title`,`t1`.`content` AS `content`,`t1`.`sender_id` AS `sender_id`,`t1`.`recever_id` AS `recever_id`,`t1`.`send_status` AS `send_status`,`t1`.`receve_status` AS `receve_status`,`t1`.`read_status` AS `read_status`,`t1`.`insert_time` AS `insert_time`,`t2`.`user_name` AS `sender_name`,`t2`.`true_name` AS `sender_true_name`,`t3`.`user_name` AS `recever_name`,`t3`.`true_name` AS `recever_true_name` from ((`kp_message` `t1` join `kp_user` `t2`) join `kp_user` `t3`) where ((`t1`.`sender_id` = `t2`.`id`) and (`t1`.`recever_id` = `t3`.`id`));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vmessage` AS select `t1`.`id` AS `id`,`t1`.`title` AS `title`,`t1`.`content` AS `content`,`t1`.`sender_id` AS `sender_id`,`t1`.`recever_id` AS `recever_id`,`t1`.`send_status` AS `send_status`,`t1`.`receve_status` AS `receve_status`,`t1`.`read_status` AS `read_status`,`t1`.`insert_time` AS `insert_time`,`t2`.`user_name` AS `sender_name`,`t2`.`true_name` AS `sender_true_name`,`t3`.`user_name` AS `recever_name`,`t3`.`true_name` AS `recever_true_name` from ((`kp_message` `t1` join `kp_user` `t2`) join `kp_user` `t3`) where ((`t1`.`sender_id` = `t2`.`id`) and (`t1`.`recever_id` = `t3`.`id`)) union select `t4`.`id` AS `id`,`t4`.`title` AS `title`,`t4`.`content` AS `content`,`t4`.`sender_id` AS `sender_id`,`t4`.`recever_id` AS `recever_id`,`t4`.`send_status` AS `send_status`,`t4`.`receve_status` AS `receve_status`,`t4`.`read_status` AS `read_status`,`t4`.`insert_time` AS `insert_time`,`t5`.`user_name` AS `sender_name`,'系统管理员' AS `sender_true_name`,`t6`.`user_name` AS `recever_name`,`t6`.`true_name` AS `recever_true_name` from ((`kp_message` `t4` join `kp_admin_user` `t5`) join `kp_user` `t6`) where ((`t4`.`sender_id` = `t5`.`id`) and (`t4`.`recever_id` = `t6`.`id`));
 
 -- ----------------------------
 -- View structure for `kp_vsearch`

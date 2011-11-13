@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=gbk" />
+	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<title>活动列表</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+    <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Message/adminMessage.js"></script>
+	<script>
+		function del(id){
+			if(id && confirm("确定要删除这条记录吗？")){
+				location.href = "deleteAdminMessage?id=" + id;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form method="get" action="adminMessageList">
+	<table border="0" class="table" cellpadding="0" cellspacing="0"  >
+		<tr >
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_01.jpg" alt=""/>
+			</td>
+			<td class="navigation_middle" >
+				您现在的位置： 短消息管理 》短消息列表
+			</td>
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_03.jpg" alt=""></img>
+			</td>
+		</tr>
+	</table>
+	
+	<table cellpadding="0" cellspacing="0" class="table" border="0" style="padding-bottom: 5px;padding-top: 5px" >
+		<tr>
+			<td style="width:250px;">
+				消息标题：<input type="text" style="width:150px;" name="title" value="{$Think.request.title}"/>
+			</td>
+			<td style="width:250px;">
+				发件人：<input type="text" style="width:150px;" name="sender_name" value="{$Think.request.sender_name}"/>
+			</td>
+			<td style="width:250px;">
+				收件人：<input type="text" style="width:150px;" name="recever_name" value="{$Think.request.recever_name}"/>
+			</td>
+			<td>
+				<input type="submit" value=" 查 询 " id="btnSearch" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+			</td>
+		</tr>
+	</table>
+	<table class="its" cellspacing="1" id="ufile" border="0">
+		<tr>
+			<th nowrap="nowrap">
+				消息标题
+			</th>
+			<th nowrap="nowrap">
+				发件人
+			</th>
+			<th nowrap="nowrap">
+				收件人
+			</th>
+			<th nowrap="nowrap">
+				消息内容
+			</th>
+			<th nowrap="nowrap">
+				发件时间
+			</th>
+
+			<th nowrap="nowrap">
+				操作
+			</th>
+		</tr>
+		<!-- odd even-->
+		
+		<volist name='list' id='vo' > 
+			<if condition="$i%2==1">
+			<tr class="odd">
+			<else />
+			<tr class="even">
+			</if>
+				<td>{$vo.title}</td>
+				<td>{$vo.sender_name}</td>
+				<td>{$vo.recever_name}</td>
+				<td><lt name="vo.content|strip_tags|mb_convert_encoding='auto','UTF-8'|mb_strlen" value="20">{$vo.content}<else/><a href="javascript:;"  onclick="show({$vo.id})">{$vo.content|strip_tags|mb_substr=0,20,'utf-8'}...</a></lt></td>
+				<td>{$vo.insert_time} </td>
+				<td> <a href="javascript:;" onclick="del('{$vo.id}')">删除</a></td>
+			</tr>
+		</volist>
+		<tr class="odd"><td colspan="6" align="right">{$foot}</td></tr>
+	</table>
+	</form>
+</body>
+<div id="messageContent" title="短消息详情" style="margin:20px 20px 20px 20px">
+</div>
+</html>

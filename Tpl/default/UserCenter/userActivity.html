@@ -64,7 +64,7 @@
 	    <tr>
 		<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:12px;float:left;"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank"  >{$vo.title}</div></td>
 		<td class="lbtxt1"   width="250"><div style="height:37px;overflow:hidden;font-size:12px;float:left;">{$vo.sponsor}</td>
-		<td class="lbtxt5" width="150"><php>echo date("Y年m月d日", strtotime($vo["inter_time"]))</php></td>
+		<td class="lbtxt5" width="150"><php>echo date("Y年m月d日", strtotime($vo["insert_time"]))</php></td>
 	    </tr>
         </table>
 		</div>

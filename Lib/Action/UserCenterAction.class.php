@@ -19,7 +19,24 @@ class UserCenterAction extends Action
 		$this->assign('list',$list); 
 		$this->assign('foot',$foot);
 		$this -> display();
+	}
 
+	public function  userActivityComment() {
+		if(!Session::is_set("id")){
+			header("Content-type: text/html; charset=utf-8");
+			echo '<script>location.href="/";try{window.event.returnValue=false; }catch(e){}</script>';
+			return;
+		}
+		$condition["user_id"]  = Session::get("id");
+		$vactivity_comment = M("vactivity_comment");
+		$count = $vactivity_comment -> where($condition) -> count();
+		import("ORG.Util.Page");
+		$Page = new Page($count, 10);
+		$foot = $Page -> show();
+		$list = $vactivity_comment -> where($condition) -> order('insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+		$this->assign('list',$list); 
+		$this->assign('foot',$foot);
+		$this -> display();
 	}
 
 	public function  checkPassword() {

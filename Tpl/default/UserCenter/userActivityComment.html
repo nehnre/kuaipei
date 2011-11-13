@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/userCenter.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/niceform/niceforms.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+		<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/passwordstrength.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/UserCenter/editPassword.js"></script>
+	<title>活动评论记录——立配网</title>
+	<script type="text/javascript">
+		$(function(){
+			$(".menu_container div").each(function(){
+				var className = $(this).attr("class");
+				className = className.replace(/1$/ig, "");
+				$(this).attr("class", className);
+			});
+			$(".menu_usercenter").removeClass("menu_usercenter").addClass("menu_usercenter1");
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<include file="./Tpl/default/Public/index_top.html" />
+		<div class="body">
+<div id="inw_bg" style="float:left;width:100%"><div class="clear"></div>
+ <div id="nr">
+   <div style="height:20px;"></div>
+    <div class="clear"></div>
+<include file="./Tpl/default/Public/left.html" />
+   <div id="main"><div class="main_nr">
+           <div style="line-height:19px;padding-bottom:7px;padding-left:7px;padding-right:7px"><span style="font-size:20px;font-weight:bold;font-family:arial;color:#666">评论记录</span></div>
+		<if condition="count($list) elt 0">
+				<div class="lb2 gray" style="text-align:center"><a href="/Activity/listIndexActivity" target="_blank"  >您还没有任何评论，请参加。</a></div>
+		<else />
+		<div class="lb1">
+				<div class="contentFloat">
+					<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+					<tr>
+					<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">活动名称</div></td>
+					<td class="lbtxt1" width="250"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">评论标题</div></td>
+					<td class="lbtxt1" width="150"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">参加时间</div></td>
+					</tr>
+					</table>
+	        	</div>
+		</div>
+			</if>
+
+	   <volist name='list' id='vo' > 
+       <if condition="$i%2==1">
+	    <div class="lb2">
+		<else />
+	    <div class="lb1">
+		</if>
+		<div class="contentFloat">
+		<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+	    <tr>
+		<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:12px;float:left;"><a href="/Activity/show?id={$vo.activity_id}" target="_blank"  >{$vo.activity_title}</div></td>
+		<td class="lbtxt1"   width="250"><div style="height:37px;overflow:hidden;font-size:12px;float:left;">{$vo.title}</td>
+		<td class="lbtxt5" width="150"><php>echo date("Y年m月d日", strtotime($vo["insert_time"]))</php></td>
+	    </tr>
+        </table>
+		</div>
+		</div>
+		</volist>
+		
+		<if condition="count($list)%2==1">
+		<div class="lb1" style="text-align:right;padding-right:10px;">
+		<else />
+		<div class="lb2" style="text-align:right;padding-right:10px;">
+		</if>
+			{$foot}
+		</div>
+
+		<div class="clear"></div>
+  
+   
+   
+   </div></div>
+  </div>
+  <div class="clear"></div>
+  </div>
+</div>
+	<div class="clear"></div>
+		</div>
+		<include file="./Tpl/default/Public/index_bottom.html" />  
+	</div>
+	<include file="./Tpl/default/Public/dialog.html" />  
+	<include file="./Tpl/default/Public/qq_dialog.html" />
+</body>
+</html>

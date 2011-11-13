@@ -20,6 +20,9 @@
 	<script type="text/javascript">
 		var _scroll_lock = false;
 		$(function(){
+			$("#searchInformationColumn").click(function(){
+					$("#searchWordForm").submit();
+			});
 			$(".menu_container div").each(function(){
 				var className = $(this).attr("class");
 				className = className.replace(/1$/ig, "");
@@ -68,6 +71,29 @@
 	<include file="./Tpl/default/Public/index_top.html" />
 	<div class="body">
 		<div class="align_center index_body">
+			<div class="clear"></div>
+			<form name="searchWordForm" id="searchWordForm" target="_blank"  method="get"  action="/Search/index">
+			<div class="search">
+				<div class="search_text gray">请输入要查询的内容</div>
+				<div class="search_form">
+					<div class="search_input"><input type="text" name="word" id="word"/></div>
+					<div class="search_btn"><input type="button" value=" 搜     索 " id="searchInformationColumn"/></div>
+				</div>
+			</div>
+			</form>
+			<div class="clear"></div>
+			<div class="category">
+				<div class="category_fenlei">分类</div>
+				<div class="category_fenlei_content">
+					<volist name="hot_tags" id="vo">
+					<a href="/Search/?tags={$vo.tag_name|urlencode}" class="black">{$vo.tag_name}</php></a><span class="red">({$vo.num})</span>
+					</volist>
+					<a href="#" class="black">热门促销</a><span class="red">(10)</span>
+					<a href="#" class="black">本月促销</a><span class="red">(10)</span>
+				</div>
+			</div>
+			<div class="clear"></div>
+
 			<div class="layer1" style="padding-top:20px;">
 				<div class="left">
 					<div class="promotion">

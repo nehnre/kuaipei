@@ -31,6 +31,19 @@ class AdminAction extends Action
         $this->display();
     }
 
+   public  function checkAdminUser(){
+   		if(!Session::is_set("systemId")){
+			$json["success"] = false;
+			$json["msg"] = "请您先登录";
+		}else{
+			$condition["id"] = Session::get("systemId");
+			$admin_user = M("admin_user");
+			$result = $admin_user -> where($condition) -> find();
+			$json["success"] = true;
+			$json["user_name"] = $result["user_name"];
+		}
+		$this -> ajaxReturn($json);
+   }
 	public function adminLogin(){
 		
 		$condition["user_name"] = $_REQUEST["user_name"];

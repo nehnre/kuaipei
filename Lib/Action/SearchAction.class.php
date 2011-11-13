@@ -13,7 +13,8 @@ class SearchAction extends Action
 		} else {
 			$tags = $_REQUEST["tags"];
 			if(!empty($tags)){
-				$map["tags"] = array('like',"%".$tags."%");;
+				$map["tags"] = array('like',"%".$tags."%");
+				$map["type"] = array('eq',"立配活动");;
 			}		
 		}
 		

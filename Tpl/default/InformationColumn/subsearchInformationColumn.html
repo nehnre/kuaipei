@@ -56,7 +56,7 @@
 ">{$vo.title}</a></td>
 		<td class="lbtxt1" width="100" align="center"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank
 ">{$vo.column}</a></td>
-		<td class="lbtxt5" width="100"><php>echo date("Y年m月d日", strtotime($vo["publish_time"]))</php></td>
+		<td class="lbtxt5" width="100"><php>echo date("Y年m月d日", strtotime($vo["user_publish_time"]))</php></td>
 	    </tr>
         </table>
 		</div>

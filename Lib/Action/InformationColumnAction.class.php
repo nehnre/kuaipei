@@ -100,13 +100,26 @@ class InformationColumnAction extends Action
 	
 
 	public function publishInformationColumn(){
-		$id = $_REQUEST["id"];
-		$informationColumn = M("information_column");
-		$data["status"] = "已发布";
-		$data["update_time"] = date("Y-m-d H:i:s");
-        $data["publish_time"] = date("Y-m-d H:i:s");
-		$informationColumn -> where("id=".$id) -> save($data);
-		echo '<script>alert("发布成功！");location.href="listInformationColumn";</script>';
+		$id = $_REQUEST["informationColumnId"];
+		$userPublishTime = $_REQUEST["userPublishTime"];
+		if(!empty($id)){
+			$informationColumn = M("information_column");
+			$data["status"] = "已发布";
+			$data["update_time"] = date("Y-m-d H:i:s");
+			$data["publish_time"] = date("Y-m-d H:i:s");
+			if(!empty($userPublishTime)){
+				$data["user_publish_time"] = date("Y-m-d H:i:s",strtotime($userPublishTime));
+			}else{
+				$data["user_publish_time"] = date("Y-m-d H:i:s");
+			}
+			$informationColumn -> where("id=".$id) -> save($data);
+			$json["msg"] = "发布成功！";
+			$json["success"] = true;
+		}else{
+			$json["msg"] = "发布失败！";
+			$json["success"] = false;
+		}
+		$this -> ajaxReturn($json);
 	}
 	
     /**

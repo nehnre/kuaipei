@@ -3,9 +3,15 @@
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=gbk" />
 	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
-	<title>活动列表</title>
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<title>资讯列表</title>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/InformationColumn/	listInformationColumn.js"></script>
+
 	<script>
 		function del(id){
 			if(id && confirm("确定要删除这条记录吗？")){
@@ -117,7 +123,7 @@
 				<if condition="$vo.status eq '已发布'">
 				<a href="javascript:;" onclick="canclePub('{$vo.id}')">取消发布</a> 
 				<else />
-				<a href="javascript:;" onclick="pub('{$vo.id}')">发布资讯</a> 
+				<a href="javascript:;" onclick="show('{$vo.id}')">发布资讯</a> 
 				</if>  </td>
 			</tr>
 		</volist>
@@ -125,5 +131,12 @@
 	</table>
 	</form>
 </body>
-
+	<include file="./Tpl/default/Public/dialog.html" />  
+<div id="AddpublishTime" title="填写发布时间" style="margin:20px 20px 20px 20px">
+<form id="myForm">
+<input name='informationColumnId' id='informationColumnId'  type="hidden">
+<input name='userPublishTime' id='userPublishTime' type='text' readonly><br>
+<input type="button" value="发布资讯" id="btnInformationColumn"/>
+</form>
+</div>
 </html>

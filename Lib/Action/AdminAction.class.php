@@ -12,6 +12,16 @@ class AdminAction extends Action
 			  header("Content-type: text/html; charset=utf-8");
 		      echo '<script>location.href="Admin/loginInit";try{window.event.returnValue=false; }catch(e){}</script>';
 		}else{
+			$condition["id"] = Session::get("systemId");
+			$admin_user = M("admin_user");
+			$result = $admin_user -> where($condition) -> find();
+			if($result["user_name"] != 'admin'){
+				    $menu = ',资讯管理,图片资讯';
+					$this -> assign("menu", $menu);
+			}else{
+				   $menu = ',系统管理,活动管理,用户管理,评论管理,资讯管理,短消息管理,图片资讯,导出数据';
+					$this -> assign("menu", $menu);
+			}
 			 $this->display();
 		}
     }

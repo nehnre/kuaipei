@@ -99,7 +99,9 @@
 			<tr>
 				<td valign="top" align="left" width="242" height="100%">
 					<div class="menu">
-								<ul id="parentUL" class="ui-accordion-container">						
+
+								<ul id="parentUL" class="ui-accordion-container">			
+								<if condition="strripos($menu,'系统管理')">
 										<li id="XTGL-" class="catalog" style="display: block">
 											<a  href="javascript:ShowCatalog(1)" class="ui-accordion-link">系统管理</a>						
 												<ul class="subCatalog" id="catalog_1">												
@@ -108,6 +110,8 @@
 													</li>
 												 </ul>
 										</li>
+                                </if>
+								<if condition="strripos($menu,'活动管理')">
 										<li id="GSBGL-" class="catalog" style="display: block">
 											<a  href="javascript:ShowCatalog(2)" class="ui-accordion-link">活动管理</a>	
 													<ul class="subCatalog" id="catalog_2">
@@ -119,6 +123,8 @@
 														</li>
 												     </ul>
 										</li>
+									</if>
+									<if condition=" strripos($menu,'用户管理')">
 										<li id="GSBGL-" class="catalog" style="display: block">
 											<a  href="javascript:ShowCatalog(3)" class="ui-accordion-link">用户管理</a>	
 													<ul class="subCatalog" id="catalog_3">
@@ -130,6 +136,8 @@
 														</li>												
 												     </ul>
 										</li>
+										</if>
+                                    <if condition=" strripos($menu,'评论管理')">
 										<li id="GSBGL-" class="catalog" style="display: block">
 											<a  href="javascript:ShowCatalog(4)" class="ui-accordion-link">评论管理</a>	
 													<ul class="subCatalog" id="catalog_4">
@@ -138,6 +146,8 @@
 														</li>											
 												     </ul>
 										</li>
+										</if>
+                                <if condition=" strripos($menu,'资讯管理')">
 										<li id="GSBGL-" class="catalog" style="display: block">
 											<a  href="javascript:ShowCatalog(5)" class="ui-accordion-link">资讯管理</a>	
 													<ul class="subCatalog" id="catalog_5">
@@ -149,6 +159,8 @@
 														</li>
 												     </ul>
 										</li>
+									</if>
+									 <if condition=" strripos($menu,'短消息管理') ">
 										<li id="GSBGL-" class="catalog" style="display: block">
 											<a  href="javascript:ShowCatalog(6)" class="ui-accordion-link">短消息管理</a>	
 													<ul class="subCatalog" id="catalog_6">
@@ -160,6 +172,8 @@
 														</li>
 												     </ul>
 										</li>
+									</if>
+									 <if condition=" strripos($menu,'图片资讯')">
 										<li id="GSBGL-图片资讯" class="catalog" style="display: block">
 											<a  href="javascript:ShowCatalog(7)" class="ui-accordion-link">图片资讯</a>	
 											<ul class="subCatalog" id="catalog_7">
@@ -171,6 +185,8 @@
 												</li>
 											 </ul>
 										</li>
+										</if>
+	                                <if condition=" strripos($menu,'导出数据')">
 										<li id="GSBGL-" class="catalog" style="display: block">
 											<a  href="javascript:ShowCatalog(8)" class="ui-accordion-link">导出数据</a>	
 													<ul class="subCatalog" id="catalog_8">
@@ -185,6 +201,7 @@
 														</li>
 												     </ul>
 										</li>
+									</if>
 								</ul>
 					</div>
 				</td>

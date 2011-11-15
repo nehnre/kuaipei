@@ -277,7 +277,7 @@ class AdminUserAction extends Action
 						continue;
 					}
 				}
-				
+				$User -> link_man = trim($csv->f('姓名')); 
 				$User -> province = trim($csv->f('省')); 
 				$User -> city = trim($csv->f('市')); 
 				$User -> post_code = trim($csv->f('邮政编码'));

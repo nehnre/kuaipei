@@ -5,10 +5,16 @@ class InformationColumnAction extends Action
 
 	public function canclePublishInformationColumn(){
 		$id = $_REQUEST["id"];
+		$p = $_REQUEST["p"];
 		$InformationColumn = M("information_column");
 		$data["status"] = "未发布";
 		$InformationColumn -> where("id=".$id) -> save($data);
-		echo '<script>alert("取消成功！");location.href="listInformationColumn";</script>';
+		if(!empty($p)){
+				echo '<script>alert("取消成功！");location.href="listInformationColumn?p='.$p.'";</script>';
+		}else{
+		        echo '<script>alert("取消成功！");location.href="listInformationColumn";</script>';
+		}
+		
 	}
 
     /**

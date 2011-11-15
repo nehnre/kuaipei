@@ -775,3 +775,40 @@ a:hover{
 	line-height:40px;
 }
 .hidden .ui-dialog-titlebar .ui-dialog-titlebar-close{display:none;}
+
+#back_html_top {
+	position: relative; width: 11px; height: 93px; cursor: pointer;background: url(../images/roll.png) no-repeat
+}
+#back_html_bottom{
+	position: relative; width: 11px; height: 93px; cursor: pointer;background: url(../images/roll.png) no-repeat 0px -146px
+}
+#ct {
+	position: relative; width: 11px; height: 53px; cursor: pointer;background: url(../images/roll.png) no-repeat 0px -93px
+}
+#back_top{
+	position: fixed; 
+	width: 15px; 
+	display: block; 
+	top: 33%;
+	left:50%;
+	margin-left:490px;
+	_margin-left: 490px;
+	_position: absolute;
+	_margin-top: 180px
+}
+
+.backToTop {
+    display: none;
+    width: 18px;
+    line-height: 1.2;
+    padding: 5px 0;
+    font-size: 12px;
+    text-align: center;
+    position: fixed;
+    _position: absolute;
+    right: 10px;
+    bottom: 100px;
+    _bottom: "auto";
+    cursor: pointer;
+    opacity: .6;
+}

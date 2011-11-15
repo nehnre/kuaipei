@@ -2,23 +2,7 @@ $(document).ready(function(){
     				ShowCatalog(0);
     			//	var h=$(window).height()-88-25;
   				//   $("div.content").css("height",h);
-  				 $.ajax({
-						url:"/Admin/checkAdminUser",
-						type: "post",
-						success: function(json){
-							json = nehnre.parseJSON(json);
-							if(json.data.success){
-											if(json.data.user_name!="admin"){
-													var text = $(".catalog:contains('资讯管理')");
-													var text1 = $(".catalog:contains('图片资讯')");
-                                                    $("#parentUL").empty();
-													$("#parentUL").append(text).append(text1);	
-											}
-							}else{
-								showAlert(json.data.msg);
-							}
-						}
-				 });
+
   				var today=new Date();
 				var hour=today.getHours();
 				var year=today.getFullYear();

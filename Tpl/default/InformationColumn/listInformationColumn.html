@@ -26,8 +26,9 @@
 			}
 		}
 		function canclePub(id){
+			var p = "{$Think.request.p}";
 			if(id){
-				location.href = "canclePublishInformationColumn?id=" + id;
+				location.href = "canclePublishInformationColumn?id=" + id+"&p="+p;
 				try{window.event.returnValue=false;}catch(e){}
 			}
 		}

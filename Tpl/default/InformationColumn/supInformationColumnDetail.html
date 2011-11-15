@@ -43,7 +43,7 @@
                     <div class="help_right_content">
 						<div class="help_right_content_title">{$result.title}</div>
 						<div class="hr"></div>
-						<div class="help_right_content_time"><p><span><php>echo date("Y年m月d日", strtotime($result["user_publish_time"]))</php></span><if condition="!empty($result['source']) ">&nbsp;&nbsp;&nbsp;&nbsp;<span>来源：
+						<div class="help_right_content_time"><p><span><php>if(empty($result["user_publish_time"])) echo date("Y年m月d日", strtotime($result["publish_time"])); else echo date("Y年m月d日", strtotime($result["user_publish_time"])); </php></span><if condition="!empty($result['source']) ">&nbsp;&nbsp;&nbsp;&nbsp;<span>来源：
 {$result.source}</span></if><if condition="!empty($result['author']) ">&nbsp;&nbsp;&nbsp;&nbsp;<span>作者：
 {$result.author}</span></if><if condition="!empty($result['editor']) ">&nbsp;&nbsp;&nbsp;&nbsp;<span>编辑：
 {$result.editor}</span></if><p></div>

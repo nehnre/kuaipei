@@ -24,6 +24,11 @@
 				$(this).attr("class", className);
 			});
 			$(".menu_activity").removeClass("menu_activity").addClass("menu_activity1");
+			var storage_import_flag = nehnre.storage.get("storage_import_flag");
+			if(storage_import_flag==1){
+				   $("#btnJoin").click();
+					nehnre.storage.del("storage_import_flag");
+			}
 		});
 	</script>
 <body>

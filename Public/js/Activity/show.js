@@ -1,4 +1,5 @@
 $(function(){
+
 	$( "#dialog-comment" ).dialog({
 		height: 400,
 		width: 600,
@@ -72,6 +73,7 @@ $(function(){
 		if(unlogin){
 			$("#login").click();
 		} else if("导入" == import_flag && status == "基本注册"){
+			nehnre.storage.set("storage_import_flag", "1");
 			showAlert("为了让您更好得参与活动，并且为了给您提供更优质的服务，请完善您的认证信息。<a href='javascript:;' onclick='reg()' style='text-decoration:underline;color:#ce0000'>立即完善</a>");
 		} else if(status == "基本注册"){
 			showAlert("很遗憾！您目前仅是注册会员，成为认证会员才能参加活动。<a  href='javascript:;' onclick='reg()' style='text-decoration:underline;color:#ce0000'>立即升级</a>");

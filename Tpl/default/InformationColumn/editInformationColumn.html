@@ -103,7 +103,7 @@
 			</tr>
 			<tr class="odd">
 				<td  align="right"><span class="red">*</span>文章显示排序：</td>
-				<td  align="left"><input type="text" style="width:80%" name="seq" id="seq" value="{$result.seq}"/></td>
+				<td  align="left"><input type="text" style="width:80%" name="seq" id="seq"   <if condition="!empty($result['seq'])"> value="{$result.seq}"<else /> value="99" </if>/></td>
 			</tr>
 			<tr  class="odd">
 				<td colspan="2">

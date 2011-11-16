@@ -225,7 +225,7 @@ class InformationColumnAction extends Action
             //s$pagep = new PhptdPage($count,10); // 实例化分页类
 			//$foot = $pagep->showPage($setPage);
 			$foot = $Page -> show();
-			$list = $informationColumn -> where($condition) -> order('seq  desc,update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+			$list = $informationColumn -> where($condition) -> order('user_publish_time desc,update_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
 			$this->assign('list',$list); 
 			$this->assign('foot',$foot);
 			

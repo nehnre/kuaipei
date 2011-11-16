@@ -491,3 +491,14 @@ h3 {
 	height:24px;
 	overflow:hidden;
 }
+.hr{
+	border-bottom:1px solid gray;
+	margin:10px 0 10px 0;
+}
+.help_right_content_time p{
+color:#777;
+}
+.help_right_content_time p span{
+ margin:0px 5px;
+ font-family:"宋体"; 
+}

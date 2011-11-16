@@ -260,6 +260,23 @@ class InformationColumnAction extends Action
 				$result = $InformationColumn -> where($condition) -> find();
 				if(!empty($result)){
 					$this -> assign("result", $result);
+					$search_tags  = $result['search_tags'];
+					if(!empty($search_tags)){
+                        $i = 0;
+						$arrTags = explode(",",str_replace("，","," ,$search_tags));
+						foreach($arrTags as $tag){
+							$tag = trim($tag);
+							$array[$i ] =array("like", "%".$tag."%"); 
+							$i ++;
+						}
+						$array[$i] = 'or';
+					}
+				    $map['search_tags'] =$array;
+					$map['id']  = array(array('neq',$result['id'])); 
+					$InformationColumn1 = M("information_column");
+		            $list = $InformationColumn1 -> where($map) -> order('seq  desc,insert_time desc') -> limit(5) -> select();
+		            $this -> assign("list", $list);
+
 					$this->display();
 				} else {
 					$this -> error("文章不存在或未发布！");

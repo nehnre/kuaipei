@@ -6,7 +6,7 @@
 	<meta name="description" content="立配网是国内汽配行业特有的以促销为手段的垂直网络营销平台。我们致力于推动汽车产品替换市场对规格、质量、声誉及品牌的一手买卖资讯，让消费者享用到更多优质优价的产品；我们积极帮助汽配企业创造机遇，做汽车后市场最给力的营销网站。" />
 	<link rel="stylesheet" href="__PUBLIC__/css/common.css" type="text/css" media="screen" /> 
 	<link rel="stylesheet" href="__PUBLIC__/css/index.css" type="text/css" media="screen" /> 
-	<link rel="stylesheet" href="__PUBLIC__/css/informationColumn.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/informationColumnNew.css" type="text/css" media="screen" /> 
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.6.1.js"></script>
 	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
@@ -53,6 +53,45 @@
             </div>
             <div class="clear"></div>
         </div>
+
+<div id="inw_bg" style="width: 100%; float: left; padding-top:20px;">
+		<div class="clear"></div>
+		<div id="nr">
+				<div class="column">
+					<div class="column_nr">
+						<div class="colum_title">
+							<div class="tab">相关搜索</div>
+						</div>
+					</div>
+				</div>
+
+			   <div class="main"><div class="main_nr">	
+					<if condition="count($list) elt 0">
+							<div class="lb2 gray" style="text-align:center">没有找到相关数据</div>
+						</if>
+				   <volist name='list' id='vo' > 
+				   <if condition="$i%2==1">
+					<div class="lb2">
+					<else />
+					<div class="lb1">
+					</if>
+					<div class="contentFloat">
+					<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+					<tr>
+					<td class="lbtxt1"><div style="width:750px;height:37px;overflow:hidden;font-size:12px;float:left;"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank"><span style="font-weight:bold;">{$vo.title}</span><php>echo "：".strip_tags($vo["content"])</php></a></div>...</td>
+					<td class="lbtxt5" width="150"><php>if(empty($vo["user_publish_time"])) echo date("Y年m月d日", strtotime($vo["publish_time"])); else echo date("Y年m月d日", strtotime($vo["user_publish_time"])); </php></td>
+					</tr>
+					</table>
+					</div>
+					</div>
+					</volist>
+
+					<div class="clear"></div>
+			   </div></div>
+		
+		</div>
+</div>
+<div class="clear"></div>
     </div>
 	<include file="./Tpl/default/Public/index_bottom.html" />
 	<include file="./Tpl/default/Public/dialog.html" />  

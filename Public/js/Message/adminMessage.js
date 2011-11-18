@@ -28,8 +28,45 @@ $(function(){
 			});
 		}
 	});
+	
+	
+	//选择用户类型
+	$("#choose_type").change(function(){
+	    var choose_type = $("#choose_type").val();
+		if(choose_type =='用户名'){
+			$('#user_name').show();
+			$('#user_name_text').show();
+			$('#user_type').val('');
+			$('#user_status').hide();
+			$('#user_type').hide();
+			$('#user_status').val('');
+			$('#user_type').val('');
+            $('#user_status_text').hide();
+			$('#user_type_text').hide();
+		}else if(choose_type =='用户状态'){
+			$('#user_name').hide();
+			$('#user_name').val('');
+			$('#user_status').show();
+			$('#user_status_text').show();
+			$('#user_type').hide();
+			$('#user_type').val('');
+			$('#user_type_text').hide();
+			$('#user_name_text').hide();
+		}else if(choose_type =='用户分类'){
+			$('#user_name').hide();
+			$('#user_name').val('');
+			$('#user_status').hide();
+			$('#user_status').val('');
+			$('#user_type').show();
+			$('#user_type_text').show();
+			$('#user_name_text').hide();
+			$('#user_status_text').hide();
+		}
+
+	});
 
 });
+
 
 function show(id){
         showWaiting();
@@ -56,19 +93,31 @@ function show(id){
 
 //检测用户名
 function checkUserName(){
-	var user_name = $("#user_name").val();
-	user_name = $.trim(user_name);
-	if(!user_name){
-		showAlert("请先填写用户名！",function(){
-			$("#user_name").focus();
-		});
-		return false;
-	}
-	if(!nehnre.reg.mobile.test(user_name)){
-		showAlert("用户名不符合要求（必须为13位的手机号）！",function(){
-			$("#user_name").focus();
-		});
-		return false;
+	var choose_type = $("#choose_type").val();
+	if(choose_type =='用户名'){
+		var user_name = $("#user_name").val();
+		if(!user_name){
+			showAlert("请填写用户名",function(){
+				$("#user_name").focus();
+			});
+			return false;
+		}
+	}else if(choose_type =='用户状态'){
+		var user_status = $("#user_status").val();
+		if(!user_status){
+			showAlert("请选择用户状态",function(){
+				$("#user_status").focus();
+			});
+			return false;
+		}
+	}else if(choose_type =='用户分类'){
+		var user_type = $("#user_type").val();
+		if(!user_type){
+			showAlert("请选择用户分类",function(){
+				$("#user_type").focus();
+			});
+			return false;
+		}
 	}
 	return true;
 }

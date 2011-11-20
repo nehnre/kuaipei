@@ -8,7 +8,7 @@ class MessageAction extends Action{
 		$data["send_status"] = "删除";
 		$data["id"] =  $id;
 		$Message -> save($data);
-		echo '<script>alert("删除成功！");location.href="/Message/outbox.shtml";</script>';
+		echo '<script>alert("删除成功！");location.href="/Message/adminMessageList";</script>';
 	}
 
   //逻辑删除收件箱
@@ -194,6 +194,7 @@ class MessageAction extends Action{
 			if(!empty($recever_name)){
 				$condition["recever_name"] = array("like", "%".$recever_name."%"); 
 			}
+			$condition["send_status"] = "普通";
 
 			$count = $vmessage -> where($condition) -> count();
 			import("ORG.Util.Page");
@@ -225,7 +226,7 @@ class MessageAction extends Action{
 		 $this -> ajaxReturn($json);
 	}
 
-  //后台删除发件箱（非逻辑删除）
+  //后台删除发件箱（非逻辑删除，暂时未用）
 	public function deleteAdminMessage(){
 		$id = $_REQUEST["id"];
 		$message = M("message");
@@ -253,38 +254,75 @@ class MessageAction extends Action{
 		}
 		$user_id = Session::get("systemId");
 		$user_name = $_REQUEST["user_name"];
-		$User = M('User');
-		$condition['user_name'] = $user_name;
-		$result = $User -> where($condition) -> field("id") -> find();
-		
-		if(!empty($result)){
-		
-			if($user_id != $result["id"]){
-				//保存消息
-				$Message = M("Message");
-				$Message -> create();
-				$Message -> insert_time = date("Y-m-d H:i:s");
-				
-				//保存发送人，接收人，状态等信息
-				$Message -> sender_id = $user_id;
-				$Message -> recever_id = $result["id"];
-				$Message -> msg_id = $msg_id;
-				$Message -> send_status = "普通";
-				$Message -> receve_status = "普通";
-				$Message -> read_status = "未读";
-				$Message -> add();
-				
-				$json["success"] = true;
-				$json["msg"] = "发送成功！";
-			} else {
-				$json["success"] = false;
-				$json["msg"] = "不要自己给自己发消息！";
+		$choose_type = $_REQUEST["choose_type"];
+		$user_status = $_REQUEST["user_status"];
+		$user_type = $_REQUEST["user_type"];
+		if($choose_type =="用户名" && !empty($user_name)){
+			$user_names = explode(",",str_replace("，","," ,$user_name));
+			$meg ="";
+			foreach($user_names as $tag){
+				$User = M('User');
+				$condition['user_name'] = $tag;
+				$result = $User -> where($condition) -> field("id") -> find();
+				if(!empty($result)){
+					$saveMessage = "saveMessage";
+					$this -> $saveMessage($user_id,$result["id"]);
+				}else{
+				  $meg .=$tag."不存在；";
+				}
 			}
-		} else {
+			$json["success"] = true;
+			$json["msg"] = $meg;
+		}else if($choose_type =="用户状态" && !empty($user_status)){
+			$User = M('User');
+			$condition['status'] = $user_status;
+			$result = $User -> where($condition) -> field("id") -> findAll();
+			$meg = 0 ;
+			foreach($result as $tag){
+				if(!empty($tag)){
+					$saveMessage = "saveMessage";
+					$this -> $saveMessage($user_id,$tag["id"]);
+					$meg++;
+				}
+			}
+			$json["success"] = true;
+			$json["msg"] ="总共成功发送".$meg."个用户";
+		}else if($choose_type =="用户分类" && !empty($user_type)){
+			$User = M('User');
+			$condition['user_type1'] = $user_type;
+			$result = $User -> where($condition) -> field("id") -> findAll();
+			$meg = 0 ;
+			foreach($result as $tag){
+				if(!empty($tag)){
+					$saveMessage = "saveMessage";
+					$this -> $saveMessage($user_id,$tag["id"]);
+					$meg++;
+				}
+			}
+			$json["success"] = true;
+			$json["msg"] ="总共成功发送".$meg."个用户";
+		}else{
 			$json["success"] = false;
-			$json["msg"] = "你填写的用户不存在，发送失败！";
+			$json["msg"] ="发送失败";
 		}
+		
 		$this -> ajaxReturn($json);
+	}
+	
+	private function saveMessage($user_id ,$id){
+			//保存消息
+			$Message = M("Message");
+			$Message -> create();
+			$Message -> insert_time = date("Y-m-d H:i:s");
+			
+			//保存发送人，接收人，状态等信息
+			$Message -> sender_id = $user_id;
+			$Message -> recever_id = $id;
+			$Message -> msg_id = $msg_id;
+			$Message -> send_status = "普通";
+			$Message -> receve_status = "普通";
+			$Message -> read_status = "未读";
+			$Message -> add();
 	}
 	
 	

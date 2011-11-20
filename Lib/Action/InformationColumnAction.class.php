@@ -78,7 +78,7 @@ class InformationColumnAction extends Action
 			}
 			
 			$source = $_REQUEST["source"];
-			if(!empty($type)){
+			if(!empty($source)){
 				$condition["source"] = $source; 
 			}
 

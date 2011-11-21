@@ -96,6 +96,7 @@ class ActivityAction extends Action
 			$Userlog -> table_id = $id;
 			$Userlog -> act_describ = "参加抽奖活动一次";
 			$Userlog -> insert_time = date("Y-m-d H:i:s");
+			$Userlog -> ip = $_SERVER['REMOTE_ADDR'];
 			$Userlog -> add();
 			$User = M("User");
 			$condition["id"] = $user_id;

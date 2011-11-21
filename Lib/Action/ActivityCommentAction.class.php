@@ -21,6 +21,7 @@ class ActivityCommentAction extends Action
 			$ActivityComment -> activity_id = $_REQUEST["activity_id"];
 			$ActivityComment -> insert_time = date("Y-m-d H:i:s");
 			$ActivityComment -> user_id = Session::get("id");
+			$ActivityComment -> ip = $_SERVER['REMOTE_ADDR'];
 			$ActivityComment -> add();
 			$json["success"] = true;
 			$json["msg"] = "评论成功";

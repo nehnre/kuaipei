@@ -1,23 +1,6 @@
 $(function(){
-		$("#perfect").next().addClass("red");
-		$("#perfect").click(function(){
-	  	$.ajax({
-			url:"/UserCenter/checkStatus",
-			type:"POST",
-			success: function(json){
-				json = nehnre.parseJSON(json);
-				if(json.data.success){
-								location.href = "/UserCenter/perfectUser";
-				}else{
-					showAlert(json.data.msg);
-				}
-			},
-			error: function(){
-				showAlert("提交失败，可能服务器出现故障。");
-			}
-		});
+		$("#perfect").find("span").addClass("bold");
 
-	 });
 	//提交按钮
 	$("#btnSubmit").click(function(){
 		if(checkForm()){

@@ -1,23 +1,5 @@
 $(function(){
-	 $("#baisc").find("span").addClass("red");
-		$("#perfect").click(function(){
-		$.ajax({
-			url:"/UserCenter/checkStatus",
-			type:"POST",
-			success: function(json){
-				json = nehnre.parseJSON(json);
-				if(json.data.success){
-								location.href = "/UserCenter/perfectUser";
-				}else{
-					showAlert(json.data.msg);
-				}
-			},
-			error: function(){
-				showAlert("提交失败，可能服务器出现故障。");
-			}
-		});
-
-	 });
+	 $("#basic").addClass("bold");
 	$( "#birthday" ).datepicker({
 		maxDate:new Date(),
 		monthNames:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']	,

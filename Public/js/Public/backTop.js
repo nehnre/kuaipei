@@ -1,4 +1,5 @@
-(function() {
+$(function(){
+
     var backToTopTxt = "返回顶部";
 	var backToTopEle = $('<div class="backToTop"><img src="/Public/images/to_top.jpg" border="0"/></div>').appendTo($("body")).attr("title", backToTopTxt).click(function() {
            // $("html, body").animate({ "scrollTop": "0px"}, "slow");
@@ -16,4 +17,4 @@
     };
     $(window).bind("scroll", backToTopFun);
     $(function() { backToTopFun(); });
-})();
+});

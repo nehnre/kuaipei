@@ -250,15 +250,100 @@ class ActivityAction extends Action
 		
 		/*获取过期信息*/
 		$expires = 0;
-		if($result["start_time"] > date("Y-m-d")){
-			//还没到开始时间
-			$expirse = -1;
-		}
-		if($result["end_time"] < date("Y-m-d")){
-			//已经结束
-			$expirse = 1;
+		if(!empty($result["start_time"])&& $result["start_time"] !="0000-00-00"){
+			if($result["start_time"] > date("Y-m-d")){
+				//还没到开始时间
+				$expirse = -1;
+			}
+			if($result["end_time"] < date("Y-m-d")){
+				//已经结束
+				$expirse = 1;
+			}
 		}
 		$this -> assign("expirse", $expirse);
+
+		
+		/*获取用户信息*/
+		$User = M("User");
+		$loginUser = $User -> where("id=".$user_id) -> find();
+		$this -> assign("user", $loginUser);
+		
+		/*获取性别信息*/
+		$check_sex = 0;	
+		if(!empty($result["sex"])){
+			if(!strstr($result["sex"],$loginUser["sex"])){
+			  //不包含
+			  $check_sex = 1;
+			}
+		}
+		$this -> assign("check_sex", $check_sex);
+		
+		/*获取省份信息*/
+		$check_province = 0;	
+		if(!empty($result["province"])){
+			if(!strstr($result["province"],$loginUser["province"])){
+			  //不包含
+			  $check_province = 1;
+			}
+		}
+		$this -> assign("check_province", $check_province);
+		
+		/*获取年龄信息*/
+		$check_birthday = 0;	
+		if(!empty($result["start_birthday"])&& $result["start_birthday"] !="0000-00-00"){
+			if($result["start_birthday"] >$loginUser["birthday"]){
+				//未到年龄
+				$check_birthday = -1;
+			}
+
+		}
+		if(!empty($result["end_birthday"])&& $result["end_birthday"] !="0000-00-00"){
+			if($result["end_time"] < $loginUser["birthday"]){
+				//超过年龄
+				$check_birthday = 1;
+			}
+		}
+		$this -> assign("check_birthday", $check_birthday);
+		
+		/*获取身份类别信息*/
+		$check_user_type = 0;	
+		if(!empty($result["user_type"])){
+			if(!strstr($result["user_type"],$loginUser["user_type1"])){
+			  //不包含
+			  $check_user_type = 1;
+			}
+		}
+		$this -> assign("check_user_type", $check_user_type);
+		
+		/*重复参加数*/
+		$check_repeat_num = 0 ;
+		if(!empty($result["repeat_num"])){
+			$repeat_Userlog = M("Userlog");
+			unset($condition);
+			$condition["user_id"] = $user_id;
+			$condition["table_name"] = "kp_activity";
+			$repeat_user_log = $repeat_Userlog -> where($condition) ->order('insert_time desc') -> find();
+			$timediff = "timediff";
+			$num = $this ->$timediff($repeat_user_log["insert_time"],date("Y-m-d H:i:s"));
+			if($num < $result["repeat_num"]){
+			     $check_repeat_num = $result["repeat_num"]-$num  ;
+			}
+		}
+		$this -> assign("check_repeat_num", $check_repeat_num);
+		/*参加总人数*/
+		$check_total_num = 0 ;
+		if(!empty($result["total_num"])){
+			$total_Userlog = M("Userlog");
+			unset($condition);
+			$condition["user_id"] = $user_id;
+			$condition["table_name"] = "kp_activity";
+			$condition["table_id"] = $id;
+			$activity_num = $total_Userlog -> where($condition) -> count();
+			if($activity_num >= $result["total_num"]){
+			     $total_num = 1 ;
+			}
+		}
+		$this -> assign("check_total_num", $check_total_num);
 		
 		/*获取评论信息*/
 		$VActivityComment = M("vactivity_comment");
@@ -273,10 +358,7 @@ class ActivityAction extends Action
 		$this->assign('foot',$foot);
 		
 		
-		/*获取用户信息*/
-		$User = M("User");
-		$loginUser = $User -> where("id=".$user_id) -> find();
-		$this -> assign("user", $loginUser);
+
 		
 		$this -> display();
 	}
@@ -322,6 +404,9 @@ class ActivityAction extends Action
 	private function saveForm($preview){
 
 		$id = $_REQUEST["id"];
+		$sex = $_REQUEST["sex"];
+		$province = $_REQUEST["province"];
+		$user_type = $_REQUEST["user_type"];
 		$error = $_FILES["photo"]["error"];
 		foreach($error as $e){
 			if($e == 0){
@@ -330,8 +415,9 @@ class ActivityAction extends Action
 		}
 		$Activity = M("Activity");
 		$Activity -> create();
-		
-		
+		$Activity ->sex = implode(",",$sex);
+		$Activity ->province = implode(",",$province);
+		$Activity ->user_type = implode(",",$user_type);
 		
 		if($uploadFlag){
 			import("ORG.Net.UploadFile");
@@ -480,11 +566,20 @@ class ActivityAction extends Action
 		$gets = $this -> $post($post_data, $target);
 		return $gets;
 	}
+	/**计算相差多少天*/
+	private function timediff($begin_time,$end_time)
+	{
+		 $timediff = strtotime($end_time)-strtotime($begin_time);
+		 $days = intval($timediff/86400);
+		 return $days;
+	}
 	public function test(){
-	
-			$value = "a";
-			$value = $value + ",";
-			echo $value;
+         echo  strstr("天津市,2","sh");
+			if(!strstr("天津市,2","天津")){
+			  //不包含
+			  echo  strripos("天津市,2","天津市");
+			}
+			
 	}
 	
 }

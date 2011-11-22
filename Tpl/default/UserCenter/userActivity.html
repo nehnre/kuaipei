@@ -44,6 +44,7 @@
 					<table border="0" width="100%" cellspacing="0" cellpadding="0" >
 					<tr>
 					<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">活动名称</div></td>
+					<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">活动类型</div></td>
 					<td class="lbtxt1" width="250"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">促销产品名称</div></td>
 					<td class="lbtxt1" width="150"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">参加时间</div></td>
 					</tr>
@@ -62,6 +63,7 @@
 		<table border="0" width="100%" cellspacing="0" cellpadding="0" >
 	    <tr>
 		<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:12px;float:left;"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank"  >{$vo.title}</div></td>
+		<td class="lbtxt1"   width="300"><div style="height:37px;overflow:hidden;font-size:12px;float:left;">{$vo.type}</td>
 		<td class="lbtxt1"   width="250"><div style="height:37px;overflow:hidden;font-size:12px;float:left;">{$vo.sponsor}</td>
 		<td class="lbtxt5" width="150"><php>echo date("Y年m月d日", strtotime($vo["insert_time"]))</php></td>
 	    </tr>

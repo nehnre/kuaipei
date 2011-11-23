@@ -200,15 +200,15 @@
 			</tr>
 			<tr class="odd">
 				<td width="200px" align="right">活动开始时间：</td>
-				<td align="left"><input type="text" style="width:80%" id="start_time" name="start_time" value="{$result.start_time}"/></td>
+				<td align="left"><input type="text" style="width:80%" id="start_time" name="start_time" if condition="!($result['start_time'] eq '0000-00-00') ">value="{$result.start_time}"</if>/></td>
 			</tr>
 			<tr class="odd">
 				<td width="200px" align="right">活动结束时间：</td>
-				<td align="left"><input type="text" style="width:80%" id="end_time" name="end_time" value="{$result.end_time}"/></td>
+				<td align="left"><input type="text" style="width:80%" id="end_time" name="end_time" <if condition="!($result['end_time'] eq '0000-00-00') ">value="{$result.end_time}"</if>/></td>
 			</tr>
 			<tr class="odd">
 				<td width="200px" align="right">年龄：</td>
-				<td align="left"><input type="text" style="width:39%" id="start_birthday" name="start_birthday" value="{$result.start_birthday}"/>-<input type="text" style="width:39%" id="end_birthday" name="end_birthday" value="{$result.end_birthday}"/></td>
+				<td align="left"><input type="text" style="width:39%" id="start_birthday" name="start_birthday" <if condition="!($result['start_birthday'] eq '0000-00-00') "> value="{$result.start_birthday}" </if> />-<input type="text" style="width:39%" id="end_birthday" name="end_birthday" <if condition="!($result['end_birthday'] eq '0000-00-00') ">value="{$result.end_birthday}"</if>/></td>
 			</tr>
 			<tr class="odd">
 				<td width="200px" align="right">身份类别：</td>

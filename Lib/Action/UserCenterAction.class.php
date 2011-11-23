@@ -96,7 +96,14 @@ class UserCenterAction extends Action
 			//}else
 			$json["success"] = true;
 			$json["status"] = $result['status'];
-
+			/**用于短消息*/
+			$vmessage = M("vmessage");
+			unset($condition);
+		    $condition["recever_id"] = Session::get("id");
+		    $condition["receve_status"] = "普通";
+			$condition["read_status"] = "未读";
+		    $count = $vmessage -> where($condition) -> count();
+			$json["count"] = $count;
 		}
 			$this -> ajaxReturn($json);
 	}

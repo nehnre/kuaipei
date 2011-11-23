@@ -10,6 +10,8 @@
 									if(json.data.status=='已审核'){
 										 $("#perfect").find("span").text('认证用户信息');
 								    }
+									$("#userMessage").empty();
+									$("#userMessage").append("站内消息<span class='red'>("+json.data.count+")</span>");
 					}else{
 						showAlert(json.data.msg);
 					}

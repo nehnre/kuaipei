@@ -301,7 +301,7 @@ h3 {
 {
 	font-family:微软雅黑;
 	font-size:12px;
-	margin-bottom:10px;
+	background-color:#F3F3F3;
 }
 
 .help_right_content
@@ -309,11 +309,10 @@ h3 {
 	border-top:1px solid #DEDEE0;
 	border-bottom:1px solid #DEDEE0;
 	background-color:#F3F3F3;
-	width:935px;
+	width:733px;
 	line-height:25px;
 	padding-top:10px;
-	padding-left:15px;
-	padding-right:5px;
+
 }
 
 .help_right_content_title
@@ -501,4 +500,22 @@ color:#777;
 .help_right_content_time p span{
  margin:0px 5px;
  font-family:"宋体"; 
+}
+
+.detailit1{
+	margin-left:15px;
+	text-align:left;
+	height:20px;
+	line-height:20px;
+	overflow:hidden;
+	color:#737373;
+}
+.detailline{
+	background:none;
+	border-width: 1px 0 0 0;
+	border-style: dashed;
+	border-color: #BEBEBE;
+	margin-left:15px;
+	margin-right:15px;
+	height:10px;
 }

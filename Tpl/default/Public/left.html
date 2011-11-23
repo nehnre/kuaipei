@@ -15,6 +15,25 @@
 					}
 				}
 			});
+			$("#perfect").click(function(){
+				$.ajax({
+					url:"/UserCenter/checkStatus",
+					type:"POST",
+					success: function(json){
+						json = nehnre.parseJSON(json);
+						if(json.data.success){
+										location.href = "/UserCenter/perfectUser";
+						}else{
+							showAlert(json.data.msg);
+						}
+					},
+					error: function(){
+						showAlert("提交失败，可能服务器出现故障。");
+					}
+				});
+
+			 });			
+			
 		});
 	</script> 
 		 <div id="side">
@@ -24,9 +43,9 @@
 	 <div align="center">
 	 <table border="0" width="80%"  cellspacing="0" cellpadding="0">
 		<tr><td  height="40" align="center"><span class="z1">个人信息</span></td></tr>
-		<tr><td height="25" align="center"><a href="/UserCenter" class="le" id="basic"><span>完善个人信息</span></a></td>
+		<tr><td height="25" align="center"><a href="/UserCenter" class="le" ><span id="basic">完善个人信息</span></a></td>
 		</tr>
-		<tr><td  height="25" align="center"><a href="/UserCenter/editPassword" class="le">修改密码</a></td></tr>		
+		<tr><td  height="25" align="center"><a href="/UserCenter/editPassword" class="le"><span id="editPassWord">修改密码</span></a></td></tr>		
 	 </table>
      </div>	 
      </div>
@@ -39,13 +58,13 @@
 		  <td height="25" align="center" ><a href="javascript:" class="le" id="perfect"><span>升级为认证用户</span></a></td>
 		</tr>
 		<tr>
-		  <td  height="25" align="center" ><a href="/UserCenter/userActivity" class="le">活动记录</a></td>
+		  <td  height="25" align="center" ><a href="/UserCenter/userActivity" class="le"><span id="userActivity">活动记录</span></a></td>
 		</tr>		
 		<tr>
-		  <td  height="25" align="center" ><a href="/UserCenter/userActivityComment" class="le"> 评论记录</a></td>
+		  <td  height="25" align="center" ><a href="/UserCenter/userActivityComment" class="le"> <span id="userActivityComment">评论记录</span></a></td>
 		</tr>		
 		<tr >
-		  <td  height="25" align="center"><a href="/Message/" class="le">站内消息</a></td>
+		  <td  height="25" align="center"><a href="/Message/" class="le"><span id="userMessage">站内消息</span></a></td>
 		</tr>
 	 </table>
      </div>	 

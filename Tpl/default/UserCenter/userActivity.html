@@ -12,8 +12,6 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
-		<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/passwordstrength.js"></script>
-	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/UserCenter/editPassword.js"></script>
 	<title>活动记录——立配网</title>
 	<script type="text/javascript">
 		$(function(){
@@ -23,6 +21,7 @@
 				$(this).attr("class", className);
 			});
 			$(".menu_usercenter").removeClass("menu_usercenter").addClass("menu_usercenter1");
+			$("#userActivity").addClass("bold");
 		});
 	</script>
 </head>
@@ -45,6 +44,7 @@
 					<table border="0" width="100%" cellspacing="0" cellpadding="0" >
 					<tr>
 					<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">活动名称</div></td>
+					<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">活动类型</div></td>
 					<td class="lbtxt1" width="250"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">促销产品名称</div></td>
 					<td class="lbtxt1" width="150"><div style="height:37px;overflow:hidden;font-size:14px;text-align:center;font-weight:bold;">参加时间</div></td>
 					</tr>
@@ -63,6 +63,7 @@
 		<table border="0" width="100%" cellspacing="0" cellpadding="0" >
 	    <tr>
 		<td class="lbtxt1" width="300"><div style="height:37px;overflow:hidden;font-size:12px;float:left;"><a href="supInformationColumnDetail?id={$vo.id}" target="_blank"  >{$vo.title}</div></td>
+		<td class="lbtxt1"   width="300"><div style="height:37px;overflow:hidden;font-size:12px;float:left;">{$vo.type}</td>
 		<td class="lbtxt1"   width="250"><div style="height:37px;overflow:hidden;font-size:12px;float:left;">{$vo.sponsor}</td>
 		<td class="lbtxt5" width="150"><php>echo date("Y年m月d日", strtotime($vo["insert_time"]))</php></td>
 	    </tr>

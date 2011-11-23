@@ -71,3 +71,36 @@ $.initCities = function(provEl, cityEl, defaultCity) {
 		cityEl.html('<option value="">请先选择</option>');
 	}
 };
+
+	
+$.initCheckProv = function(provId, cityId, defaultProv, defaultCity) {
+	var provEl = $("#" + provId);
+	var cityEl = $("#" + cityId);
+	var hasDefaultProv = (typeof(defaultCity) != 'undefined');
+	
+	var provHtml = '';
+	for(var i = 0; i < $._cityInfo.length; i++) {
+		provHtml += '<input value="' + $._cityInfo[i].n + '"' + ((hasDefaultProv &&  defaultProv.indexOf($._cityInfo[i].n)>-1) ? ' checked="checked"' : '') + 'type="checkbox" name="province[]">' + $._cityInfo[i].n;
+	}
+	provEl.html(provHtml);
+	$.initCheckCities(provEl, cityEl, defaultCity);
+	provEl.change(function() {
+		$.initCheckCities(provEl, cityEl);
+	});
+};
+
+$.initCheckCities = function(provEl, cityEl, defaultCity) {
+	var hasDefaultCity = (typeof(defaultCity) != 'undefined');
+	var index = provEl.get(0).selectedIndex;
+	index --;
+	if(index >= 0) {
+		var cities = $._cityInfo[index].c;
+		var cityHtml = '';
+		for(var i = 0; i < cities.length; i++) {
+			cityHtml += '<input value="' + cities[i] + '"' + ((hasDefaultCity && cities[i] == defaultCity) ? ' checked="checked"' : '') + 'type="checkbox" name="city[]">'+cities[i];
+		}
+		cityEl.html(cityHtml);
+	} else {
+		cityEl.html('');
+	}
+};

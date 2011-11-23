@@ -196,10 +196,10 @@ class RegAction extends Action
 		
 		$User = M('User');
 		$User -> create();
-		
+
 		$User -> insert_time = date("Y-m-d H:i:s");
 		$User -> update_time = date("Y-m-d H:i:s");
-		
+		$User -> ip = $_SERVER['REMOTE_ADDR'];
 		$id = $User -> add();
 		
 		Session::set("id",$id);
@@ -294,6 +294,7 @@ class RegAction extends Action
 		if($if_insert){
 			$user_name = Session::get("user_name_temp");
 			$User -> insert_time = date("Y-m-d H:i:s");
+			$User -> ip = $_SERVER['REMOTE_ADDR'];
 			$User -> status = "基本注册";
 			$User -> user_name = $user_name;
 			$id = $User -> add();
@@ -419,12 +420,11 @@ class RegAction extends Action
 	}
 	
 	public function test(){
-		$User = M('User');
-		$User -> user_name = '111';
-		$User -> nick_name = '222';
-		$User -> password = '3333';
-		$id = $User -> add();
-		$this -> display();
+
+
+
+		echo $ip;
+
 	}
 	
 }

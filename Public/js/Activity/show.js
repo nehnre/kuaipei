@@ -70,6 +70,18 @@ $(function(){
 		var start_time = $(this).attr("start_time");
 		var end_time = $(this).attr("end_time");
 		var import_flag = $(this).attr("import_flag");
+		var check_sex = $(this).attr("check_sex");
+		var check_birthday = $(this).attr("check_birthday");
+		var start_birthday = $(this).attr("start_birthday");
+		var end_birthday = $(this).attr("end_birthday");
+		var check_repeat_num = $(this).attr("check_repeat_num");
+		var repeat_num = $(this).attr("repeat_num");
+		var check_total_num = $(this).attr("check_total_num");
+		var total_num = $(this).attr("total_num");
+		var check_province = $(this).attr("check_province");
+		var province = $(this).attr("province");
+		var check_user_type = $(this).attr("check_user_type");
+		var user_type = $(this).attr("user_type");
 		if(unlogin){
 			$("#login").click();
 		} else if("导入" == import_flag && status == "基本注册"){
@@ -83,7 +95,19 @@ $(function(){
 			showAlert("活动还没有开始，开始时间：{0}".format(start_time));
 		} else if(~~expirse > 0){
 			showAlert("活动已经结束，结束时间：{0}".format(end_time));
-		} else if (joined){
+		}else if(check_province==1){
+			showAlert("对不起，此活动只对{0}用户开放".format(province));
+		}else if(check_user_type==1){
+			showAlert("对不起，此活动只对{0}用户开放".format(user_type));
+		}else if(check_sex==1){
+			showAlert("对不起，您不符合参加此活动的条件");
+		}else if(~~check_birthday<0||~~check_birthday>0){
+			showAlert("对不起，您不符合参加此活动的条件");
+		}else if(check_repeat_num==1){
+			showAlert("请您{0}天后在参加此活动".format(check_repeat_num));
+		}else if(check_total_num==1){
+			showAlert("此活动参加人数已满");
+		}else if (joined){
 			showAlert("您已经于{0}参加过此次活动了！".format(joined));
 		} else {
 			showWaiting();

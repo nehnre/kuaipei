@@ -154,16 +154,17 @@
 					</div>
 				</div>
 				<div class="right">
+				<if condition="$result['type'] eq '在线调查'">
 					<div class="activity_guide">
-						<div class="activity_title1">在线调查活动</div>
+						<div class="activity_title1">在线调查互动</div>
 						<div class="check_activity_content">
-								<if condition="empty($log)">
+								<?php if(empty($vuserlog)): ?>
 								<div class="check_nick_name"></div>
 								<div class="check_act_time" style="color:gray;">马上参加在线调查活动！</div>
 								<div class="check_action"></div>
 								<div class="clear"></div>
-								</if>
-								<volist name="log" id="vo">
+								<?php endif; ?>
+								<volist name="vuserlog" id="vo">
 								<div class="check_nick_name">[{$vo.nick_name}]</div>
 								<div class="check_act_time"><php>echo '于'.date("Y年m月d日 H:i:s", strtotime($vo["insert_time"]));</php></div>
 								<div class="check_action">参加了{$vo.sponsor}的在线调查活动</div>
@@ -171,6 +172,19 @@
 								</volist>
 						</div>
 					</div>
+				<else/>
+					
+					<div class="activity_guide">
+						<div class="activity_title1">如何参加产品试用活动？</div>
+						<div class="activity_content1">
+简单方便，轻松四步骤：<br />
+1、登陆立配网，成为立配认证会员。<br />
+2、进入产品试用活动页面，选择您感兴趣的产品，点击“参加”。<br />
+3、等待立配网发送消息到您手机，通知您获得产品试用资格。<br />
+4、凭立配网短信，到指定经销商领取您的试用产品。发表试用评论，赢得惊喜好礼！<br />
+   					</div>
+					</div>
+					
 					<div class="clear"></div>
 					<div class="custom_service">
 						<div class="activity_title1">如何发表试用评论？</div>
@@ -178,6 +192,7 @@
                         在规定的时间内，登陆立配网，进入相应产品试用活动的页面，点击“我要评论”，发表您的试用评论。如果您的评论得到网友们的热烈讨论，还有可能赢得丰厚礼品。
 </div>
 					</div>
+				</if>
 					<div class="clear"></div>
 					<!--<div class="activity_faq">
 						<div class="activity_title1">FAQ常见问题</div>

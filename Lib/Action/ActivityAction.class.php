@@ -117,6 +117,8 @@ class ActivityAction extends Action
 			//记录日志
 			$user_id = Session::get("id");
 			$id = $_REQUEST["id"];
+			$Activity = M("Activity");
+			$Activityresult = $Activity -> where("id=".$id) -> find();
 			$Userlog = M("Userlog");
 			$Userlog -> user_id = $user_id;
 			$Userlog -> table_name = "kp_activity";
@@ -134,10 +136,15 @@ class ActivityAction extends Action
 				$true_name = $result["true_name"];
 			}
 			$user_name = $result["user_name"];
-			$sendSms = "sendSms";
-			$this -> $sendSms($user_name, "尊敬的".$true_name."，感谢您参加本次立配网活动！我们将在您获得试用资格后，发送试用通知，敬请留意。【立配网】");
-			$json["success"] = true;
-			$json["msg"] = "参加成功！感谢您参加本次活动，我们将在您获得试用资格后，发送短信通知到您的手机上，敬请留意查收。";
+			if($Activityresult["type"] !="在线调查"){
+				$sendSms = "sendSms";
+				$this -> $sendSms($user_name, "尊敬的".$true_name."，感谢您参加本次立配网活动！我们将在您获得试用资格后，发送试用通知，敬请留意。【立配网】");
+				$json["success"] = true;
+				$json["msg"] = "参加成功！感谢您参加本次活动，我们将在您获得试用资格后，发送短信通知到您的手机上，敬请留意查收。";
+			}else{
+				$json["success"] = true;
+				$json["msg"] = "在线调查";
+			}
 		}
 		$this -> ajaxReturn($json);
 	}
@@ -256,8 +263,8 @@ class ActivityAction extends Action
 		}
 		
 		$Vuserlog = M("Vuserlog");
-		$log = $Vuserlog -> where("type='在线调查'") -> order('insert_time desc') -> limit(7) -> select();
-		$this -> assign("log", $log);
+		$Vuserlog = $Vuserlog -> where("type='在线调查'") -> order('insert_time desc') -> limit(7) -> select();
+		$this -> assign("vuserlog", $Vuserlog);
 		
 		$user_id = Session::get("id");
 		if(!empty($user_id)){

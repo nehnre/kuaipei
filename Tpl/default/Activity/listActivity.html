@@ -124,8 +124,8 @@
 				<td>{$vo.title}</td>
 				<td>{$vo.type}</td>
 				<td>{$vo.sponsor}</td>
-				<td><if condition="!($vo['start_time'] eq '0000-00-00') ">{$vo.start_time}</if></td>
-				<td><if condition="!($vo['start_time'] eq '0000-00-00') ">{$vo.end_time}</if></td>
+				<td id="start_time_{$vo.id}"><if condition="!($vo['start_time'] eq '0000-00-00') ">{$vo.start_time}</if></td>
+				<td id="end_time_{$vo.id}"><if condition="!($vo['end_time'] eq '0000-00-00') ">{$vo.end_time}</if></td>
 				<td>{$vo.status}</td>
 				<td><a href="editActivity?id={$vo.id}">编辑</a> 
 				<a href="javascript:;" onclick="del('{$vo.id}')">删除</a>

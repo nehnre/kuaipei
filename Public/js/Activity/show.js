@@ -118,22 +118,30 @@ $(function(){
 				data:"id=" + id,
 				success:function(json){
 					json = nehnre.parseJSON(json);
-					showAlert(json.data.msg, function(){
-						if(json.data.success){
-							$("#btnJoin").unbind("click");
+					if(json.data.msg == "在线调查"){
+						if(url != ""){
+							location.href = url.replace(/#*$/ig,"");
+						}else{
 							location.href = location.href.replace(/#*$/ig,"");
-							if(url != ""){
-								location.href = url.replace(/#*$/ig,"");
-							}else{
-							    location.href = location.href.replace(/#*$/ig,"");
+						}
+					}else{
+						showAlert(json.data.msg, function(){
+							if(json.data.success){
+								$("#btnJoin").unbind("click");
+								if(url != ""){
+									location.href = url.replace(/#*$/ig,"");
+								}else{
+									location.href = location.href.replace(/#*$/ig,"");
+									
+								}
+								try{
+									window.event.returnValue=false;  
+								}catch(e){}
 								
 							}
-							try{
-								window.event.returnValue=false;  
-							}catch(e){}
-							
-						}
-					});
+						});
+					}
+
 				}
 			});
 		}

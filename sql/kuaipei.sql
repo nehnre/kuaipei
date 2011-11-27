@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-11-23 00:20:19
+Date: 2011-11-27 10:57:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -51,26 +51,27 @@ CREATE TABLE `kp_activity` (
   `total_num` int(11) DEFAULT NULL,
   `province` varchar(1000) DEFAULT NULL,
   `city` varchar(1000) DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_activity
 -- ----------------------------
-INSERT INTO `kp_activity` VALUES ('34', '免费试用', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '', '', null, '', null, '2011-10-12', '2011-10-30', '4e9598e8c5dfc.jpg', '4e9598e8c6d9e.jpg', '4e9598e8c7d3b.jpg', '4e9598e8c94a8.jpg', null, '我们,的家', '未发布', '0', '2011-10-12 21:40:56', '10', '2011-11-15 00:00:00', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('35', '免费试用', '汽车加油卡抽奖活动', '上海大众公司', '活动性质：公益\r\n活动类别：抽奖', '所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网', '', '', null, '', null, '2011-10-12', '2011-10-14', '4e9599975b317.jpg', '4e9599975c2b6.jpg', '4e9599975d257.jpg', '4e9eb321a4593.jpg', null, '志向,远大', '已发布', '0', '2011-10-12 21:43:51', '0', '2011-11-12 21:02:32', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('36', '抽奖活动', '活动标题', '主办方', '活动介绍', '活动说明', 'sdfsdf', '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\"><span style=\"background-color:#e53333;\">相关产</span>品</span>', null, '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\">牌故事</span>', null, '2011-10-19', '2011-10-30', null, null, null, '4e9ee41a31590.jpg', null, null, '已发布', '0', '2011-10-19 22:52:10', null, '2011-10-31 21:48:56', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('37', '抽奖活动', 'sdfsdf', 'sdf', 'sdfsd', 'sdfsd活动说', '<i><span style=\"background-color:#e56600;\">金金金金金222222222222222222金金金金金金<img src=\"/kindeditor/attached/image/20111022/20111022042219_87950.jpg\" alt=\"\" /></span></i>', '', null, '', null, '2011-10-19', '2011-11-04', null, null, null, '4ea245819f867.jpg', '4ea246c5a51c8.png', '中国,哈哈,我们', '已发布', '0', '2011-10-19 22:55:43', null, '2011-10-31 22:03:40', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('39', '免费试用', '1', '1', '1', '1', '1', '1', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '已发布', '0', '2011-11-15 14:56:47', '0', '2011-11-21 00:00:00', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('40', '免费试用', '1', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:56:58', '0', '2011-11-15 14:56:58', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('41', '免费试用', '3', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:57:10', '0', '2011-11-15 14:57:10', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('42', '免费试用', '333', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:57:20', '0', '2011-11-15 14:57:20', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('43', '免费试用', '444', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:57:26', '0', '2011-11-15 14:57:26', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('44', '免费试用', '233223', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:57:36', '0', '2011-11-15 14:57:36', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('45', '免费试用', '2323323424', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:57:43', '0', '2011-11-15 14:57:43', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('46', '免费试用', '', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-18 15:15:41', '0', '2011-11-18 15:15:41', null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('47', '免费试用', 'eee', 'ee', 'e', 'e', 'ee', 'eeeeeeeeeee', null, 'eeeeeeeeeeeee', null, '2011-11-22', '2011-11-25', null, null, null, null, null, '', '已发布', '0', '2011-11-22 13:29:21', '0', '2011-11-22 22:27:18', '1,2', '2011-11-23', '2011-11-30', '厂商,经销商,修理厂', '3', '1', '北京市,天津市,上海市,福建省', null);
-INSERT INTO `kp_activity` VALUES ('48', '免费试用', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '未发布', '0', '2011-11-22 16:12:24', null, '2011-11-22 16:12:24', null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('34', '免费试用', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '', '', null, '', null, '2011-10-12', '2011-10-30', '4e9598e8c5dfc.jpg', '4e9598e8c6d9e.jpg', '4e9598e8c7d3b.jpg', '4e9598e8c94a8.jpg', null, '我们,的家', '未发布', '0', '2011-10-12 21:40:56', '10', '2011-11-15 00:00:00', null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('35', '免费试用', '汽车加油卡抽奖活动', '上海大众公司', '活动性质：公益\r\n活动类别：抽奖', '所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网', '', '', null, '', null, '2011-10-12', '2011-10-14', '4e9599975b317.jpg', '4e9599975c2b6.jpg', '4e9599975d257.jpg', '4e9eb321a4593.jpg', null, '志向,远大', '已发布', '0', '2011-10-12 21:43:51', '0', '2011-11-12 21:02:32', null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('36', '抽奖活动', '活动标题', '主办方', '活动介绍', '活动说明', 'sdfsdf', '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\"><span style=\"background-color:#e53333;\">相关产</span>品</span>', null, '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\">牌故事</span>', null, '2011-10-19', '2011-10-30', null, null, null, '4e9ee41a31590.jpg', null, null, '已发布', '0', '2011-10-19 22:52:10', null, '2011-10-31 21:48:56', null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('37', '在线调查', 'sdfsdf', 'sdf', 'sdfsd', 'sdfsd活动说', '<i><span style=\"background-color:#e56600;\">金金金金金222222222222222222金金金金金金<img src=\"/kindeditor/attached/image/20111022/20111022042219_87950.jpg\" alt=\"\" /></span></i>', '', null, '', null, '2011-10-19', '2011-11-04', null, null, null, '4ea245819f867.jpg', '4ea246c5a51c8.png', '中国,哈哈,我们', '已发布', '0', '2011-10-19 22:55:43', null, '2011-10-31 22:03:40', null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('39', '在线调查', '1', '1', '1', '1', '1', '1', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '已发布', '0', '2011-11-15 14:56:47', '0', '2011-11-21 00:00:00', null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('40', '免费试用', '1', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:56:58', '0', '2011-11-15 14:56:58', null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('41', '免费试用', '3', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:57:10', '0', '2011-11-15 14:57:10', null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('42', '免费试用', '333', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:57:20', '0', '2011-11-15 14:57:20', null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('43', '免费试用', '444', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:57:26', '0', '2011-11-15 14:57:26', null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('44', '免费试用', '233223', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-15 14:57:36', '0', '2011-11-23 10:31:01', null, '0000-00-00', '0000-00-00', null, '0', '0', null, null, null);
+INSERT INTO `kp_activity` VALUES ('45', '免费试用', '2323323424', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '已发布', '0', '2011-11-15 14:57:43', '0', '2011-11-27 00:00:00', null, null, null, null, null, null, null, null, 'http://kuaipei/Activity/show?id=39');
+INSERT INTO `kp_activity` VALUES ('46', '免费试用', '', '', '', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '未发布', '0', '2011-11-18 15:15:41', '0', '2011-11-23 10:35:18', null, '1991-11-07', '1991-11-06', null, '0', '0', null, null, null);
+INSERT INTO `kp_activity` VALUES ('47', '在线调查', 'eee', 'ee', 'e', 'e', 'ee', 'eeeeeeeeeee', null, 'eeeeeeeeeeeee', null, '2011-11-22', '2011-11-25', null, null, null, null, null, '', '已发布', '0', '2011-11-22 13:29:21', '0', '2011-11-27 10:03:07', '1,2', '2011-11-23', '2011-11-30', '厂商,经销商,修理厂', '3', '1', '北京市,天津市,上海市,福建省', null, null);
+INSERT INTO `kp_activity` VALUES ('48', '免费试用', null, null, null, null, null, null, null, null, null, '0000-00-00', '0000-00-00', null, null, null, null, null, null, '未发布', '0', '2011-11-22 16:12:24', null, '2011-11-27 10:02:39', null, '0000-00-00', '0000-00-00', null, '0', '0', null, null, null);
 
 -- ----------------------------
 -- Table structure for `kp_activity_comment`
@@ -240,7 +241,7 @@ INSERT INTO `kp_message` VALUES ('7', '11111', '11', '1', '1217', '普通', '普
 INSERT INTO `kp_message` VALUES ('8', '2222', '2222', '1', '1217', '普通', '普通', '未读', '2011-11-18 15:55:06');
 INSERT INTO `kp_message` VALUES ('9', 'test', 'test2', '1', '1217', '普通', '普通', '未读', '2011-11-18 15:55:39');
 INSERT INTO `kp_message` VALUES ('10', '1111111', '111', '1', '1217', '普通', '普通', '未读', '2011-11-18 15:57:17');
-INSERT INTO `kp_message` VALUES ('11', 'testetste', '111', '1', '1217', '普通', '普通', '未读', '2011-11-18 15:58:28');
+INSERT INTO `kp_message` VALUES ('11', 'testetste', '111', '1', '1217', '普通', '普通', '已读', '2011-11-18 15:58:28');
 INSERT INTO `kp_message` VALUES ('12', '1111', '11', '1', '1217', '普通', '删除', '已读', '2011-11-18 16:16:46');
 INSERT INTO `kp_message` VALUES ('13', 'tetstt', '待审核待审核待审核', '1', '1215', '普通', '普通', '未读', '2011-11-18 16:23:41');
 INSERT INTO `kp_message` VALUES ('14', 'tetstt', '待审核待审核待审核', '1', '1216', '删除', '普通', '未读', '2011-11-18 16:23:41');
@@ -418,7 +419,7 @@ CREATE TABLE `kp_userlog` (
   `insert_time` datetime DEFAULT NULL,
   `ip` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_userlog
@@ -538,6 +539,12 @@ INSERT INTO `kp_userlog` VALUES ('154', '1217', 'kp_activity', '39', '参加抽�
 INSERT INTO `kp_userlog` VALUES ('155', '1217', 'kp_activity', '47', '参加抽奖活动一次', '2011-11-22 15:51:24', '127.0.0.1');
 INSERT INTO `kp_userlog` VALUES ('156', '1', 'kp_admin_user', '1', '登录一次', '2011-11-22 20:58:27', null);
 INSERT INTO `kp_userlog` VALUES ('157', '1217', 'kp_user', '1217', '登录一次', '2011-11-22 22:22:48', null);
+INSERT INTO `kp_userlog` VALUES ('158', '1217', 'kp_user', '1217', '登录一次', '2011-11-23 10:00:44', null);
+INSERT INTO `kp_userlog` VALUES ('159', '1', 'kp_admin_user', '1', '登录一次', '2011-11-23 10:30:18', null);
+INSERT INTO `kp_userlog` VALUES ('160', '1', 'kp_admin_user', '1', '登录一次', '2011-11-26 23:53:29', null);
+INSERT INTO `kp_userlog` VALUES ('161', '1', 'kp_admin_user', '1', '登录一次', '2011-11-27 08:59:02', null);
+INSERT INTO `kp_userlog` VALUES ('162', '1217', 'kp_user', '1217', '登录一次', '2011-11-27 10:48:42', null);
+INSERT INTO `kp_userlog` VALUES ('165', '1217', 'kp_activity', '45', '参加抽奖活动一次', '2011-11-27 10:53:16', '127.0.0.1');
 
 -- ----------------------------
 -- View structure for `kp_vactivity_comment`

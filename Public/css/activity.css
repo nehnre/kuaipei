@@ -185,6 +185,8 @@
 	line-height:25px;
 	background-color:white;
  }
+
+ 
  .right .custom_service{
 	margin-top:10px;
  }
@@ -199,4 +201,23 @@
 	border:0px;
 	font-weight:bold;
 	font-size:16px;
+ }
+ .check_nick_name{
+ 	color:#565656;
+	font-weight:bold;
+	overflow:hidden;
+	white-space:nowrap;
+	margin-right:5px;
+	line-height:25px;
+	margin-top:10px;
+ }
+ .check_action{
+	margin-top:5px;
+}
+ .right .check_activity_content{
+	border-width:0 1px 1px 1px;
+	border-color:#d5d5d5;
+	border-style:solid;
+	padding:10px 5px 10px 10px;
+	background-color:white;
  }

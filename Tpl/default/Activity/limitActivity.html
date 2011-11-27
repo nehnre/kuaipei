@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
+	<title>活动</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+</head>
+	<script>
+	$(function(){
+		//提交按钮
+		$("#limit",window.parent.document).dialog("close");
+		
+		$("#btnSubmit").click(function(){
+			var data = $("#myForm").serialize();
+			if ($.browser.msie && $.browser.version < 7){
+				$("select").hide();
+			}
+			$.ajax({
+				url: "/Activity/saveOrUpdateLimitActivity",
+				data: data,
+				type: "POST",
+				success: function(json){
+					json = nehnre.parseJSON(json);
+					if(json.data.success){
+						window.parent.closeLimit();
+					}
+				}
+			});
+		});
+	});
+	</script>
+<body >
+	<form method="post"  enctype="multipart/form-data" id="myForm">
+	<input type="hidden" value="{$result.id}" name="id"/>
+	<table class="its" cellspacing="1" cellpadding="5" border="0">
+			<tr class="odd">
+				<td colspan="2" align="center"><span style="font-size:14px;font-weight:bold">活动限制条件</span></td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">所在地区：</td>
+				<td align="left"><div id="checkprovince"></div><div id="checkcity"></div>
+					<script type="text/javascript">
+						$.initCheckProv("checkprovince", "checkcity", "{$result.province}", "{$result.city}");
+					</script>
+				</td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">性别：</td>
+				<td align="left"><input type="checkbox" id="sex" value="1" name="sex[]"/>男<input type="checkbox" value="2"  id="sex" name="sex[]"/>女</td>
+				<script type="text/javascript">
+					$("input[name^=sex]").each(function(){
+						var sex = "{$result.sex}";
+						if(sex.indexOf($(this).val())>-1){
+							$(this).attr("checked","checked");
+						}
+					});
+				</script>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">活动开始时间：</td>
+				<td align="left"><input type="text" style="width:80%" id="start_time" name="start_time" <if condition="!($result['start_time'] eq '0000-00-00') ">value="{$result.start_time}"</if> /></td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">活动结束时间：</td>
+				<td align="left"><input type="text" style="width:80%" id="end_time" name="end_time" <if condition="!($result['end_time'] eq '0000-00-00') ">value="{$result.end_time}"</if>/></td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">年龄：</td>
+				<td align="left"><input type="text" style="width:39%" id="start_birthday" name="start_birthday" <if condition="!($result['start_birthday'] eq '0000-00-00') "> value="{$result.start_birthday}" </if> />-<input type="text" style="width:39%" id="end_birthday" name="end_birthday" <if condition="!($result['end_birthday'] eq '0000-00-00') ">value="{$result.end_birthday}"</if>/></td>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">身份类别：</td>
+				<td align="left"><input type="checkbox"  id="user_type" name="user_type[]" value="厂商"/>厂商<input type="checkbox"  id="user_type" name="user_type[]" value="经销商"/>经销商<input type="checkbox" id="user_type" name="user_type[]" value="修理厂"/>修理厂<input type="checkbox" id="user_type" name="user_type[]" value="车主"/>车主<input type="checkbox" id="user_type" name="user_type[]" value="车队"/>车队<input type="checkbox" id="user_type" name="user_type[]" value="其他"/>其他</td>
+			</tr>
+				<script type="text/javascript">
+					$("input[name^=user_type]").each(function(){
+						var user_type = "{$result.user_type}";
+						if(user_type.indexOf($(this).val())>-1){
+							$(this).attr("checked","checked");
+						}
+					});
+				</script>
+			<tr class="odd">
+				<td width="200px" align="right">重复参加数：</td>
+				<td align="left">
+				    <select style="width:80%" name="repeat_num" id="repeat_num">
+					    <option value=""></option>
+						<option value="1">1天</option>
+						<option value="2">2天</option>
+						<option value="3">3天</option>
+						<option value="4">4天</option>
+						<option value="5">5天</option>
+						<option value="6">6天</option>
+						<option value="7">7天</option>
+					</select>
+				</td>
+				<script type="text/javascript">
+					$("#repeat_num").val("{$result.repeat_num}");
+				</script>
+			</tr>
+			<tr class="odd">
+				<td width="200px" align="right">参加总人数：</td>
+				<td align="left"><input type="text" style="width:80%" id="total_num" name="total_num" value="{$result.total_num}"/></td>
+			</tr>
+			
+			<tr  class="odd">
+				<td colspan="2">
+					<input type="button" value="提 交" id="btnSubmit" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+				</td>
+			</tr>
+	</table>
+	</form>
+</body>
+</html>

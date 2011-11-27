@@ -3,9 +3,14 @@
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=gbk" />
 	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<style type="text/css" media="screen">@import url(__PUBLIC__/niceform/niceforms-default.css);</style>
+	<link rel="stylesheet" href="__PUBLIC__/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" /> 
 	<title>活动列表</title>
-	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
+    <script language="javascript" type="text/javascript" src="__PUBLIC__/js/Activity/listActivity.js"></script>
 	<script>
 		function del(id){
 			if(id && confirm("确定要删除这条记录吗？")){
@@ -24,6 +29,10 @@
 				location.href = "canclePublishActivity?id=" + id;
 				try{window.event.returnValue=false;}catch(e){}
 			}
+		}
+		function closeLimit(){
+			$("#limit").dialog("close");
+			showAlert("提交成功");
 		}
 	</script>
 </head>
@@ -125,7 +134,7 @@
 				<else />
 				<a href="javascript:;" onclick="pub('{$vo.id}')">发布活动</a> 
 				</if>
-				
+				<a href="javascript:;" onclick="limit('{$vo.id}')">限制条件</a>
 				</td>
 			</tr>
 		</volist>
@@ -133,5 +142,8 @@
 	</table>
 	</form>
 </body>
-
+<include file="./Tpl/default/Public/dialog.html" />  
+<div id="limit" title="活动限制条件">
+<iframe name="limitContent" id="limitContent" width="100%" height="450px" scrolling="no" frameborder="0"></iframe>
+</div>
 </html>

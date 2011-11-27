@@ -73,6 +73,33 @@ class ActivityAction extends Action
 		}
         $this->display();
 	}
+	
+	public function limitActivity(){
+		$id = $_REQUEST["id"];
+		if(!empty($id)){
+			$Activity = M("Activity");
+			$result = $Activity -> where("id=".$id) -> find();
+			$getTags = "getTags";
+			$result["tags"] = $this -> $getTags("kp_activity", $id);
+			$this -> assign("result", $result);
+			
+		}
+        $this->display();
+	}
+	
+    /**
+    +----------------------------------------------------------
+    * 保存限制条件
+    +----------------------------------------------------------
+    */
+	public function saveOrUpdateLimitActivity(){
+		$saveForm = "saveForm";
+		$this -> $saveForm(false);
+		$json["success"] = true;
+		$json["msg"] = "保存成功！";
+		$this -> ajaxReturn($json);
+	}
+	
 
 	public function deleteActivity(){
 		$id = $_REQUEST["id"];
@@ -227,6 +254,10 @@ class ActivityAction extends Action
 		if(empty($id) || empty($result)){
 			$this -> error("没有这项活动或者活动还未被审核！");
 		}
+		
+		$Vuserlog = M("Vuserlog");
+		$log = $Vuserlog -> where("type='在线调查'") -> order('insert_time desc') -> limit(7) -> select();
+		$this -> assign("log", $log);
 		
 		$user_id = Session::get("id");
 		if(!empty($user_id)){

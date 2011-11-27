@@ -34,6 +34,7 @@
 				<td align="left">
 					<select style="width:80%" name="type">
 						<option value="免费试用">免费试用</option>
+						<option value="在线调查">在线调查</option>
 					</select>
 				</td>
 			</tr>
@@ -44,6 +45,10 @@
 			<tr class="odd">
 				<td  align="right">产品名称：</td>
 				<td  align="left"><input type="text" style="width:80%" name="sponsor" id="sponsor" value="{$result.sponsor}"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">活动链接：</td>
+				<td  align="left"><input type="text" style="width:80%" name="url" id="url" value="{$result.url}"/></td>
 			</tr>
 			<tr class="odd">
 				<td  align="right">活动介绍：</td>
@@ -57,6 +62,7 @@
 				<td  align="right">活动详情：</td>
 				<td  align="left"><textarea cols="100" style="width:80%" rows="24" id="detail_text" name="detail_text" style="visibility:hidden;">{$result.detail_text}</textarea></td>
 			</tr>
+
 			<tr class="odd">
 				<td  align="right">产品介绍：</td>
 				<td  align="left"><textarea cols="100" style="width:80%" rows="24" id="related_product" name="related_product" style="visibility:hidden;">{$result.related_product}</textarea></td>
@@ -175,76 +181,7 @@
 				</td>
 				</if>
 			</tr>
-			<tr class="odd">
-				<td colspan="2" align="center"><span style="font-size:14px;font-weight:bold">活动限制条件</span></td>
-			</tr>
-			<tr class="odd">
-				<td width="200px" align="right">所在地区：</td>
-				<td align="left"><div id="checkprovince"></div><div id="checkcity"></div>
-					<script type="text/javascript">
-						$.initCheckProv("checkprovince", "checkcity", "{$result.province}", "{$result.city}");
-					</script>
-				</td>
-			</tr>
-			<tr class="odd">
-				<td width="200px" align="right">性别：</td>
-				<td align="left"><input type="checkbox" id="sex" value="1" name="sex[]"/>男<input type="checkbox" value="2"  id="sex" name="sex[]"/>女</td>
-				<script type="text/javascript">
-					$("input[name^=sex]").each(function(){
-						var sex = "{$result.sex}";
-						if(sex.indexOf($(this).val())>-1){
-							$(this).attr("checked","checked");
-						}
-					});
-				</script>
-			</tr>
-			<tr class="odd">
-				<td width="200px" align="right">活动开始时间：</td>
-				<td align="left"><input type="text" style="width:80%" id="start_time" name="start_time" if condition="!($result['start_time'] eq '0000-00-00') ">value="{$result.start_time}"</if>/></td>
-			</tr>
-			<tr class="odd">
-				<td width="200px" align="right">活动结束时间：</td>
-				<td align="left"><input type="text" style="width:80%" id="end_time" name="end_time" <if condition="!($result['end_time'] eq '0000-00-00') ">value="{$result.end_time}"</if>/></td>
-			</tr>
-			<tr class="odd">
-				<td width="200px" align="right">年龄：</td>
-				<td align="left"><input type="text" style="width:39%" id="start_birthday" name="start_birthday" <if condition="!($result['start_birthday'] eq '0000-00-00') "> value="{$result.start_birthday}" </if> />-<input type="text" style="width:39%" id="end_birthday" name="end_birthday" <if condition="!($result['end_birthday'] eq '0000-00-00') ">value="{$result.end_birthday}"</if>/></td>
-			</tr>
-			<tr class="odd">
-				<td width="200px" align="right">身份类别：</td>
-				<td align="left"><input type="checkbox"  id="user_type" name="user_type[]" value="厂商"/>厂商<input type="checkbox"  id="user_type" name="user_type[]" value="经销商"/>经销商<input type="checkbox" id="user_type" name="user_type[]" value="修理厂"/>修理厂<input type="checkbox" id="user_type" name="user_type[]" value="车主"/>车主<input type="checkbox" id="user_type" name="user_type[]" value="车队"/>车队<input type="checkbox" id="user_type" name="user_type[]" value="其他"/>其他</td>
-			</tr>
-				<script type="text/javascript">
-					$("input[name^=user_type]").each(function(){
-						var user_type = "{$result.user_type}";
-						if(user_type.indexOf($(this).val())>-1){
-							$(this).attr("checked","checked");
-						}
-					});
-				</script>
-			<tr class="odd">
-				<td width="200px" align="right">重复参加数：</td>
-				<td align="left">
-				    <select style="width:80%" name="repeat_num" id="repeat_num">
-					    <option value=""></option>
-						<option value="1">1天</option>
-						<option value="2">2天</option>
-						<option value="3">3天</option>
-						<option value="4">4天</option>
-						<option value="5">5天</option>
-						<option value="6">6天</option>
-						<option value="7">7天</option>
-					</select>
-				</td>
-				<script type="text/javascript">
-					$("#repeat_num").val("{$result.repeat_num}");
-				</script>
-			</tr>
-			<tr class="odd">
-				<td width="200px" align="right">参加总人数：</td>
-				<td align="left"><input type="text" style="width:80%" id="total_num" name="total_num" value="{$result.total_num}"/></td>
-			</tr>
-			
+
 			<tr  class="odd">
 				<td colspan="2">
 					<input type="button" value="预 览" id="btnPreview" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>

@@ -82,6 +82,7 @@ $(function(){
 		var province = $(this).attr("province");
 		var check_user_type = $(this).attr("check_user_type");
 		var user_type = $(this).attr("user_type");
+		var url = $(this).attr("url");
 		if(unlogin){
 			$("#login").click();
 		} else if("导入" == import_flag && status == "基本注册"){
@@ -121,6 +122,12 @@ $(function(){
 						if(json.data.success){
 							$("#btnJoin").unbind("click");
 							location.href = location.href.replace(/#*$/ig,"");
+							if(url != ""){
+								location.href = url.replace(/#*$/ig,"");
+							}else{
+							    location.href = location.href.replace(/#*$/ig,"");
+								
+							}
 							try{
 								window.event.returnValue=false;  
 							}catch(e){}

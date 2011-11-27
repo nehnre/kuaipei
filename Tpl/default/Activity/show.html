@@ -98,7 +98,7 @@
 											</volist>
 										</ul>
 									</div>
-									<div class="join_btn"><img src="/Public/images/activity/btn_join.png" style="cursor:pointer" id="btnJoin" status="{$user.status}" unlogin="{$unlogin}" joined="{$joined}" expirse="{$expirse}" start_time="{$result.start_time}" end_time="{$result.end_time}" import_flag="{$user.import_flag}"  check_sex="{$check_sex}" check_birthday="{$check_birthday}" start_birthday="{$result.start_birthday}" end_birthday="{$result.end_birthday}" check_repeat_num="{$check_repeat_num}" repeat_num ="{$result.repeat_num}" check_total_num="{$check_total_num}" total_num ="{$result.total_num}" check_province="{$check_province}" province="{$result.province}" check_user_type="{$check_user_type}" user_type="{$result.user_type}"/></div>
+									<div class="join_btn"><img src="/Public/images/activity/btn_join.png" style="cursor:pointer" id="btnJoin" status="{$user.status}" unlogin="{$unlogin}" joined="{$joined}" expirse="{$expirse}" start_time="{$result.start_time}" end_time="{$result.end_time}" import_flag="{$user.import_flag}"  check_sex="{$check_sex}" check_birthday="{$check_birthday}" start_birthday="{$result.start_birthday}" end_birthday="{$result.end_birthday}" check_repeat_num="{$check_repeat_num}" repeat_num ="{$result.repeat_num}" check_total_num="{$check_total_num}" total_num ="{$result.total_num}" check_province="{$check_province}" province="{$result.province}" check_user_type="{$check_user_type}" user_type="{$result.user_type}" url="{$result.url}" /></div>
 								</div>
 							</div>
 							<div class="clear"></div>
@@ -155,14 +155,21 @@
 				</div>
 				<div class="right">
 					<div class="activity_guide">
-						<div class="activity_title1">如何参加产品试用活动？</div>
-						<div class="activity_content1">
-简单方便，轻松四步骤：<br />
-1、登陆立配网，成为立配认证会员。<br />
-2、进入产品试用活动页面，选择您感兴趣的产品，点击“参加”。<br />
-3、等待立配网发送消息到您手机，通知您获得产品试用资格。<br />
-4、凭立配网短信，到指定经销商领取您的试用产品。发表试用评论，赢得惊喜好礼！<br />
-   					</div>
+						<div class="activity_title1">在线调查活动</div>
+						<div class="check_activity_content">
+								<if condition="empty($log)">
+								<div class="check_nick_name"></div>
+								<div class="check_act_time" style="color:gray;">马上参加在线调查活动！</div>
+								<div class="check_action"></div>
+								<div class="clear"></div>
+								</if>
+								<volist name="log" id="vo">
+								<div class="check_nick_name">[{$vo.nick_name}]</div>
+								<div class="check_act_time"><php>echo '于'.date("Y年m月d日 H:i:s", strtotime($vo["insert_time"]));</php></div>
+								<div class="check_action">参加了{$vo.sponsor}的在线调查活动</div>
+								<div class="clear"></div>
+								</volist>
+						</div>
 					</div>
 					<div class="clear"></div>
 					<div class="custom_service">

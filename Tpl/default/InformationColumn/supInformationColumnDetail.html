@@ -39,9 +39,9 @@
 						$type["最新商情"] = 5;
 						$type["配件一览"] = 6;
 					</php>
-
-                    <div class="help_right_content">
                     <div class="help_right_title"><a name="01" id="01"></a><span>当前位置</span>：<a href="/InformationColumn/supListInformationColumn">行业资讯</a> &gt; <a href="/InformationColumn/supListInformationColumn?flag=<php>echo $type[$result[column]]</php>">{$result.column}</a></div>
+                    <div class="help_right_content">
+
 						<div class="help_right_content_title">{$result.title}</div>
 						<div class="hr"></div>
 						<div class="help_right_content_time"><p><span><php>if(empty($result["user_publish_time"])) echo date("Y年m月d日", strtotime($result["publish_time"])); else echo date("Y年m月d日", strtotime($result["user_publish_time"])); </php></span><if condition="!empty($result['source']) ">&nbsp;&nbsp;&nbsp;&nbsp;<span>来源：
@@ -51,7 +51,7 @@
                         <div style="line-height:24px;font-size:14px;padding:30px 30px 30px 30px">{$result.content}</div>
                     </div>
                 </div>
-				<div class="right" style="height:20px">
+				<div class="right" style="height:20px;padding-top:25px;">
 					<div class="detail_trends">
 						<div class="detailTitle">相关资讯</div>
 						<div >

@@ -71,7 +71,9 @@
 								<include file="./Tpl/default/Public/message_menu.html" />
 								<div class="message_splitpage gray">{$foot}</div>
 							</div>
-
+							<if condition="count($list) elt 0">
+									<div class="lb2 gray" style="text-align:center">您还没有任何短消息。</div>
+							<else />
 							<div class=ddlb>
 								<table border=0 cellspacing=0 cellpadding=0 width="100%">
 									<tbody>
@@ -84,6 +86,7 @@
 									</tbody>
 								</table>
 							</div>
+						   </if>
 							<volist name="list" id="vo">
 							<if condition="$i%2==1">
 							<div class=lb1>

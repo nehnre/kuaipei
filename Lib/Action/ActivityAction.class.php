@@ -263,7 +263,7 @@ class ActivityAction extends Action
 		}
 		
 		$Vuserlog = M("Vuserlog");
-		$Vuserlog = $Vuserlog -> where("type='在线调查'") -> order('insert_time desc') -> limit(7) -> select();
+		$Vuserlog = $Vuserlog -> where("type='在线调查'") -> order('insert_time desc') -> limit(20) -> select();
 		$this -> assign("vuserlog", $Vuserlog);
 		
 		$user_id = Session::get("id");

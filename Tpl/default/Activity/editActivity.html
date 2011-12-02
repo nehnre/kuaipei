@@ -10,6 +10,7 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script type="text/javascript" src="/kindeditor/kindeditor-min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Activity/editActivity.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
 		<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/jquery.province.js"></script>
 </head>
 <body >
@@ -32,12 +33,15 @@
 			<tr class="odd">
 				<td width="200px" align="right">活动类型：</td>
 				<td align="left">
-					<select style="width:80%" name="type">
+					<select style="width:80%" name="type" id="type">
 						<option value="免费试用">免费试用</option>
 						<option value="在线调查">在线调查</option>
 					</select>
 				</td>
 			</tr>
+			<script type="text/javascript">
+				$("#type").val("{$result.type}");
+			</script>
 			<tr class="odd">
 				<td width="200px" align="right">活动标题：</td>
 				<td align="left"><input type="text" style="width:80%" name="title" id="title" value="{$result.title}"/></td>
@@ -48,7 +52,11 @@
 			</tr>
 			<tr class="odd">
 				<td  align="right">活动链接：</td>
-				<td  align="left"><input type="text" style="width:80%" name="url" id="url" value="{$result.url}"/></td>
+				<td  align="left"><input type="text" style="width:60%" name="url" id="url" value="{$result.url}"/><input type="button" value="在线预览" id="btnOnlinePreview" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/></td>
+			</tr>
+			<tr class="odd">
+				<td  align="right">活动链接高度：</td>
+				<td  align="left"><input type="text" style="width:80%" name="url_height" id="url_height" value="{$result.url_height}"/></td>
 			</tr>
 			<tr class="odd">
 				<td  align="right">活动介绍：</td>
@@ -191,5 +199,5 @@
 	</table>
 	</form>
 </body>
-
+	<include file="./Tpl/default/Public/dialog.html" />  
 </html>

@@ -120,7 +120,7 @@ $(function(){
 					json = nehnre.parseJSON(json);
 					if(json.data.msg == "在线调查"){
 						if(url != ""){
-							location.href = url.replace(/#*$/ig,"");
+							location.href = "/Activity/showOnlineActivity?id="+id;
 						}else{
 							location.href = location.href.replace(/#*$/ig,"");
 						}

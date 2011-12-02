@@ -51,6 +51,28 @@ $(function(){
 		
 	});
 	
+	$("#btnOnlinePreview").click(function(){
+		var url = $("#url").val();
+		var url_height = $("#url_height").val();
+		if(url !=""&&url_height !=""){
+			$("#myForm").attr("action","showOnlineActivity");
+			$("#myForm").attr("target", "_blank");
+			$("#myForm").submit();
+		}else{
+			if(url==""){
+				showAlert("活动链接为空！",function(){
+					$("#url").focus();
+				});
+				return false;
+			}else{
+				showAlert("活动链接高度为空！",function(){
+					$("#url_height").focus();
+				});
+				return false;
+			}
+		}
+	});
+	
 	$("#btnPreview").click(function(){
 		$("#myForm").attr("action","preview?_=" + new Date().getTime());
 		$("#myForm").attr("target", "_blank");

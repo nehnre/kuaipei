@@ -596,6 +596,28 @@ class ActivityAction extends Action
 			}
 		}
 	}
+	public function  showOnlineActivity(){
+		$id = $_REQUEST["id"];
+		$url = $_REQUEST["url"];
+		$url_height = $_REQUEST["url_height"];
+
+		if(!empty($url)&&!empty($url_height)){
+			$this -> assign("url", $url);
+			$this -> assign("url_height", $url_height);
+			$this -> display();
+		}else{
+			$Activity = M("Activity");
+			$condition["id"] = $id;
+			$condition["type"] = "在线调查";
+			$result = $Activity -> where($condition) -> find();
+			if(empty($id) || empty($result)){
+				$this -> error("没有这项活动或者不是在线调查活动！");
+			}
+			$this -> assign("result", $result);
+			$this -> display();
+		}
+	}
+	
 	
 	private function sendSms($mobile, $content){
 		$target = "http://60.28.195.138/submitdata/service.asmx/g_Submit";
@@ -604,6 +626,9 @@ class ActivityAction extends Action
 		$gets = $this -> $post($post_data, $target);
 		return $gets;
 	}
+	
+	
+	
 	/**计算相差多少天*/
 	private function timediff($begin_time,$end_time)
 	{

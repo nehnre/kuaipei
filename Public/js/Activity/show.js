@@ -120,7 +120,7 @@ $(function(){
 					json = nehnre.parseJSON(json);
 					if(json.data.msg == "在线调查"){
 						if(url != ""){
-							location.href = "/Activity/showOnlineActivity?id="+id;
+							window.open("/Activity/showOnlineActivity?id="+id);
 						}else{
 							location.href = location.href.replace(/#*$/ig,"");
 						}
@@ -151,11 +151,17 @@ $(function(){
 		$(this).click(function(){
 			$(".activity_content .activity_buttons .items").css("color","#a5a5a5");
 			$(this).css("color","#bf1d2d");
+			var type =$("#type").val();
 			if(i == 0){
 				$("#tab_1").show();
 				$("#tab_2").hide();
 				$("#tab_3").hide();
-				$(".activity_content").css("background","url(/Public/images/activity/activity_bg.jpg)");
+				if(type=="在线调查"){
+				  $(".activity_content").css("background","url(/Public/images/activity/activity_bg3.jpg)");
+				}else{
+                  $(".activity_content").css("background","url(/Public/images/activity/activity_bg.jpg)");
+				}
+				
 				//$("activity_text").css("");
 			}
 			if(i == 1){
@@ -169,6 +175,29 @@ $(function(){
 				$("#tab_2").hide();
 				$("#tab_3").show();
 				$(".activity_content").css("background","url(/Public/images/activity/activity_bg1.jpg)");
+			}
+		});
+	});
+	
+	$(".firm_activity_content .activity_buttons .items").each(function(i){
+		$(this).click(function(){
+			$(".firm_activity_content .activity_buttons .items").css("color","#a5a5a5");
+			$(this).css("color","#bf1d2d");
+			if(i == 0){
+				$("#tab_1").show();
+				$("#tab_2").hide();
+				$("#tab_3").hide();
+				//$("activity_text").css("");
+			}
+			if(i == 1){
+				$("#tab_1").hide();
+				$("#tab_2").show();
+				$("#tab_3").hide();
+			}
+			if(i == 2){
+				$("#tab_1").hide();
+				$("#tab_2").hide();
+				$("#tab_3").show();
 			}
 		});
 	});

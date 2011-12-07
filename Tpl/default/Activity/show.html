@@ -34,6 +34,7 @@
 <body>
 	<include file="./Tpl/default/Public/index_top.html" />
 	<input type="hidden" name="id" id="id" value="{$result.id}" />
+	<input type="hidden" name="type" id="type" value="{$result.type}" />
 	<div class="body">
 		<div class="align_center index_body">
 			<!--<div class="search">
@@ -65,7 +66,7 @@
 			<div class="clear"></div>
 			<div class="layer1">
 				<div class="left">
-					<div class="activity_content">
+					<div class="activity_content" <if condition="$result['type'] eq '在线调查' ">style="background:url(__PUBLIC__/images/activity/activity_bg3.jpg)" </if>>
 						<div class="activity_buttons">
 							<div class="items" style="color:#bf1d2d;">活动介绍</div>
 							<if condition="!empty($result['related_product'])">

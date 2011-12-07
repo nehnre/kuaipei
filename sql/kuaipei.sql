@@ -594,7 +594,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- View structure for `kp_vtable_tags`
 -- ----------------------------
 DROP VIEW IF EXISTS `kp_vtable_tags`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vtable_tags` AS select `t2`.`id` AS `id`,`t1`.`tag_name` AS `tag_name`,`t2`.`table_name` AS `table_name`,`t2`.`table_id` AS `table_id` from (`kp_tags` `t1` join `kp_table_tags` `t2`) where (`t1`.`id` = `t2`.`tags_id`);
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vtable_tags` AS select `t2`.`id` AS `id`,`t1`.`tag_name` AS `tag_name`,`t2`.`table_name` AS `table_name`,`t2`.`table_id` AS `table_id` from (`kp_tags` `t1` join `kp_table_tags` `t2`) where ((`t1`.`id` = `t2`.`tags_id`) and (`t2`.`table_name` = 'kp_activity'));
 
 -- ----------------------------
 -- View structure for `kp_vuserlog`

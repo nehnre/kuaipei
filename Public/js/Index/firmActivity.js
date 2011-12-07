@@ -18,7 +18,7 @@ var bottom;
 function initScrolling(){
  scrollingBox = document.getElementById("activity_content");
  //滚动
- scrollingInterval = setInterval("scrolling()",10);
+ scrollingInterval = setInterval("scrolling()",50);
  //鼠标划过停止滚动效果
  scrollingBox.onmouseover = over;
  //鼠标划出回复滚动效果

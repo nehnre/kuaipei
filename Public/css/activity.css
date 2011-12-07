@@ -320,9 +320,10 @@
  }
  .firm_activity_content .activity_text .activity_abstract{
 	width:510px;
-	height:350px;
+	height:360px;
 	float:left;
-	padding-left:20px;
+	margin-left:20px;
+	background-color:#00DDDD;
 	overflow-x:none;
 	overflow-y:auto;
  }

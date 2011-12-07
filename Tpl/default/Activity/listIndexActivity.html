@@ -184,7 +184,7 @@
 							<div class="row">
 								<volist name="firmActivitychild" id="vo">
 								<div class="item">
-									<div class="img align_center" style="cursor:pointer" href="/Activity/show?id={$vo.id}"><div style="width:200px;margin-left:7px;height:148px;overflow:hidden;background:url(__PUBLIC__/Uploads/{$vo.index_pic});">
+									<div class="img align_center" style="cursor:pointer" href="/Activity/firmActivityShow?id={$vo.id}"><div style="width:200px;margin-left:7px;height:148px;overflow:hidden;background:url(__PUBLIC__/Uploads/{$vo.index_pic});">
 										<if condition="!empty($vo['index_change_pic'])">
 										<img src="__PUBLIC__/Uploads/{$vo.index_change_pic}" style="margin-left:-600px" />
 										</if>

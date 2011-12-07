@@ -23,7 +23,7 @@ $(function(){
 		showOn:"button"
 		
 	};
-	$( "#userPublishTime" ).datepicker(dataConfig).attr("readonly", true).css("cursor", "pointer");
+	$( "#userPublishTime" ).datepicker(dataConfig).attr("readonly", true);
     $("#btnInformationColumn").click(function(){
 			var data = $("#myForm").serialize();
 			console.log(data);

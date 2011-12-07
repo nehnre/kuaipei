@@ -16,10 +16,12 @@ class ActivityAction extends Action
 		$type = $_REQUEST["type"];
 		if(!empty($type)){
 		    $condition["type"] =$type;
+		}else{
+			 $condition["type"] =array("neq","厂商活动"); 
 		}
 		$count = $Activity -> where($condition) -> count();
 		import("ORG.Util.Page");
- 		$Page = new Page($count, 15);
+ 		$Page = new Page($count, 9);
 		$foot = $Page -> show();
 		$result = $Activity -> where($condition) -> order('insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
 		$len = count($result);
@@ -34,6 +36,34 @@ class ActivityAction extends Action
 		}
 		$this -> assign("result", $temp);
 		$this->assign('foot',$foot);
+		
+		
+		$firmActivitycount = $Activity -> where("type='厂商活动' and status='已发布'") -> count();
+ 		C('VAR_PAGE','firmp');
+		$firmActivityPage = new Page($firmActivitycount, 6);
+		$firmActivityfoot = $firmActivityPage -> show();
+		$firmActivityresult = $Activity -> where("type='厂商活动' and status='已发布'") -> order('insert_time desc') -> limit($firmActivityPage->firstRow.','.$firmActivityPage->listRows) -> select(); // 查询数据
+		$firmActivitylen = count($firmActivityresult);
+		for($i=0;$i< $firmActivitylen/3;$i++){
+			$firmActivitytemp[$i][0] = $firmActivityresult[$i*3];
+			if($firmActivitylen > $i*3 + 1){
+				$firmActivitytemp[$i][1] = $firmActivityresult[$i*3 + 1];
+			}
+			if($firmActivitylen > $i*3 + 2){
+				$firmActivitytemp[$i][2] = $firmActivityresult[$i*3 + 2];
+			}
+		}
+		$this -> assign("firmActivityresult", $firmActivitytemp);
+		$this->assign('firmActivityfoot',$firmActivityfoot);
+		
+		
+		//
+		$count1 = $Activity -> where("type='免费试用' and status='已发布' ") -> count();
+		$count2 = $Activity -> where("type='在线调查'and status='已发布' ") -> count();
+		$this->assign('count1',$count1);
+		$this->assign('count2',$count2);
+		
+		//厂商活动
 
 		$Vuserlog = M("Vuserlog");
 		$log = $Vuserlog -> where("") -> order('insert_time desc') -> limit(7) -> select();
@@ -123,7 +153,7 @@ class ActivityAction extends Action
 			$Userlog -> user_id = $user_id;
 			$Userlog -> table_name = "kp_activity";
 			$Userlog -> table_id = $id;
-			$Userlog -> act_describ = "参加抽奖活动一次";
+			$Userlog -> act_describ = "参加".$Activityresult["type"]."一次";
 			$Userlog -> insert_time = date("Y-m-d H:i:s");
 			$Userlog -> ip = $_SERVER['REMOTE_ADDR'];
 			$Userlog -> add();
@@ -136,14 +166,14 @@ class ActivityAction extends Action
 				$true_name = $result["true_name"];
 			}
 			$user_name = $result["user_name"];
-			if($Activityresult["type"] !="在线调查"){
+			if($Activityresult["type"] =="免费试用" ){
 				$sendSms = "sendSms";
 				$this -> $sendSms($user_name, "尊敬的".$true_name."，感谢您参加本次立配网活动！我们将在您获得试用资格后，发送试用通知，敬请留意。【立配网】");
 				$json["success"] = true;
 				$json["msg"] = "参加成功！感谢您参加本次活动，我们将在您获得试用资格后，发送短信通知到您的手机上，敬请留意查收。";
 			}else{
 				$json["success"] = true;
-				$json["msg"] = "在线调查";
+				$json["msg"] = $Activityresult["type"];
 			}
 		}
 		$this -> ajaxReturn($json);
@@ -626,6 +656,156 @@ class ActivityAction extends Action
 		$gets = $this -> $post($post_data, $target);
 		return $gets;
 	}
+	//厂商活动页面显示
+	public function firmActivityShow(){
+		$id = $_REQUEST["id"];
+		$Activity = M("Activity");
+		$condition["id"] = $id;
+		$condition["status"] = "已发布";
+		
+		$result = $Activity -> where($condition) -> find();
+		if(empty($id) || empty($result)){
+			$this -> error("没有这项活动或者活动还未被审核！");
+		}
+		
+		$Vuserlog = M("Vuserlog");
+		$Vuserlog = $Vuserlog -> where("type='在线调查'") -> order('insert_time desc') -> limit(20) -> select();
+		$this -> assign("vuserlog", $Vuserlog);
+		
+		$user_id = Session::get("id");
+		if(!empty($user_id)){
+			$Userlog = M("Userlog");
+			unset($condition);
+			$condition["user_id"] = $user_id;
+			$condition["table_name"] = "kp_activity";
+			$condition["table_id"] = $id;
+			$log = $Userlog -> where($condition) -> find();
+			if(!empty($log)){
+				$this -> assign("joined", $log["insert_time"]);
+			}
+		} else {
+			$this -> assign("unlogin", true);
+		}
+		$introduce = split("\n",str_replace("\r","",$result["introduce"]));
+		$describ_text = split("\n",str_replace("\r","",$result["describ_text"]));
+		$this -> assign("result", $result);
+		$this -> assign("introduce", $introduce);
+		$this -> assign("describ_text", $describ_text);
+		
+		/*获取过期信息*/
+		$expires = 0;
+		if(!empty($result["start_time"])&& $result["start_time"] !="0000-00-00"){
+			if($result["start_time"] > date("Y-m-d")){
+				//还没到开始时间
+				$expirse = -1;
+			}
+			if($result["end_time"] < date("Y-m-d")){
+				//已经结束
+				$expirse = 1;
+			}
+		}
+		$this -> assign("expirse", $expirse);
+
+		
+		/*获取用户信息*/
+		$User = M("User");
+		$loginUser = $User -> where("id=".$user_id) -> find();
+		$this -> assign("user", $loginUser);
+		
+		/*获取性别信息*/
+		$check_sex = 0;	
+		if(!empty($result["sex"])){
+			if(!strstr($result["sex"],$loginUser["sex"])){
+			  //不包含
+			  $check_sex = 1;
+			}
+		}
+		$this -> assign("check_sex", $check_sex);
+		
+		/*获取省份信息*/
+		$check_province = 0;	
+		if(!empty($result["province"])){
+			if(!strstr($result["province"],$loginUser["province"])){
+			  //不包含
+			  $check_province = 1;
+			}
+		}
+		$this -> assign("check_province", $check_province);
+		
+		/*获取年龄信息*/
+		$check_birthday = 0;	
+		if(!empty($result["start_birthday"])&& $result["start_birthday"] !="0000-00-00"){
+			if($result["start_birthday"] >$loginUser["birthday"]){
+				//未到年龄
+				$check_birthday = -1;
+			}
+
+		}
+		if(!empty($result["end_birthday"])&& $result["end_birthday"] !="0000-00-00"){
+			if($result["end_time"] < $loginUser["birthday"]){
+				//超过年龄
+				$check_birthday = 1;
+			}
+		}
+		$this -> assign("check_birthday", $check_birthday);
+		
+		/*获取身份类别信息*/
+		$check_user_type = 0;	
+		if(!empty($result["user_type"])){
+			if(!strstr($result["user_type"],$loginUser["user_type1"])){
+			  //不包含
+			  $check_user_type = 1;
+			}
+		}
+		$this -> assign("check_user_type", $check_user_type);
+		
+		/*重复参加数*/
+		$check_repeat_num = 0 ;
+		if(!empty($result["repeat_num"])){
+			$repeat_Userlog = M("Userlog");
+			unset($condition);
+			$condition["user_id"] = $user_id;
+			$condition["table_name"] = "kp_activity";
+			$repeat_user_log = $repeat_Userlog -> where($condition) ->order('insert_time desc') -> find();
+			$timediff = "timediff";
+			$num = $this ->$timediff($repeat_user_log["insert_time"],date("Y-m-d H:i:s"));
+			if($num < $result["repeat_num"]){
+			     $check_repeat_num = $result["repeat_num"]-$num  ;
+			}
+		}
+		$this -> assign("check_repeat_num", $check_repeat_num);
+		/*参加总人数*/
+		$check_total_num = 0 ;
+		if(!empty($result["total_num"])){
+			$total_Userlog = M("Userlog");
+			unset($condition);
+			$condition["user_id"] = $user_id;
+			$condition["table_name"] = "kp_activity";
+			$condition["table_id"] = $id;
+			$activity_num = $total_Userlog -> where($condition) -> count();
+			if($activity_num >= $result["total_num"]){
+			     $total_num = 1 ;
+			}
+		}
+		$this -> assign("check_total_num", $check_total_num);
+		
+		/*获取评论信息*/
+		$VActivityComment = M("vactivity_comment");
+		unset($condition);
+		$condition["activity_id"] = $id;
+		$count = $VActivityComment -> where($condition) -> count();
+		import("ORG.Util.Page");
+ 		$Page = new Page($count, 10);
+		$foot = $Page -> show();
+		$list = $VActivityComment -> where($condition) -> order('insert_time desc') -> limit($Page->firstRow.','.$Page->listRows) -> select(); // 查询数据
+		$this->assign('list',$list); 
+		$this->assign('foot',$foot);
+		
+		
+
+		
+		$this -> display();
+	}
 	
 	
 	
@@ -645,5 +825,7 @@ class ActivityAction extends Action
 			
 	}
 	
+	
+
 }
 ?>

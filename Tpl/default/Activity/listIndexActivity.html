@@ -99,15 +99,19 @@
 					<div class="promotion">
 						<div class="left_title">
 							<span>配</span>件促销</a>
-						<div class="tab" style="margin-left:190px;">
-							<div class="item">
-								<div class="text" style="font-size:12px;">全部</div>
+						<div class="tab" style="margin-right:10px;">
+							<if condition="!empty($count2)">
+							<div class="item" style="float:right;">
+								<div class="text" style="font-size:12px;">在线调查</div>
 							</div>
-							<div class="item">
+							</if>
+							<if condition="!empty($count1)">
+							<div class="item" style="float:right;">
 								<div class="text" style="font-size:12px;">免费试用</div>
 							</div>
-							<div class="item">
-								<div class="text" style="font-size:12px;">在线调查</div>
+							</if>
+							<div class="item" style="float:right;">
+								<div class="text" style="font-size:12px;">全部</div>
 							</div>
 						</div>
 						</div>
@@ -166,7 +170,44 @@
 					</div>
 					<div class="clear"></div>
 				</div>
-			</div>
+				<div class="clear"></div>
+				<div class="left" style="padding-top:20px;">
+					<div class="promotion">
+						<div class="left_title">
+							<span>厂</span>商活动</a>
+						</div>
+						<div class="promotion_content">
+							<volist name="firmActivityresult" id="firmActivitychild">
+							<if condition="$i  gt 1">
+							<div class="line"></div>
+							</if>
+							<div class="row">
+								<volist name="firmActivitychild" id="vo">
+								<div class="item">
+									<div class="img align_center" style="cursor:pointer" href="/Activity/show?id={$vo.id}"><div style="width:200px;margin-left:7px;height:148px;overflow:hidden;background:url(__PUBLIC__/Uploads/{$vo.index_pic});">
+										<if condition="!empty($vo['index_change_pic'])">
+										<img src="__PUBLIC__/Uploads/{$vo.index_change_pic}" style="margin-left:-600px" />
+										</if>
+									</div></div>
+									<div class="red bold text">{$vo.sponsor}</div>
+									<div class="gray bold text">{$vo.title}</div>
+									<div class="button">
+										<div>{$vo.start_time}</div>
+										<a href="/Activity/firmActivityShow?id={$vo.id}" style="color:white">点击查看</a>
+									</div>
+								</div>
+								</volist>
+							</div>
+							</volist>
+							<div style="height:20px;"></div>
+							 <div  style="text-align:right;padding-right:10px;">{$firmActivityfoot}</div>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="left_bottom"></div>
+					</div>
+				</div>
+                <div class="clear"></div>
 			</div>
 			<div class="clear"></div>
 		</div>

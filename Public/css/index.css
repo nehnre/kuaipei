@@ -811,3 +811,40 @@ a:hover{
     _bottom: "auto";
     cursor: pointer;
 }
+
+.activity_pic{
+	width:50px;
+	height:50px;
+	float:left;
+}
+
+.activity_pic img{
+	border:#bebebe solid 1px;
+}
+.activity_news{
+	width:140px;
+	height:60px;
+	float:left;
+}
+.activity_news .activity_title{
+    width:140px;
+	height:30px;
+	float:left;
+	overflow:hidden;
+}
+.activity_news .activity_time{
+	width:140px;
+	height:30px;
+	float:left;
+	overflow:hidden;
+}
+.firm_activity{
+	width:210px;
+	height:70px;
+	padding-bottom:10px;
+}
+.activity_content{
+	padding:7px 10px 7px 10px;
+	height:310px;
+	overflow:hidden;
+}

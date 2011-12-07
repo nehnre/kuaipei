@@ -10,7 +10,7 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
-	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/InformationColumn/	listInformationColumn.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/InformationColumn/listInformationColumn.js"></script>
 
 	<script>
 		function del(id){
@@ -136,7 +136,7 @@
 <div id="AddpublishTime" title="填写发布时间" style="margin:20px 20px 20px 20px">
 <form id="myForm">
 <input name='informationColumnId' id='informationColumnId'  type="hidden">
-<input name='userPublishTime' id='userPublishTime' type='text' readonly><br>
+<input name='userPublishTime' id='userPublishTime' type='text' readonly value="<php>echo date('Y-m-d',time());</php>"><br>
 <input type="button" value="发布资讯" id="btnInformationColumn"/>
 </form>
 </div>

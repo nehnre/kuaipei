@@ -10,7 +10,7 @@ class IndexAction extends Action
     public function index()
     {
 		$Activity = M("Activity");
-		$result = $Activity -> where("status='已发布'") -> order('seq desc, insert_time desc') -> limit(12) -> select();
+		$result = $Activity -> where("type<>'厂商活动' and status='已发布'") -> order('seq desc, insert_time desc') -> limit(12) -> select();
 		$len = count($result);
 		for($i=0;$i< $len/3;$i++){
 			$temp[$i][0] = $result[$i*3];
@@ -26,6 +26,9 @@ class IndexAction extends Action
 		$Vuserlog = M("Vuserlog");
 		$log = $Vuserlog -> where("") -> order('insert_time desc') -> limit(7) -> select();
 		$this -> assign("log", $log);
+		//显示厂商活动
+		$firmActivity = $Activity -> where("status='已发布' and type='厂商活动' ") -> order('seq desc, insert_time desc') -> select();
+		$this -> assign("firmActivity", $firmActivity);
 		
 		//显示活动相关信息
 		$Information_column = M("information_column");

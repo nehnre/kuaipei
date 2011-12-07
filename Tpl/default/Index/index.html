@@ -15,6 +15,7 @@
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/dialog.js"></script>
 	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Index/index.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/Index/firmActivity.js"></script>
 	<title>欢迎光临——立配网</title>
 	
 	<script type="text/javascript">
@@ -211,7 +212,41 @@
 						<div class="left_bottom"></div>
 					</div>
 				</div>
-               <div class="right"><a href="/Index/survey" target="_blank" onclick=""><img   src="__PUBLIC__/images/Investigate.jpg" border="0"/></a></div>
+				<div class="right">
+					<div class="trends">
+						<div class="right_title">厂商活动<a href="/Activity/listIndexActivity" class="gray" style="margin-left:60px;" target="_blank">更多 ></a></div>
+						<div class="trends_content">
+							<div class="activity_content" id="activity_content">
+								<if condition="empty($firmActivity)">
+								<div class="nick_name"></div>
+								<div class="act_time" style="color:gray;">暂无厂商活动！</div>
+								<div class="action"></div>
+								<div class="clear"></div>
+								</if>
+								<volist name="firmActivity" id="vo">
+							   <div class="firm_activity">
+									<div class="activity_pic">
+										<if condition="!empty($vo['picture'])">
+										<img src="__PUBLIC__/Upload/{$vo.activity_pic}" width="50" height="60"/>
+										<else />
+										<img src="__PUBLIC__/images/foot_logo.jpg" width="50" height="60"/>
+										</if>
+									</div>
+									<div class="activity_news">
+										<div class="activity_title"><span class="bold">活动标题:</span><a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
+										<div class="activity_time"><span class="bold">活动时间:</span><php>echo date("Y年m月d日", strtotime($result["start_time"])).'至'.date("Y年m月d日", strtotime($result["start_time"]));</php></div>
+									</div>
+								</div>
+								<div class="clear"></div>
+							   </volist>
+								
+							</div>
+						</div>
+						<div class="right_bottom"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				
 			   <div class="right" style="height:10px"></div>
 				<div class="right" style="height:20px">
 					<div class="trends">

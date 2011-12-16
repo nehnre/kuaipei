@@ -224,7 +224,7 @@
  
  
   .firm_activity_content{
-	width:953px;
+	width:931px;
 	height:490px;
 	background:url(../images/activity/activity_bg2.jpg);
 	background-repeat:repeat;
@@ -281,7 +281,6 @@
 	font-size:14px;
 	font-family:黑体;
 	font-weight:bold;
-	background-color:#00DDDD;
 	
  }
  .firm_activity_content .activity_call{
@@ -291,7 +290,6 @@
 	font-size:14px;
 	font-family:黑体;
 	font-weight:bold;
-	background-color:#00DDDD;
  }
  .firm_activity_content .activity_url{
     width:375px;
@@ -300,7 +298,6 @@
 	font-size:14px;
 	font-family:黑体;
 	font-weight:bold;
-	background-color:white;
  }
   .firm_activity_content .join_btn{
     float:left;
@@ -323,7 +320,6 @@
 	height:360px;
 	float:left;
 	margin-left:20px;
-	background-color:#00DDDD;
 	overflow-x:none;
 	overflow-y:auto;
  }

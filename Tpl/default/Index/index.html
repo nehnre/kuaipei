@@ -226,8 +226,8 @@
 								<volist name="firmActivity" id="vo">
 							   <div class="firm_activity">
 									<div class="activity_pic">
-										<if condition="!empty($vo['picture'])">
-										<img src="__PUBLIC__/Upload/{$vo.activity_pic}" width="50" height="60"/>
+										<if condition="!empty($vo['index_pic'])">
+										<img src="__PUBLIC__/Uploads/{$vo.index_pic}" width="50" height="60"/>
 										<else />
 										<img src="__PUBLIC__/images/foot_logo.jpg" width="50" height="60"/>
 										</if>

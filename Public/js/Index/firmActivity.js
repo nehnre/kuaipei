@@ -6,9 +6,11 @@ var bottom;
 function initScrolling(){
 
  scrollingBox = document.getElementById("activity_content");
- scrollingInterval = setInterval("scrolling()",50);
- scrollingBox.onmouseover = over;
- scrollingBox.onmouseout = out; 
+ if($(scrollingBox).children().size() > 8){
+	 scrollingInterval = setInterval("scrolling()",50);
+	 scrollingBox.onmouseover = over;
+	 scrollingBox.onmouseout = out; 
+ }
 }
 function scrolling(){
  var origin = scrollingBox.scrollTop++;

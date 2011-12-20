@@ -77,6 +77,16 @@ class AdminUserAction extends Action
 			if(!empty($activite_flag)){
 				$condition["activite_flag"] = $activite_flag; 
 			}
+			
+			$freeze_flag = $_REQUEST["freeze_flag"];
+			if(!empty($freeze_flag)){
+				if($freeze_flag=="已冻结"){
+					$condition["freeze_flag"] = $freeze_flag; 
+				}else{
+				    $condition["freeze_flag"] = array('neq',"已冻结");
+				}
+			}
+
 
 
 			$count = $User -> where($condition) -> count();
@@ -93,6 +103,23 @@ class AdminUserAction extends Action
 		}
 
 	}
+	
+	public function cancleFreezeUser(){
+		$id = $_REQUEST["id"];
+		$User = M("User");
+		$data["freeze_flag"] = "未冻结";
+		$User -> where("id=".$id) -> save($data);
+		echo '<script>alert("取消成功！");location.href="listUser";</script>';
+	}
+	
+	public function freezeUser(){
+		$id = $_REQUEST["id"];
+		$User = M("User");
+		$data["freeze_flag"] = "已冻结";
+		$User -> where("id=".$id) -> save($data);
+		echo '<script>alert("冻结成功！");location.href="listUser";</script>';
+	}
+
 	
     /**
     +----------------------------------------------------------

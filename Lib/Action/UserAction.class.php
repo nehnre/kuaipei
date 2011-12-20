@@ -26,7 +26,10 @@ class UserAction extends Action
 			if(empty($result)){
 				$json["success"] = false;
 				$json["msg"] = "用户名或密码不正确！";
-			} else {
+			} else if($result["freeze_flag"] == "已冻结"){
+				$json["success"] = false;
+				$json["msg"] = "对不起，您的账户已被管理员冻结，如要继续使用，请与管理员联络！";
+			}else {
 				Session::set("id", $result["id"]);
 				Session::set("nick_name", $result["nick_name"]);
 				$json["success"] = true;

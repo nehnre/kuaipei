@@ -227,17 +227,18 @@
 							   <div class="firm_activity">
 									<div class="activity_pic">
 										<if condition="!empty($vo['picture'])">
-										<img src="__PUBLIC__/Upload/{$vo.activity_pic}" width="50" height="90"/>
+										<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/Upload/{$vo.activity_pic}" width="50" height="60"/></a>
 										<else />
-										<img src="__PUBLIC__/images/foot_logo.jpg" width="50" height="90"/>
+										<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/images/foot_logo.jpg" width="50" height="60"/></a>
 										</if>
 									</div>
 									<div class="activity_news">
 										<div class="activity_title"><span class="bold">产品名称:</span><a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank">{$vo.sponsor}</a></div>
 										<div class="activity_title"><span class="bold">活动标题:</span>{$vo.title}</div>
-										<div class="activity_time"><span class="bold">活动时间:</span><php>echo date("Y年m月d日", strtotime($result["start_time"])).'至'.date("Y年m月d日", strtotime($result["start_time"]));</php></div>
 									</div>
+									<div class="activity_time"><span class="bold">s活动时间:</span><php>echo date("Y-m-d", strtotime($result["start_time"])).'至'.date("Y-m-d", strtotime($result["start_time"]));</php></div>
 								</div>
+								
 								<div class="clear"></div>
 							   </volist>
 								

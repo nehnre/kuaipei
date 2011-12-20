@@ -15,11 +15,14 @@ class AdminAction extends Action
 			$condition["id"] = Session::get("systemId");
 			$admin_user = M("admin_user");
 			$result = $admin_user -> where($condition) -> find();
-			if($result["user_name"] != 'admin'){
+			if($result["user_name"] == 'edit'){
 				    $menu = ',资讯管理,图片资讯';
 					$this -> assign("menu", $menu);
-			}else{
-				   $menu = ',系统管理,活动管理,用户管理,评论管理,资讯管理,短消息管理,图片资讯,导出数据';
+			}else if($result["user_name"] == 'activity_admin'){
+				    $menu = ',活动发布,评论管理,资讯管理,图片资讯';
+					$this -> assign("menu", $menu);	
+			}else if($result["user_name"] == 'admin'){
+				   $menu = ',系统管理,活动管理,用户管理,评论管理,资讯管理,短消息管理,图片资讯,导出数据,日志查看';
 					$this -> assign("menu", $menu);
 			}
 			 $this->display();
@@ -86,16 +89,17 @@ class AdminAction extends Action
 		}
 		$this -> ajaxReturn($json);
 	}
-	
-	public function test(){
-		
-		$condition["user_name"] = 'admin';
-		//$condition["password"] = '111111';
 
-			$condition["password"] = '9db06bcff9248837f86d1a6bcf41c9e7';
-			$Admin_User = M("admin_user");
-			$result = $Admin_User  -> where($condition) -> find();
-			$this -> ajaxReturn($result);
+	
+	
+	public function messageRemain(){
+		$file_contents = file_get_contents('http://60.28.195.138/submitdata/service.asmx/Sm_GetRemain?sname=dlshzy03&spwd=87654321&scorpid=&sprdid=1012818') ;
+        $xml = simplexml_load_string($file_contents);
+		$State = $xml->State;
+        $Remain = $xml->Remain;
+		$this -> assign("State", $State);
+		$this -> assign("Remain", $Remain);
+        $this->display();
 	}
 
    public function logout(){

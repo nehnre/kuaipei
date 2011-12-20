@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=gbk" />
+	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<title>活动列表</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+</head>
+<body>
+	<form method="get" action="listUserLog">
+	<table border="0" class="table" cellpadding="0" cellspacing="0"  >
+		<tr >
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_01.jpg" alt=""/>
+			</td>
+			<td class="navigation_middle" >
+				您现在的位置： 日志查看 》短信余量查看
+			</td>
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_03.jpg" alt=""></img>
+			</td>
+		</tr>
+	</table>
+	
+
+	<table class="its" cellspacing="1" id="ufile" border="0">
+
+
+			<tr class="even">
+				<td style="font-size:14px;">已用短信<span class="red">{$State}</span>条,剩余短信<span class="red">{$Remain}</span>条</td>
+			</tr>
+	</table>
+	</form>
+</body>
+
+</html>

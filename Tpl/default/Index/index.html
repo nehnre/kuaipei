@@ -216,7 +216,7 @@
 					<div class="trends">
 						<div class="right_title">厂商活动<a href="/Activity/listIndexActivity" class="gray" style="margin-left:60px;font-size:12px;font-weight:normal;font-family:宋体;" target="_blank">更多 ></a></div>
 						<div class="trends_content">
-							<div class="firm_activity_content" id="activity_content">
+							<div class="index_firm_activity_content" id="activity_content">
 								<if condition="empty($firmActivity)">
 								<div class="nick_name"></div>
 								<div class="act_time" style="color:gray;">暂无厂商活动！</div>
@@ -227,13 +227,14 @@
 							   <div class="firm_activity">
 									<div class="activity_pic">
 										<if condition="!empty($vo['index_pic'])">
-										<img src="__PUBLIC__/Uploads/{$vo.index_pic}" width="50" height="60"/>
+										<img src="__PUBLIC__/Uploads/{$vo.index_pic}" width="50" height="90"/>
 										<else />
-										<img src="__PUBLIC__/images/foot_logo.jpg" width="50" height="60"/>
+										<img src="__PUBLIC__/images/foot_logo.jpg" width="50" height="90"/>
 										</if>
 									</div>
 									<div class="activity_news">
-										<div class="activity_title"><span class="bold">活动标题:</span><a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank">{$vo.title}</a></div>
+										<div class="activity_title"><span class="bold">产品名称:</span><a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank">{$vo.sponsor}</a></div>
+										<div class="activity_title"><span class="bold">活动标题:</span>{$vo.title}</div>
 										<div class="activity_time"><span class="bold">活动时间:</span><php>echo date("Y年m月d日", strtotime($result["start_time"])).'至'.date("Y年m月d日", strtotime($result["start_time"]));</php></div>
 									</div>
 								</div>

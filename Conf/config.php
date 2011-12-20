@@ -1,7 +1,7 @@
 <?php
 	return array(
 		//'配置项'=>'配置值'
-		'APP_DEBUG' => true, // 开启调试模式
+		'APP_DEBUG' => false, // 开启调试模式
 		'DB_TYPE'=> 'mysql',   // 数据库类型
 		'DB_HOST'=> '127.0.0.1', // 数据库服务器地址
 		'DB_NAME'=>'kuaipei',  // 数据库名称 

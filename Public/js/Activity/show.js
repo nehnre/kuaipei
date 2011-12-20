@@ -108,9 +108,7 @@ $(function(){
 			showAlert("请您{0}天后在参加此活动".format(check_repeat_num));
 		}else if(check_total_num==1){
 			showAlert("此活动参加人数已满");
-		}else if (joined){
-			showAlert("您已经于{0}参加过此次活动了！".format(joined));
-		} else {
+		}else {
 			showWaiting();
 			var id = $("#id").val();
 			$.ajax({

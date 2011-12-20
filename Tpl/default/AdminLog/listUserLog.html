@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=gbk" />
+	<link rel="stylesheet" href="__PUBLIC__/css/main.css" type="text/css" />
+	<title>活动列表</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/jqueryui/js/jquery-1.6.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/js/base/core.js"></script>
+</head>
+<body>
+	<form method="get" action="listUserLog">
+	<table border="0" class="table" cellpadding="0" cellspacing="0"  >
+		<tr >
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_01.jpg" alt=""/>
+			</td>
+			<td class="navigation_middle" >
+				您现在的位置： 日志查看 》日志列表
+			</td>
+			<td>
+				<img src="__PUBLIC__/images/mainpage/n_03.jpg" alt=""></img>
+			</td>
+		</tr>
+	</table>
+	
+	<table cellpadding="0" cellspacing="0" class="table" border="0" style="padding-bottom: 5px;padding-top: 5px" >
+		<tr>
+			<td style="width:200px;">
+				用户名：<input type="text" style="width:100px;" name="user_name" value="{$Think.request.user_name}"/>
+			</td>
+			<td style="width:200px;">
+				事件名称：<input type="text" style="width:100px;" name="act_describ" value="{$Think.request.act_describ}"/>
+			</td>
+
+			<td>
+				<input type="submit" value=" 查 询 " id="btnSearch" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>
+			</td>
+		</tr>
+	</table>
+	<table class="its" cellspacing="1" id="ufile" border="0">
+		<tr>
+			<th nowrap="nowrap">
+				用户名
+			</th>
+			<th nowrap="nowrap">
+				事件名称
+			</th>
+			<th nowrap="nowrap">
+				事件时间
+			</th>
+		</tr>
+		<!-- odd even-->
+		
+		<volist name='list' id='vo' > 
+			<if condition="$i%2==1">
+			<tr class="odd">
+			<else />
+			<tr class="even">
+			</if>
+				<td>{$vo.user_name}</td>
+				<td>{$vo.act_describ}</td>
+				<td>{$vo.insert_time}</td>
+			</tr>
+		</volist>
+		<tr class="odd"><td colspan="3" align="right">{$foot}</td></tr>
+	</table>
+	</form>
+</body>
+
+</html>

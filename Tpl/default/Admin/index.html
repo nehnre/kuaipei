@@ -202,6 +202,19 @@
 												     </ul>
 										</li>
 									</if>
+									
+	                                <if condition=" strripos($menu,'日志查看')">
+										<li id="GSBGL-" class="catalog" style="display: block">
+											<a  href="javascript:ShowCatalog(9)" class="ui-accordion-link">日志查看</a>	
+													<ul class="subCatalog" id="catalog_9">
+														<li id="GSBGL-活动列表" style="display: block">															
+																	<a href="../AdminLog/listUserLog" target="content" onclick="javascript:setCSS(this);" style="color: 585956">日志列表</a>
+																	<a href="../Admin/messageRemain" target="content" onclick="javascript:setCSS(this);" style="color: 585956">短信余量查看</a>																	
+														</li>												
+												     </ul>
+										</li>
+									</if>
+									
 								</ul>
 					</div>
 				</td>

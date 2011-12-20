@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2011-12-07 17:11:25
+Date: 2011-12-20 20:04:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -60,8 +60,8 @@ CREATE TABLE `kp_activity` (
 -- ----------------------------
 -- Records of kp_activity
 -- ----------------------------
-INSERT INTO `kp_activity` VALUES ('34', '免费试用', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '', '', null, '', null, '2011-10-12', '2011-10-30', '4e9598e8c5dfc.jpg', '4e9598e8c6d9e.jpg', '4e9598e8c7d3b.jpg', '4e9598e8c94a8.jpg', null, '我们,的家', '未发布', '0', '2011-10-12 21:40:56', '10', '2011-11-15 00:00:00', null, null, null, null, null, null, null, null, null, null, null);
-INSERT INTO `kp_activity` VALUES ('35', '免费试用', '汽车加油卡抽奖活动', '上海大众公司', '活动性质：公益\r\n活动类别：抽奖', '所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网', '', '', null, '', null, '2011-10-12', '2011-10-14', '4e9599975b317.jpg', '4e9599975c2b6.jpg', '4e9599975d257.jpg', '4e9eb321a4593.jpg', null, '志向,远大', '未发布', '0', '2011-10-12 21:43:51', '0', '2011-12-03 00:00:00', null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('34', '免费试用', '汽车坐垫抽奖活动', '上海科技网络游戏公司', '促销产品：汽车充气折叠靠垫\r\n促销类型：优惠券', '说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明\r\n说明说明说明说明说明说明说明说明说明说明', '', '', null, '', null, '2011-10-12', '2011-10-30', '4e9598e8c5dfc.jpg', '4e9598e8c6d9e.jpg', '4e9598e8c7d3b.jpg', '4e9598e8c94a8.jpg', null, '我们,的家', '已发布', '0', '2011-10-12 21:40:56', '10', '2011-12-20 00:00:00', null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('35', '免费试用', '汽车加油卡抽奖活动', '上海大众公司', '活动性质：公益\r\n活动类别：抽奖', '所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网\r\n所有解释权归立配网', '', '', null, '', null, '2011-10-12', '2011-10-14', '4e9599975b317.jpg', '4e9599975c2b6.jpg', '4e9599975d257.jpg', '4e9eb321a4593.jpg', null, '志向,远大', '已发布', '0', '2011-10-12 21:43:51', '0', '2011-12-20 00:00:00', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `kp_activity` VALUES ('36', '抽奖活动', '活动标题', '主办方', '活动介绍', '活动说明', 'sdfsdf', '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\"><span style=\"background-color:#e53333;\">相关产</span>品</span>', null, '<span class=\"Apple-style-span\" style=\"font-family:宋体;line-height:normal;\">牌故事</span>', null, '2011-10-19', '2011-10-30', null, null, null, '4e9ee41a31590.jpg', null, null, '已发布', '0', '2011-10-19 22:52:10', null, '2011-10-31 21:48:56', null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `kp_activity` VALUES ('37', '在线调查', 'sdfsdf', 'sdf', 'sdfsd', 'sdfsd活动说', '<i><span style=\"background-color:#e56600;\">金金金金金222222222222222222金金金金金金<img src=\"/kindeditor/attached/image/20111022/20111022042219_87950.jpg\" alt=\"\" /></span></i>', '', null, '', null, '2011-12-07', '2011-12-15', null, null, null, '4ea245819f867.jpg', '4ea246c5a51c8.png', '中国,哈哈,我们', '已发布', '0', '2011-10-19 22:55:43', null, '2011-12-07 14:23:05', '1,2', '0000-00-00', '0000-00-00', null, '3', '0', null, null, null, null, null);
 INSERT INTO `kp_activity` VALUES ('39', '在线调查', '1', '1', '1', '1', '1', '1', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '已发布', '0', '2011-11-15 14:56:47', '0', '2011-12-02 16:30:54', null, null, null, null, null, null, null, null, 'http://www.diaochapai.com/survey/cec55509-31e2-40fd-bb78-b17965484c19', '1110', null);
@@ -74,7 +74,7 @@ INSERT INTO `kp_activity` VALUES ('45', '厂商活动', '2323323424', '', '', ''
 INSERT INTO `kp_activity` VALUES ('46', '厂商活动', 'eeee', 'ee', 'werwwr', '', '', '', null, '', null, '0000-00-00', '0000-00-00', null, null, null, null, null, '', '已发布', '0', '2011-11-18 15:15:41', '0', '2011-12-05 00:00:00', null, '1991-11-07', '1991-11-06', null, '0', '0', null, null, '', '0', null);
 INSERT INTO `kp_activity` VALUES ('47', '免费试用', 'eee', 'ee', 'e', 'e', 'ee', 'eeeeeeeeeee', null, 'eeeeeeeeeeeee', null, '2011-12-07', '2011-12-20', null, null, null, null, null, '', '已发布', '0', '2011-11-22 13:29:21', '0', '2011-12-07 14:38:28', null, '2011-11-23', '2011-11-30', null, '3', '1', null, null, '', '0', '');
 INSERT INTO `kp_activity` VALUES ('48', '厂商活动', '曼牌-空调滤清器CU-19-003曼牌-空调滤清器CU-19-003', '曼牌-空调滤清器CU-19-003曼牌-空调滤清器CU-19-003', 'rr', '', '<strong> <p style=\"text-justify:inter-ideograph;text-align:justify;text-indent:-18pt;margin:0cm 0cm 0pt 18pt;mso-pagination:none;mso-list:l0 level1 lfo1;tab-stops:list 18.0pt;\" class=\"MsoNormal\"><strong><span style=\"mso-fareast-font-family:Arial;mso-bidi-font-family:Arial;\" lang=\"DE\"><span style=\"mso-list:Ignore;\"><span style=\"font-family:Arial;font-size:small;\">1、</span><span style=\"font:7pt \'Times New Roman\';\"> </span></span></span><span style=\"font-size:small;\"><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">剪下两个</span><span lang=\"DE\"><span style=\"font-family:Arial;\">LuK</span></span><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">双质量飞轮离合器套装</span><span lang=\"DE\"><span style=\"font-family:Arial;\">25</span></span><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">周年标贴（须连同包装盒一同剪下），寄回舍弗勒贸易（上海）有限公司汽车售后市场部</span></span></strong></p>\r\n<span style=\"font-size:small;\"><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\"> <p><a href=\"http://www.snscar.cn/data/attachment/portal/201111/01/212640ylw33k5nzpql2hny.png\" target=\"_blank\"></a></p>\r\n<p style=\"text-justify:inter-ideograph;text-align:justify;text-indent:-18pt;margin:0cm 0cm 0pt 18pt;mso-pagination:none;mso-list:l0 level1 lfo1;tab-stops:list 18.0pt;\" class=\"MsoNormal\"><strong><span style=\"mso-fareast-font-family:Arial;mso-bidi-font-family:Arial;\" lang=\"DE\"><span style=\"mso-list:Ignore;\"><span style=\"font-family:Arial;\">2、</span><span style=\"font:7pt \'Times New Roman\';\"> </span></span></span><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">请在邮寄时，使用正楷完整填写寄件人信息，包括维修厂名称、维修厂地址、联系人、电话，以便赠品准确发送。</span></strong></p>\r\n</span></span></strong>', '<span style=\"font-size:small;\"><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\"><strong> <p style=\"text-justify:inter-ideograph;text-align:justify;text-indent:-18pt;margin:0cm 0cm 0pt 18pt;mso-pagination:none;mso-list:l0 level1 lfo1;tab-stops:list 18.0pt;\" class=\"MsoNormal\"><strong><span style=\"mso-fareast-font-family:Arial;mso-bidi-font-family:Arial;\" lang=\"DE\"><span style=\"mso-list:Ignore;\"><span style=\"font-family:Arial;font-size:small;\">1、</span><span style=\"font:7pt \'Times New Roman\';\"> </span></span></span><span style=\"font-size:small;\"><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">剪下两个</span><span lang=\"DE\"><span style=\"font-family:Arial;\">LuK</span></span><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">双质量飞轮离合器套装</span><span lang=\"DE\"><span style=\"font-family:Arial;\">25</span></span><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">周年标贴（须连同包装盒一同剪下），寄回舍弗勒贸易（上海）有限公司汽车售后市场部</span></span></strong></p>\r\n<span style=\"font-size:small;\"><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\"> <p><a href=\"http://www.snscar.cn/data/attachment/portal/201111/01/212640ylw33k5nzpql2hny.png\" target=\"_blank\"></a></p>\r\n<p style=\"text-justify:inter-ideograph;text-align:justify;text-indent:-18pt;margin:0cm 0cm 0pt 18pt;mso-pagination:none;mso-list:l0 level1 lfo1;tab-stops:list 18.0pt;\" class=\"MsoNormal\"><strong><span style=\"mso-fareast-font-family:Arial;mso-bidi-font-family:Arial;\" lang=\"DE\"><span style=\"mso-list:Ignore;\"><span style=\"font-family:Arial;\">2、</span><span style=\"font:7pt \'Times New Roman\';\"> </span></span></span><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">请在邮寄时，使用正楷完整填写寄件人信息，包括维修厂名称、维修厂地址、联系人、电话，以便赠品准确发送。</span></strong></p>\r\n</span></span></strong></span></span>', '4edede335a964.jpg', '<span style=\"font-size:small;\"><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\"><strong> <p style=\"text-justify:inter-ideograph;text-align:justify;text-indent:-18pt;margin:0cm 0cm 0pt 18pt;mso-pagination:none;mso-list:l0 level1 lfo1;tab-stops:list 18.0pt;\" class=\"MsoNormal\"><strong><span style=\"mso-fareast-font-family:Arial;mso-bidi-font-family:Arial;\" lang=\"DE\"><span style=\"mso-list:Ignore;\"><span style=\"font-family:Arial;font-size:small;\">1、</span><span style=\"font:7pt \'Times New Roman\';\"> </span></span></span><span style=\"font-size:small;\"><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">剪下两个</span><span lang=\"DE\"><span style=\"font-family:Arial;\">LuK</span></span><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">双质量飞轮离合器套装</span><span lang=\"DE\"><span style=\"font-family:Arial;\">25</span></span><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">周年标贴（须连同包装盒一同剪下），寄回舍弗勒贸易（上海）有限公司汽车售后市场部</span></span></strong></p>\r\n<span style=\"font-size:small;\"><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\"> <p><a href=\"http://www.snscar.cn/data/attachment/portal/201111/01/212640ylw33k5nzpql2hny.png\" target=\"_blank\"></a></p>\r\n<p style=\"text-justify:inter-ideograph;text-align:justify;text-indent:-18pt;margin:0cm 0cm 0pt 18pt;mso-pagination:none;mso-list:l0 level1 lfo1;tab-stops:list 18.0pt;\" class=\"MsoNormal\"><strong><span style=\"mso-fareast-font-family:Arial;mso-bidi-font-family:Arial;\" lang=\"DE\"><span style=\"mso-list:Ignore;\"><span style=\"font-family:Arial;\">2、</span><span style=\"font:7pt \'Times New Roman\';\"> </span></span></span><span style=\"font-family:宋体;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;\" lang=\"DE\">请在邮寄时，使用正楷完整填写寄件人信息，包括维修厂名称、维修厂地址、联系人、电话，以便赠品准确发送。</span></strong></p>\r\n</span></span></strong></span></span>', null, '2011-11-28', '2011-11-28', null, '4eddd850cd59f.jpg', null, null, '4eddd80d66d33.jpg', '', '已发布', '0', '2011-11-22 16:12:24', '0', '2011-12-07 13:42:54', null, '0000-00-00', '0000-00-00', null, '0', '0', null, null, '22', '0', '021-39576523');
-INSERT INTO `kp_activity` VALUES ('49', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '未发布', '0', '2011-12-06 22:26:01', null, '2011-12-06 22:26:01', null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `kp_activity` VALUES ('49', '免费试用', 'eeeeeeeeeeeeeeee', '33333', '3333', '333', '', '', null, '', null, null, null, null, null, null, null, null, '', '已发布', '0', '2011-12-06 22:26:01', '0', '2011-12-20 19:53:25', null, null, null, null, null, null, null, null, '', '0', '');
 
 -- ----------------------------
 -- Table structure for `kp_activity_comment`
@@ -396,15 +396,16 @@ CREATE TABLE `kp_user` (
   `insert_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   `ip` varchar(100) DEFAULT NULL,
+  `freeze_flag` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1218 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_user
 -- ----------------------------
-INSERT INTO `kp_user` VALUES ('1215', '18602123503', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre', 'nehnre@yahoo.com.cn', '', '厂商', '外资', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ea8260cdf4df.jpg', '', '', '', '', '', '', '0000-00-00 00:00:00', '2011-10-31 20:14:00', '2011-10-20 21:40:00', '2011-10-31 20:20:00', null);
-INSERT INTO `kp_user` VALUES ('1216', '18602123502', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre1', 'nehnreyahoo.com.cn', null, '经销商', '代理', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ebb247a5a35c.jpg', '', '', '', '', '', '', null, '2011-10-31 20:14:11', '2011-10-20 21:40:35', '2011-11-10 09:16:54', null);
-INSERT INTO `kp_user` VALUES ('1217', '13585801360', '96e79218965eb72c92a549dd5a330112', '昵称', '', null, '车主', '商用车', '222', '1', '1991-11-13', '', '', '', '', '已审核', null, '天津市', '天津市', '222222', null, null, null, null, null, null, '', '22', '22', '', '', '导入', '', null, '2011-11-15 22:25:32', '2011-11-10 21:59:39', '2011-11-21 14:50:32', null);
+INSERT INTO `kp_user` VALUES ('1215', '18602123503', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre', 'nehnre@yahoo.com.cn', '', '厂商', '外资', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ea8260cdf4df.jpg', '', '', '', '', '', '', '0000-00-00 00:00:00', '2011-10-31 20:14:00', '2011-10-20 21:40:00', '2011-10-31 20:20:00', null, null);
+INSERT INTO `kp_user` VALUES ('1216', '18602123502', 'e3ceb5881a0a1fdaad01296d7554868d', 'nehnre1', 'nehnreyahoo.com.cn', null, '经销商', '代理', '聂红雷', '1', '1991-10-01', '', '', '1', '', '待审核', '1', '天津市', '天津市', '', '', '', '', '1', '', '', 'thumb_4ebb247a5a35c.jpg', '', '', '', '', '', '', null, '2011-10-31 20:14:11', '2011-10-20 21:40:35', '2011-11-10 09:16:54', null, '已冻结');
+INSERT INTO `kp_user` VALUES ('1217', '13585801360', '96e79218965eb72c92a549dd5a330112', '昵称', '', null, '车主', '商用车', '222', '1', '1991-11-13', '', '', '', '', '已审核', null, '天津市', '天津市', '222222', null, null, null, null, null, null, '', '22', '22', '', '', '导入', '', null, '2011-11-15 22:25:32', '2011-11-10 21:59:39', '2011-11-21 14:50:32', null, '未冻结');
 
 -- ----------------------------
 -- Table structure for `kp_userlog`
@@ -419,7 +420,7 @@ CREATE TABLE `kp_userlog` (
   `insert_time` datetime DEFAULT NULL,
   `ip` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=200 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=206 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of kp_userlog
@@ -565,6 +566,12 @@ INSERT INTO `kp_userlog` VALUES ('192', '1', 'kp_admin_user', '1', '登录一次
 INSERT INTO `kp_userlog` VALUES ('193', '1', 'kp_admin_user', '1', '登录一次', '2011-12-06 22:25:33', null);
 INSERT INTO `kp_userlog` VALUES ('194', '1', 'kp_admin_user', '1', '登录一次', '2011-12-07 11:15:54', null);
 INSERT INTO `kp_userlog` VALUES ('199', '1217', 'kp_activity', '39', '参加在线调查一次', '2011-12-07 14:49:20', '127.0.0.1');
+INSERT INTO `kp_userlog` VALUES ('200', '1217', 'kp_user', '1217', '登录一次', '2011-12-19 16:04:08', null);
+INSERT INTO `kp_userlog` VALUES ('201', '1', 'kp_admin_user', '1', '登录一次', '2011-12-20 13:18:20', null);
+INSERT INTO `kp_userlog` VALUES ('202', '1', 'kp_admin_user', '1', '登录一次', '2011-12-20 13:18:56', null);
+INSERT INTO `kp_userlog` VALUES ('203', '1', 'kp_admin_user', '1', '登录一次', '2011-12-20 13:19:17', null);
+INSERT INTO `kp_userlog` VALUES ('204', '1217', 'kp_user', '1217', '登录一次', '2011-12-20 13:42:50', null);
+INSERT INTO `kp_userlog` VALUES ('205', '1', 'kp_admin_user', '1', '登录一次', '2011-12-20 19:51:28', null);
 
 -- ----------------------------
 -- View structure for `kp_vactivity_comment`
@@ -594,7 +601,13 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- View structure for `kp_vtable_tags`
 -- ----------------------------
 DROP VIEW IF EXISTS `kp_vtable_tags`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vtable_tags` AS select `t2`.`id` AS `id`,`t1`.`tag_name` AS `tag_name`,`t2`.`table_name` AS `table_name`,`t2`.`table_id` AS `table_id` from (`kp_tags` `t1` join `kp_table_tags` `t2`) where ((`t1`.`id` = `t2`.`tags_id`) and (`t2`.`table_name` = 'kp_activity'));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vtable_tags` AS select `t2`.`id` AS `id`,`t1`.`tag_name` AS `tag_name`,`t2`.`table_name` AS `table_name`,`t2`.`table_id` AS `table_id` from (`kp_tags` `t1` join `kp_table_tags` `t2`) where (`t1`.`id` = `t2`.`tags_id`);
+
+-- ----------------------------
+-- View structure for `kp_vuserdetaillog`
+-- ----------------------------
+DROP VIEW IF EXISTS `kp_vuserdetaillog`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kp_vuserdetaillog` AS select `t1`.`id` AS `id`,`t2`.`user_name` AS `user_name`,`t1`.`act_describ` AS `act_describ`,`t1`.`insert_time` AS `insert_time` from (`kp_admin_user` `t2` left join `kp_userlog` `t1` on((`t1`.`user_id` = `t2`.`id`))) union select `t3`.`id` AS `id`,`t4`.`user_name` AS `user_name`,`t3`.`act_describ` AS `act_describ`,`t3`.`insert_time` AS `insert_time` from (`kp_user` `t4` left join `kp_userlog` `t3` on((`t3`.`user_id` = `t4`.`id`)));
 
 -- ----------------------------
 -- View structure for `kp_vuserlog`

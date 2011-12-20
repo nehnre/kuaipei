@@ -24,7 +24,7 @@ class IndexAction extends Action
 		$this -> assign("result", $temp);
 		
 		$Vuserlog = M("Vuserlog");
-		$log = $Vuserlog -> where("") -> order('insert_time desc') -> limit(7) -> select();
+		$log = $Vuserlog -> where(" type<>'厂商活动' ") -> order('insert_time desc') -> limit(7) -> select();
 		$this -> assign("log", $log);
 		//显示厂商活动
 		$firmActivity = $Activity -> where("status='已发布' and type='厂商活动' ") -> order('seq desc, insert_time desc') -> select();

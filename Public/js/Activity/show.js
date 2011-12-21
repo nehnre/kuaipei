@@ -109,7 +109,15 @@ $(function(){
 				data:"id=" + id,
 				success:function(json){
 					json = nehnre.parseJSON(json);
-					if(json.data.msg == "在线调查"||json.data.msg == "厂商活动"){
+					if(json.data.msg == "厂商活动"){
+						if(url != ""){
+							closeWaiting();
+							window.open(url);
+							
+						}else{
+							location.href = location.href.replace(/#*$/ig,"");
+						}
+					}else if(json.data.msg == "在线调查"){
 						if(url != ""){
 							closeWaiting();
 							window.open("/Activity/showOnlineActivity?id="+id);

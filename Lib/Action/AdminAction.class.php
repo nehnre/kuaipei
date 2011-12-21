@@ -15,14 +15,14 @@ class AdminAction extends Action
 			$condition["id"] = Session::get("systemId");
 			$admin_user = M("admin_user");
 			$result = $admin_user -> where($condition) -> find();
-			if($result["user_name"] == 'edit'){
+			if($result["user_name"] == 'editor'){
 				    $menu = ',资讯管理,图片资讯';
 					$this -> assign("menu", $menu);
-			}else if($result["user_name"] == 'activity_admin'){
-				    $menu = ',活动发布,评论管理,资讯管理,图片资讯';
+			}else if($result["user_name"] == 'publisher'){
+				    $menu = ',活动管理,评论管理,资讯管理,图片资讯';
 					$this -> assign("menu", $menu);	
 			}else if($result["user_name"] == 'admin'){
-				   $menu = ',系统管理,活动管理,用户管理,评论管理,资讯管理,短消息管理,图片资讯,导出数据,日志查看';
+				    $menu = ',系统管理,活动管理,用户管理,评论管理,资讯管理,短消息管理,图片资讯,导出数据,日志查看';
 					$this -> assign("menu", $menu);
 			}
 			 $this->display();

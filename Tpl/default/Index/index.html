@@ -233,10 +233,10 @@
 										</if>
 									</div>
 									<div class="activity_news">
-										<div class="activity_title"><span class="bold">产品名称:</span><a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank">{$vo.sponsor}</a></div>
-										<div class="activity_title"><span class="bold">活动标题:</span>{$vo.title}</div>
+										<div class="activity_title"><a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank">{$vo.sponsor}</a></div>
+										<div class="activity_title">{$vo.title}</div>
 									</div>
-									<div class="activity_time"><span class="bold">s活动时间:</span><php>echo date("Y-m-d", strtotime($result["start_time"])).'至'.date("Y-m-d", strtotime($result["start_time"]));</php></div>
+									<div class="activity_time"><php>echo date("Y-m-d", strtotime($vo["start_time"])).'至'.date("Y-m-d", strtotime($vo["end_time"]));</php></div>
 								</div>
 								
 								<div class="clear"></div>

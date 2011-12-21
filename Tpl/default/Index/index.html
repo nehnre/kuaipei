@@ -227,16 +227,17 @@
 							   <div class="firm_activity">
 									<div class="activity_pic">
 										<if condition="!empty($vo['index_pic'])">
-										<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/Upload/{$vo.index_pic}" width="50" height="60"/></a>
+										<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/Upload/{$vo.index_pic}" width="50" height="50"/></a>
 										<else />
-										<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/images/foot_logo.jpg" width="50" height="60"/></a>
+										<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/images/foot_logo.jpg" width="50" height="50"/></a>
 										</if>
 									</div>
 									<div class="activity_news">
 										<div class="activity_title"><a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank">{$vo.sponsor}</a></div>
 										<div class="activity_title">{$vo.title}</div>
+										<div class="activity_time"><php>echo date("Y-m-d", strtotime($vo["start_time"])).'至'.date("Y-m-d", strtotime($vo["end_time"]));</php></div>
 									</div>
-									<div class="activity_time"><php>echo date("Y-m-d", strtotime($vo["start_time"])).'至'.date("Y-m-d", strtotime($vo["end_time"]));</php></div>
+
 								</div>
 								
 								<div class="clear"></div>
@@ -263,7 +264,7 @@
 								<volist name="log" id="vo">
 								<div class="nick_name">[{$vo.nick_name}]</div>
 								<div class="act_time"><php>echo '于'.date("Y年m月d日 H:i:s", strtotime($vo["insert_time"]));</php></div>
-								<div class="action">参加了{$vo.sponsor}的免费试用活动</div>
+								<div class="action">参加了{$vo.sponsor}的{$vo.type}活动</div>
 								<div class="clear"></div>
 								</volist>
 							</div>

@@ -814,7 +814,7 @@ a:hover{
 
 .activity_pic{
 	width:50px;
-	height:60px;
+	height:50px;
 	float:left;
 }
 
@@ -824,7 +824,7 @@ a:hover{
 .activity_news{
 	width:140px;
 	_width:120px;
-	height:60px;
+	height:50px;
 	float:left;
 }
 .activity_news .activity_title{
@@ -834,18 +834,20 @@ a:hover{
 	_padding-right:5px;
 	width:130px;
 	_width:120px;
-	height:30px;
+	height:15px;
 	float:left;
 	overflow:hidden;
 }
-.firm_activity .activity_time{
-	padding-top:5px;
+.activity_news .activity_time{
+    padding-left:10px;
+	_padding-left:5px;
 	padding-right:10px;
 	_padding-right:5px;
-	width:180px;
+	width:130px;
 	_width:120px;
 	height:15px;
 	float:left;
+	overflow:hidden;
 }
 .activity_news .sponsor{
     padding-left:10px;
@@ -854,20 +856,20 @@ a:hover{
 	_padding-right:5px;
 	width:130px;
 	_width:120px;
-	height:30px;
+	height:15px;
 	float:left;
 	overflow:hidden;
 }
 
 .firm_activity{
 	width:190px;
-	height:85px;
+	height:50px;
 	padding-bottom:10px;
 }
 .index_firm_activity_content{
 	padding:7px 10px 7px 10px;
     _padding-left:5px;
 	_padding-right:5px;
-	height:355px;
+	height:230px;
 	overflow:hidden;
 }

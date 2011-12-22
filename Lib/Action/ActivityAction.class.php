@@ -66,7 +66,7 @@ class ActivityAction extends Action
 		//厂商活动
 
 		$Vuserlog = M("Vuserlog");
-		$log = $Vuserlog -> where("") -> order('insert_time desc') -> limit(7) -> select();
+		$log = $Vuserlog -> where(" type<>'厂商活动' ") -> order('insert_time desc') -> limit(7) -> select();
 		$this -> assign("log", $log);
 		
 		//显示热门关键词

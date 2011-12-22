@@ -160,7 +160,7 @@
 								<volist name="log" id="vo">
 								<div class="nick_name">[{$vo.nick_name}]</div>
 								<div class="act_time"><php>echo '于'.date("Y年m月d日 H:i:s", strtotime($vo["insert_time"]));</php></div>
-								<div class="action">参加了{$vo.sponsor}的免费试用活动</div>
+								<div class="action">参加了{$vo.sponsor}的{$vo.type}活动</div>
 								<div class="clear"></div>
 								</volist>
 							  <div style="height:20px;"></div>

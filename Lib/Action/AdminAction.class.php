@@ -83,6 +83,7 @@ class AdminAction extends Action
 				$Userlog -> table_name = "kp_admin_user";
 				$Userlog -> table_id = $result["id"];
 				$Userlog -> act_describ = "登录一次";
+				$Userlog -> ip = $_SERVER['REMOTE_ADDR'];
 				$Userlog -> insert_time = date("Y-m-d H:i:s");
 				$Userlog -> add();
 			}

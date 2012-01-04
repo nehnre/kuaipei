@@ -42,6 +42,7 @@ class UserAction extends Action
 				$Userlog -> table_id = $result["id"];
 				$Userlog -> act_describ = "登录一次";
 				$Userlog -> insert_time = date("Y-m-d H:i:s");
+				$Userlog -> ip = $_SERVER['REMOTE_ADDR'];
 				$Userlog -> add();
 			}
 		}

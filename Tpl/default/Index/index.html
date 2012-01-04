@@ -228,9 +228,9 @@
 										<div class="activity_time"><php>echo date("Y-m-d", strtotime($vo["start_time"])).'至'.date("Y-m-d", strtotime($vo["end_time"]));</php></div>
 										<div class="activity_pic">
 											<if condition="!empty($vo['index_pic'])">
-											<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/Uploads/{$vo.index_pic}" onload="scaleImage(this,180,300)" /></a>
+											<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/Uploads/{$vo.index_pic}" onload="scaleImage(this,166,115)" /></a>
 											<else />
-											<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/images/foot_logo.jpg" onload="scaleImage(this,180,300)" /></a>
+											<a href="/Activity/firmActivityShow?id={$vo.id}" class="red" target="_blank"><img src="__PUBLIC__/images/foot_logo.jpg" onload="scaleImage(this,166,115)" /></a>
 											</if>
 										</div>
 									</div>

@@ -48,10 +48,9 @@
             
             <div class="ad" >
 				<ul class="slider" >
-					<img src="__PUBLIC__/adpics/s1.jpg" width="953" height="231"/>
-					<img src="__PUBLIC__/adpics/s2.jpg" width="953" height="231"/>
-					<img src="__PUBLIC__/adpics/s3.jpg" width="953" height="231"/>
-					<img src="__PUBLIC__/adpics/s4.jpg" width="953" height="231"/>
+				    <volist name="picNews" id="vo">
+					<a href="{$vo.link}" target="_blank"><img src="/Public/Uploads/{$vo.pic}" width="953" height="231" alt="{$vo.title}" style="border:none; vertical-align:middle;" /></a>
+					</volist>
 			    </ul>
 			    <ul class="num" >
 				    <li>1</li>

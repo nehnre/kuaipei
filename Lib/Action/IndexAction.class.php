@@ -45,6 +45,13 @@ class IndexAction extends Action
 		$hot_tags = $vhot_tags -> where("") -> order('num desc') -> limit(4) -> select();
 		$this -> assign("hot_tags", $hot_tags);
 		
+		//显示滚动图片信息
+		$pic_news = M("pic_news");
+		unset($condition);
+		$condition["status"] = "已发布";
+		$condition["type"] = "首页资讯";
+		$picNews = $pic_news -> where($condition) -> order("insert_time desc") -> limit(4) -> select();
+		$this -> assign("picNews", $picNews);
 		
         $this->display();
     }

@@ -169,9 +169,18 @@ class ActivityAction extends Action
 			if($Activityresult["type"] =="免费试用" ){
 				$sendSms = "sendSms";
 				$this -> $sendSms($user_name, "尊敬的".$true_name."，感谢您参加本次立配网活动！我们将在您获得试用资格后，发送试用通知，敬请留意。【立配网】");
+				
+				//发送短消息
+				$saveMessage = "saveMessage";
+				$this -> $saveMessage($user_id,"参加".$Activityresult["title"], "尊敬的".$true_name."，感谢您参加本次立配网活动！我们将在您获得试用资格后，发送试用通知，敬请留意。【立配网】");
+				
 				$json["success"] = true;
 				$json["msg"] = "参加成功！感谢您参加本次活动，我们将在您获得试用资格后，发送短信通知到您的手机上，敬请留意查收。";
 			}else{
+				//发送短消息
+				$saveMessage = "saveMessage";
+				$this -> $saveMessage($user_id,"参加".$Activityresult["title"],"尊敬的".$true_name."，您成功参加".$Activityresult["title"]."！。【立配网】");
+				
 				$json["success"] = true;
 				$json["msg"] = $Activityresult["type"];
 			}
@@ -816,6 +825,31 @@ class ActivityAction extends Action
 		 $days = intval($timediff/86400);
 		 return $days;
 	}
+
+    private function saveMessage($user_id,$title,$msg){
+	        unset($condition);
+	        $condition["user_name"] = "admin";
+			$admin_user = M("admin_user");
+			$result = $admin_user -> where($condition) -> find();
+			
+			$Message = M("Message");
+			
+			//保存消息
+			$Message = M("Message");
+			$Message -> create();
+			$Message -> insert_time = date("Y-m-d H:i:s");
+			
+			//保存发送人，接收人，状态等信息
+			$Message -> sender_id = $result["id"];
+			$Message -> recever_id = $user_id;
+			$Message -> msg_id = $msg_id;
+			$Message -> title = $title;
+			$Message -> content = $msg;
+			$Message -> send_status = "普通";
+			$Message -> receve_status = "普通";
+			$Message -> read_status = "未读";
+			$Message -> add();
+	}
 	public function test(){
          echo  strstr("天津市,2","sh");
 			if(!strstr("天津市,2","天津")){
@@ -824,7 +858,6 @@ class ActivityAction extends Action
 			}
 			
 	}
-	
 	
 
 }

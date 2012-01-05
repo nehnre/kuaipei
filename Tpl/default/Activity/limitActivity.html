@@ -87,7 +87,18 @@
 				<td width="200px" align="right">参加总人数：</td>
 				<td align="left"><input type="text" style="width:80%" id="total_num" name="total_num" value="{$result.total_num}"/></td>
 			</tr>
-			
+			<tr class="odd">
+				<td width="200px" align="right">用户状态：</td>
+				<td align="left"><select style="width:80%" name="user_status" id="user_status">
+					    <option value=""></option>
+						<option value="基本注册">基本注册</option>
+						<option value="待审核">待审核</option>
+						<option value="已审核">已审核</option>
+					</select></td>
+				<script type="text/javascript">
+					$("#user_status").val("{$result.user_status}");
+				</script>
+			</tr>
 			<tr  class="odd">
 				<td colspan="2">
 					<input type="button" value="提 交" id="btnSubmit" class="shortbutton" onmouseover="this.className='shortbutton_mouseover'" onmouseout="this.className='shortbutton'"/>

@@ -81,10 +81,24 @@ $(function(){
 		var check_province = $(this).attr("check_province");
 		var province = $(this).attr("province");
 		var check_user_type = $(this).attr("check_user_type");
+		var check_user_status = $(this).attr("check_user_status");
 		var user_type = $(this).attr("user_type");
 		var url = $(this).attr("url");
 		if(unlogin){
 			$("#login").click();
+		}else if(check_user_status==1){
+				showAlert("该活动只有注册用户能够参加");
+		}else if(check_user_status==2){
+				showAlert("该活动只有待审核用户能够参加");
+		}else if(check_user_status==3) {
+			if("导入" == import_flag && status == "基本注册"){
+				nehnre.storage.set("storage_import_flag", "1");
+				showAlert("为了让您更好得参与活动，并且为了给您提供更优质的服务，请完善您的认证信息。<a href='javascript:;' onclick='reg()' style='text-decoration:underline;color:#ce0000'>立即完善</a>");
+			} else if(status == "基本注册"){
+				showAlert("很遗憾！您目前仅是注册会员，成为认证会员才能参加活动。<a  href='javascript:;' onclick='reg()' style='text-decoration:underline;color:#ce0000'>立即升级</a>");
+			} else if(status == "待审核"){
+				showAlert("尊敬的会员：您的认证资料目前正在审核中，暂时不能参加活动，我们将尽快处理，请耐心等待！等审核认证通过，我们将立即发送提示信息，敬请留意！");
+			}
 		}else if(~~expirse < 0){
 			showAlert("活动还没有开始，开始时间：{0}".format(start_time));
 		} else if(~~expirse > 0){

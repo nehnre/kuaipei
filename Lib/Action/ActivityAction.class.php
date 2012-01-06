@@ -392,6 +392,27 @@ class ActivityAction extends Action
 		}
 		$this -> assign("check_user_type", $check_user_type);
 		
+		/*获取用户注册状态*/
+		$check_user_status = 0;	
+		if(!empty($result["user_status"])){
+			if($result["user_status"]=="基本注册"){
+			    if($loginUser["status"] !="基本注册"){
+			       $check_user_status = 1;	
+				}
+			}else if($result["user_status"]=="待审核"){
+				if($loginUser["status"] !="待审核"){
+			       $check_user_status = 2;	
+				}
+			}else if($result["user_status"]=="已审核"){
+				if($loginUser["status"] !="已审核"){
+			       $check_user_status = 3;	
+				}
+			}
+		}
+		$this -> assign("check_user_status", $check_user_status);
+		
+		
+		
 		/*重复参加数*/
 		$check_repeat_num = 0 ;
 		if(!empty($result["repeat_num"])){
@@ -797,6 +818,24 @@ class ActivityAction extends Action
 			}
 		}
 		$this -> assign("check_total_num", $check_total_num);
+		
+		/*获取用户注册状态*/
+		$check_user_status = 0;	
+		if(!empty($result["user_status"])){
+			if($result["user_status"]=="基本注册"){
+			    if($loginUser["status"] !="基本注册"){
+			       $check_user_status = 1;	
+				}
+			}else if($result["user_status"]=="待审核"){
+				if($loginUser["status"] !="待审核"){
+			       $check_user_status = 2;	
+				}
+			}else if($result["user_status"]=="已审核"){
+				if($loginUser["status"] !="已审核"){
+			       $check_user_status = 3;	
+				}
+			}
+		}
 		
 		/*获取评论信息*/
 		$VActivityComment = M("vactivity_comment");

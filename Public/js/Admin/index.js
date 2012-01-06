@@ -24,6 +24,48 @@ $(document).ready(function(){
 					location.href = "/Admin/logout" ;
 					try{window.event.returnValue=false;}catch(e){}
 				});
+				
+				$( "#dialog-editPassword" ).dialog({
+					width: 500,
+					height: 300,
+					resizable: false,
+					closeOnEscape: false,
+					modal: true,
+					autoOpen: false,
+					close: function(){
+						$("#user_name").val("");
+						$("#password").val("");
+					}
+				});	
+				$("#editPassword").click(function(){
+					$( "#dialog-editPassword" ).dialog("open");
+				});	
+
+				$("#btnSet").click(function(){
+					if(!topCheckPassword()){
+						return;
+					}
+					var user_name = $("#user_name").val();
+					var password = $("#password").val();
+					var data = "user_name=" + user_name + "&password=" + password ;
+					//showWaiting();
+					$.ajax({
+						url:"/Admin/changePassword",
+						cache: false,
+						data: data,
+						success:function(json){
+							json = nehnre.parseJSON(json);
+							showAlert(json.data.msg, function(){
+								if(json.data.success){
+									$( "#dialog-editPassword" ).dialog("close");
+									clearFindPassword();
+								}
+							});
+						}
+						
+					});
+				});
+				
 });
 	
 	global_pro_id = -1;		
@@ -45,4 +87,36 @@ function ShowCatalog(i){
 function setCSS(self){
 	$("a[class='selected']").attr("class","not_selected");
 	$(self).attr("class","selected");
+}
+
+//检测密码是否匹配
+function topCheckPassword(){
+	var password = $("#password").val();
+	var passwordagain = $("#passwordagain").val();
+	if(!password){
+		showAlert("请输入密码！",function(){
+			$("#password").focus();
+		});
+		return false;
+	}
+	if(password.length < 6 || password.length > 16){
+		showAlert("密码长度要在6到16之间！",function(){
+			$("#password").focus();
+		});
+		return false;
+	}
+	
+	if(password != passwordagain){
+		showAlert("两次输入的密码不一致，请检查！",function(){
+			$("#password").focus();
+		});
+		return false;
+	}
+	
+	return true;
+}
+function clearFindPassword(){
+	$("#user_name").val("");
+	$("#password").val("");
+	$("#passwordagain").val("");
 }

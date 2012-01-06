@@ -22,9 +22,11 @@ class AdminAction extends Action
 				    $menu = ',活动管理,评论管理,资讯管理,图片资讯';
 					$this -> assign("menu", $menu);	
 			}else if($result["user_name"] == 'admin'){
-				    $menu = ',系统管理,活动管理,用户管理,评论管理,资讯管理,短消息管理,图片资讯,导出数据,日志查看';
+				    $menu = ',系统管理,活动管理,用户管理,评论管理,资讯管理,短消息管理,图片资讯,导出数据,日志查看,改密码';
 					$this -> assign("menu", $menu);
 			}
+             $list = $admin_user -> order('id asc') -> findAll();
+			 $this -> assign("list", $list);
 			 $this->display();
 		}
     }
@@ -106,6 +108,22 @@ class AdminAction extends Action
    public function logout(){
 		Session::clear();
 		echo("<script type='text/javascript'>location.href='/Admin/loginInit';try{window.event.returnValue=false;}catch(e){}</script>");
+	}
+	
+	public function changePassword(){
+		$password = $_GET["password"];
+		$user_name = $_GET["user_name"];
+
+		$admin_user = M('admin_user');
+		$condition['user_name'] = $user_name;
+		$result = $admin_user -> where($condition) -> field("id") -> find();
+		$admin_user -> id = $result["id"];
+		$admin_user -> password = md5($password);
+		$admin_user -> save();
+		$json["success"] = true;
+		$json["msg"] = "设置成功！".$user_name.$result["id"];
+
+		$this -> ajaxReturn($json);
 	}
 
 	

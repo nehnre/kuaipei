@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50508
 File Encoding         : 65001
 
-Date: 2012-01-05 08:59:15
+Date: 2012-01-06 10:38:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,7 +57,6 @@ CREATE TABLE `kp_activity` (
   `user_status` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
-
 
 -- ----------------------------
 -- Records of kp_activity
